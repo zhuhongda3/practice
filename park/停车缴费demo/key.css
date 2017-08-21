@@ -1,0 +1,229 @@
+.keyboard {
+	display: none;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	text-align: center;
+	background: #CFD4DA;
+	padding: 0 0 10px;
+	border-top: 1px solid #c1c7cf;
+	outline: 0
+}
+
+.keyboard-toolbar {
+	height: 32px;
+	background: #f7f7f7;
+	text-align: right
+}
+
+.keyboard-toolbar .keyboard-toolbar-item {
+	font-size: 14px;
+	padding: 6px 8px;
+	display: inline-block;
+	color: #00bf70;
+	line-height: 1.42857143
+}
+
+.keyboard-wrapper {
+	display: inline-block;
+	margin-top: 4px
+}
+
+.keyboard .keyboard-keyset {
+	display: none;
+	position: relative;
+	margin: 0 auto
+}
+
+.keyboard .keyboard-text,
+.keyboard .keyboard-text-hover {
+	color: #222;
+	display: inline-block;
+	min-width: 16px
+}
+
+.keyboard .keyboard-text-hover {
+	display: none;
+	position: absolute;
+	top: -60px;
+	bottom: -1px;
+	background: url(bg-active.png) center bottom no-repeat;
+	background-size: 100% auto;
+	left: -12px;
+	right: -12px;
+	z-index: 0;
+	pointer-events: none
+}
+
+.keyboard .keyboard-button {
+	cursor: pointer;
+	padding: 6px 0;
+	border: 0;
+	line-height: 1.42857143;
+	outline: 0;
+	background: #fff;
+	margin: 6px 2px 0;
+	border-radius: 5px;
+	font-size: 18px;
+	-webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .4);
+	-moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .4);
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .4);
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	vertical-align: middle;
+	width: 28px;
+	max-width: 28px;
+	display: inline-block;
+	text-align: center;
+	position: relative
+}
+
+.keyboard .keyboard-button:active>.keyboard-text-hover {
+	display: block;
+	text-align: center;
+	padding: 8px;
+	font-size: 25px
+}
+
+.keyboard .keyboard-button[disabled] {
+	pointer-events: none;
+	cursor: not-allowed;
+	opacity: .65;
+	filter: alpha(opacity=65)
+}
+
+.keyboard .keyboard-button.keyboard-action-button {
+	background: #A8B0BD
+}
+
+.keyboard .keyboard-button.keyboard-action-placeholder {
+	background: 0 0;
+	border: 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none
+}
+
+.keyboard .keyboard-button.keyboard-action-delete {
+	background: url(btn-del.png) center no-repeat;
+	background-size: 20px auto;
+	padding: 6px 7px;
+	position: absolute;
+	right: 0
+}
+.keyboard .keyboard-button.keyboard-action-switch{
+	background: url(btn-back.png) center no-repeat;
+	background-size: 30px auto;
+	padding: 6px 7px;
+	position: absolute;
+	left: 0;
+}
+.keyboard .keyboard-button.keyboard-action-switch1{
+	background: url(btn-back1.png) center no-repeat;
+	background-size: 30px auto;
+}
+
+@media screen and (min-width:360px) and (max-width:374px) {
+	.keyboard .keyboard-button {
+		font-size: 20px;
+		padding: 10px 0;
+		margin: 6px 3px 0;
+		width: 30px;
+		max-width: 30px;
+	}
+	.keyboard .keyboard-button.keyboard-action-delete {
+		background-size: 24px auto;
+		padding: 10px 9px;
+	}
+
+	.keyboard .keyboard-button.keyboard-action-switch{
+		background-size: 34px auto;
+		padding: 10px 9px;
+	}
+
+	.keyboard .keyboard-button:active>.keyboard-text-hover {
+		bottom: 0;
+		left: -13px;
+		right: -13px;
+		padding: 10px;
+		font-size: 28px;
+	}
+}
+
+@media screen and (min-width:375px) and (max-width:411px) {
+	.keyboard .keyboard-button {
+		font-size: 20px;
+		padding: 10px 0;
+		margin: 6px 2px 0;
+		width: 33px;
+		max-width: 33px
+	}
+	.keyboard .keyboard-button.keyboard-action-delete {
+		background-size: 24px auto;
+		padding: 10px 9px
+	}
+	.keyboard .keyboard-button.keyboard-action-switch{
+		background-size: 34px auto;
+		padding: 10px 9px;
+	}
+	.keyboard .keyboard-button:active>.keyboard-text-hover {
+		left: -14px;
+		right: -14px;
+		top: -65px;
+		padding: 11px;
+		font-size: 29px
+	}
+}
+
+@media screen and (min-width:412px) and (max-width:413px) {
+	.keyboard .keyboard-button {
+		font-size: 20px;
+		padding: 10px 0;
+		margin: 6px 2px 0;
+		width: 36px;
+		max-width: 36px
+	}
+	.keyboard .keyboard-button.keyboard-action-delete {
+		background-size: 24px auto;
+		padding: 10px 9px
+	}
+	.keyboard .keyboard-button.keyboard-action-switch{
+		background-size: 34px auto;
+		padding: 10px 9px;
+	}
+	.keyboard .keyboard-button:active>.keyboard-text-hover {
+		top: -74px;
+		left: -15px;
+		right: -15px;
+		padding: 12px;
+		font-size: 32px
+	}
+}
+
+@media screen and (min-width:414px) {
+	.keyboard .keyboard-button {
+		font-size: 24px;
+		padding: 10px 0;
+		margin: 6px 3px 0;
+		width: 35px;
+		max-width: 35px
+	}
+	.keyboard .keyboard-button.keyboard-action-delete {
+		background-size: 26px auto;
+		padding: 10px;
+	}
+	.keyboard .keyboard-button.keyboard-action-switch{
+		background-size: 36px auto;
+		padding: 10px;
+	}
+	.keyboard .keyboard-button:active>.keyboard-text-hover {
+		top: -64px;
+		left: -15px;
+		right: -15px;
+		padding: 12px;
+		font-size: 32px
+	}
+}
