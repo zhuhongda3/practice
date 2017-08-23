@@ -470,7 +470,7 @@
                         $this = $(this);
                         $this.parent().children().removeClass('active');
                         $this.addClass('active');
-                        $.Keyboard('#keyboard').switchTo((i == 0||i == 7) ? 'province' : 'area', function (keyboard, keyset) {
+                        $.Keyboard('#keyboard').switchTo(i == 0 ? 'province' : 'area', function (keyboard, keyset) {
                             // if (i == 1) {
                             //     if ($('#plate-input').text().replace(/\s/g, '').startsWith('\u4f7f')) {
                             //         keyboard.disableKeys(keyset, ['\u6e2f', '\u6fb3', '\u5b66', '\u9886']);
@@ -494,8 +494,16 @@
                                 $this.next('.weui-flex__item').trigger('click');
                             }
                             if ($('#plate-input').text().replace(/\s/g, '').length > 6) {
-                                $('#process').removeAttr('disabled');
-                                $.form.plate = $('#plate-input').text().replace(/\s/g,'');
+                                var count = 0 ;
+                                for(var j = 0;j < $(".weui-flex__item").length - 1;j++){
+                                    if($(".weui-flex__item:eq("+j+")").html()==""){
+                                         count++;
+                                    }
+                                } 
+                                if(count==0){
+                                    $('#process').removeAttr('disabled');
+                                    $.form.plate = $('#plate-input').text().replace(/\s/g,'');
+                                }
                             } else {
                                 $('#process').attr('disabled', true);
                                 $.form.plate = undefined;
@@ -509,8 +517,7 @@
                             if (i != 7) {
                                 $('#process').attr('disabled', true);
                                 $.form.plate = undefined;
-                            } else if ($('#plate-input').text().replace(/\s/g, '').length >
-                                6) {
+                            } else if ($('#plate-input').text().replace(/\s/g, '').length >6) {
                                 $('#process').removeAttr('disabled');
                                 $.form.plate = $('#plate-input').text().replace(/\s/g,'');
                             } else {
@@ -528,13 +535,9 @@
                 }
 
             });
-            function switch1(){
-				$(".keyboard-wrapper div").show();
-				$(".keyboard-wrapper div:nth-child(1)").hide();
-			}
-			function switch2(){
-				$(".keyboard-wrapper div").show();
-				$(".keyboard-wrapper div:nth-child(2)").hide();
+            function switchKeyBoard(i){
+                $(".keyboard-wrapper div").show();
+                $(".keyboard-wrapper div:nth-child("+i+")").hide();
 			}
         </script>
     </div>
