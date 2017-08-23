@@ -25,7 +25,7 @@ function (e) {
 				})
 			},
 			close: function () {
-				this.$element.hide(), this.settings.hide()
+				this.$element.hide(), this.settings.hide(),$(".weui-flex__item").removeClass("active")
 			},
 			switchTo: function (t, a) {
 				if (this.$element.is(":visible") || this.$element.show(), void 0 != this.settings.currentKeyset) {
@@ -77,19 +77,17 @@ function (e) {
 						}).addClass("keyboard-button").addClass("keyboard-action-button").addClass("keyboard-action-placeholder").append(e("<span />", {
 							text: " "
 						}).addClass("keyboard-text")))
-						//sitch1
+						//switch keyboard
 						"switch1" == a.type?n.append(e("<a />", {
-							href: "javascript:switch1();",
+							href: "javascript:switchKeyBoard(1);",
 							value: "switch1",
 							tabindex: -1
 						}).addClass("keyboard-button").addClass("keyboard-action-button").addClass("keyboard-action-switch").addClass("keyboard-action-switch1").append(e("<span />", {
 							text: ""
 						}).addClass("keyboard-text"))):""
-
-						//switch2
 						"switch2" == a.type?n.append(e("<a />", {
-							href: "javascript:switch2();",
-							value: "switch1",
+							href: "javascript:switchKeyBoard(2);",
+							value: "switch2",
 							tabindex: -1
 						}).addClass("keyboard-button").addClass("keyboard-action-button").addClass("keyboard-action-switch").append(e("<span />", {
 							text: ""
