@@ -9,9 +9,7 @@ $(document).ready(function() {
         });
         return false;
     });
-
     $(".link_item .item").mouseover(function() {
-        $(this).siblings().removeClass("animated bounce").addClass("animated bounce");
-    })
-
+        $(this).addClass("animated bounce").siblings().removeClass("animated bounce");
+    });
 });
