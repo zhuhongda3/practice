@@ -8,7 +8,6 @@ body {
     font-family: PingFangSC-Regular, Helvetica Neue, Microsoft Yahei, 微软雅黑;
 }
 
-
 /* ::-webkit-scrollbar-track-piece {
     width: 10px;
     background-color: transparent;
@@ -48,8 +47,8 @@ body {
 }
 
 .link_bar .title {
-    height: 50px;
     text-align: center;
+    height: 50px;
     line-height: 50px;
     font-size: 18px;
     color: #26cbff;
@@ -83,6 +82,7 @@ body {
     color: #fff;
 }
 
+/* body主体 */
 .link_body {
     position: relative;
     display: -webkit-box;
@@ -110,14 +110,38 @@ body {
     overflow: hidden;
 }
 
+.link_body .link_item img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #eee;
+}
+
+.link_body .link_item span{
+    color: #26cbff;
+    margin-left: 10px;
+}
+
 .link_body .link_item .box_name {
-    font-size: 16px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
     margin: 20px 2% 0 2%;
 }
 
-.link_body .link_item a {
+.link_body .link_item .box_name i {
+    width: 5px;
+    height: 5px;
+    margin-right: 10px;
+    background: #26cbff;
+    border-radius: 50%;
+}
+
+.link_body .link_item .item {
+    display: flex;
+    align-items: center;
     float: left;
-    cursor: pointer;
     height: 60px;
     border-radius: 6px;
     background: #fff;
@@ -129,11 +153,18 @@ body {
     border: 1px solid #e4ecf3;
     box-shadow: 1px 2px 3px #f2f6f8;
 }
+.link_body .link_item .item a{
+    margin-left: 10px;
+    color: #000;
+}
 
 .footer {
-    bottom: 0;
     width: 100%;
+    bottom: 0;
     line-height: 45px;
     background: #fff;
     box-shadow: 0 0 1rem rgba(0, 0, 0, .2);
+    text-align: center;
+    color:#333;
+    font-size: 12px;
 }

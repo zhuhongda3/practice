@@ -10,9 +10,8 @@ $(document).ready(function() {
         return false;
     });
 
-    $(".link_item a").mouseover(function() {
-        $(".link_item a").removeClass("animated bounce")
-        $(this).addClass("animated bounce");
+    $(".link_item .item").mouseover(function() {
+        $(this).addClass("animated bounce").siblings().removeClass("animated bounce");
     })
 
 });
