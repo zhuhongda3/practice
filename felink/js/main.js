@@ -11,7 +11,7 @@ $(document).ready(function() {
     });
 
     $(".link_item .item").mouseover(function() {
-        $(this).addClass("animated bounce").siblings().removeClass("animated bounce");
+        $(this).siblings().removeClass("animated bounce").addClass("animated bounce");
     })
 
 });
