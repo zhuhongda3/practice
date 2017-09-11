@@ -1,0 +1,79 @@
+/* 
+   v1.0 | 20170911
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+article,aside,audio,b,canvas,caption,center,
+dd,details,dl,dt,embed,fieldset,figcaption,
+figure,footer,form,header,hgroup,i,label
+,legend,li,mark,menu,nav,ol,output,ruby,
+section,small,strike,strong,sub,summary,sup,
+table,tbody,td,tfoot,th,thead,time,tr,tt,u
+,ul,var,video{margin:0;padding:0;border:0;vertical-align:baseline;font:inherit;font-size:100%}
+
+/* HTML5 display-role reset for older browsers */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+body{line-height:1}
+li,ol,ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}
+table{border-collapse:collapse;border-spacing:0}
+body{font-family:PingFangSC-Regular,Helvetica Neue,Microsoft Yahei,微软雅黑}
+
+//add from zhangxinxu
+ins{text-decoration:none;}
+mark{font-weight:700;font-style:italic;}
+del{text-decoration:line-through;}
+abbr[title],dfn[title]{border-bottom:1px dotted #000;cursor:help;}
+hr{display:block;margin:1em 0;padding:0;height:1px;border:0;border-top:1px solid #ccc;}
+input,select{vertical-align:middle;}
+
+//copy in website
+h1,h2,h3,h4,h5,h6{font-weight:normal;}
+a {background:transparent;text-decoration:none;outline:none;}
+a:hover{text-decoration:underline;}
+a:link{text-decoration: none; }
+:focus { outline: none; }
+sup{vertical-align:text-top;}
+sub{vertical-align:text-bottom;}
+address,cite,dfn,em,var{font-style:normal;}
+fieldset,img{border:0;}
+button,input,select,textarea{font-size:100%;}
+
+* ,*::after,*::before{
+    box-sizing: border-box;
+}
+
+//.clearfix
+.clearfix:after{clear:both;content:".";display:block;height:0;font-size:0;visibility:hidden;}
+.clearfix{*zoom:1;}
+
+::-webkit-scrollbar-track-piece {
+    width: 5px;
+    background-color: transparent;
+}
+::-webkit-scrollbar {
+    width: 5px;
+    height: 2px;
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+    height: 50px;
+    background: transparent;
+    cursor: pointer;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: transparent;
+    cursor: pointer;
+} 
+
+//移动端
+html{height:100%;-webkit-tap-highlight-color:transparent;}                 /*去除点击页面中元素时出现的阴影*/
+body{-webkit-user-select: none;}                                           /*禁止页面文字选择*/ 
+button,input{-webkit-appearance:none;}                                     /*去掉在ios中按钮用input的自带的圆角渐变*/
+input:-webkit-autofill {-webkit-box-shadow: 0 0 0px 1000px white inset;} /*去掉input自动填充内容的黄色背景*/
+html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 { -webkit-text-size-adjust: none; }  /*禁止文字自动调整大小*/
+a,img{-webkit-touch-callout:none;}                                         /*禁用长按页面时的弹出菜单(iOS下有效) ,img和a标签都要加*/ 

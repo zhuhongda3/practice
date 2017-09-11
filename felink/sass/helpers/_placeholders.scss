@@ -1,0 +1,40 @@
+%bg-image { 
+    width: 100%;
+    background-position: center center; 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+}
+
+//WebKit浏览器或移动端
+%ellipsis{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+%ellipsis2{
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+//@extend %bg-image
+//跨多浏览器支持设置相对定位的容器高度
+%module {
+    position:relative;
+    line-height:1.4em;
+    /* 3 times the line-height to show 3 lines */
+    height:4.2em;
+    overflow:hidden;
+}
+%module:after {
+    content:"...";
+    font-weight:bold;
+    position:absolute;
+    bottom:0;
+    right:0;
+    padding:0 20px 1px 45px;
+    background:url("") repeat-y;
+}

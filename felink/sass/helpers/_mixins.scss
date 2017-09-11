@@ -1,0 +1,6 @@
+@mixin rounded-corner($arc) {
+    -moz-border-radius: $arc; 
+    -webkit-border-radius: 
+    $arc; border-radius: $arc; 
+}
+//@include rounded-corner(5px);
