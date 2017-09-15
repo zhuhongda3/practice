@@ -59,6 +59,9 @@
             a{
                 margin-left: 10px;
                 color: #000;
+                &:hover{
+                    text-decoration: underline;
+                }
             }
         }
     }

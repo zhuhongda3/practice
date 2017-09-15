@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/foundation/6.4.3/css/foundation.min.css">
     <link rel="shortcut icon" href="img/favicon.png">
     <link href="./css/global.css" rel="stylesheet">
     <title>felink</title>
@@ -35,10 +36,10 @@
                     <a href="javascript:void(0);">template</a>
                 </li>
                 <li class="link">
-                    <a href="javascript:void(0);">blog</a>
+                    <a href="javascript:void(0);">nodeJs</a>
                 </li>
                 <li class="link">
-                    <a href="javascript:void(0);">nodeJs</a>
+                    <a href="javascript:void(0);">blog</a>
                 </li>
                 <li class="link">
                     <a href="javascript:void(0);">community</a>
@@ -46,214 +47,290 @@
             </ul>
         </div>
 
-        <div class="link-nav">
-            <div class="link-list">
-                <!-- html -->
-                <div class="link-item">
-                    <div class="box-name"><i class=""></i>html</div>
-                    <div class="item">
-                        <img src="img/foundation.png" alt="">
-                        <span>foundation</span>
-                        <a href="http://www.foundcss.com/" target="_blank">中</a>
-                        <a href="http://foundation.zurb.com/" target="_blank">英</a>
-                    </div>
-                    <div class="item">
-                        <img src="img/bootstrap.png" alt="">
-                        <span>bootstrap</span>
-                        <a href="http://www.bootcss.com/" target="_blank">中</a>
-                        <a href="http://getbootstrap.com/" target="_blank">英</a>
+        <div class="off-canvas-wrapper">
+            <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+                <div class="title-bar">
+                    <div class="title-bar-left">
+                        <button class="menu-icon" type="button" data-open="offCanvas"></button>
                     </div>
                 </div>
-                <!-- css -->
-                <div class="link-item">
-                    <div class="box-name"><i class=""></i>css</div>
-                    <div class="item">
-                        <img src="img/sass.png" alt="">
-                        <span>sass</span>
-                        <a href="https://www.sass.hk/" target="_blank">中</a>
-                        <a href="http://sass-lang.com/" target="_blank">英</a>
-                    </div>
-                    <div class="item">
-                        <img src="img/less.png" alt="">
-                        <span>less</span>
-                        <a href="http://less.bootcss.com/" target="_blank">中</a>
-                        <a href="http://lesscss.org/" target="_blank">英</a>
-                    </div>
-                    <div class="item">
-                        <img src="img/stylus.png" alt="">
-                        <span>stylus</span>
-                        <a href=" http://stylus-lang.com/" target="_blank">英</a>
-                    </div>
+                <div class="off-canvas position-left" id="offCanvas" data-off-canvas data-transition="overlap">
+
+                    <button class="close-button exit-off-canvas" aria-label="Close menu" type="button" data-close="offCanvas">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <ul class="menu-con vertical menu accordion-menu" data-accordion-menu data-submenu-toggle="true">
+                        <li>
+                            <a href="#">html</a>
+                            <ul class="menu vertical nested">
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">css</a>
+                            <ul class="menu vertical nested"></ul>
+                        </li>
+                        <li>
+                            <a href="#">javascript</a>
+                            <ul class="menu vertical nested"></ul>
+                        </li>
+                        <li>
+                            <a href="#">tool</a>
+                            <ul class="menu vertical nested"></ul>
+                        </li>
+                        <li>
+                            <a href="#">template</a>
+                            <ul class="menu vertical nested"></ul>
+                        </li>
+                        <li>
+                            <a href="#">nodeJs</a>
+                            <ul class="menu vertical nested"></ul>
+                        </li>
+                        <li>
+                            <a href="#">blog</a>
+                            <ul class="menu vertical nested"></ul>
+                        </li>
+                        <li>
+                            <a href="#">community</a>
+                            <ul class="menu vertical nested"></ul>
+                        </li>
+                    </ul>
 
                 </div>
-                <!-- javascript -->
-                <div class="link-item">
-                    <div class="box-name"><i class=""></i>javascript</div>
-                    <div class="item">
-                        <img src="img/plain.png" alt="">
-                        <span>plainjs</span>
-                        <a href="https://plainjs.com/javascript/" target="_blank">英</a>
-                    </div>
-                    <div class="item">
-                        <img src="img/jquery.png" alt="">
-                        <span>Jquery</span>
-                        <a href="http://www.jquery123.com/" target="_blank">中</a>
-                        <a href="http://jquery.com/" target="_blank">英</a>
-                        <a href="http://jquery.cuishifeng.cn/" target="_blank">API</a>
-                    </div>
-                    <div class="item">
-                        <img src="img/vue.png" alt="">
-                        <span>Vue.js</span>
-                        <a href="https://cn.vuejs.org/" target="_blank">中</a>
-                    </div>
-                    <div class="item">
-                        <img src="img/angular.png" alt="">
-                        <span>Angularjs</span>
-                        <a href="http://www.angularjs.net.cn/" target="_blank">中</a>
-                        <a href="https://angularjs.org/" target="_blank">英</a>
-                    </div>
-                    <div class="item">
-                        <img src="img/react.png" alt="">
-                        <span>React</span>
-                        <a href="http://nav.react-china.org/" target="_blank">中</a>
-                        <a href="https://facebook.github.io/react/" target="_blank">英</a>
-                    </div>
-                    <div class="item">
-                        <img src="img/react.png" alt="">
-                        <span>React Native</span>
-                        <a href="http://reactnative.cn/" target="_blank">中</a>
-                        <a href="https://facebook.github.io/react-native/" target="_blank">英</a>
-                    </div>
-                </div>
-                <!-- tool -->
-                <div class="link-item">
-                    <div class="box-name"><i class=""></i>tool</div>
-                    <div class="item">
-                        <img src="img/gulp.png" alt="">
-                        <span>gulp</span>
-                        <a href="http://www.gulpjs.com.cn/" target="_blank">中</a>
-                        <a href="https://gulpjs.com/" target="_blank">英</a>
-                    </div>
-                    <div class="item">
-                        <img src="img/webpack.png" alt="">
-                        <span>webpack</span>
-                        <a href="http://www.css88.com/doc/webpack2/guides/development/" target="_blank">中</a>
-                        <a href="https://webpack.js.org/" target="_blank">英</a>
-                    </div>
-                    <div class="item">
-                        <img src="img/grunt.png" alt="">
-                        <span>grunt</span>
-                        <a href="https://gruntjs.com/" target="_blank">英</a>
-                    </div>
-                    <div class="item">
-                        <img src="img/cordova.png" alt="">
-                        <span>cordova</span>
-                        <a href="http://cordova.axuer.com/" target="_blank">中</a>
-                        <a href="http://cordova.apache.org/" target="_blank">英</a>
-                    </div>
-                </div>
-                <!-- template -->
-                <div class="link-item">
-                    <div class="box-name"><i class=""></i>template</div>
-                    <div class="item">
-                        <img src="img/ejs.png" alt="">
-                        <span>ejs</span>
-                        <a href="http://www.ejs.co/" target="_blank">英</a>
-                    </div>
-                    <div class="item">
-                        <img src="img/art-template.png" alt="">
-                        <span>art-template</span>
-                        <a href="https://aui.github.io/art-template/" target="_blank">中</a>
-                    </div>
-                    <div class="item">
-                        <img src="img/segmentfault.png" alt="">
-                        <span>汇总</span>
-                        <a href="https://segmentfault.com/a/1190000000502743" target="_blank">中</a>
-                    </div>
-                </div>
-                <!-- blog -->
-                <div class="link-item">
-                    <div class="box-name"><i class=""></i>blog</div>
-                    <div class="item">
-                        <img src="img/default.png" alt="">
-                        <span>廖雪峰</span>
-                        <a href="https://www.liaoxuefeng.com/" target="_blank">中</a>
-                    </div>
-                </div>
-                <!-- nodejs -->
-                <div class="link-item">
-                    <div class="box-name"><i class=""></i>nodeJs</div>
-                    <div class="item">
-                        <img src="img/koa.png" alt="">
-                        <span>koa</span>
-                        <a href="http://koa.bootcss.com/" target="_blank">中</a>
-                        <a href="http://koajs.com/" target="_blank">英</a>
-                    </div>
-                    <div class="item">
-                        <img src="img/express.png" alt="">
-                        <span>express</span>
-                        <a href="http://www.expressjs.com.cn/" target="_blank">中</a>
-                        <a href="http://expressjs.com/" target="_blank">英</a>
-                    </div>
-                </div>
-                <!-- community -->
-                <div class="link-item">
-                    <div class="box-name"><i class=""></i>community</div>
-                    <div class="item">
-                        <img src="img/juejin.png" alt="">
-                        <span>掘金</span>
-                        <a href="https://juejin.im/" target="_blank">中</a>
-                    </div>
-                    <div class="item">
-                        <img src="img/awesomes.png" alt="">
-                        <span>awesomes</span>
-                        <a href="https://www.awesomes.cn/" target="_blank">中</a>
-                    </div>
-                    <div class="item">
-                        <img src="img/stackoverflow.png" alt="">
-                        <span>stackoverflow</span>
-                        <a href="https://stackoverflow.com/" target="_blank">英</a>
-                    </div>
-                    <div class="item">
-                        <img src="img/github.png" alt="">
-                        <span>github</span>
-                        <a href="https://github.com/" target="_blank">英</a>
-                    </div>
-                    <div class="item">
-                        <img src="img/segmentfault.png" alt="">
-                        <span>segmentfault</span>
-                        <a href="https://segmentfault.com/" target="_blank">中</a>
-                    </div>
-                    <div class="item">
-                        <img src="img/cnodejs.png" alt="">
-                        <span>cnodejs</span>
-                        <a href="https://cnodejs.org/" target="_blank">中</a>
-                    </div>
-                    <div class="item">
-                        <img src="img/w3cplus.png" alt="">
-                        <span>w3cplus</span>
-                        <a href="http://www.w3cplus.com/" target="_blank">中</a>
-                    </div>
-                    <div class="item">
-                        <img src="img/w3ctech.png" alt="">
-                        <span>w3ctech</span>
-                        <a href="https://www.w3ctech.com/" target="_blank">中</a>
-                    </div>
-                    <div class="item">
-                        <img src="img/daqianduan.png" alt="">
-                        <span>daqianduan</span>
-                        <a href="http://www.daqianduan.com/" target="_blank">中</a>
+                <div class="off-canvas-content" data-off-canvas-content>
+                    <div class="link-nav">
+                        <div class="link-list">
+                            <!-- html -->
+                            <div class="link-item">
+                                <div class="box-name"><i class=""></i>html</div>
+                                <div class="item">
+                                    <img src="img/foundation.png" alt="">
+                                    <span>foundation</span>
+                                    <a href="http://foundation.zurb.com/" target="_blank">英</a>
+                                </div>
+                                <div class="item">
+                                    <img src="img/bootstrap.png" alt="">
+                                    <span>bootstrap</span>
+                                    <a href="http://www.bootcss.com/" target="_blank">中</a>
+                                    <a href="http://getbootstrap.com/" target="_blank">英</a>
+                                </div>
+                            </div>
+
+                            <!-- css -->
+                            <div class="link-item">
+                                <div class="box-name"><i class=""></i>css</div>
+                                <div class="item">
+                                    <img src="img/sass.png" alt="">
+                                    <span>sass</span>
+                                    <a href="https://www.sass.hk/" target="_blank">中</a>
+                                    <a href="http://sass-lang.com/" target="_blank">英</a>
+                                </div>
+                                <div class="item">
+                                    <img src="img/less.png" alt="">
+                                    <span>less</span>
+                                    <a href="http://less.bootcss.com/" target="_blank">中</a>
+                                    <a href="http://lesscss.org/" target="_blank">英</a>
+                                </div>
+                                <div class="item">
+                                    <img src="img/stylus.png" alt="">
+                                    <span>stylus</span>
+                                    <a href=" http://stylus-lang.com/" target="_blank">英</a>
+                                </div>
+                            </div>
+
+                            <!-- javascript -->
+                            <div class="link-item">
+                                <div class="box-name"><i class=""></i>javascript</div>
+                                <div class="item">
+                                    <img src="img/plain.png" alt="">
+                                    <span>plainjs</span>
+                                    <a href="https://plainjs.com/javascript/" target="_blank">英</a>
+                                </div>
+                                <div class="item">
+                                    <img src="img/default.png" alt="">
+                                    <span>ES6</span>
+                                    <a href="http://es6.ruanyifeng.com/" target="_blank">中</a>
+                                    <a href="http://www.infoq.com/cn/es6-in-depth/">中</a>
+                                    <a href="http://www.ecma-international.org/ecma-262/6.0/" target="_black">英</a>
+                                </div>
+                                <div class="item">
+                                    <img src="img/jquery.png" alt="">
+                                    <span>Jquery</span>
+                                    <a href="http://www.jquery123.com/" target="_blank">中</a>
+                                    <a href="http://jquery.com/" target="_blank">英</a>
+                                    <a href="http://jquery.cuishifeng.cn/" target="_blank">API</a>
+                                </div>
+                                <div class="item">
+                                    <img src="img/vue.png" alt="">
+                                    <span>Vue.js</span>
+                                    <a href="https://cn.vuejs.org/" target="_blank">中</a>
+                                </div>
+                                <div class="item">
+                                    <img src="img/angular.png" alt="">
+                                    <span>Angularjs</span>
+                                    <a href="http://www.angularjs.net.cn/" target="_blank">中</a>
+                                    <a href="https://angularjs.org/" target="_blank">英</a>
+                                </div>
+                                <div class="item">
+                                    <img src="img/react.png" alt="">
+                                    <span>React</span>
+                                    <a href="http://nav.react-china.org/" target="_blank">中</a>
+                                    <a href="https://facebook.github.io/react/" target="_blank">英</a>
+                                </div>
+                                <div class="item">
+                                    <img src="img/react.png" alt="">
+                                    <span>React Native</span>
+                                    <a href="http://reactnative.cn/" target="_blank">中</a>
+                                    <a href="https://facebook.github.io/react-native/" target="_blank">英</a>
+                                </div>
+                            </div>
+
+                            <!-- tool -->
+                            <div class="link-item">
+                                <div class="box-name"><i class=""></i>tool</div>
+                                <div class="item">
+                                    <img src="img/gulp.png" alt="">
+                                    <span>gulp</span>
+                                    <a href="http://www.gulpjs.com.cn/" target="_blank">中</a>
+                                    <a href="https://gulpjs.com/" target="_blank">英</a>
+                                </div>
+                                <div class="item">
+                                    <img src="img/webpack.png" alt="">
+                                    <span>webpack</span>
+                                    <a href="http://www.css88.com/doc/webpack2/guides/development/" target="_blank">中</a>
+                                    <a href="https://webpack.js.org/" target="_blank">英</a>
+                                </div>
+                                <div class="item">
+                                    <img src="img/grunt.png" alt="">
+                                    <span>grunt</span>
+                                    <a href="https://gruntjs.com/" target="_blank">英</a>
+                                </div>
+                                <div class="item">
+                                    <img src="img/cordova.png" alt="">
+                                    <span>cordova</span>
+                                    <a href="http://cordova.axuer.com/" target="_blank">中</a>
+                                    <a href="http://cordova.apache.org/" target="_blank">英</a>
+                                </div>
+                            </div>
+
+                            <!-- template -->
+                            <div class="link-item">
+                                <div class="box-name"><i class=""></i>template</div>
+                                <div class="item">
+                                    <img src="img/ejs.png" alt="">
+                                    <span>ejs</span>
+                                    <a href="http://www.ejs.co/" target="_blank">英</a>
+                                </div>
+                                <div class="item">
+                                    <img src="img/art-template.png" alt="">
+                                    <span>art-template</span>
+                                    <a href="https://aui.github.io/art-template/" target="_blank">中</a>
+                                </div>
+                                <div class="item">
+                                    <img src="img/segmentfault.png" alt="">
+                                    <span>other</span>
+                                    <a href="https://segmentfault.com/a/1190000000502743" target="_blank">中</a>
+                                </div>
+                            </div>
+
+                            <!-- nodejs -->
+                            <div class="link-item">
+                                <div class="box-name"><i class=""></i>nodeJs</div>
+                                <div class="item">
+                                    <img src="img/koa.png" alt="">
+                                    <span>koa</span>
+                                    <a href="http://koa.bootcss.com/" target="_blank">中</a>
+                                    <a href="http://koajs.com/" target="_blank">英</a>
+                                </div>
+                                <div class="item">
+                                    <img src="img/express.png" alt="">
+                                    <span>express</span>
+                                    <a href="http://www.expressjs.com.cn/" target="_blank">中</a>
+                                    <a href="http://expressjs.com/" target="_blank">英</a>
+                                </div>
+                            </div>
+
+                            <!-- blog -->
+                            <div class="link-item">
+                                <div class="box-name"><i class=""></i>blog</div>
+                                <div class="item">
+                                    <img src="img/default.png" alt="">
+                                    <span>廖雪峰</span>
+                                    <a href="https://www.liaoxuefeng.com/" target="_blank">中</a>
+                                </div>
+                                <div class="item">
+                                    <img src="img/default.png" alt="">
+                                    <span>阮一峰</span>
+                                    <a href="http://www.ruanyifeng.com/blog/" target="_blank">中</a>
+                                </div>
+                            </div>
+
+                            <!-- community -->
+                            <div class="link-item">
+                                <div class="box-name"><i class=""></i>community</div>
+                                <div class="item">
+                                    <img src="img/juejin.png" alt="">
+                                    <span>掘金</span>
+                                    <a href="https://juejin.im/" target="_blank">中</a>
+                                </div>
+                                <div class="item">
+                                    <img src="img/awesomes.png" alt="">
+                                    <span>awesomes</span>
+                                    <a href="https://www.awesomes.cn/" target="_blank">中</a>
+                                </div>
+                                <div class="item">
+                                    <img src="img/stackoverflow.png" alt="">
+                                    <span>stackoverflow</span>
+                                    <a href="https://stackoverflow.com/" target="_blank">英</a>
+                                </div>
+                                <div class="item">
+                                    <img src="img/github.png" alt="">
+                                    <span>github</span>
+                                    <a href="https://github.com/" target="_blank">英</a>
+                                </div>
+                                <div class="item">
+                                    <img src="img/segmentfault.png" alt="">
+                                    <span>segmentfault</span>
+                                    <a href="https://segmentfault.com/" target="_blank">中</a>
+                                </div>
+                                <div class="item">
+                                    <img src="img/cnodejs.png" alt="">
+                                    <span>cnodejs</span>
+                                    <a href="https://cnodejs.org/" target="_blank">中</a>
+                                </div>
+                                <div class="item">
+                                    <img src="img/w3cplus.png" alt="">
+                                    <span>w3cplus</span>
+                                    <a href="http://www.w3cplus.com/" target="_blank">中</a>
+                                </div>
+                                <div class="item">
+                                    <img src="img/w3ctech.png" alt="">
+                                    <span>w3ctech</span>
+                                    <a href="https://www.w3ctech.com/" target="_blank">中</a>
+                                </div>
+                                <div class="item">
+                                    <img src="img/daqianduan.png" alt="">
+                                    <span>daqianduan</span>
+                                    <a href="http://www.daqianduan.com/" target="_blank">中</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
         <div class="footer">
-            © For a better tomorrow , Please reach out your hands , And stretch out your arms , As far as you can. If we all reached
-            together, To the world we can say. That a better tomorrow , Begins with today.
+            © For a better tomorrow, Begins with today.
         </div>
     </div>
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+    <script src="http://cdn.bootcss.com/foundation/6.4.3/js/foundation.min.js"></script>
+    <script src="http://cdn.bootcss.com/modernizr/2010.07.06dev/modernizr.min.js"></script>
     <script src="./js/global.js"></script>
 </body>
 

@@ -13,4 +13,6 @@ $(document).ready(function() {
     $(".link-item .item").mouseover(function() {
         $(this).addClass("animated bounce").siblings().removeClass("animated bounce");
     });
+
+    $(document).foundation();
 });

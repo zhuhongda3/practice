@@ -40,3 +40,62 @@
         }
     }
 }
+
+
+
+// foundation sidebar
+.js-off-canvas-overlay {
+    background: rgba(0,0,0,.5);
+}
+
+.title-bar {
+    display: none;
+    height: 45px;
+    line-height: 25px;
+    background: transparent;
+}
+
+.menu-icon::after {
+    background: #0a0a0a;
+    -webkit-box-shadow: 0 7px 0 #0a0a0a, 0 14px 0 #0a0a0a;
+    box-shadow: 0 7px 0 #0a0a0a, 0 14px 0 #0a0a0a;
+}
+
+.off-canvas {
+    background: #121212;
+}
+
+.menu-con {
+    padding-top: 40px;
+}
+
+.accordion-menu >li a {
+    color: #666;
+}
+.accordion-menu .is-accordion-submenu a{
+    font-size: 14px;
+}
+
+.submenu-toggle::after {
+    border-color: #666 transparent transparent;
+}
+
+.close-button {
+    position: absolute;
+    z-index: 999;
+    color: #666;
+    font-size: 26px;
+}
+
+.close-button:focus,
+.close-button:hover {
+    color: #8a8a8a;
+}
+
+.accordion-menu li {
+    border-bottom: 1px solid #444;
+}
+
+.accordion-menu li:last-child {
+    border: 0;
+}

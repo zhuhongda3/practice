@@ -4,3 +4,23 @@
         margin: 0 auto;
     }
 }
+
+@media screen and (max-width:640px){
+    .sidebar{
+        display: none;
+    }
+    .link-nav{
+        margin-left: 0;
+        padding-top: 0;
+        .link-item{
+            margin: 10px;
+            .item{
+                margin: 3%;
+                width: 94%;
+            }
+        } 
+    }
+    .title-bar{
+        display: block;
+    }
+}
