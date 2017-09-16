@@ -203,7 +203,7 @@ a, img {
   display: none;
   height: 45px;
   line-height: 25px;
-  background: transparent; }
+  background: #fff; }
 
 .menu-icon::after {
   background: #0a0a0a;
