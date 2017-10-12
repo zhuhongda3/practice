@@ -14,9 +14,9 @@ $(document).ready(function() {
         $('body').animate({'scrollTop':'0'},300);
     });
 
-    $(".link-item .item").mouseover(function() {
-        $(this).addClass("animated bounce").siblings().removeClass("animated bounce");
-    });
+    // $(".link-item .item").mouseover(function() {
+    //     $(this).addClass("animated bounce").siblings().removeClass("animated bounce");
+    // });
 
     $(document).foundation();
 });

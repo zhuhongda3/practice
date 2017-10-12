@@ -267,12 +267,11 @@ a, img {
   justify-content: center;
   margin-left: 248px;
   overflow-y: auto;
-  background: #f3f6f8;
+  background: #f4f4f4;
   padding: 50px 0; }
   .link-nav .link-item {
     margin: 20px 30px;
     padding-bottom: 20px;
-    background: #fff;
     overflow: hidden; }
     .link-nav .link-item img {
       width: 30px;
