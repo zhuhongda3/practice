@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+    <title>去哪吃</title>
+    <style>
+        .p-center {
+            padding: 100px 0;
+            text-align: center;
+            user-select: none;
+        }
+
+        .p-center h3 {
+            font-size: 16px;
+            display: inline-block;
+            font-weight: normal;
+        }
+
+        .p-center h3 i {
+            font-size: 18px;
+            color: rgb(63, 148, 206);
+            padding: 0 5px;
+        }
+
+        .p-center p {
+            font-size: 14px;
+            padding: 20px 0;
+            color: #333
+        }
+
+        .p-center p a {
+            color: #35ce1b;
+        }
+
+        .p-center p span {
+            color: #f00;
+            padding: 0 2px;
+            font-size: 16px;
+        }
+
+        .p-center p span.result {
+            display: inline-block;
+            vertical-align: bottom;
+            color: rgb(56, 153, 18);
+            padding: 0 10px;
+            min-width: 50px;
+            border-bottom: 1px solid #000;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .show-num-area {
+            display: inline-block;
+            overflow: hidden
+        }
+
+        .show-num-area span {
+            float: left;
+            margin: 0 10px;
+            padding: 5px 15px;
+            font-size: 14px;
+            color: #666;
+            background-color: #efefef;
+            border-radius: 5px;
+        }
+
+        .show-num-area span.selected {
+            background-color: rgb(56, 153, 18);
+            color: #ffff;
+        }
+
+        button {
+            cursor: pointer;
+            outline: 0;
+            border: 0;
+            border-radius: 5px;
+            display: block;
+            margin: 20px auto;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 14px;
+            text-align: center;
+            color: #fff;
+            background-color: rgb(63, 148, 206);
+        }
+
+        button.disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="p-center">
+        <h3>
+            <i class="fa fa-search"></i>中午去哪吃？</h3>
+        <p>随机排列剩余
+            <span id="c-num"></span>次,项数如下：
+            <a href="">
+                <i class="fa fa-refresh"></i>
+            </a>
+        </p>
+        <div id="showNum" class="show-num-area"></div>
+        <p>结果:
+            <span class="result" id="result"></span>
+        </p>
+        <button id="showNumBtn">开始</button>
+    </div>
+    <script>
+        var showData = {
+            times: 30, //变化次数
+            time: 50,  //每次变化时间
+            t: null,  //定时器
+            _Array: ['红牛', '绿牛', '饺子', '黄鱼面', '其他'], //可选项
+            init: function () {
+                this.initData();
+                this.even();
+            },
+            initData: function () {
+                var html = '';
+                for (var i in this._Array) {
+                    html += '<span>' + this._Array[i] + '</span>';
+                }
+                document.getElementById('c-num').innerHTML = this.times;
+                document.getElementById('showNum').innerHTML = html;
+            },
+            showNum: function () {
+                var _sortArray = [],
+                    html = '';
+                this._Array.forEach(function (value, index) {
+                    return (function (value) {
+                        var _sortObj = {};
+                        _sortObj.a = value;
+                        _sortObj.b = Math.random();
+                        _sortArray.push(_sortObj);
+                    })(value);
+                });
+                //按随机数升序排
+                for (var i = 0; i < _sortArray.length; i++) {
+                    for (var j = i + 1; j < _sortArray.length; j++) {
+                        if (_sortArray[i].b > _sortArray[j].b) {
+                            var arrayTemp = _sortArray[i];
+                            _sortArray[i] = _sortArray[j];
+                            _sortArray[j] = arrayTemp;
+                        }
+                    }
+                }
+                for (var i in _sortArray) {
+                    html += '<span>' + _sortArray[i].a + '</span>';
+                }
+                document.getElementById('showNum').innerHTML = html;
+            },
+            changeNum: function () {
+                var _that = this,
+                    _btn = document.getElementById('showNumBtn');
+                if (_that.times > 0) {
+                    _that.t = setTimeout(function () {
+                        _that.showNum(_that.times);
+                        _that.changeNum(_that.times);
+                        _that.times = _that.times - 1;
+                        if (_that.times < 0) {
+                            _that.times = 0;
+                        }
+                        document.getElementById('c-num').innerHTML = _that.times;
+                    }, _that.time);
+                } else {
+                    _that.getTips();
+                    _btn.setAttribute('class', 'disabled');
+                    _btn.innerHTML = '结束';
+                }
+            },
+            getTips: function () {
+                var i = parseInt((this._Array.length - 1) * Math.random()),
+                    dom = document.getElementById('showNum').getElementsByTagName("span");
+                document.getElementById('result').innerHTML = dom[i].innerHTML;
+                dom[i].setAttribute('class', 'selected');
+            },
+            even: function () {
+                var _that = this,
+                    _btn = document.getElementById('showNumBtn');
+                _btn.addEventListener('click', function () {
+                    if (!(_btn.className.indexOf('disabled') > -1)) {
+                        if (_btn.innerHTML == '开始') {
+                            _that.changeNum();
+                            _btn.innerHTML = '暂停';
+                        } else {
+                            clearTimeout(_that.t);
+                            _btn.innerHTML = '开始';
+                        }
+                    }
+                }, false);
+            }
+        }
+        showData.init();
+    </script>
+</body>
+
+</html>
