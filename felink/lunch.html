@@ -60,7 +60,7 @@
 
         .show-num-area span {
             float: left;
-            margin: 0 10px;
+            margin: 5px 10px;
             padding: 5px 15px;
             font-size: 14px;
             color: #666;
@@ -93,6 +93,10 @@
             background-color: #ddd;
             cursor: not-allowed;
         }
+
+        html{
+            -webkit-tap-highlight-color:transparent;
+        }
     </style>
 </head>
 
@@ -112,10 +116,10 @@
     </div>
     <script>
         var showData = {
-            times: parseInt(Math.random()*(35-20+1)+20,10), //变化次数20~35次
-            time: 100,  //每次变化时间
-            t: null,   //定时器
-            _Array: ['红牛', '绿牛', '饺子', '黄鱼面', '其他'], //可选项
+            times: parseInt(Math.random()*16+15,10), //变化次数15~30次
+            time: 130,  //每次变化时间
+            t: null,    //定时器
+            _Array: ['红牛', '绿牛','冒菜','菜饭','新繁阳','蒸味鲜','重庆面馆', '黄鱼面馆', '东北饺子','老朋友饺子'], //可选项
             init: function () {
                 this.initData();
                 this.even();
