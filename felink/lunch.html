@@ -100,11 +100,9 @@
     <div class="p-center">
         <h3>
             <i class="fa fa-search"></i>中午去哪吃？</h3>
-        <p>随机排列剩余
-            <span id="c-num"></span>次,项数如下：
-            <a href="">
-                <i class="fa fa-refresh"></i>
-            </a>
+        <p>
+           随机排列剩余<span id="c-num"></span>次,
+           项数如下：<a href=""><i class="fa fa-refresh"></i></a>  
         </p>
         <div id="showNum" class="show-num-area"></div>
         <p>结果:
@@ -114,9 +112,9 @@
     </div>
     <script>
         var showData = {
-            times: 30, //变化次数
-            time: 50,  //每次变化时间
-            t: null,  //定时器
+            times: parseInt(Math.random()*(35-20+1)+20,10), //变化次数20~35次
+            time: 100,  //每次变化时间
+            t: null,   //定时器
             _Array: ['红牛', '绿牛', '饺子', '黄鱼面', '其他'], //可选项
             init: function () {
                 this.initData();
