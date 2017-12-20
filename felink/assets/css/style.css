@@ -1,0 +1,18 @@
+*{margin:0;padding: 0;}
+html{-webkit-tap-highlight-color:transparent}
+body{-webkit-text-size-adjust:none;-webkit-touch-callout:none;-webkit-user-select:none}
+.p-center{padding:100px 0;text-align:center;user-select:none}
+.p-center h3{font-size:16px;display:inline-block;font-weight:400}
+.p-center h3 i{font-size:18px;color:#3f94ce;padding:0 5px}
+.p-center p{font-size:14px;padding:20px 0;color:#333}
+.p-center p a{color:#35ce1b}
+.p-center p span{color:red;padding:0 2px;font-size:16px}
+span.result{display:inline-block;vertical-align:bottom;color:#389912;padding:0 10px;min-width:75px;border-bottom:1px solid #000;font-weight:700;font-size:15px}
+.show-num-area{display:inline-block;overflow:hidden}
+.show-num-area span{float:left;margin:5px 10px;padding:5px 15px;font-size:14px;color:#666;background-color:#efefef;border-radius:5px}
+.show-num-area span i{font-style: normal}
+.show-num-area span em{padding: 0 2px;color: #f58c5c;font-style: normal}
+.show-num-area span.selected{background-color:#389912;color:#ffff}
+button{cursor:pointer;outline:0;border:0;border-radius:5px;display:block;margin:20px auto;width:100px;height:30px;line-height:30px;font-size:14px;text-align:center;color:#fff;background-color:#3f94ce}
+button.disabled{background-color:#ddd;cursor:not-allowed}
+p span.toggle-pro{display:inline-block;height:20px;line-height:20px;padding:0 5px;text-align:center;color:#fff;font-size:14px;margin-left:10px;background-color:#cc531c;border-radius:3px}
