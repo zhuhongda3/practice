@@ -12,16 +12,14 @@ var plugins = {
     },
     //data init
     initData: function () {
-        this.times = parseInt(Math.random()*6+15,10);//15~20
+        this.times = parseInt(Math.random()*16+30,10);//30~40
         this.speed = 80;
         this.isRandom = false;
         this.shopData = [
             {name:'红牛',pro:15,count: 0},  
             {name:'遇见饺色',pro:10,count: 0},
-            {name:'冒菜',pro:5,count: 0},
-            {name:'小胡菜饭',pro:2,count: 0},
-            {name:'新繁阳',pro:5,count: 0},
-            {name:'蒸味鲜',pro:3,count: 0},
+            {name:'冒菜',pro:10,count: 0},
+            {name:'小胡菜饭',pro:5,count: 0},
             {name:'农家小炒',pro:10,count: 0},
             {name:'重庆小面',pro:5,count: 0},
             {name:'绿牛',pro:15,count: 0},
@@ -37,7 +35,7 @@ var plugins = {
         }
         $('#result').html('');
         $('#shopNum').html(this.shopData.length);
-        $('#c-num').html(this.times);
+        // $('#c-num').html(this.times);
         $('#showNumBtn').removeClass('disabled').html('开始');
         if(this.isRandom){
             $('#proBtn').html('开启');
@@ -81,7 +79,7 @@ var plugins = {
             that.calcResult();
             that.animation(that.times); 
             that.times = that.times - 1;
-            $('#c-num').html(that.times);
+            // $('#c-num').html(that.times);
             that.timer = setTimeout(function () {
                 that.startUp(that.times);
             }, that.speed);
