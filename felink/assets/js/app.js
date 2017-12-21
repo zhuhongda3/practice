@@ -12,7 +12,7 @@ var plugins = {
     },
     //data init
     initData: function () {
-        this.times = parseInt(Math.random()*16+30,10);//30~40
+        this.times = parseInt(Math.random()*16+30,10);//30~45
         this.speed = 80;
         this.isRandom = false;
         this.shopData = [
