@@ -33,12 +33,11 @@ var plugins = {
     initStatus(){
         var html = '';
         for (var i in this.shopData) {
-            html += '<span><i>' + this.shopData[i].name +'</i><em>'+this.shopData[i].count+'</em></span>';
+            html += '<span data-count='+this.shopData[i].count+'>' + this.shopData[i].name +'</span>';
         }
         $('#result').html('');
         $('#shopNum').html(this.shopData.length);
         $('#c-num').html(this.times);
-        $('#totalCalc').html(this.times);
         $('#showNumBtn').removeClass('disabled').html('开始');
         if(this.isRandom){
             $('#proBtn').html('开启');
@@ -71,7 +70,7 @@ var plugins = {
             }
         }
         for (var k in sortArray) {
-            html += '<span class='+(sortArray[k].a===this.iResults?' selected':'')+'><i>' + sortArray[k].a+'</i><em>'+sortArray[k].c+'</em></span>';
+            html += '<span data-count='+sortArray[k].c+' '+(sortArray[k].a===this.iResults?'class="selected"':'')+'>' + sortArray[k].a + '</span>';
         }
         $('#showNum').html(html);
     },
