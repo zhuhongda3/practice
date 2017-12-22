@@ -5,24 +5,24 @@ body{-webkit-text-size-adjust:none;-webkit-touch-callout:none;-webkit-user-selec
 .p-center h3{font-size:16px;display:inline-block;font-weight:400}
 .p-center h3 i{font-size:18px;color:#3f94ce;padding:0 5px}
 .p-center p{font-size:14px;padding:20px 0;color:#333}
-.p-center p a{color:#35ce1b;font-size: 16px;}
-.p-center p span{color:red;padding:0 2px;font-size:16px}
-span.result{display:inline-block;vertical-align:bottom;color:#389912;padding:0 10px;min-width:75px;border-bottom:1px solid #000;font-weight:700;font-size:15px}
+.result{display:inline-block;vertical-align:bottom;color:#389912;padding:0 10px;min-width:75px;border-bottom:1px solid #000;font-weight:700;font-size:15px}
+.shopnum{color:red;padding:0 2px;font-size:16px}
+.refresh{color:#35ce1b;font-size: 15px;}
+.foundbtn{cursor:pointer;outline:0;border:0;border-radius:5px;display:block;margin:20px auto;width:100px;height:30px;line-height:30px;font-size:14px;text-align:center;color:#fff;background-color:#3f94ce}
+.foundbtn.disabled{background-color:#ddd;cursor:not-allowed}
+.toggle-pro{display:inline-block;height:20px;line-height:20px;padding:0 5px;text-align:center;color:#fff;font-size:14px;margin-left:10px;background-color:#cc531c;border-radius:3px}
 .show-num-area{display:inline-block;overflow:hidden}
 .show-num-area span{float:left;margin:5px 10px;padding:5px 15px;font-size:14px;color:#666;background-color:#efefef;border-radius:5px}
 .show-num-area span.selected{background-color:#389912;color:#ffff}
-button{cursor:pointer;outline:0;border:0;border-radius:5px;display:block;margin:20px auto;width:100px;height:30px;line-height:30px;font-size:14px;text-align:center;color:#fff;background-color:#3f94ce}
-button.disabled{background-color:#ddd;cursor:not-allowed}
-p span.toggle-pro{display:inline-block;height:20px;line-height:20px;padding:0 5px;text-align:center;color:#fff;font-size:14px;margin-left:10px;background-color:#cc531c;border-radius:3px}
+.showPro{display: none;font-size: 16px;color:#3f94ce;padding: 5px;}
+
 
 .mask{display: none;position: fixed;left: 0;top: 0;width: 100%;height: 100%;background-color: rgba(0,0,0,.5);z-index: 5;}
 .diaglog-modal{display:none;position: absolute;left: 50%;top: 50%;border-radius:10px;width:85%;height: 65%;-webkit-transform: translate(-50%,-50%);transform: translate(-50%,-50%);overflow: hidden;z-index: 10}
-.showPro{text-align: right;padding: 10px;height: 40px;}
-.p-center p .showPro{display: none;font-size: 16px;color:#3f94ce;padding: 5px;}
 .proinner{height: 100%;}
 .iscrollbox{position: relative;height: -webkit-calc(100% - 39px);height: calc(100% - 39px);min-height: 300px;background: #f4f4f4;overflow: hidden;}
 .iscroll-content{position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
-.proinner table{width: 100%;color: #666;border-collapse:collapse;border-spacing :0;}
+.proinner table{width: 100%;color: #666;border-collapse:collapse;border-spacing:0;}
 .proinner table thead{background: #3f94ce;color: #fff;}
 .proinner table th,.proinner table td{font-weight: normal;width: 50%;font-size: 14px;text-align: center;}
 .proinner table th{padding: 10px 0;}
