@@ -13,7 +13,7 @@ var plugins = {
     //data init
     initData: function () {
         this.times = parseInt(Math.random()*16+30,10);//30~45
-        this.speed = 80;
+        this.speed = 90;
         this.isRandom = false;
         this.shopData = [
             {name:'红牛',pro:15,count: 0},  
@@ -28,22 +28,25 @@ var plugins = {
         ];
     },
     //status init
-    initStatus(){
+    initStatus: function(){
         var html = '';
         for (var i in this.shopData) {
             html += '<span data-count='+this.shopData[i].count+'>' + this.shopData[i].name +'</span>';
         }
-        $('#result').html('');
         $('#shopNum').html(this.shopData.length);
-        // $('#c-num').html(this.times);
-        $('#showNumBtn').removeClass('disabled').html('开始');
         if(this.isRandom){
             $('#proBtn').html('开启');
         }else{
             $('#proBtn').html('关闭');
         }
         $('#showNum').html(html);
+       
+    },
+    //重置数据
+    resetData:function(){
+        $('#result').html('');
         clearTimeout(this.timer);
+        $('#showNumBtn').removeClass('disabled').html('开始');
     },
     //animation
     animation: function () {
@@ -79,7 +82,6 @@ var plugins = {
             that.calcResult();
             that.animation(that.times); 
             that.times = that.times - 1;
-            // $('#c-num').html(that.times);
             that.timer = setTimeout(function () {
                 that.startUp(that.times);
             }, that.speed);
