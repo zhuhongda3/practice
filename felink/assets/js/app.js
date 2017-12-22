@@ -10,7 +10,7 @@ var plugins = {
         this.initStatus();
         this.evenSet();
     },
-    //data init
+    //数据初始化
     initData: function () {
         this.times = parseInt(Math.random()*16+30,10);//30~45
         this.speed = 90;
@@ -27,7 +27,7 @@ var plugins = {
             {name:'老朋友饺子',pro:15,count: 0}
         ];
     },
-    //status init
+    //初始化页面状态
     initStatus: function(){
         var html = '';
         for (var i in this.shopData) {
@@ -42,55 +42,13 @@ var plugins = {
         $('#showNum').html(html);
        
     },
-    //重置数据
+    //重置页面状态
     resetData:function(){
         $('#result').html('');
-        clearTimeout(this.timer);
         $('#showNumBtn').removeClass('disabled').html('开始');
+        clearTimeout(this.timer);
     },
-    //animation
-    animation: function () {
-        var sortArray = [],html = '';
-        this.shopData.forEach(function (value, index) {
-            return (function (value) {
-                var sortObj = {};
-                sortObj.a = value.name;
-                sortObj.b = Math.random();
-                sortObj.c = value.count;
-                sortArray.push(sortObj);
-            })(value);
-        });
-        //ascending order
-        for (var i = 0; i < sortArray.length; i++) {
-            for (var j = i + 1; j < sortArray.length; j++) {
-                if (sortArray[i].b > sortArray[j].b) {
-                    var arrayTemp = sortArray[i];
-                    sortArray[i] = sortArray[j];
-                    sortArray[j] = arrayTemp;
-                }
-            }
-        }
-        for (var k in sortArray) {
-            html += '<span data-count='+sortArray[k].c+' '+(sortArray[k].a===this.iResults?'class="selected"':'')+'>' + sortArray[k].a + '</span>';
-        }
-        $('#showNum').html(html);
-    },
-    //start
-    startUp: function () {
-        var that = this;
-        if (that.times > 0) {
-            that.calcResult();
-            that.animation(that.times); 
-            that.times = that.times - 1;
-            that.timer = setTimeout(function () {
-                that.startUp(that.times);
-            }, that.speed);
-        } else {
-            $('#result').html(this.iResults);
-            $('#showNumBtn').addClass('disabled').html('结束');
-        }
-    },
-    //calculate result
+    //计算结果
     calcResult: function () {
         var sideArray = [],idx;
         for(var m = 0;m<this.shopData.length;m++){
@@ -117,6 +75,49 @@ var plugins = {
         this.iResults = this.shopData[idx].name;
         this.shopData[idx].count = this.shopData[idx].count + 1;
     },
+    //渲染页面
+    animation: function () {
+        var sortArray = [],html = '';
+        this.shopData.forEach(function (value, index) {
+            return (function (value) {
+                var sortObj = {};
+                sortObj.a = value.name;
+                sortObj.b = Math.random();
+                sortObj.c = value.count;
+                sortArray.push(sortObj);
+            })(value);
+        });
+        //升序
+        for (var i = 0; i < sortArray.length; i++) {
+            for (var j = i + 1; j < sortArray.length; j++) {
+                if (sortArray[i].b > sortArray[j].b) {
+                    var arrayTemp = sortArray[i];
+                    sortArray[i] = sortArray[j];
+                    sortArray[j] = arrayTemp;
+                }
+            }
+        }
+        for (var k in sortArray) {
+            html += '<span data-count='+sortArray[k].c+' '+(sortArray[k].a===this.iResults?'class="selected"':'')+'>' + sortArray[k].a + '</span>';
+        }
+        $('#showNum').html(html);
+    },
+    //启动入口
+    startUp: function () {
+        var that = this;
+        if (that.times > 0) {
+            that.calcResult();
+            that.animation(that.times); 
+            that.times = that.times - 1;
+            that.timer = setTimeout(function () {
+                that.startUp(that.times);
+            }, that.speed);
+        } else {
+            $('#result').html(this.iResults);
+            $('#showNumBtn').addClass('disabled').html('结束');
+        }
+    },
+    //事件
     evenSet: function () {
         var that = this;
         $('#showNumBtn').click(function(){
@@ -134,14 +135,38 @@ var plugins = {
             if($(this).html()==='关闭'){
                 $(this).html('开启');
                 that.isRandom = true;
+                $('#lookPro').show();
             }else{
                 $(this).html('关闭');
                 that.isRandom = false;
+                $('#lookPro').hide();                
             }
         });
         $('#refreshData').click(function(){
             window.location.reload();
         });
+
+        $('#lookPro').click(function(){
+            $('.mask').show();
+            $('.diaglog-modal').show();
+            var iscrollText = doT.template($("#iscrolltmpl").text());
+            $("#iscrollContent").html(iscrollText(that.shopData));
+            if ($(this).data('iscroll') == undefined) {
+                new IScroll('#iscrollContent', {
+                    mouseWheel: true,
+                    scrollbars: true,
+                    fadeScrollbars: true
+                });
+                $(this).data('iscroll', 1);
+            }
+            document.querySelector('.mask') && document.querySelector('.mask').addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+            document.querySelector('.diaglog-modal') && document.querySelector('.diaglog-modal').addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+        });
+
+        $('.mask').click(function(){
+            $(this).hide();
+            $('.diaglog-modal').hide();
+        })
     }
 }
 
