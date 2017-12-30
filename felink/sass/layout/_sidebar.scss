@@ -49,10 +49,16 @@
 }
 
 .title-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
     display: none;
     height: 45px;
     line-height: 25px;
     background: #fff;
+    z-index: 2;
+    width: 100%;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .2);
 }
 
 .menu-icon::after {
@@ -62,7 +68,8 @@
 }
 
 .off-canvas {
-    background: #121212;
+    background: #f4f4f4;
+    margin-top: 0!important;
 }
 
 .menu-con {
@@ -70,6 +77,7 @@
 }
 
 .accordion-menu >li a {
+    font-size: 14px;
     color: #666;
 }
 .accordion-menu .is-accordion-submenu a{
@@ -93,7 +101,7 @@
 }
 
 .accordion-menu li {
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid #eee;
 }
 
 .accordion-menu li:last-child {

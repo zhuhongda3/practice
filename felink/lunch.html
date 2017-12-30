@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0 user-scalable=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -11,19 +11,16 @@
 </head>
 
 <body>
+    <span class="showPro" id="lookPro"><i class="fa fa-question-circle-o"></i></span>
     <div class="p-center">
-        <h3><i class="fa fa-search"></i>去哪吃？<span class="result" id="result"></span></h3>
-        <button class="foundbtn" id="showNumBtn">开始</button>
-        <p>
-           共<span id="shopNum" class="shopnum"></span>家商户：<span id="refreshData" class="refresh"><i class="fa fa-refresh"></i></span>  
-        </p>
-        <p><span class="showPro" id="lookPro"><i class="fa fa-question-circle-o"></i></span>开启自定义概率?<span class="toggle-pro" id="proBtn"></span></p>
+        <div class="title"><i class="fa fa-search"></i>去哪吃？<button class="foundbtn" id="showNumBtn"></button></div>
+        <p>共<span id="shopNum" class="shopnum"></span>家商户参与,您选择的是：</p>
         <div id="showNum" class="show-num-area"></div>
     </div>
     <div class="diaglog-modal">
         <div class="proinner">
             <table>
-                <thead><tr><th>商户名称</th><th>概率</th></tr></thead>
+                <thead><tr><th>商户名称</th><th>概率<button class="toggle-pro" id="proBtn"></button></th></tr></thead>
             </table>
             <div class="iscrollbox">
                 <div id="iscrollContent" class="iscroll-content"></div>

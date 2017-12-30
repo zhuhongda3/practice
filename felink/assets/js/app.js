@@ -1,9 +1,8 @@
 var plugins = {
-    times: null,      //变化次数
+    times: null,      //次数
     speed: null,      //速率
-    timer: null,      //定时器
-    isRandom: null,   //是否开启自定义概率
-    iResults: '',     //即时结果
+    isRandom: false,   //是否开启自定义概率
+    iResults: '',     //每一次执行的结果
     shopData: [],     //name为商户名称，pro为每项占比,count为出现的次数 
     init: function () {
         this.initData();
@@ -12,9 +11,6 @@ var plugins = {
     },
     //数据初始化
     initData: function () {
-        this.times = parseInt(Math.random()*16+30,10);//30~45
-        this.speed = 90;
-        this.isRandom = false;
         this.shopData = [
             {name:'红牛',pro:15,count: 0},  
             {name:'遇见饺色',pro:10,count: 0},
@@ -34,6 +30,7 @@ var plugins = {
             html += '<span data-count='+this.shopData[i].count+'>' + this.shopData[i].name +'</span>';
         }
         $('#shopNum').html(this.shopData.length);
+        $('#showNumBtn').html('搜索');
         if(this.isRandom){
             $('#proBtn').html('开启');
         }else{
@@ -42,28 +39,23 @@ var plugins = {
         $('#showNum').html(html);
        
     },
-    //重置页面状态
-    resetData:function(){
-        $('#result').html('');
-        $('#showNumBtn').removeClass('disabled').html('开始');
-        clearTimeout(this.timer);
-    },
     //计算结果
     calcResult: function () {
-        var sideArray = [],idx;
-        for(var m = 0;m<this.shopData.length;m++){
-            var num = 0;
-            for(var n = 0;n<this.shopData.length;n++){
-                if(n<=m){
-                    num += this.shopData[n].pro;
-                }
-            }
-            sideArray.push(num);
-        }
-        if(this.isRandom){
+        var idx;
+        if(this.isRandom){ 
             var j = parseInt(Math.random()*100+1,10),
+                sideArray = [],
                 w = 0; 
-            for(var i=0;i<sideArray.length;i++){
+            for(var m = 0;m<this.shopData.length;m++){//划分概率区间零界点
+                var num = 0;
+                for(var n = 0;n<this.shopData.length;n++){
+                    if(n<=m){
+                        num += this.shopData[n].pro;
+                    }
+                }
+                sideArray.push(num);
+            }
+            for(var i=0;i<sideArray.length;i++){ //计算随机值所属区间
                 if(w<j&&sideArray[i]>=j){
                     idx = i;
                 }
@@ -78,6 +70,7 @@ var plugins = {
     //渲染页面
     animation: function () {
         var sortArray = [],html = '';
+        //构建一个新对象
         this.shopData.forEach(function (value, index) {
             return (function (value) {
                 var sortObj = {};
@@ -87,7 +80,7 @@ var plugins = {
                 sortArray.push(sortObj);
             })(value);
         });
-        //升序
+        //按属性b升序排列
         for (var i = 0; i < sortArray.length; i++) {
             for (var j = i + 1; j < sortArray.length; j++) {
                 if (sortArray[i].b > sortArray[j].b) {
@@ -97,55 +90,51 @@ var plugins = {
                 }
             }
         }
+        //插入变化的dom结构
         for (var k in sortArray) {
             html += '<span data-count='+sortArray[k].c+' '+(sortArray[k].a===this.iResults?'class="selected"':'')+'>' + sortArray[k].a + '</span>';
         }
         $('#showNum').html(html);
     },
-    //启动入口
+    //入口
     startUp: function () {
         var that = this;
         if (that.times > 0) {
             that.calcResult();
             that.animation(that.times); 
             that.times = that.times - 1;
-            that.timer = setTimeout(function () {
+            setTimeout(function () {
                 that.startUp(that.times);
             }, that.speed);
-        } else {
-            $('#result').html(this.iResults);
-            $('#showNumBtn').addClass('disabled').html('结束');
+        }else{
+            $('#showNumBtn').removeClass('disabled').html('搜索');
         }
     },
     //事件
     evenSet: function () {
         var that = this;
+        //查询随机结果
         $('#showNumBtn').click(function(){
             if(!$(this).hasClass('disabled')){
-                if($(this).html()==='开始'){
-                    that.startUp();
-                    $(this).html('暂停');
-                }else{
-                    clearTimeout(that.timer);
-                    $(this).html('开始');
-                }
+                that.times = parseInt(Math.random()*16+30,10); //30-45
+                that.speed = parseInt(Math.random()*31+90,10); //90-120
+                that.startUp();
+                $('#showNumBtn').addClass('disabled').html('查询中...');
             }
         });
+        //是否开启自定义概率
         $('#proBtn').click(function(){
             if($(this).html()==='关闭'){
-                $(this).html('开启');
                 that.isRandom = true;
-                $('#lookPro').show();
+                $(this).html('开启');
+                $('.iscroll-content').show();
             }else{
-                $(this).html('关闭');
                 that.isRandom = false;
-                $('#lookPro').hide();                
+                $(this).html('关闭');
+                $('.iscroll-content').hide();
             }
         });
-        $('#refreshData').click(function(){
-            window.location.reload();
-        });
-
+        //模态框
         $('#lookPro').click(function(){
             $('.mask').show();
             $('.diaglog-modal').show();
@@ -162,11 +151,10 @@ var plugins = {
             document.querySelector('.mask') && document.querySelector('.mask').addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
             document.querySelector('.diaglog-modal') && document.querySelector('.diaglog-modal').addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
         });
-
         $('.mask').click(function(){
             $(this).hide();
             $('.diaglog-modal').hide();
-        })
+        });
     }
 }
 

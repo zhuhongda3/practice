@@ -200,22 +200,30 @@ a, img {
   background: rgba(0, 0, 0, 0.5); }
 
 .title-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
   display: none;
   height: 45px;
   line-height: 25px;
-  background: #fff; }
+  background: #fff;
+  z-index: 2;
+  width: 100%;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2); }
 
 .menu-icon::after {
   background: #0a0a0a;
   box-shadow: 0 7px 0 #0a0a0a, 0 14px 0 #0a0a0a; }
 
 .off-canvas {
-  background: #121212; }
+  background: #f4f4f4;
+  margin-top: 0 !important; }
 
 .menu-con {
   padding-top: 40px; }
 
 .accordion-menu > li a {
+  font-size: 14px;
   color: #666; }
 
 .accordion-menu .is-accordion-submenu a {
@@ -235,7 +243,7 @@ a, img {
   color: #8a8a8a; }
 
 .accordion-menu li {
-  border-bottom: 1px solid #444; }
+  border-bottom: 1px solid #eee; }
 
 .accordion-menu li:last-child {
   border: 0; }
@@ -268,7 +276,7 @@ a, img {
   margin-left: 248px;
   overflow-y: auto;
   background: #f4f4f4;
-  padding: 50px 0; }
+  padding: 45px 0; }
   .link-nav .link-item {
     margin: 20px 30px;
     padding-bottom: 20px;
@@ -325,8 +333,7 @@ a, img {
   .sidebar {
     display: none; }
   .link-nav {
-    margin-left: 0;
-    padding-top: 0; }
+    margin-left: 0; }
     .link-nav .link-item {
       margin: 10px; }
       .link-nav .link-item .item {
