@@ -1,7 +1,7 @@
 var plugins = {
     times: null,      //次数
     speed: null,      //速率
-    isRandom: false,   //是否开启自定义概率
+    isRandom: false,  //是否开启自定义概率
     iResults: '',     //每一次执行的结果
     shopData: [],     //name为商户名称，pro为每项占比,count为出现的次数 
     init: function () {
@@ -37,16 +37,15 @@ var plugins = {
             $('#proBtn').html('关闭');
         }
         $('#showNum').html(html);
-       
     },
     //计算结果
     calcResult: function () {
         var idx;
         if(this.isRandom){ 
-            var j = parseInt(Math.random()*100+1,10),
+            var j = Math.floor(Math.random()*100+1),
                 sideArray = [],
                 w = 0; 
-            for(var m = 0;m<this.shopData.length;m++){//划分概率区间零界点
+            for(var m = 0;m<this.shopData.length;m++){ //划分概率区间零界点
                 var num = 0;
                 for(var n = 0;n<this.shopData.length;n++){
                     if(n<=m){
@@ -62,37 +61,28 @@ var plugins = {
                 w = sideArray[i];
             }
         }else{
-            idx = parseInt((this.shopData.length - 1) * Math.random(),10);
+            idx = Math.floor(Math.random()*(this.shopData.length - 1));
         }
         this.iResults = this.shopData[idx].name;
         this.shopData[idx].count = this.shopData[idx].count + 1;
     },
+    //经典洗牌算法(随机排列数组的元素)
+    shuffle: function(arr){
+        var len = arr.length;
+        for (var i = 0; i < len - 1; i++) {
+            var index = Math.floor(Math.random() * (len - i));
+            var temp = arr[index];
+            arr[index] = arr[len - i - 1];
+            arr[len - i - 1] = temp;
+        }
+        return arr;
+    },
     //渲染页面
     animation: function () {
-        var sortArray = [],html = '';
-        //构建一个新对象
-        this.shopData.forEach(function (value, index) {
-            return (function (value) {
-                var sortObj = {};
-                sortObj.a = value.name;
-                sortObj.b = Math.random();
-                sortObj.c = value.count;
-                sortArray.push(sortObj);
-            })(value);
-        });
-        //按属性b升序排列
-        for (var i = 0; i < sortArray.length; i++) {
-            for (var j = i + 1; j < sortArray.length; j++) {
-                if (sortArray[i].b > sortArray[j].b) {
-                    var arrayTemp = sortArray[i];
-                    sortArray[i] = sortArray[j];
-                    sortArray[j] = arrayTemp;
-                }
-            }
-        }
-        //插入变化的dom结构
-        for (var k in sortArray) {
-            html += '<span data-count='+sortArray[k].c+' '+(sortArray[k].a===this.iResults?'class="selected"':'')+'>' + sortArray[k].a + '</span>';
+        var html = '';
+        this.shopData = this.shuffle(this.shopData); //重新排列
+        for (var i in this.shopData) {
+            html += '<span data-count='+ this.shopData[i].count+' '+(this.shopData[i].name===this.iResults?'class="selected"':'')+'>' + this.shopData[i].name + '</span>';
         }
         $('#showNum').html(html);
     },
@@ -113,11 +103,11 @@ var plugins = {
     //事件
     evenSet: function () {
         var that = this;
-        //查询随机结果
+        //随机结果
         $('#showNumBtn').click(function(){
             if(!$(this).hasClass('disabled')){
-                that.times = parseInt(Math.random()*16+30,10); //30-45
-                that.speed = parseInt(Math.random()*31+90,10); //90-120
+                that.times = Math.floor(Math.random()*16+30); //30-45 
+                that.speed = Math.floor(Math.random()*31+90); //90-120
                 that.startUp();
                 $('#showNumBtn').addClass('disabled').html('查询中...');
             }
@@ -134,7 +124,7 @@ var plugins = {
                 $('.iscroll-content').hide();
             }
         });
-        //模态框
+        //模态框事件
         $('#lookPro').click(function(){
             $('.mask').show();
             $('.diaglog-modal').show();
