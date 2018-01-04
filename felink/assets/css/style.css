@@ -8,7 +8,7 @@ body{-webkit-text-size-adjust:none;-webkit-touch-callout:none;-webkit-user-selec
 .title{font-size:16px;display:inline-block;font-weight:400}
 .title i{font-size:18px;color:#3f94ce;padding:0 5px}
 .shopnum{color:red;padding:0 2px;font-size:16px}
-.result-btn{display:inline-block;border-radius:3px;padding: 0 10px;height:24px;line-height:24px;font-size:14px;text-align:center;color:#fff;background-color:#3f94ce;cursor:pointer;}
+.result-btn{display:inline-block;border-radius:3px;padding: 5px 10px;line-height:1;font-size:14px;text-align:center;color:#fff;background-color:#3f94ce;cursor:pointer;}
 .display-area{display:inline-block;overflow:hidden}
 .display-area span{float:left;margin:5px 10px;padding:5px 15px;font-size:14px;color:#666;background-color:#efefef;border-radius:5px}
 .display-area span.selected{background-color:#389912;color:#fff;}
