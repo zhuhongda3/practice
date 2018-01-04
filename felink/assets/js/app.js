@@ -111,12 +111,9 @@ var plugins = {
         this.shopData[idx].count += 1;
         //Re-render the page
         resultArray = this.shuffle(this.shopData);
+        console.log(this.times);
         for (var i in resultArray) {
-            if(this.times!=1){
-                html += '<span data-count=' + resultArray[i].count + ' ' + (resultArray[i].name === this.shopData[idx].name ? 'class="selected"' : '') + '>' + resultArray[i].name + '</span>';
-            }else{
-                html += '<span data-count=' + resultArray[i].count + ' ' + (resultArray[i].name === this.shopData[idx].name ? 'class="selected"' : 'class="noselected"') + '>' + resultArray[i].name + '</span>';
-            }
+            html += '<span data-count=' + resultArray[i].count + ' ' + (resultArray[i].name === this.shopData[idx].name ? 'class="selected'+(this.times == 1?' animated rollIn':'')+'"' : '') + '>' + resultArray[i].name + '</span>';
         }
         $('#showResultArea').html(html);
     },
