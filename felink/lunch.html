@@ -6,21 +6,22 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>去哪吃</title>
+    <title>where to eat?</title>
 </head>
 
 <body>
-    <span class="showPro" id="lookPro"><i class="fa fa-question-circle-o"></i></span>
-    <div class="p-center">
-        <div class="title"><i class="fa fa-search"></i>去哪吃？<button class="foundbtn" id="showNumBtn"></button></div>
-        <p>共<span id="shopNum" class="shopnum"></span>家商户参与,您选择的是：</p>
-        <div id="showNum" class="show-num-area"></div>
+    <span class="icon-tip" id="showModal"><i class="fa fa-question-circle-o"></i></span>
+    <div class="wrap">
+        <div class="title"><i class="fa fa-search"></i>去哪吃？<div class="result-btn" id="showResultBtn">随机</div></div>
+        <p>共<span class="shopnum" id="shopNum"></span>家商户参与,您选择的是：</p>
+        <div class="display-area" id="showResultArea"></div>
     </div>
     <div class="diaglog-modal">
-        <div class="proinner">
+        <div class="modal-inner">
             <table>
-                <thead><tr><th>商户名称</th><th>概率<button class="toggle-pro" id="proBtn"></button></th></tr></thead>
+                <thead><tr><th>商户名称</th><th>概率<span class="icon-eye" id="proToggleBtn"><i class="fa fa-eye-slash"></i></span></th></tr></thead>
             </table>
             <div class="iscrollbox">
                 <div id="iscrollContent" class="iscroll-content"></div>
