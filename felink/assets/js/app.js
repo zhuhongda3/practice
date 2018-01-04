@@ -5,8 +5,7 @@ var plugins = {
     shopData: [],    //Business data
     init: function () {
         this.initData();
-        this.initStatus();
-        this.clickEven();
+        this.clickEvent();
     },
     //init data
     initData: function () {
@@ -57,13 +56,14 @@ var plugins = {
             }
         ];
     },
-    //init page status
-    initStatus: function () {
+    //reset page status
+    resetStatus: function () {
         var html = '';
+        this.times = Math.floor(Math.random() * 16 + 30);
+        this.speed = Math.floor(Math.random() * 31 + 90);
         for (var i in this.shopData) {
             html += '<span data-count=' + this.shopData[i].count + '>' + this.shopData[i].name + '</span>';
         }
-        $('#shopNum').html(this.shopData.length);
         $('#showResultArea').html(html);
     },
     //Program entry
@@ -82,7 +82,7 @@ var plugins = {
     },
     //calculate reusult
     calcResult: function () {
-        var idx, html = '';
+        var idx, html = '',resultArray = [];
 
         if (this.isRandom) {
             var j = Math.floor(Math.random() * 100 + 1),
@@ -110,9 +110,13 @@ var plugins = {
         }
         this.shopData[idx].count += 1;
         //Re-render the page
-        this.shopData = this.shuffle(this.shopData);
-        for (var i in this.shopData) {
-            html += '<span data-count=' + this.shopData[i].count + ' ' + (this.shopData[i].name === this.shopData[idx].name ? 'class="selected"' : '') + '>' + this.shopData[i].name + '</span>';
+        resultArray = this.shuffle(this.shopData);
+        for (var i in resultArray) {
+            if(this.times!=1){
+                html += '<span data-count=' + resultArray[i].count + ' ' + (resultArray[i].name === this.shopData[idx].name ? 'class="selected"' : '') + '>' + resultArray[i].name + '</span>';
+            }else{
+                html += '<span data-count=' + resultArray[i].count + ' ' + (resultArray[i].name === this.shopData[idx].name ? 'class="selected"' : 'class="noselected"') + '>' + resultArray[i].name + '</span>';
+            }
         }
         $('#showResultArea').html(html);
     },
@@ -158,19 +162,19 @@ var plugins = {
         }, false);
     },
     //click event
-    clickEven: function () {
+    clickEvent: function () {
         var that = this;
 
         $('#showResultBtn').click(function () {
             if (!$(this).hasClass('animated')) {
-                that.times = Math.floor(Math.random() * 16 + 30);
-                that.speed = Math.floor(Math.random() * 31 + 90);
+                that.resetStatus();
                 that.startUp();
                 $('#showResultBtn').addClass('animated rollOut');//fadeOut
             }
         });
 
         $('#proToggleBtn').click(function () {
+            $('#iscrollContent').toggleClass('hidePro');
             if (that.isRandom) {
                 that.isRandom = false;
                 $(this).html('<i class="fa fa-eye-slash"></i>');
