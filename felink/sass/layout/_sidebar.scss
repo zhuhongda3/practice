@@ -61,10 +61,10 @@
     //box-shadow: 0 0 1rem rgba(0, 0, 0, .2);
 }
 
-.menu-icon::after {
-    background: #eee;
-    -webkit-box-shadow: 0 7px 0 #eee, 0 14px 0 #eee;
-    box-shadow: 0 7px 0 #eee, 0 14px 0 #eee;
+.menu-icon::after,.menu-icon:hover::after {
+    background: #f1e2e2;
+    -webkit-box-shadow: 0 7px 0 #f1e2e2, 0 14px 0 #f1e2e2;
+    box-shadow: 0 7px 0 #f1e2e2, 0 14px 0 #f1e2e2;
 }
 
 .off-canvas {
@@ -91,13 +91,13 @@
 .close-button {
     position: absolute;
     z-index: 999;
-    color: #666;
+    color: #f1e2e2;
     font-size: 26px;
 }
 
 .close-button:focus,
 .close-button:hover {
-    color: #eee;
+    color: #f1e2e2;
 }
 
 .accordion-menu li {
