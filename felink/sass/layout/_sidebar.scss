@@ -55,16 +55,16 @@
     display: none;
     height: 45px;
     line-height: 25px;
-    background: #fff;
+    background: transparent;
     z-index: 2;
     width: 100%;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, .2);
+    //box-shadow: 0 0 1rem rgba(0, 0, 0, .2);
 }
 
 .menu-icon::after {
-    background: #0a0a0a;
-    -webkit-box-shadow: 0 7px 0 #0a0a0a, 0 14px 0 #0a0a0a;
-    box-shadow: 0 7px 0 #0a0a0a, 0 14px 0 #0a0a0a;
+    background: #eee;
+    -webkit-box-shadow: 0 7px 0 #eee, 0 14px 0 #eee;
+    box-shadow: 0 7px 0 #eee, 0 14px 0 #eee;
 }
 
 .off-canvas {
@@ -97,7 +97,7 @@
 
 .close-button:focus,
 .close-button:hover {
-    color: #8a8a8a;
+    color: #eee;
 }
 
 .accordion-menu li {

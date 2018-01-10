@@ -6,8 +6,8 @@ body{-webkit-text-size-adjust:none;-webkit-touch-callout:none;-webkit-user-selec
 .wrap{position: relative;padding-top:90px;text-align:center;}
 .wrap p{font-size:14px;padding:20px 0;color:#666;}
 .title{font-size:16px;display:inline-block;font-weight:400}
-.title i{font-size:18px;color:#3f94ce;padding:0 5px}
-.result-btn{display:inline-block;border-radius:3px;padding: 5px 10px;line-height:1;font-size:14px;text-align:center;color:#fff;background-color:#3f94ce;cursor:pointer;}
+.title i{color:#3f94ce;font-size: 16px;padding: 4px 10px;}
+.result-btn{display:inline-block;}
 .display-area{margin-top: 15px;overflow:hidden;}
 .display-area span{float:left;margin:5px 10px;padding:5px 15px;font-size:14px;color:#666;background-color:#efefef;border-radius:5px}
 .display-area span.selected{background-color:#389912;color:#fff;}
@@ -20,7 +20,7 @@ body{-webkit-text-size-adjust:none;-webkit-touch-callout:none;-webkit-user-selec
 .iscroll-content{position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
 .iscroll-content.hidePro tbody tr td:last-child{visibility: hidden;}
 .modal-inner table{width: 100%;color: #666;border-collapse:collapse;border-spacing:0;}
-.icon-eye{display: inline-block;padding:0 8px;vertical-align: middle;line-height: 1;padding-bottom: 3px;color: #dde216;}
+.icon-eye{display: inline-block;padding:0 8px;vertical-align: middle;line-height: 1;padding-bottom: 3px;color: #666;}
 .modal-inner table thead{background: #3f94ce;color: #fff;}
 .modal-inner table th,.modal-inner table td{font-weight: normal;width: 50%;font-size: 14px;text-align: center;}
 .modal-inner table th{padding: 10px 0;}

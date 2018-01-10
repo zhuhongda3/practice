@@ -59,7 +59,7 @@ var plugins = {
     //reset page status
     resetStatus: function () {
         var html = '';
-        this.times = Math.floor(Math.random() * 16 + 30);
+        this.times = Math.floor(Math.random() * 11 + 25);
         this.speed = Math.floor(Math.random() * 31 + 90);
         for (var i in this.shopData) {
             html += '<span data-count=' + this.shopData[i].count + '>' + this.shopData[i].name + '</span>';
@@ -111,9 +111,8 @@ var plugins = {
         this.shopData[idx].count += 1;
         //Re-render the page
         resultArray = this.shuffle(this.shopData);
-        console.log(this.times);
         for (var i in resultArray) {
-            html += '<span data-count=' + resultArray[i].count + ' ' + (resultArray[i].name === this.shopData[idx].name ? 'class="selected'+(this.times == 1?' animated rollIn':'')+'"' : '') + '>' + resultArray[i].name + '</span>';
+            html += '<span data-count=' + resultArray[i].count + ' ' + (resultArray[i].name === this.shopData[idx].name ? 'class="selected'+(this.times == 1?' animated zoomIn':'')+'"' : '') + '>' + resultArray[i].name + '</span>';
         }
         $('#showResultArea').html(html);
     },

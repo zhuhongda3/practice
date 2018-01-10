@@ -10,13 +10,8 @@ $(document).ready(function() {
         return false;
     });
 
-    $(".footer").click(function(){
+    $(".title-bar").click(function(){
         $('body').animate({'scrollTop':'0'},300);
     });
-
-    // $(".link-item .item").mouseover(function() {
-    //     $(this).addClass("animated bounce").siblings().removeClass("animated bounce");
-    // });
-
     $(document).foundation();
 });
