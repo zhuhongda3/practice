@@ -62,9 +62,9 @@
 }
 
 .menu-icon::after,.menu-icon:hover::after {
-    background: #f1e2e2;
-    -webkit-box-shadow: 0 7px 0 #f1e2e2, 0 14px 0 #f1e2e2;
-    box-shadow: 0 7px 0 #f1e2e2, 0 14px 0 #f1e2e2;
+    background: #ddd;
+    -webkit-box-shadow: 0 7px 0 #ddd, 0 14px 0 #ddd;
+    box-shadow: 0 7px 0 #ddd, 0 14px 0 #ddd;
 }
 
 .off-canvas {
@@ -91,13 +91,13 @@
 .close-button {
     position: absolute;
     z-index: 999;
-    color: #f1e2e2;
+    color: #ddd;
     font-size: 26px;
 }
 
 .close-button:focus,
 .close-button:hover {
-    color: #f1e2e2;
+    color: #ddd;
 }
 
 .accordion-menu li {
