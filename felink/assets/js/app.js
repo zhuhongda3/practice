@@ -25,18 +25,13 @@ var plugins = {
                 count: 0
             },
             {
-                name: '小胡菜饭',
-                pro: 5,
-                count: 0
-            },
-            {
                 name: '农家小炒',
                 pro: 10,
                 count: 0
             },
             {
                 name: '重庆小面',
-                pro: 5,
+                pro: 10,
                 count: 0
             },
             {
