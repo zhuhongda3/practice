@@ -6,43 +6,38 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>where to eat?</title>
+    <title>where go?</title>
 </head>
 
 <body>
     <span class="icon-tip" id="showModal"><i class="fa fa-question-circle-o"></i></span>
     <div class="wrap">
-        <div class="title">去哪吃？<div class="result-btn" id="showResultBtn"><i class="fa fa-search"></i></div></div>
+        <div class="title">where go?<div class="result-btn" id="showResultBtn"><i class="fa fa-search"></i></div></div>
         <div class="display-area" id="showResultArea"></div>
     </div>
-    <div class="diaglog-modal">
-        <div class="modal-inner">
-            <table>
-                <thead><tr><th>商户名称</th><th>概率<span class="icon-eye" id="proToggleBtn"><i class="fa fa-eye-slash"></i></span></th></tr></thead>
-            </table>
-            <div class="iscrollbox">
-                <div id="iscrollContent" class="iscroll-content hidePro"></div>
-            </div>
-        </div>
-    </div>
-    <div class="mask"></div>
+    <div class="table-wrap js-table"></div>
     <script src="https://cdn.bootcss.com/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://cdn.bootcss.com/iScroll/5.2.0/iscroll.min.js"></script>
     <script src="https://cdn.bootcss.com/dot/2.0.0-beta.0/doT.min.js"></script>
-    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/json2.js"></script>
+    <script src="./assets/js/myStorage.js"></script>
+    <script src="./assets/js/localDB.js"></script>
     <script id="iscrolltmpl" type="text/x-dot-template">
-        <div class="iscrollwrap">
-            <table>
-                <tbody>
-                    {{for(var i in it){}}
-                        <tr><td>{{=it[i].name}}</td><td>{{=it[i].pro}}%</td></tr>
-                    {{}}}
-                </tbody>
-            </table>
-        </div>
+        <table>
+            <thead><tr><th style="width: 120px">名称</th><th style="width: 120px;">占比(100)(%)</th><th>操作</th></tr></thead>
+            <tbody>
+                {{for(let [index,item] of Object.entries(it)){}}
+                    <tr data-name="{{=item.name}}" data-pro="{{=item.pro}}"><td>{{=item.name}}</td><td>{{=item.pro}}</td><td><button class="btn btn-sm btn-success js-updata">修改</button>&nbsp;&nbsp;<button class="btn btn-sm btn-danger js-del">删除</button></td></tr>
+                {{}}}
+                <tr><td colspan="3"><button class="js-remove-item btn btn-sm btn-light">删除全部</button>&nbsp;&nbsp;<button class="js-add-item btn btn-sm btn-primary">新增</button></td></tr>
+            </tbody>
+        </table>
     </script>
+    <script src="./assets/js/app.js"></script>
 </body>
 
 </html>
