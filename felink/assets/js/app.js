@@ -73,8 +73,6 @@ var plugins = {
     //reset page status
     resetStatus: function () {
         var html = '';
-        this.times = Math.floor(Math.random() * 11 + 25);
-        this.speed = Math.floor(Math.random() * 31 + 90);
         for (var i in this.shopData) {
             html += '<span>' + this.shopData[i].name + '</span>';
         }
@@ -127,6 +125,7 @@ var plugins = {
         }
         //Re-render the page
         resultArray = this.shuffle(this.shopData);
+        console.log(resultArray)
         for (var i in resultArray) {
             html += '<span ' + (resultArray[i].name === this.shopData[idx].name ? 'class="selected'+(this.times == 1?' animated zoomIn':'')+'"' : '') + '>' + resultArray[i].name + '</span>';
         }
@@ -173,6 +172,8 @@ var plugins = {
 
         $('#showResultBtn').click(function () {
             if (!$(this).hasClass('animated') && $('.display-area span').length>1) {
+                that.times = Math.floor(Math.random() * 11 + 25);
+                that.speed = Math.floor(Math.random() * 31 + 90);
                 that.startUp();
                 $('#showResultBtn').addClass('animated rollOut');
             }
@@ -182,9 +183,10 @@ var plugins = {
             if($('.js-save').length>0){
                 return;
             }
+            $('.js-no-data').hide();
             var html = '<tr><td><input class="form-control" type="text"  placeholder="名称"></td><td><input class="form-control" type="" '+
             'placeholder="数字"></td><td><button class="btn btn-sm btn-success js-save">确定</button>&nbsp;&nbsp;<button class="btn btn-sm btn-danger js-remove">删除</button></td></tr>';
-            $(html).insertBefore(".js-table tbody tr:last-child");
+            $(".js-table tbody").append(html);
         });
 
         $(".js-table").on('click','.js-save',function(){
@@ -197,7 +199,7 @@ var plugins = {
             }else{
                 $this.find('td:eq(0)').find('input').removeClass('error');
             }
-            if(isNaN(Number(pro)||pro==""||Number(pro))){
+            if(isNaN(Number(pro))||pro==""||Number(pro)==0){
                 $this.find('td:eq(1)').find('input').addClass('error');
                 return;
             }else{
@@ -213,6 +215,9 @@ var plugins = {
 
         $(".js-table").on('click','.js-remove',function(){
             $(this).closest('tr').remove();
+            if($(this).closest('tbody').find('tr').length == 0){
+                $('.js-no-data').show();
+            }
         });
 
 
@@ -256,6 +261,11 @@ var plugins = {
 
         $("#showModal").click(function(){
             $('.js-table').toggleClass('hide');
+            if(!$('.js-table').hasClass('hide')){
+                $('.mask').show();
+            }else{
+                $('.mask').hide();
+            }
         });
 
         $('.js-table').on('click','.js-remove-item',function(){
