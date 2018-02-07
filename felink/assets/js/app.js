@@ -189,21 +189,25 @@ var plugins = {
 
         $(".js-table").on('click','.js-save',function(){
             var $this = $(this).closest('tr');
-            var name = String($this.find('td:eq(0)').find('input').val());
-            var pro = Number($this.find('td:eq(1)').find('input').val());
+            var name = $this.find('td:eq(0)').find('input').val();
+            var pro =  $this.find('td:eq(1)').find('input').val();
             if(name == ""){
                 $this.find('td:eq(0)').find('input').addClass('error');
                 return;
+            }else{
+                $this.find('td:eq(0)').find('input').removeClass('error');
             }
-            if(isNaN(pro)){
+            if(isNaN(Number(pro)||pro==""||Number(newPro))){
                 $this.find('td:eq(1)').find('input').addClass('error');
                 return;
+            }else{
+                $this.find('td:eq(1)').find('input').removeClass('error');
             }
-            if( that.storage.select('space',{name:name,pro:pro},false).length>0){
+            if( that.storage.select('space',{name:String(name),pro:Number(pro)},false).length>0){
                 alert("数据已存在");
                 return;
             }
-            that.storage.insert('space',{name:name,pro:pro});
+            that.storage.insert('space',{name:String(name),pro:Number(pro)});
             that.refreshDom();
         });
 
@@ -214,34 +218,38 @@ var plugins = {
 
         $(".js-table").on('click','.js-del',function(){
             var $this = $(this).closest('tr');
-            var nameVal = String($this.data('name'));
-            var proVal = Number($this.data('pro'));
-            that.storage.delete('space',{name:nameVal,pro:proVal});
+            var nameVal = $this.data('name');
+            var proVal = $this.data('pro');
+            that.storage.delete('space',{name:String(nameVal),pro:Number(proVal)});
             that.refreshDom();
         });
 
         $(".js-table").on('click','.js-updata',function(){
             var $this = $(this).closest('tr');
             if($(this).html() == '修改'){
-                var name = String($this.data('name'));
-                var pro = Number($this.data('pro'));
-                if(name == ""){
-                    $this.find('td:eq(0)').find('input').addClass('error');
-                    return;
-                }
-                if(isNaN(pro)){
-                    $this.find('td:eq(1)').find('input').addClass('error');
-                    return;
-                }
+                var name = $this.data('name');
+                var pro = $this.data('pro');
                 $this.find('td:eq(0)').html('<input class="form-control" type="text" data-value="'+name+'" value="'+name+'">');
                 $this.find('td:eq(1)').html('<input class="form-control" type="text" data-value="'+pro+'" value="'+pro+'">');
                 $(this).html('保存');
             }else{
-                var oldName = String($this.data('name'));
-                var oldPro = Number($this.data('pro'));
-                var newName = String($this.find('td:eq(0)').find('input').val());
-                var newPro = Number($this.find('td:eq(1)').find('input').val());
-                that.storage.update('space',{name:oldName,pro:oldPro},{name:newName,pro:newPro});
+                var oldName = $this.data('name');
+                var oldPro = $this.data('pro');
+                var newName = $this.find('td:eq(0)').find('input').val();
+                var newPro = $this.find('td:eq(1)').find('input').val();
+                if(newName == ""){
+                    $this.find('td:eq(0)').find('input').addClass('error');
+                    return;
+                }else{
+                    $this.find('td:eq(0)').find('input').removeClass('error');
+                }
+                if(isNaN(Number(newPro))||newPro==""||Number(newPro)==0){
+                    $this.find('td:eq(1)').find('input').addClass('error');
+                    return;
+                }else{
+                    $this.find('td:eq(1)').find('input').removeClass('error');
+                }
+                that.storage.update('space',{name:String(oldName),pro:Number(oldPro)},{name:String(newName),pro:Number(newPro)});
                 that.refreshDom();
             }
         });

@@ -30,8 +30,12 @@
         <table>
             <thead><tr><th>名称</th><th>占比</th><th>操作</th></tr></thead>
             <tbody>
-                {{for(let [index,item] of Object.entries(it)){}}
-                    <tr data-name="{{=item.name}}" data-pro="{{=item.pro}}"><td>{{=item.name}}</td><td>{{=item.pro}}</td><td><button class="btn btn-sm btn-success js-updata">修改</button>&nbsp;&nbsp;<button class="btn btn-sm btn-danger js-del">删除</button></td></tr>
+                {{? Object.entries(it).length>0}}
+                    {{for(let [index,item] of Object.entries(it)){}}
+                        <tr data-name="{{=item.name}}" data-pro="{{=item.pro}}"><td>{{=item.name}}</td><td>{{=item.pro}}</td><td><button class="btn btn-sm btn-success js-updata">修改</button>&nbsp;&nbsp;<button class="btn btn-sm btn-danger js-del">删除</button></td></tr>
+                    {{}}}
+                {{??}}
+                <tr><td colspan="3" style="height: 50px;">暂无数据</td></tr>
                 {{}}}
                 <tr><td colspan="3"><button class="js-remove-item btn btn-sm" style="width:30%">删除全部</button>&nbsp;&nbsp;<button width:30% class="js-info btn btn-sm btn-info">使用默认数据</button>&nbsp;&nbsp;<button style="width:30%" class="js-add-item btn btn-sm btn-primary">新增</button></td></tr>
             </tbody>
