@@ -13,10 +13,12 @@ body{-webkit-text-size-adjust:none;-webkit-touch-callout:none;-webkit-user-selec
 .display-area span{float:left;margin:5px 10px;padding:5px 15px;font-size:14px;color:#666;background-color:#efefef;border-radius:5px}
 .display-area span.selected{background-color:#389912;color:#fff;}
 .table-wrap{margin-top: 20px;}
+.table-wrap.hide{display: none;}
 table{width: 100%;color: #666;border-collapse:collapse;border-spacing:0;}
 table thead{background: #3f94ce;color: #fff;} 
 table th,table td{font-weight: normal;font-size: 14px;text-align: center;}
 table th{padding: 5px 0;}
+table th:not(:last-child){width: 30%;}
 table td{padding: 8px 5px;}
 table td input{display: inline-block;width: 100%;border: 1px solid #ddd;}
 table td input.error{border-color: #f00;}

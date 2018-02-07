@@ -48,6 +48,7 @@ var plugins = {
         for(let i = 0; i < data.length; i++){
             this.storage.insert('space',data[i]);
         }
+        // 更新单条数据
         // storage.update('space',{a:1,b:2},{a:2,b:1});
         // 删除单条数据
         // storage.delete('space',{a: 2,b:1});
@@ -82,7 +83,6 @@ var plugins = {
     //Program entry
     startUp: function () {
         var that = this;
-
         if (that.times > 0) {
             that.calcResult();
             that.times -= 1;
@@ -95,10 +95,14 @@ var plugins = {
     },
     //calculate reusult
     calcResult: function () {
-        var idx, html = '',resultArray = [];
+        var idx, html = '',resultArray = [],total = 0;
+
+        for(var i = 0;i < this.shopData.length; i++){
+            total += this.shopData[i].pro;
+        }
 
         if (this.isRandom) {
-            var j = Math.floor(Math.random() * 100 + 1),
+            var j = Math.floor(Math.random() * total + 1),
                 criticalPoint = [],
                 w = 0;
             //Divide the probability interval critical point
@@ -119,12 +123,12 @@ var plugins = {
                 w = criticalPoint[i];
             }
         } else {
-            idx = Math.floor(Math.random() * (this.shopData.length - 1));`1`
+            idx = Math.floor(Math.random() * (this.shopData.length - 1));
         }
         //Re-render the page
         resultArray = this.shuffle(this.shopData);
         for (var i in resultArray) {
-            html += '<span data-count=' + resultArray[i].count + ' ' + (resultArray[i].name === this.shopData[idx].name ? 'class="selected'+(this.times == 1?' animated zoomIn':'')+'"' : '') + '>' + resultArray[i].name + '</span>';
+            html += '<span ' + (resultArray[i].name === this.shopData[idx].name ? 'class="selected'+(this.times == 1?' animated zoomIn':'')+'"' : '') + '>' + resultArray[i].name + '</span>';
         }
         $('#showResultArea').html(html);
     },
@@ -168,7 +172,7 @@ var plugins = {
         var that = this;
 
         $('#showResultBtn').click(function () {
-            if (!$(this).hasClass('animated')) {
+            if (!$(this).hasClass('animated') && $('.display-area span').length>1) {
                 that.startUp();
                 $('#showResultBtn').addClass('animated rollOut');
             }
@@ -178,8 +182,8 @@ var plugins = {
             if($('.js-save').length>0){
                 return;
             }
-            var html = '<tr><td><input type="text" placeholder="名称"></td><td><input type="" '+
-            'placeholder="小于100的数字"></td><td><button class="btn btn-sm btn-success js-save">确定</button>&nbsp;&nbsp;<button class="btn btn-sm btn-danger js-remove">删除</button></td></tr>';
+            var html = '<tr><td><input class="form-control" type="text"  placeholder="名称"></td><td><input class="form-control" type="" '+
+            'placeholder="数字"></td><td><button class="btn btn-sm btn-success js-save">确定</button>&nbsp;&nbsp;<button class="btn btn-sm btn-danger js-remove">删除</button></td></tr>';
             $(html).insertBefore(".js-table tbody tr:last-child");
         });
 
@@ -229,8 +233,8 @@ var plugins = {
                     $this.find('td:eq(1)').find('input').addClass('error');
                     return;
                 }
-                $this.find('td:eq(0)').html('<input type="text" data-value="'+name+'" value="'+name+'">');
-                $this.find('td:eq(1)').html('<input type="text" data-value="'+pro+'" value="'+pro+'">');
+                $this.find('td:eq(0)').html('<input class="form-control" type="text" data-value="'+name+'" value="'+name+'">');
+                $this.find('td:eq(1)').html('<input class="form-control" type="text" data-value="'+pro+'" value="'+pro+'">');
                 $(this).html('保存');
             }else{
                 var oldName = String($this.data('name'));
@@ -243,13 +247,19 @@ var plugins = {
         });
 
         $("#showModal").click(function(){
-            that.defaultData();
+            $('.js-table').toggleClass('hide');
         });
 
         $('.js-table').on('click','.js-remove-item',function(){
-            that.storage.deleteSpace('space');
-            that.storage.createSpace('space');
-            that.refreshDom();
+            if(that.storage.select('space').length>0){
+                that.storage.deleteSpace('space');
+                that.storage.createSpace('space');
+                that.refreshDom();
+            }
+        });
+
+        $('.js-table').on('click','.js-info',function(){
+            that.defaultData();
         });
     }
 }

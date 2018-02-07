@@ -18,7 +18,7 @@
         <div class="title">where go?<div class="result-btn" id="showResultBtn"><i class="fa fa-search"></i></div></div>
         <div class="display-area" id="showResultArea"></div>
     </div>
-    <div class="table-wrap js-table"></div>
+    <div class="table-wrap js-table hide"></div>
     <script src="https://cdn.bootcss.com/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://cdn.bootcss.com/iScroll/5.2.0/iscroll.min.js"></script>
@@ -28,12 +28,12 @@
     <script src="./assets/js/localDB.js"></script>
     <script id="iscrolltmpl" type="text/x-dot-template">
         <table>
-            <thead><tr><th style="width: 120px">名称</th><th style="width: 120px;">占比(100)(%)</th><th>操作</th></tr></thead>
+            <thead><tr><th>名称</th><th>占比</th><th>操作</th></tr></thead>
             <tbody>
                 {{for(let [index,item] of Object.entries(it)){}}
                     <tr data-name="{{=item.name}}" data-pro="{{=item.pro}}"><td>{{=item.name}}</td><td>{{=item.pro}}</td><td><button class="btn btn-sm btn-success js-updata">修改</button>&nbsp;&nbsp;<button class="btn btn-sm btn-danger js-del">删除</button></td></tr>
                 {{}}}
-                <tr><td colspan="3"><button class="js-remove-item btn btn-sm btn-light">删除全部</button>&nbsp;&nbsp;<button class="js-add-item btn btn-sm btn-primary">新增</button></td></tr>
+                <tr><td colspan="3"><button class="js-remove-item btn btn-sm" style="width:30%">删除全部</button>&nbsp;&nbsp;<button width:30% class="js-info btn btn-sm btn-info">使用默认数据</button>&nbsp;&nbsp;<button style="width:30%" class="js-add-item btn btn-sm btn-primary">新增</button></td></tr>
             </tbody>
         </table>
     </script>
