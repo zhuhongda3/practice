@@ -197,7 +197,7 @@ var plugins = {
             }else{
                 $this.find('td:eq(0)').find('input').removeClass('error');
             }
-            if(isNaN(Number(pro)||pro==""||Number(newPro))){
+            if(isNaN(Number(pro)||pro==""||Number(pro))){
                 $this.find('td:eq(1)').find('input').addClass('error');
                 return;
             }else{
