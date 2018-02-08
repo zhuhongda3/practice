@@ -191,6 +191,7 @@ var plugins = {
             var html = '<tr><td><input class="form-control" type="text"></td><td><input class="form-control" type="text" '+
             '></td><td><button class="btn btn-sm btn-success js-save">确定</button>&nbsp;&nbsp;<button class="btn btn-sm btn-danger js-remove">删除</button></td></tr>';
             $(".js-table tbody").append(html);
+            $('#isScroll').scrollTop( $('#isScroll')[0].scrollHeight );
             that.initScroll();
         });
 
