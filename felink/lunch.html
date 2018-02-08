@@ -28,8 +28,13 @@
     <script src="./assets/js/myStorage.js"></script>
     <script src="./assets/js/localDB.js"></script>
     <script id="iscrolltmpl" type="text/x-dot-template">
+        <div class="table-header">
+            <table>
+                <thead><tr><th>名称</th><th>占比</th><th>操作</th></tr></thead>
+            </table>
+        </div>
+       <div class="table-body" id="isScroll">
         <table>
-            <thead><tr><th>名称</th><th>占比</th><th>操作</th></tr></thead>
             <tbody>
                 {{? Object.entries(it).length>0}}
                     {{for(let [index,item] of Object.entries(it)){}}
@@ -40,6 +45,7 @@
                 {{}}}
             </tbody>
         </table>
+        </div>
         <div class="btn-wrap"><button style="width:30%" class="js-info btn btn-sm btn-info">默认数据</button>&nbsp;&nbsp;<button class="js-remove-item btn btn-sm btn-danger" style="width:30%">删除全部</button>&nbsp;&nbsp;<button style="width:30%" class="js-add-item btn btn-sm btn-primary">新增一条</button></div>
     </script>
     <script src="./assets/js/app.js"></script>

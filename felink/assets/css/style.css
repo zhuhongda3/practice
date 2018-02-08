@@ -12,16 +12,16 @@ body{-webkit-text-size-adjust:none;-webkit-touch-callout:none;-webkit-user-selec
 .display-area{margin-top: 20px;overflow:hidden;}
 .display-area span{float:left;margin:5px 10px;padding:5px 15px;font-size:14px;color:#666;background-color:#efefef;border-radius:5px}
 .display-area span.selected{background-color:#389912;color:#fff;}
-.table-wrap{position: fixed;bottom: 0;left: 0;width: 100%;z-index: 2;transition: .3s all;}
+.table-wrap{position: fixed;bottom: 0;left: 0;width: 100%;z-index: 2;transition: .3s all;background-color: #f4f4f4;}
 .table-wrap.hide{bottom: -100%;}
 table{width: 100%;color: #666;border-collapse:collapse;border-spacing:0;background-color: #f4f4f4;}
 table thead{background: #3f94ce;color: #fff;} 
-table tbody{max-height: 100px;overflow-y: auto;}
 table th,table td{font-weight: normal;font-size: 14px;text-align: center;}
 table th{padding: 7px 0;}
-table th:not(:last-child){width: 30%;}
+table th:not(:last-child),table tr td:not(:last-child){width: 30%;}
 table td{padding: 8px 5px;}
 table td input{display: inline-block;width: 100%;border: 1px solid #ddd;}
 table td input.error{border-color: #f00;}
 .btn-wrap{padding: 5px;box-shadow: 0 1px 5px #ddd;background-color: #fff;}
 .mask{display:none;position: fixed;top:0;left: 0;width: 100%;height: 100%;background-color: rgba(0,0,0,.5);z-index: 2;}
+.table-body{max-height: 250px;overflow-y: auto;}

@@ -69,6 +69,7 @@ var plugins = {
         var iscrollText = doT.template($("#iscrolltmpl").text());
         $(".js-table").html(iscrollText(this.shopData));
         this.resetStatus();
+        this.initScroll();
     },
     //reset page status
     resetStatus: function () {
@@ -142,30 +143,33 @@ var plugins = {
         }
         return arr;
     },
-    //Probability data
-    getProData: function () {
-        // function iScrollClick() { //Fix android/ios click bugs
-        //     if (/iPhone|iPad|iPod|Macintosh/i.test(navigator.userAgent)) return false;
-        //     if (/Chrome/i.test(navigator.userAgent)) return (/Android/i.test(navigator.userAgent));
-        //     if (/Silk/i.test(navigator.userAgent)) return false;
-        //     if (/Android/i.test(navigator.userAgent)) {
-        //         var s = navigator.userAgent.substr(navigator.userAgent.indexOf('Android') + 8, 3);
-        //         return parseFloat(s[0] + s[3]) < 44 ? false : true
-        //     }
-        // }
+    initScroll: function () {
+        function iScrollClick() { //Fix android/ios click bugs
+            if (/iPhone|iPad|iPod|Macintosh/i.test(navigator.userAgent)) return false;
+            if (/Chrome/i.test(navigator.userAgent)) return (/Android/i.test(navigator.userAgent));
+            if (/Silk/i.test(navigator.userAgent)) return false;
+            if (/Android/i.test(navigator.userAgent)) {
+                var s = navigator.userAgent.substr(navigator.userAgent.indexOf('Android') + 8, 3);
+                return parseFloat(s[0] + s[3]) < 44 ? false : true
+            }
+        }
         // if ($(this).data('iscroll') == undefined) {
-        //     new IScroll('#iscrollContent', {
+        //     new IScroll('#isScroll', {
         //         click: iScrollClick(),
         //         mouseWheel: true
         //     });
         //     $(this).data('iscroll', 1);
         // }
-        // document.querySelector('.mask') && document.querySelector('.mask').addEventListener('touchmove', function (e) {
-        //     e.preventDefault();
-        // }, false);
-        // document.querySelector('.diaglog-modal') && document.querySelector('.diaglog-modal').addEventListener('touchmove', function (e) {
-        //     e.preventDefault();
-        // }, false);
+        new IScroll('#isScroll', {
+            click: iScrollClick(),
+            mouseWheel: true
+        });
+        document.querySelector('.mask') && document.querySelector('.mask').addEventListener('touchmove', function (e) {
+            e.preventDefault();
+        }, false);
+        document.querySelector('.js-table') && document.querySelector('.js-table').addEventListener('touchmove', function (e) {
+            e.preventDefault();
+        }, false);
     },
     clickEvent: function () {
         var that = this;
@@ -184,9 +188,10 @@ var plugins = {
                 return;
             }
             $('.js-no-data').hide();
-            var html = '<tr><td><input class="form-control" type="text"  placeholder="名称"></td><td><input class="form-control" type="" '+
-            'placeholder="数字"></td><td><button class="btn btn-sm btn-success js-save">确定</button>&nbsp;&nbsp;<button class="btn btn-sm btn-danger js-remove">删除</button></td></tr>';
+            var html = '<tr><td><input class="form-control" type="text"></td><td><input class="form-control" type="text" '+
+            '></td><td><button class="btn btn-sm btn-success js-save">确定</button>&nbsp;&nbsp;<button class="btn btn-sm btn-danger js-remove">删除</button></td></tr>';
             $(".js-table tbody").append(html);
+            that.initScroll();
         });
 
         $(".js-table").on('click','.js-save',function(){
@@ -215,6 +220,7 @@ var plugins = {
 
         $(".js-table").on('click','.js-remove',function(){
             $(this).closest('tr').remove();
+            that.refreshDom();
             if($(this).closest('tbody').find('tr').length == 0){
                 $('.js-no-data').show();
             }
@@ -263,6 +269,7 @@ var plugins = {
             $('.js-table').toggleClass('hide');
             if(!$('.js-table').hasClass('hide')){
                 $('.mask').show();
+                that.initScroll();
             }else{
                 $('.mask').hide();
             }
