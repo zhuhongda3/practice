@@ -222,9 +222,6 @@ var plugins = {
         $(".js-table").on('click','.js-remove',function(){
             $(this).closest('tr').remove();
             that.refreshDom();
-            if($(this).closest('tbody').find('tr').length == 0){
-                $('.js-no-data').show();
-            }
         });
 
 
