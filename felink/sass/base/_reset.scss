@@ -77,3 +77,9 @@ button,input{-webkit-appearance:none;}                                     /*去
 input:-webkit-autofill {-webkit-box-shadow: 0 0 0px 1000px white inset;} /*去掉input自动填充内容的黄色背景*/
 html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 { -webkit-text-size-adjust: none; }  /*禁止文字自动调整大小*/
 a,img{-webkit-touch-callout:none;}                                         /*禁用长按页面时的弹出菜单(iOS下有效) ,img和a标签都要加*/ 
+
+body{
+    font-size: 14px;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    background: #f4f4f4 url(./../img/background.png);
+}
