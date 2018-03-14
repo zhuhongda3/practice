@@ -30,7 +30,7 @@
       var keyBoardArea = document.createElement('div');
       keyBoardArea.style.position = _option.position;
       keyBoardArea.style.left = _option.left;
-      keyBoardArea.style.bottom = _option.bottom;
+      keyBoardArea.style.bottom = '-100%';
       keyBoardArea.style.width = _option.width;
       keyBoardArea.style.color = _option.color;
       keyBoardArea.style.fontSize = _option.fontSize;
@@ -43,7 +43,7 @@
       keyMask.style.bottom = _option.bottom;
       keyMask.style.width = _option.width;
       keyMask.style.height = _option.height;
-      keyMask.style.zIndex = _option.bottom - 1;
+      keyMask.style.zIndex = - 1;
 
       for (var i = 0, len = _keyNumber.length; i < len; i += 1) {
         var span_tag = document.createElement('span');
@@ -83,25 +83,38 @@
           this.style.backgroundColor = '#fff';
         };
       }
-
+      keyInput.setAttribute('data-focus',true);
       document.body.appendChild(keyMask);
       document.body.appendChild(keyBoardArea);
-
-      keyInput.setAttribute('data-focus',true);
-
+      
+      // 上升
+      var target = keyBoardArea.clientHeight,step = target / 15,current=-target;
+      var timeinter1 = setInterval(function () {
+        current += step;
+        if (current > 0) {
+          keyBoardArea.style.bottom = 0;
+          clearInterval(timeinter1);
+          return;
+        }
+        keyBoardArea.style.bottom = current + "px";
+      }, 15);
+      
+      //下拉
       keyMask.onclick = function () {
-        var _this = this, current = 0, target = keyBoardArea.clientHeight, step = target / 15;
+        var _this = this, current = 0;
         document.body.removeChild(keyMask);
         var timeinter = setInterval(function () {
           current -= step;
-          if (current < -target) {
+          if (current <= -target) {
             document.body.removeChild(keyBoardArea);
             keyInput.removeAttribute('data-focus');
             clearInterval(timeinter);
+            return;
           }
           keyBoardArea.style.bottom = current + "px";
         }, 15);
       }
+
       return this;
     }
   }
