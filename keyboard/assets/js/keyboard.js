@@ -14,14 +14,15 @@
   var _keyNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, '', 0, '删除']
 
   var plugin = {
-    init: function (keyInput, opt) {
-      if (!opt) {
+    init: function (keyInput,opt) {
+      if(!opt){
         _option = option;
-      } else {
+      }else{
         _option = opt;
       }
 
       document.activeElement.blur();
+
 
       var keyBoardArea = document.createElement('div');
       keyBoardArea.style.position = _option.position;
@@ -61,28 +62,27 @@
         var span_txt = document.createTextNode(_keyNumber[i]);
         span_tag.appendChild(span_txt);
         keyBoardArea.appendChild(span_tag);
+        //touchstart
+        span_tag.ontouchstart = function () {
+          var val = keyInput.value;
+          if (this.innerText == '') return false;
+          if (this.innerText == '删除') {
+            val = val.slice(0, val.length - 1);
+          } else {
+            this.style.backgroundColor = 'rgba(0,0,0,.3)';
+            val += this.innerText;
+          }
+          keyInput.value = val;
+        };
+         //tauchend
+         span_tag.ontouchend = function () {
+          if (this.innerText == ''||this.innerText == '删除') return;
+          this.style.backgroundColor = '#fff';
+        };
       }
+
       document.body.appendChild(keyMask);
       document.body.appendChild(keyBoardArea);
-
-      //touchstart
-      span_tag.ontouchstart = function () {
-        var val = keyInput.value;
-        if (this.innerText == '') return false;
-        if (this.innerText == '删除') {
-          val = val.slice(0, val.length - 1);
-        } else {
-          this.style.backgroundColor = 'rgba(0,0,0,.3)';
-          val += this.innerText;
-        }
-        keyInput.value = val;
-      };
-
-      //tauchend
-      span_tag.ontouchend = function () {
-        if (this.innerText == '' || this.innerText == '删除') return;
-        this.style.backgroundColor = '#fff';
-      };
 
       keyMask.onclick = function () {
         var _this = this, current = 0, target = keyBoardArea.clientHeight, step = target / 15;
