@@ -15,14 +15,17 @@
 
   var plugin = {
     init: function (keyInput,opt) {
+      document.activeElement.blur();
+      
+      if(keyInput.getAttribute('data-focus')){
+        return;
+      }
+      if(!keyInput) return;
       if(!opt){
         _option = option;
       }else{
         _option = opt;
       }
-
-      document.activeElement.blur();
-
 
       var keyBoardArea = document.createElement('div');
       keyBoardArea.style.position = _option.position;
@@ -84,13 +87,16 @@
       document.body.appendChild(keyMask);
       document.body.appendChild(keyBoardArea);
 
+      keyInput.setAttribute('data-focus',true);
+
       keyMask.onclick = function () {
         var _this = this, current = 0, target = keyBoardArea.clientHeight, step = target / 15;
+        document.body.removeChild(keyMask);
         var timeinter = setInterval(function () {
           current -= step;
           if (current < -target) {
-            _this.parentNode.removeChild(keyBoardArea);
-            _this.parentNode.removeChild(_this);
+            document.body.removeChild(keyBoardArea);
+            keyInput.removeAttribute('data-focus');
             clearInterval(timeinter);
           }
           keyBoardArea.style.bottom = current + "px";
@@ -99,7 +105,6 @@
       return this;
     }
   }
-
   this.keyboard = plugin;
 
 })();
