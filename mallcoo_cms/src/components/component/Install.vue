@@ -1,7 +1,7 @@
 <template>
   <div>
     <template-box title="卡片">
-      <template slot="content">{{code}}</template>
+      <template slot="content"></template>
       <template slot="code">{{code}}</template> 
     </template-box>
   </div>
@@ -14,11 +14,8 @@ import {a} from '@/code/test';
 export default {
   data(){
     return {
-      code: '',
+      code: a,
     };
-  },
-  moutedBefore(){
-    this.code = a;
   },
   components:{
     TemplateBox,
