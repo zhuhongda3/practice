@@ -42,7 +42,8 @@ export default {
   data(){
     return{
       itemList: [],
-      openedsArray: ['1','2','3'],
+      // openedsArray: ['1','2','3'],
+      openedsArray: ['1'],
     }
   },
   mounted(){

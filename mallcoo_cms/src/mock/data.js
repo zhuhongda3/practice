@@ -17,12 +17,12 @@ export const sideBarData = [
       {
         menuItemGroupTitle: '基础组件',
         menuItemList:[
-          {menuItem:'Layout 布局',url:''},
-          {menuItem:'Container 布局容器',url:''},
-          {menuItem:'Color 色彩',url:''},
-          {menuItem:'Typography 字体',url:''},
-          {menuItem:'Icon 图标',url:''},
-          {menuItem:'Button 按钮',url:''},
+          {menuItem:'Layout 布局',url:'/component/layout'},
+          {menuItem:'Container 布局容器',url:'/component/container'},
+          {menuItem:'Color 色彩',url:'/component/color'},
+          {menuItem:'Typography 字体',url:'/component/typography'},
+          {menuItem:'Icon 图标',url:'/component/icon'},
+          {menuItem:'Button 按钮',url:'/component/button'},
         ]
       },
       {
@@ -34,8 +34,8 @@ export const sideBarData = [
           {menuItem:'InputNumber 计数器',url:''},
           {menuItem:'Select 选择器',url:''},
           {menuItem:'Cascader 级联选择器',url:''},
-          {menuItem:'Switch开关',url:''},
-          {menuItem:'Slider滑块',url:''},
+          {menuItem:'Switch 开关',url:''},
+          {menuItem:'Slider 滑块',url:''},
           {menuItem:'TimePicker 时间选择器',url:''},
           {menuItem:'DatePicker 日期选择器',url:''},
           {menuItem:'DateTimePicker 日期时间选择器',url:''},
@@ -43,7 +43,7 @@ export const sideBarData = [
           {menuItem:'Rate 评分',url:''},
           {menuItem:'ColorPicker 颜色选择器',url:''},
           {menuItem:'Transfer 穿梭框',url:''},
-          {menuItem:'Form表单',url:''},
+          {menuItem:'Form 表单',url:''},
         ]
       },
       {
@@ -106,7 +106,7 @@ export const sideBarData = [
         menuItemList:[
           {menuItem:'风格一',url:''},
           {menuItem:'风格一',url:''},
-          {menuItem:'',url:''},
+          {menuItem:'风格一',url:''},
         ]
       }
     ]
