@@ -25,11 +25,9 @@
             </el-submenu>
           </el-menu>
         </el-aside>
-
         <el-main>
           <router-view/>
         </el-main>
-
       </el-container>
     </el-container>
   </div>
@@ -70,6 +68,7 @@ export default {
     color: #fff;
     line-height: 60px;
   }
+  z-index: 20;
 }
 .el-aside{
   position: fixed;

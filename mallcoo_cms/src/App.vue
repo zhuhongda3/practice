@@ -12,5 +12,16 @@ export default {
 </script>
 
 <style lang="scss">
+.clearfix{
+  &:before,
+  &:after{
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+body{
+  background-color: #f4f4f4;
+}
 @import './assets/normalize.scss';
 </style>

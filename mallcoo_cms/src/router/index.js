@@ -2,16 +2,17 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/components/component/Index'
 //说明列表
-import Install from '@/components/component/Install'
+import Element from '@/components/component/Element'
+import VueCodeRule from '@/components/component/VueCodeRule'
 // basic 基础组件
 import Layout from '@/components/component/Layout'
-import Container from '@/components/component/Container'
-import Color from '@/components/component/Color'
-import Typography from '@/components/component/Typography'
+// import Container from '@/components/component/Container'
+// import Color from '@/components/component/Color'
+// import Typography from '@/components/component/Typography'
 import Icon from '@/components/component/Icon'
 import Button from '@/components/component/Button'
 // 表单组件
-// import Radio from '@/components/component/Radio'
+import Radio from '@/components/component/Radio'
 // import Checkbox from '@/components/component/Checkbox'
 // import Input from '@/components/component/Input'
 // import InputNumber from '@/components/component/InputNumber'
@@ -60,30 +61,34 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/component/install',
+      redirect: '/component/element',
       name: 'Index',
       component: Index,
       children: [
         {
-          path: '/component/install',
-          component: Install
+          path: '/component/element',
+          component: Element
+        },
+        {
+          path: '/component/vuecoderule',
+          component: VueCodeRule
         },
         {
           path: '/component/layout',
           component: Layout
         },
-        {
-          path: '/component/container',
-          component: Container
-        },
-        {
-          path: '/component/color',
-          component: Color
-        },
-        {
-          path: '/component/typography',
-          component: Typography
-        },
+        // {
+        //   path: '/component/container',
+        //   component: Container
+        // },
+        // {
+        //   path: '/component/color',
+        //   component: Color
+        // },
+        // {
+        //   path: '/component/typography',
+        //   component: Typography
+        // },
         {
           path: '/component/icon',
           component: Icon
@@ -91,6 +96,10 @@ export default new Router({
         {
           path: '/component/button',
           component: Button
+        },
+        {
+          path: '/component/radio',
+          component: Radio
         },
       ]
     }

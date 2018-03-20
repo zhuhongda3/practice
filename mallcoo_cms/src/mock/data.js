@@ -5,8 +5,8 @@ export const sideBarData = [
       {
         menuItemGroupTitle: '说明列表',
         menuItemList:[
-          {menuItem:'说明页1',url:'/component/install'},
-          {menuItem:'说明页2',url:''},
+          {menuItem:'Element UI 官网',url:'/component/element'},
+          {menuItem:'Vue 风格指南',url:'/component/vuecoderule'},
         ]
       },
     ]
@@ -18,9 +18,9 @@ export const sideBarData = [
         menuItemGroupTitle: '基础组件',
         menuItemList:[
           {menuItem:'Layout 布局',url:'/component/layout'},
-          {menuItem:'Container 布局容器',url:'/component/container'},
-          {menuItem:'Color 色彩',url:'/component/color'},
-          {menuItem:'Typography 字体',url:'/component/typography'},
+          // {menuItem:'Container 布局容器',url:'/component/container'},
+          // {menuItem:'Color 色彩',url:'/component/color'},
+          // {menuItem:'Typography 字体',url:'/component/typography'},
           {menuItem:'Icon 图标',url:'/component/icon'},
           {menuItem:'Button 按钮',url:'/component/button'},
         ]
@@ -28,7 +28,7 @@ export const sideBarData = [
       {
         menuItemGroupTitle: '表单组件',
         menuItemList:[
-          {menuItem:'Radio 单选框',url:''},
+          {menuItem:'Radio 单选框',url:'/component/radio'},
           {menuItem:'Checkbox 多选框',url:''},
           {menuItem:'Input 输入框',url:''},
           {menuItem:'InputNumber 计数器',url:''},
@@ -91,7 +91,7 @@ export const sideBarData = [
     ]
   },
   {
-    submenu: '常用模板',
+    submenu: '实例模板',
     menuItemGroup:[
       {
         menuItemGroupTitle: '输入框',
