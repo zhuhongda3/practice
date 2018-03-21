@@ -40,7 +40,6 @@ export default {
   data(){
     return{
       itemList: [],
-      // openedsArray: ['1','2','3'],
       openedsArray: ['1'],
     }
   },
@@ -64,12 +63,12 @@ export default {
   border-bottom: 1px solid #666;
   background-color: #545c64;
   span{
-    float: right;
     color: #fff;
     line-height: 60px;
   }
   z-index: 20;
 }
+
 .el-aside{
   position: fixed;
   top: 60px;
@@ -77,10 +76,12 @@ export default {
   height: calc(100% - 60px);
   background-color: #545c64;
 }
+
 .el-main{
   margin-top: 60px;
   margin-left: 300px;
 }
+
 .el-menu{
   border-right: 0;
 }

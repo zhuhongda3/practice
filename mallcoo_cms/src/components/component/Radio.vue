@@ -69,7 +69,7 @@
 
 <script>
 import CardBox from '@/components/share/CardBox';
-import {code1,code2,code3,code4,code5,code6} from '@/code/radio';
+import {code1,code2,code3,code4} from '@/code/radio';
 
 export default {
   data(){

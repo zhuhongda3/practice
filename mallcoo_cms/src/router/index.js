@@ -1,18 +1,18 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from '@/components/component/Index'
+import Index from '@/components/Index'
+
 //说明列表
-import Element from '@/components/component/Element'
-import VueCodeRule from '@/components/component/VueCodeRule'
+// import Element from '@/components/component/Element'
+// import VueCodeRule from '@/components/component/VueCodeRule'
+
 // basic 基础组件
-import Layout from '@/components/component/Layout'
-// import Container from '@/components/component/Container'
-// import Color from '@/components/component/Color'
-// import Typography from '@/components/component/Typography'
-import Icon from '@/components/component/Icon'
-import Button from '@/components/component/Button'
+// import Layout from '@/components/component/Layout'
+// import Icon from '@/components/component/Icon'
+// import Button from '@/components/component/Button'
+
 // 表单组件
-import Radio from '@/components/component/Radio'
+// import Radio from '@/components/component/Radio'
 // import Checkbox from '@/components/component/Checkbox'
 // import Input from '@/components/component/Input'
 // import InputNumber from '@/components/component/InputNumber'
@@ -28,6 +28,7 @@ import Radio from '@/components/component/Radio'
 // import ColorPicker from '@/components/component/ColorPicker'
 // import Transfer from '@/components/component/Transfer'
 // import Form from '@/components/component/Form'
+
 // table 表格组件
 // import Table from '@/components/component/Table'
 // import Tag from '@/components/component/Tag'
@@ -35,18 +36,21 @@ import Radio from '@/components/component/Radio'
 // import Tree from '@/components/component/Tree'
 // import Pagination from '@/components/component/Pagination'
 // import Badge from '@/components/component/Badge'
+
 // 提示组件
 // import Alert from '@/components/component/Alert'
 // import Loading from '@/components/component/Loading'
 // import Message from '@/components/component/Message'
 // import MessageBox from '@/components/component/MessageBox'
 // import Notification from '@/components/component/Notification'
+
 // 导航组件
 // import NavMenu from '@/components/component/NavMenu'
 // import Tabs from '@/components/component/Tabs'
 // import Breadcrumb from '@/components/component/Breadcrumb'
 // import Dropdown from '@/components/component/Dropdown'
 // import Steps from '@/components/component/Steps'
+
 // 其它组件
 // import Dialog from '@/components/component/Dialog'
 // import Tooltip from '@/components/component/Tooltip'
@@ -55,53 +59,62 @@ import Radio from '@/components/component/Radio'
 // import Carousel from '@/components/component/Carousel'
 // import Collapse from '@/components/component/Collapse'
 
-Vue.use(Router)
+
+const routerOptions = [
+  {
+    path: '/component/element',
+    component: 'Element'
+  },
+  {
+    path: '/component/vuecoderule',
+    component: 'VueCodeRule'
+  },
+  {
+    path: '/component/layout',
+    component: 'Layout'
+  },
+  {
+    path: '/component/icon',
+    component: 'Icon'
+  },
+  {
+    path: '/component/button',
+    component: 'Button'
+  },
+  {
+    path: '/component/radio',
+    component: 'Radio'
+  },
+  {
+    path: '/component/checkbox',
+    component: 'Checkbox'
+  },
+  {
+    path: '/component/input',
+    component: 'Input'
+  },
+];
+
+const children = routerOptions.map(route => {
+  return {
+  ...route,
+  component: () => import(`@/components/component/${route.component}.vue`)
+  }
+});
+
+Vue.use(Router);
 
 export default new Router({
   routes: [
     {
       path: '/',
       redirect: '/component/element',
-      name: 'Index',
       component: Index,
-      children: [
-        {
-          path: '/component/element',
-          component: Element
-        },
-        {
-          path: '/component/vuecoderule',
-          component: VueCodeRule
-        },
-        {
-          path: '/component/layout',
-          component: Layout
-        },
-        // {
-        //   path: '/component/container',
-        //   component: Container
-        // },
-        // {
-        //   path: '/component/color',
-        //   component: Color
-        // },
-        // {
-        //   path: '/component/typography',
-        //   component: Typography
-        // },
-        {
-          path: '/component/icon',
-          component: Icon
-        },
-        {
-          path: '/component/button',
-          component: Button
-        },
-        {
-          path: '/component/radio',
-          component: Radio
-        },
-      ]
+      children: children
     }
-  ]
+  ],
+  mode: 'history',
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
 })

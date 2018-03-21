@@ -1,10 +1,12 @@
 export const code1 =
-`<!--change事件如果有需要请添加，没有需要请移除，此处仅供演示-->
-<el-radio v-model="radio1" label="1" @change="getRadio1Value">备选项</el-radio>
-<el-radio v-model="radio1" label="2" @change="getRadio1Value">备选项</el-radio>
+`<template>
+  <!--change事件如果有需要请添加，没有需要请移除，此处仅供演示-->
+  <el-radio v-model="radio1" label="1" @change="getRadio1Value">备选项</el-radio>
+  <el-radio v-model="radio1" label="2" @change="getRadio1Value">备选项</el-radio>
 
-<!--禁用：disabled-->
-<el-radio disabled v-model="radio1" label="3">备选项（禁用）</el-radio>
+  <!--禁用：disabled-->
+  <el-radio disabled v-model="radio1" label="3">备选项（禁用）</el-radio>
+</template>
 
 <script>
 export default {
@@ -22,12 +24,14 @@ export default {
 </script>
 `;
 export const code2 =
-`<!--change事件如果有需要请添加，没有需要请移除，此处仅供演示-->
-<el-radio-group v-model="radio2" @change="getRadioValue">
-  <el-radio :label="1">备选项</el-radio>
-  <el-radio :label="2">备选项</el-radio>
-  <el-radio :label="3">备选项</el-radio>
-</el-radio-group>
+`<template>
+  <!--change事件如果有需要请添加，没有需要请移除，此处仅供演示-->
+  <el-radio-group v-model="radio2" @change="getRadioValue">
+    <el-radio :label="1">备选项</el-radio>
+    <el-radio :label="2">备选项</el-radio>
+    <el-radio :label="3">备选项</el-radio>
+  </el-radio-group>
+</template>
 
 <script>
 export default {
@@ -45,22 +49,24 @@ export default {
 </script>
 `;
 export const code3 =
-`<el-radio-group v-model="radio3">
-  <el-radio-button label="1">备选项</el-radio-button>
-  <el-radio-button label="2">备选项</el-radio-button>
-</el-radio-group>
+`<template>
+  <el-radio-group v-model="radio3">
+    <el-radio-button label="1">备选项</el-radio-button>
+    <el-radio-button label="2">备选项</el-radio-button>
+  </el-radio-group>
 
-<!--全部禁用，也可作用于el-radio-button单个禁用-->
-<el-radio-group v-model="radio4" disabled>
-  <el-radio-button label="1">备选项</el-radio-button>
-  <el-radio-button label="2">备选项</el-radio-button>
-</el-radio-group>
+  <!--全部禁用，也可作用于el-radio-button单个禁用-->
+  <el-radio-group v-model="radio4" disabled>
+    <el-radio-button label="1">备选项</el-radio-button>
+    <el-radio-button label="2">备选项</el-radio-button>
+  </el-radio-group>
 
-<!--自定义按钮大小(也可以给el-radio-button单独设置size,可选值：medium,small,mini)，字体颜色，背景色-->
-<el-radio-group v-model="radio5" size="small" text-color="#fff" fill="#f00">
-  <el-radio-button label="1">备选项</el-radio-button>
-  <el-radio-button label="2">备选项</el-radio-button>
-</el-radio-group>
+  <!--自定义按钮大小(也可以给el-radio-button单独设置size,可选值：medium,small,mini)，字体颜色，背景色-->
+  <el-radio-group v-model="radio5" size="small" text-color="#fff" fill="#f00">
+    <el-radio-button label="1">备选项</el-radio-button>
+    <el-radio-button label="2">备选项</el-radio-button>
+  </el-radio-group>
+</template>
 
 <script>
 export default {
@@ -75,23 +81,25 @@ export default {
 </script>
 `;
 export const code4 =
-`<el-radio v-model="radio6" label="1" border>备选项</el-radio>
-<el-radio v-model="radio6" label="2" border>备选项</el-radio>
+`<template>
+  <el-radio v-model="radio6" label="1" border>备选项</el-radio>
+  <el-radio v-model="radio6" label="2" border>备选项</el-radio>
 
-<el-radio-group v-model="radio7" size="medium">
-  <el-radio label="1" border>备选项</el-radio>
-  <el-radio label="2" border>备选项</el-radio>
-</el-radio-group>
+  <el-radio-group v-model="radio7" size="medium">
+    <el-radio label="1" border>备选项</el-radio>
+    <el-radio label="2" border>备选项</el-radio>
+  </el-radio-group>
 
-<el-radio-group v-model="radio8" disabled>
-  <el-radio label="1" border>备选项</el-radio>
-  <el-radio label="2" border>备选项</el-radio>
-</el-radio-group>
+  <el-radio-group v-model="radio8" disabled>
+    <el-radio label="1" border>备选项</el-radio>
+    <el-radio label="2" border>备选项</el-radio>
+  </el-radio-group>
 
-<el-radio-group v-model="radio9">
-  <el-radio label="1" border>备选项</el-radio>
-  <el-radio label="2" border size="small" disabled>备选项</el-radio>
-</el-radio-group>
+  <el-radio-group v-model="radio9">
+    <el-radio label="1" border>备选项</el-radio>
+    <el-radio label="2" border size="small" disabled>备选项</el-radio>
+  </el-radio-group>
+</template>
 
 <script>
 export default {
@@ -105,10 +113,4 @@ export default {
   }
 }
 </script>
-`;
-export const code5 =
-`
-`;
-export const code6 =
-`
 `;
