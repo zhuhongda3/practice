@@ -4,12 +4,10 @@
       <template slot="content">
         <table>
           <tr>
-            <th>序号</th>
             <th>图标</th>
             <th>名称</th>
           </tr>
           <tr v-for="(item,index) in itemList" :key="index">
-            <td>{{index+1}}</td>
             <td><i :class="item"></i></td>
             <td>{{item}}</td>
           </tr>
@@ -46,8 +44,11 @@ table{
   }
   tr{
     td{
-      &:nth-child(1){
-        color: #ddd;
+      &:nth-child(2){
+        text-align: left;
+        padding-left: 20px;
+        color: #666;
+        font-size: 13px;
       }
     }
   }

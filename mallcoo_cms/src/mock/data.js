@@ -5,8 +5,7 @@ export const sideBarData = [
       {
         menuItemGroupTitle: '说明列表',
         menuItemList:[
-          {menuItem:'Element UI 官网',url:'/component/element'},
-          {menuItem:'Vue 风格指南',url:'/component/vuecoderule'},
+          {menuItem:'参考资料',url:'/component/references'},
         ]
       },
     ]
@@ -31,11 +30,11 @@ export const sideBarData = [
           {menuItem:'Radio 单选框',url:'/component/radio'},
           {menuItem:'Checkbox 多选框',url:'/component/checkbox'},
           {menuItem:'Input 输入框',url:'/component/input'},
-          {menuItem:'InputNumber 计数器',url:'/component/inputnumber'},
+          // {menuItem:'InputNumber 计数器',url:'/component/inputnumber'},
           {menuItem:'Select 选择器',url:'/component/select'},
-          {menuItem:'Cascader 级联选择器',url:'/component/cascader'},
+          // {menuItem:'Cascader 级联选择器',url:'/component/cascader'},
           {menuItem:'Switch 开关',url:'/component/switch'},
-          {menuItem:'Slider 滑块',url:'/component/slider'},
+          // {menuItem:'Slider 滑块',url:'/component/slider'},
           {menuItem:'TimePicker 时间选择器',url:'/component/timepicker'},
           {menuItem:'DatePicker 日期选择器',url:'/component/datepicker'},
           {menuItem:'DateTimePicker 日期时间选择器',url:'/component/datetimepicker'},

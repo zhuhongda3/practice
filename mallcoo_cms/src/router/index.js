@@ -62,12 +62,8 @@ import Index from '@/components/Index'
 
 const routerOptions = [
   {
-    path: '/component/element',
-    component: 'Element'
-  },
-  {
-    path: '/component/vuecoderule',
-    component: 'VueCodeRule'
+    path: '/component/references',
+    component: 'References'
   },
   {
     path: '/component/layout',
@@ -93,12 +89,28 @@ const routerOptions = [
     path: '/component/input',
     component: 'Input'
   },
+  {
+    path: '/component/select',
+    component: 'Select'
+  },
+  {
+    path: '/component/switch',
+    component: 'Switch'
+  },
+  {
+    path: '/component/timepicker',
+    component: 'TimePicker'
+  },
+  {
+    path: '/component/datepicker',
+    component: 'DatePicker'
+  },
 ];
 
 const children = routerOptions.map(route => {
   return {
   ...route,
-  component: () => import(`@/components/component/${route.component}.vue`)
+  component: () => import(`@/views/element_component/${route.component}.vue`)
   }
 });
 
@@ -108,13 +120,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/component/element',
+      redirect: '/component/references',
       component: Index,
       children: children
     }
   ],
   // mode: 'history',
-  scrollBehavior (to, from, savedPosition) {
+  scrollBehavior (to, from, savedPosition) { //控制每次切换页面时滚动条返回顶部
     return { x: 0, y: 0 }
   }
 })
