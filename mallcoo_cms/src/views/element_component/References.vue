@@ -10,11 +10,11 @@
       <tbody>
         <tr>
           <td>element 中文文档</td>
-          <td><a href="//element.eleme.io/#/zh-CN" _black="target">element.eleme.io/#/zh-CN</a></td>
+          <td><a href="//element.eleme.io/#/zh-CN" target="_black">element.eleme.io/#/zh-CN</a></td>
         </tr>
         <tr>
-          <td>vue 风格指南</td>
-          <td><a href="//cn.vuejs.org/v2/style-guide/" _black="target">cn.vuejs.org/v2/style-guide/</a></td>
+          <td>vue 中文文档</td>
+          <td><a href="//cn.vuejs.org/" target="_black">cn.vuejs.org</a></td>
         </tr>
       </tbody>
     </table>

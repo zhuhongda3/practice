@@ -90,6 +90,10 @@ const routerOptions = [
     component: 'Input'
   },
   {
+    path: '/component/inputnumber',
+    component: 'InputNumber'
+  },
+  {
     path: '/component/select',
     component: 'Select'
   },
@@ -104,6 +108,30 @@ const routerOptions = [
   {
     path: '/component/datepicker',
     component: 'DatePicker'
+  },
+  {
+    path: '/component/datetimepicker',
+    component: 'DateTimePicker'
+  },
+  {
+    path: '/component/colorpicker',
+    component: 'ColorPicker'
+  },
+  {
+    path: '/component/dropdown',
+    component: 'Dropdown'
+  },
+  {
+    path: '/component/tooltip',
+    component: 'ToolTip'
+  },
+  {
+    path: '/component/steps',
+    component: 'Steps'
+  },
+  {
+    path: '/component/upload',
+    component: 'Upload'
   },
 ];
 

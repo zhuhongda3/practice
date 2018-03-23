@@ -30,7 +30,7 @@ export const sideBarData = [
           {menuItem:'Radio 单选框',url:'/component/radio'},
           {menuItem:'Checkbox 多选框',url:'/component/checkbox'},
           {menuItem:'Input 输入框',url:'/component/input'},
-          // {menuItem:'InputNumber 计数器',url:'/component/inputnumber'},
+          {menuItem:'InputNumber 计数器',url:'/component/inputnumber'},
           {menuItem:'Select 选择器',url:'/component/select'},
           // {menuItem:'Cascader 级联选择器',url:'/component/cascader'},
           {menuItem:'Switch 开关',url:'/component/switch'},
@@ -38,10 +38,10 @@ export const sideBarData = [
           {menuItem:'TimePicker 时间选择器',url:'/component/timepicker'},
           {menuItem:'DatePicker 日期选择器',url:'/component/datepicker'},
           {menuItem:'DateTimePicker 日期时间选择器',url:'/component/datetimepicker'},
-          {menuItem:'Upload 上传',url:'/component/upload'},
           // {menuItem:'Rate 评分',url:''},
           {menuItem:'ColorPicker 颜色选择器',url:'/component/colorpicker'},
           // {menuItem:'Transfer 穿梭框',url:''},
+          {menuItem:'Upload 上传',url:'/component/upload'},
           {menuItem:'Form 表单',url:'/component/form'},
         ]
       },
@@ -63,15 +63,15 @@ export const sideBarData = [
           {menuItem:'Loading 加载',url:'/component/loading'},
           {menuItem:'Message 消息提示',url:'/component/message'},
           {menuItem:'MessageBox 弹窗',url:'/component/messagebox'},
-          {menuItem:'Notification 通知',url:'/component/notification'},
+          // {menuItem:'Notification 通知',url:'/component/notification'},
         ]
       },
       {
         menuItemGroupTitle: '导航组件',
         menuItemList:[
-          {menuItem:'NavMenu 导航菜单',url:'/component/navmenu'},
+          // {menuItem:'NavMenu 导航菜单',url:'/component/navmenu'},
           {menuItem:'Tabs 标签页',url:'/component/tabs'},
-          {menuItem:'Breadcrumb 面包屑',url:'/component/breadcrumb'},
+          // {menuItem:'Breadcrumb 面包屑',url:'/component/breadcrumb'},
           {menuItem:'Dropdown 下拉菜单',url:'/component/dropdown'},
           {menuItem:'Steps 步骤条',url:'/component/steps'},
         ]
@@ -81,10 +81,10 @@ export const sideBarData = [
         menuItemList:[
           {menuItem:'Dialog 对话框',url:'/component/dialog'},
           {menuItem:'Tooltip 文字提示',url:'/component/tooltip'},
-          {menuItem:'Popover 弹出框',url:'/component/popover'},
-          {menuItem:'Card 卡片',url:'/component/card'},
-          {menuItem:'Carousel 走马灯',url:'/component/carousel'},
-          {menuItem:'Collapse 折叠面板',url:'/component/collapse'},
+          // {menuItem:'Popover 弹出框',url:'/component/popover'},
+          // {menuItem:'Card 卡片',url:'/component/card'},
+          // {menuItem:'Carousel 走马灯',url:'/component/carousel'},
+          // {menuItem:'Collapse 折叠面板',url:'/component/collapse'},
         ]
       },
     ]
