@@ -133,6 +133,14 @@ const routerOptions = [
     path: '/component/upload',
     component: 'Upload'
   },
+  {
+    path: '/component/tabs',
+    component: 'Tabs'
+  },
+  {
+    path: '/component/dialog',
+    component: 'Dialog'
+  },
 ];
 
 const children = routerOptions.map(route => {

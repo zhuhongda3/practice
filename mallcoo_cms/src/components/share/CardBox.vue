@@ -4,7 +4,7 @@
     <el-card>
       <div slot="header" class="clearfix">
         <div class="card-title" style="float: left;">{{title}}</div>
-        <el-button style="float: right;" @click="toggleShow" size="small">{{isShow?'隐藏代码':'显示代码'}}<i v-if="isShow" class="el-icon-caret-top el-icon--right"></i><i v-else class="el-icon-caret-bottom el-icon--right"></i></el-button>
+        <el-button style="float: right;" @click="isShow = !isShow" size="small">{{isShow?'隐藏代码':'显示代码'}}<i v-if="isShow" class="el-icon-caret-top el-icon--right"></i><i v-else class="el-icon-caret-bottom el-icon--right"></i></el-button>
       </div>
       <!-- 内容插槽 -->
       <div>
@@ -35,9 +35,7 @@ export default {
     };
   },
   methods: {
-    toggleShow() {
-      this.isShow = !this.isShow;
-    }
+    
   }
 };
 </script>
