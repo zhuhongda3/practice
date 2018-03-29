@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="http://res.mallcoo.net/mobile/css/1.0.0/reset.css">
-  <link rel="stylesheet" href="http://res.mallcoo.net/mobile/css/1.0.0/smcfont.css">
+  <link rel="stylesheet" href="http://res-t.mallcoo.net/mobile/css/1.0.0/reset.css">
+  <link rel="stylesheet" href="http://res-t.mallcoo.net/mobile/css/1.0.0/smcfont.css">
   <link rel="stylesheet" href="assets/css/mirror.css">
   <title>Document</title>
 </head>
@@ -14,11 +14,12 @@
     <span>2017.12.12(上次)</span>
     <span>2017.12.22(本次)</span>
   </p>
+  
 
-  <div class="mirror-data-view dis_flex">
-    <div class="mirror-data-list mirror-list-full2 box_flex">
+  <div class="mirror-wrapper">
+    <div class="mirror-data-list mirror-data-full2 clearfixed">
       <div class="mirror-data-item">
-        <div class="mirror-svg-wrap">
+        <div class="mirror-circle-wrap">
           <svg viewBox="0 0 94 94" width="100%" height="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
             <circle fill="none" stroke="#fff" stroke-linecap="round" stroke-width="7" cx="47" cy="47" r="47" transform="rotate(90 47 47)" stroke-dasharray="0,296" stroke-opacity=".3" data-value="88"/>
             <circle fill="none" stroke="#fff" stroke-linecap="round" stroke-width="7" cx="47" cy="47" r="40" transform="rotate(90 47 47)" stroke-dasharray="0,252" data-value="90"/>
@@ -33,7 +34,7 @@
               <text>
                 <tspan x="67%" y="33%" font-size="10">本次</tspan><tspan x="67%" y="60%" font-size="24" font-family="BebasKai">90</tspan>
               </text>
-              <text x="50%" y="76%" fill-opacity=".5" font-size="10">kg/m2</text>
+              <text x="50%" y="76%" font-size="10">kg/m2</text>
             </g>
             <text x="50%" y="122%" fill="#fcfcfc" text-anchor="middle" font-size="12">蛋白质</text>
           </svg>
@@ -41,7 +42,7 @@
       </div>
 
       <div class="mirror-data-item">
-        <div class="mirror-svg-wrap">
+        <div class="mirror-circle-wrap">
           <svg viewBox="0 0 94 94" width="100%" height="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
             <circle fill="none" stroke="#fff" stroke-linecap="round" stroke-width="7" cx="47" cy="47" r="47" transform="rotate(90 47 47)" stroke-dasharray="0,296" stroke-opacity=".3" data-value="16"/>
             <circle fill="none" stroke="#fff" stroke-linecap="round" stroke-width="7" cx="47" cy="47" r="40" transform="rotate(90 47 47)" stroke-dasharray="0,252" data-value="18"/>
@@ -56,7 +57,7 @@
               <text>
                 <tspan x="67%" y="33%" font-size="10">本次</tspan><tspan x="67%" y="60%" font-size="24" font-family="BebasKai">18</tspan>
               </text>
-              <text x="50%" y="76%" fill-opacity=".5" font-size="10">岁</text>
+              <text x="50%" y="76%" font-size="10">岁</text>
             </g>
             <text x="50%" y="122%" fill="#fcfcfc" text-anchor="middle" font-size="12">身体年龄</text>
           </svg>
@@ -64,7 +65,7 @@
       </div>
 
       <div class="mirror-data-item">
-        <div class="mirror-svg-wrap">
+        <div class="mirror-circle-wrap">
           <svg viewBox="0 0 94 94" width="100%" height="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
             <circle fill="none" stroke="#fff" stroke-linecap="round" stroke-width="7" cx="47" cy="47" r="47" transform="rotate(90 47 47)" stroke-dasharray="0,296" stroke-opacity=".3" data-value="88"/>
             <circle fill="none" stroke="#fff" stroke-linecap="round" stroke-width="7" cx="47" cy="47" r="40" transform="rotate(90 47 47)" stroke-dasharray="0,252" data-value="90"/>
@@ -79,7 +80,7 @@
               <text>
                 <tspan x="67%" y="33%" font-size="10">本次</tspan><tspan x="67%" y="60%" font-size="24" font-family="BebasKai">90</tspan>
               </text>
-              <text x="50%" y="76%" fill-opacity=".5" font-size="10">%</text>
+              <text x="50%" y="76%" font-size="10">%</text>
             </g>
             <text x="50%" y="122%" fill="#fcfcfc" text-anchor="middle" font-size="12">体脂率</text>
           </svg>
@@ -87,7 +88,7 @@
       </div>
 
       <div class="mirror-data-item">
-        <div class="mirror-svg-wrap">
+        <div class="mirror-circle-wrap">
           <svg viewBox="0 0 94 94" width="100%" height="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
             <circle fill="none" stroke="#fff" stroke-linecap="round" stroke-width="7" cx="47" cy="47" r="47" transform="rotate(90 47 47)" stroke-dasharray="0,296" stroke-opacity=".3" data-value="16"/>
             <circle fill="none" stroke="#fff" stroke-linecap="round" stroke-width="7" cx="47" cy="47" r="40" transform="rotate(90 47 47)" stroke-dasharray="0,252" data-value="18"/>
@@ -102,13 +103,12 @@
               <text>
                 <tspan x="67%" y="33%" font-size="10">本次</tspan><tspan x="67%" y="60%" font-size="24" font-family="BebasKai">18</tspan>
               </text>
-              <text x="50%" y="76%" fill-opacity=".5" font-size="10">kcal</text>
+              <text x="50%" y="76%" font-size="10">kcal</text>
             </g>
             <text x="50%" y="122%" fill="#fcfcfc" text-anchor="middle" font-size="12">代谢率</text>
           </svg>
         </div>
       </div>
-        
     </div>
   </div>
 
