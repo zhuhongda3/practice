@@ -141,6 +141,18 @@ const routerOptions = [
     path: '/component/dialog',
     component: 'Dialog'
   },
+  {
+    path: '/component/alert',
+    component: 'Alert'
+  },
+  {
+    path: '/component/message',
+    component: 'Message'
+  },
+  {
+    path: '/component/messagebox',
+    component: 'MessageBox'
+  },
 ];
 
 const children = routerOptions.map(route => {

@@ -2,7 +2,7 @@
   <div>
     <el-container>
       <el-header>
-        <span>element-ui</span>
+        <span>element-ui 2.3.3</span>
       </el-header>
       <el-container>
         <el-aside>

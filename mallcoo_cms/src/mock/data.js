@@ -50,7 +50,7 @@ export const sideBarData = [
         menuItemList:[
           {menuItem:'Table 表格',url:'/component/table'},
           // {menuItem:'Tag 标签',url:''},
-          {menuItem:'Progress 进度条',url:'/component/progress'},
+          // {menuItem:'Progress 进度条',url:'/component/progress'},
           // {menuItem:'Tree 树形控件',url:''},
           {menuItem:'Pagination 分页',url:'/component/pagination'},
           // {menuItem:'Badge 标记',url:''},

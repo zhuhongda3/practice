@@ -1,7 +1,7 @@
 export const code1 =
 `<template>
   <el-upload
-    action="https://jsonplaceholder.typicode.com/posts/"  // element图片上传演示地址
+    action="https://jsonplaceholder.typicode.com/posts/"
     list-type="picture-card"
     :limit="3"
     :on-preview="handlePictureCardPreview"

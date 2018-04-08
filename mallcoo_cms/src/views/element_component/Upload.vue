@@ -1,6 +1,6 @@
 <template>
   <div>
-    <card-box title="图片墙(上传多张图片，可以限制上传数量,可预览)">
+    <card-box title="图片墙(上传多张图片，可以限制上传数量,可预览,action为上传服务器地址，此处为演示地址)">
       <template slot="content">
         <el-upload
           action="https://jsonplaceholder.typicode.com/posts/"
