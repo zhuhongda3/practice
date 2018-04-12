@@ -38,7 +38,7 @@ export const code2 =
 `<template>
   <el-upload
     class="avatar-uploader"
-    action="https://jsonplaceholder.typicode.com/posts/"  // element图片上传演示地址
+    action="https://jsonplaceholder.typicode.com/posts/"
     :on-remove="handleRemove" 
     :on-success="handleAvatarSuccess"
     :before-upload="beforeAvatarUpload">

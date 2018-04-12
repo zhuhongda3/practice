@@ -1,0 +1,29 @@
+{
+  "root": true,
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "sourceType": "module"
+  },
+  "env": {
+    "es6": true,    
+    "browser": true,
+    "node": true,
+    "jquery": true
+  },
+  "globals": {
+    "jQuery": true,
+    "$": true,
+    "__DEV__": true,
+    "__PROD__": true
+  },
+  "extends": ["eslint:recommended"],
+  "rules": {
+    "semi": "warn",
+    "no-console": "off",
+    "no-alert": "off",
+    "indent": ["error", 2]
+  },
+  "plugins": [
+    
+  ]
+}

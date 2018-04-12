@@ -153,6 +153,22 @@ const routerOptions = [
     path: '/component/messagebox',
     component: 'MessageBox'
   },
+  {
+    path: '/component/loading',
+    component: 'Loading'
+  },
+  {
+    path: '/component/form',
+    component: 'Form'
+  },
+  {
+    path: '/component/table',
+    component: 'Table'
+  },
+  {
+    path: '/component/pagination',
+    component: 'Pagination'
+  },
 ];
 
 const children = routerOptions.map(route => {

@@ -1,6 +1,6 @@
 <template>
 <el-row>
-  <el-col :span="20" :offset="2">
+  <el-col :span="24">
     <el-card>
       <div slot="header" class="clearfix">
         <div class="card-title" style="float: left;">{{title}}</div>
