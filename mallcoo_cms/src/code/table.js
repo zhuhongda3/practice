@@ -42,7 +42,6 @@ export const code1 =
     <template slot-scope="scope">
       <el-tag size="medium" v-if="scope.row.status==='正常'" type="success">{{ scope.row.status }}</el-tag>
       <el-tag size="medium" v-if="scope.row.status==='冻结'" type="warning">{{ scope.row.status }}</el-tag>
-      <el-tag size="medium" v-if="scope.row.status==='异常'" type="danger">{{ scope.row.status }}</el-tag>
   </template>
   </el-table-column>
   <el-table-column

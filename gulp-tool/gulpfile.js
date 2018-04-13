@@ -10,7 +10,7 @@ const gulp = require("gulp"),
   sass = require("gulp-sass"),
   babel = require("gulp-babel"),
   fileinclude = require("gulp-file-include"),
-  eslint = require("gulp-eslint"),
+  // eslint = require("gulp-eslint"),
   browserSync = require("browser-sync").create(),
   config = require("./config");
 
@@ -35,14 +35,14 @@ gulp.task("html", function() {
     .pipe(browserSync.reload({ stream: true }));
 });
 
-gulp.task("lint", () => {
-  // gulp.src(['**/*.js','!node_modules/**'])
-  return gulp
-    .src(config.js.url)
-    .pipe(eslint())
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError());
-});
+// gulp.task("lint", () => {
+//   // gulp.src(['**/*.js','!node_modules/**'])
+//   return gulp
+//     .src(config.js.url)
+//     .pipe(eslint())
+//     .pipe(eslint.format())
+//     .pipe(eslint.failAfterError());
+// });
 
 gulp.task("css", ["css-minify"], function() {
   return gulp

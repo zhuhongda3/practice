@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
     <router-view/>
   </div>
 </template>
@@ -21,6 +20,7 @@ export default {
   }
 }
 body{
+  min-width: 1280px;
   background-color: #f4f4f4;
 }
 @import './assets/normalize.scss';

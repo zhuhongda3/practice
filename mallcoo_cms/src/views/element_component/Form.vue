@@ -41,7 +41,7 @@
             </el-col>
             <el-col :span="8">
               <el-form-item label="当前积分">
-                <el-input v-model="form.integral"></el-input>
+                <el-input v-model="form.integral" style="width:100%;"></el-input>
               </el-form-item>
             </el-col>
           </el-row>
@@ -112,7 +112,7 @@
           <el-row>
             <el-col :span="8">
                <el-form-item>
-                <el-button @click="onSubmit" plain>搜素</el-button>
+                <el-button @click="onSubmit" plain>搜索</el-button>
               </el-form-item>
             </el-col>
           </el-row>

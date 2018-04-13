@@ -9,8 +9,8 @@ export const data = Mock.mock({
       'tel|1': '0@integer(100,999)-@integer(1000000,9999999)',
       'created': '@cname',
       'date': '@datetime',
-      'status|1': ['正常','冻结','异常']
-    }
+      'status|1': ['正常','冻结'] //'异常'
+    }  
   ]
 }).list;
 
