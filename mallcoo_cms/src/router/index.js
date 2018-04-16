@@ -78,6 +78,10 @@ const routerOptions = [
     component: 'Button'
   },
   {
+    path: '/component/title',
+    component: 'Title'
+  },
+  {
     path: '/component/radio',
     component: 'Radio'
   },

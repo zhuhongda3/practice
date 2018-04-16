@@ -1,0 +1,81 @@
+$font12: 12px;
+$font14: 14px;
+$font16: 16px;
+$font18: 18px;
+
+.el-mc-fr{float: right;}
+.el-mc-fl{float: left;}
+
+%clearfix{
+  &:before,
+  &:after{
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.clearfix{
+  @extend %clearfix;
+}
+
+body{
+  min-width: 1280px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  // font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  background-color: #f4f4f4;
+}
+
+//标题
+// 大标题
+.el-mc-title{
+  padding: 0 10px;
+  margin-bottom: 10px;
+  color: #666;
+  font-size: $font16;
+  background-color: #eee;
+  line-height: 40px;
+  @extend %clearfix;
+  //链接
+  a{
+    font-size: $font12;
+    color: #409EFF;
+    text-decoration: none;
+  }
+  //辅助文字
+  small{
+    position: relative;
+    top:-2px;
+    margin-left: 10px;
+    font-size: $font12;
+    color: #999;
+    vertical-align: middle;
+  }
+  //按钮
+  button{
+    position: relative;
+    top: -1px;
+    &.el-mc-fr{
+      top: 4px;
+    }
+  }
+}
+//小标题
+.el-mc-subtitle{
+  padding: 5px 0;
+  margin: 0 10px 10px;
+  border-bottom: 1px solid #eee;
+  font-size: $font14;
+  color: #666;
+  @extend %clearfix;
+  //辅助文字
+  small{
+    position: relative;
+    top: -2px;
+    margin-left: 10px;
+    font-size: $font12;
+    color: #999;
+    vertical-align: middle;
+  }
+}

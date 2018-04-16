@@ -22,6 +22,7 @@ export const sideBarData = [
           // {menuItem:'Typography 字体',url:'/component/typography'},
           {menuItem:'Icon 图标',url:'/component/icon'},
           {menuItem:'Button 按钮',url:'/component/button'},
+          {menuItem:'Title 标题',url:'/component/title'},
         ]
       },
       {

@@ -125,7 +125,7 @@
 
 <script>
 import CardBox from '@/components/share/CardBox';
-import {code1} from '@/code/tabs';
+import {code1} from '@/code/form';
 
 export default {
   data(){
