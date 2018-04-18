@@ -35,13 +35,14 @@
 
 <script>
 import CardBox from '@/components/share/CardBox';
-import {code1,code2} from '@/code/pagination';
+import pagination_md_1 from '@/md/pagination_md_1.md';
+import pagination_md_2 from '@/md/pagination_md_2.md';
 
 export default {
   data(){
     return {
-      code1: code1,
-      code2: code2,
+      code1: pagination_md_1,
+      code2: pagination_md_2,
       currentPage1: 1,
       currentPage2: 1,
     };

@@ -42,15 +42,17 @@
 
 <script>
 import CardBox from '@/components/share/CardBox';
-import {code1,code2,code3} from '@/code/colorpicker';
+import colorpicker_md_1 from '@/md/colorpicker_md_1.md';
+import colorpicker_md_2 from '@/md/colorpicker_md_2.md';
+import colorpicker_md_3 from '@/md/colorpicker_md_3.md';
 
 
 export default {
   data(){
     return {
-      code1: code1,
-      code2: code2,
-      code3: code3,
+      code1: colorpicker_md_1,
+      code2: colorpicker_md_2,
+      code3: colorpicker_md_3,
       color1: '#000',
       color2: null,
       color3: 'rgba(19, 206, 102, 0.8)',

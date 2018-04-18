@@ -85,19 +85,24 @@
 
 <script>
 import CardBox from '@/components/share/CardBox';
-import {code1,code2,code3,code4,code5,code6} from '@/code/checkbox';
+import checkbox_md_1 from '@/md/checkbox_md_1.md';
+import checkbox_md_2 from '@/md/checkbox_md_2.md';
+import checkbox_md_3 from '@/md/checkbox_md_3.md';
+import checkbox_md_4 from '@/md/checkbox_md_4.md';
+import checkbox_md_5 from '@/md/checkbox_md_5.md';
+import checkbox_md_6 from '@/md/checkbox_md_6.md';
 
 const cityOptions = ['上海', '北京', '广州', '深圳'];
 
 export default {
   data(){
     return {
-      code1: code1,
-      code2: code2,
-      code3: code3,
-      code4: code4,
-      code5: code5,
-      code6: code6,
+      code1: checkbox_md_1,
+      code2: checkbox_md_2,
+      code3: checkbox_md_3,
+      code4: checkbox_md_4,
+      code5: checkbox_md_5,
+      code6: checkbox_md_6,
       checked1: true,
       checked2: false,
       checked3: true,

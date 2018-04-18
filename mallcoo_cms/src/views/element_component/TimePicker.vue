@@ -13,7 +13,7 @@
           placeholder="选择时间">
         </el-time-picker>
       </template>
-      <template slot="code">{{code}}</template>
+      <template slot="code">{{code1}}</template>
     </card-box>
 
     <card-box title="固定时间点(设置了每次地增量)">
@@ -23,7 +23,7 @@
           placeholder="选择时间">
         </el-time-select>
       </template>
-      <template slot="code">{{code1}}</template>
+      <template slot="code">{{code2}}</template>
     </card-box>
 
     <card-box title="一段时间内的任意时间点">
@@ -44,7 +44,7 @@
           placeholder="任意时间点">
         </el-time-picker>
       </template>
-      <template slot="code">{{code2}}</template>
+      <template slot="code">{{code3}}</template>
     </card-box>
 
     <card-box title="固定时间范围">
@@ -70,7 +70,7 @@
           placeholder="任意时间点">
         </el-time-select>
       </template>
-      <template slot="code">{{code3}}</template>
+      <template slot="code">{{code4}}</template>
     </card-box>
 
     <card-box title="任意时间范围">
@@ -91,7 +91,7 @@
           end-placeholder="结束时间">
         </el-time-picker>
       </template>
-      <template slot="code">{{code4}}</template>
+      <template slot="code">{{code5}}</template>
     </card-box>
 
   </div>
@@ -99,17 +99,21 @@
 
 <script>
 import CardBox from '@/components/share/CardBox';
-import {code,code1,code2,code3,code4} from '@/code/timepicker';
+import timepicker_md_1 from '@/md/timepicker_md_1.md';
+import timepicker_md_2 from '@/md/timepicker_md_2.md';
+import timepicker_md_3 from '@/md/timepicker_md_3.md';
+import timepicker_md_4 from '@/md/timepicker_md_4.md';
+import timepicker_md_5 from '@/md/timepicker_md_5.md';
 
 
 export default {
   data(){
     return {
-      code: code,
-      code1: code1,
-      code2: code2,
-      code3: code3,
-      code4: code4,
+      code1: timepicker_md_1,
+      code2: timepicker_md_2,
+      code3: timepicker_md_3,
+      code4: timepicker_md_4,
+      code5: timepicker_md_5,
       value: new Date(2018, 3, 22, 18, 40),
       value6: '',
       value1: '',

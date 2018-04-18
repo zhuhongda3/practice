@@ -53,12 +53,12 @@
 
 <script>
 import CardBox from '@/components/share/CardBox';
-import {code1} from '@/code/title';
+import title_md_1 from '@/md/title_md_1.md';
 
 export default {
   data(){
     return {
-      code1: code1,
+      code1: title_md_1,
     };
   },
   components:{

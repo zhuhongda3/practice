@@ -96,15 +96,17 @@
 
 <script>
 import CardBox from '@/components/share/CardBox';
-import {code1,code2,code3} from '@/code/datepicker';
+import datepicker_md_1 from '@/md/datepicker_md_1.md';
+import datepicker_md_2 from '@/md/datepicker_md_2.md';
+import datepicker_md_3 from '@/md/datepicker_md_3.md';
 
 
 export default {
   data(){
     return {
-      code1: code1,
-      code2: code2,
-      code3: code3,
+      code1: datepicker_md_1,
+      code2: datepicker_md_2,
+      code3: datepicker_md_3,
       pickerOptions1: {
         disabledDate(time) {
           return time.getTime() > Date.now();

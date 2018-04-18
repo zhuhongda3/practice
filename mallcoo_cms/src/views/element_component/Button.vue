@@ -61,16 +61,20 @@
 
 <script>
 import CardBox from '@/components/share/CardBox';
-import {code1,code2,code3,code4,code5} from '@/code/button';
+import button_md_1 from '@/md/button_md_1.md';
+import button_md_2 from '@/md/button_md_2.md';
+import button_md_3 from '@/md/button_md_3.md';
+import button_md_4 from '@/md/button_md_4.md';
+import button_md_5 from '@/md/button_md_5.md';
 
 export default {
   data(){
     return {
-      code1: code1,
-      code2: code2,
-      code3: code3,
-      code4: code4,
-      code5: code5
+      code1: button_md_1,
+      code2: button_md_2,
+      code3: button_md_3,
+      code4: button_md_4,
+      code5: button_md_5
     };
   },
   components:{

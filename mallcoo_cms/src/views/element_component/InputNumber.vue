@@ -37,16 +37,19 @@
 
 <script>
 import CardBox from '@/components/share/CardBox';
-import {code1,code2,code3,code4} from '@/code/inputnumber';
+import inputnumber_md_1 from '@/md/inputnumber_md_1.md';
+import inputnumber_md_2 from '@/md/inputnumber_md_2.md';
+import inputnumber_md_3 from '@/md/inputnumber_md_3.md';
+import inputnumber_md_4 from '@/md/inputnumber_md_4.md';
 
 
 export default {
   data(){
     return {
-      code1: code1,
-      code2: code2,
-      code3: code3,
-      code4: code4,
+      code1: inputnumber_md_1,
+      code2: inputnumber_md_2,
+      code3: inputnumber_md_3,
+      code4: inputnumber_md_4,
       num1: 1,
       num2: 1,
       num3: 5,

@@ -39,13 +39,14 @@
 
 <script>
 import CardBox from '@/components/share/CardBox';
-import {code1,code2} from '@/code/upload';
+import upload_md_1 from '@/md/upload_md_1.md';
+import upload_md_2 from '@/md/upload_md_2.md';
 
 export default {
   data(){
     return {
-      code1: code1,
-      code2: code2,
+      code1: upload_md_1,
+      code2: upload_md_2,
       imageUrl: '',
       dialogImageUrl: '',
       dialogVisible: false

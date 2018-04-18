@@ -132,19 +132,26 @@
 
 <script>
 import CardBox from '@/components/share/CardBox';
-import {code1,code2,code3,code4,code5,code6,code7,code8} from '@/code/select';
+import select_md_1 from '@/md/select_md_1.md';
+import select_md_2 from '@/md/select_md_2.md';
+import select_md_3 from '@/md/select_md_3.md';
+import select_md_4 from '@/md/select_md_4.md';
+import select_md_5 from '@/md/select_md_5.md';
+import select_md_6 from '@/md/select_md_6.md';
+import select_md_7 from '@/md/select_md_7.md';
+import select_md_8 from '@/md/select_md_8.md';
 
 export default {
   data(){
     return {
-      code1: code1,
-      code2: code2,
-      code3: code3,
-      code4: code4,
-      code5: code5,
-      code6: code6,
-      code7: code7,
-      code8: code8,
+      code1: select_md_1,
+      code2: select_md_2,
+      code3: select_md_3,
+      code4: select_md_4,
+      code5: select_md_5,
+      code6: select_md_6,
+      code7: select_md_7,
+      code8: select_md_8,
       options: [
         {
           value: '选项1',

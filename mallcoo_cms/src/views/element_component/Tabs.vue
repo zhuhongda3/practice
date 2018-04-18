@@ -16,12 +16,12 @@
 
 <script>
 import CardBox from '@/components/share/CardBox';
-import {code1} from '@/code/tabs';
+import tabs_md_1 from '@/md/tabs_md_1.md';
 
 export default {
   data(){
     return {
-      code1: code1,
+      code1: tabs_md_1,
       activeName: 'first',
     };
   },

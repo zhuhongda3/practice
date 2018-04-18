@@ -69,15 +69,18 @@
 
 <script>
 import CardBox from '@/components/share/CardBox';
-import {code1,code2,code3,code4} from '@/code/radio';
+import radio_md_1 from '@/md/radio_md_1.md';
+import radio_md_2 from '@/md/radio_md_2.md';
+import radio_md_3 from '@/md/radio_md_3.md';
+import radio_md_4 from '@/md/radio_md_4.md';
 
 export default {
   data(){
     return {
-      code1: code1,
-      code2: code2,
-      code3: code3,
-      code4: code4,
+      code1: radio_md_1,
+      code2: radio_md_2,
+      code3: radio_md_3,
+      code4: radio_md_4,
       radio1: '1',
       radio2: 1,
       radio3: '1',

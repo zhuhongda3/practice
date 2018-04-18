@@ -77,14 +77,16 @@
 
 <script>
 import CardBox from '@/components/share/CardBox';
-import {code1,code2,code3} from '@/code/loading';
+import loading_md_1 from '@/md/loading_md_1.md';
+import loading_md_2 from '@/md/loading_md_2.md';
+import loading_md_3 from '@/md/loading_md_3.md';
 
 export default {
   data(){
     return {
-      code1: code1,
-      code2: code2,
-      code3: code3,
+      code1: loading_md_1,
+      code2: loading_md_2,
+      code3: loading_md_3,
       fullscreenLoading: false,
       tableData: [{
         date: '2016-05-03',

@@ -17,12 +17,12 @@
 
 <script>
 import CardBox from '@/components/share/CardBox';
-import {code1} from '@/code/steps';
+import steps_md_1 from '@/md/steps_md_1.md';
 
 export default {
   data(){
     return {
-      code1: code1,
+      code1: steps_md_1,
       active: 1,
     };
   },

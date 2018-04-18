@@ -125,12 +125,12 @@
 
 <script>
 import CardBox from '@/components/share/CardBox';
-import {code1} from '@/code/form';
+import form_md_1 from '@/md/form_md_1.md';
 
 export default {
   data(){
     return {
-      code1: code1,
+      code1: form_md_1,
       form: {
         id: '',
         cardNumber:'',

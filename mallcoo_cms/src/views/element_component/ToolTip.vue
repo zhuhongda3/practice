@@ -79,14 +79,16 @@
 
 <script>
 import CardBox from '@/components/share/CardBox';
-import {code1,code2,code3} from '@/code/tooltip';
+import tooltip_md_1 from '@/md/tooltip_md_1.md';
+import tooltip_md_2 from '@/md/tooltip_md_2.md';
+import tooltip_md_3 from '@/md/tooltip_md_3.md';
 
 export default {
   data(){
     return {
-      code1: code1,
-      code2: code2,
-      code3: code3,
+      code1: tooltip_md_1,
+      code2: tooltip_md_2,
+      code3: tooltip_md_3,
     };
   },
   components:{

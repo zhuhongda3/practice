@@ -90,15 +90,17 @@
 
 <script>
 import CardBox from '@/components/share/CardBox';
-import {code1,code2,code3} from '@/code/datetimepicker';
+import datetimepicker_md_1 from '@/md/datetimepicker_md_1.md';
+import datetimepicker_md_2 from '@/md/datetimepicker_md_2.md';
+import datetimepicker_md_3 from '@/md/datetimepicker_md_3.md';
 
 
 export default {
   data(){
     return {
-      code1: code1,
-      code2: code2,
-      code3: code3,
+      code1: datetimepicker_md_1,
+      code2: datetimepicker_md_2,
+      code3: datetimepicker_md_3,
       value1: '',
       value2: '',
       value3: [new Date(2000, 10, 10, 10, 10), new Date(2000, 10, 11, 10, 10)],

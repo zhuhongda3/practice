@@ -45,15 +45,17 @@
 
 <script>
 import CardBox from '@/components/share/CardBox';
-import {code1,code2,code3} from '@/code/switch';
+import switch_md_1 from '@/md/switch_md_1.md';
+import switch_md_2 from '@/md/switch_md_2.md';
+import switch_md_3 from '@/md/switch_md_3.md';
 
 
 export default {
   data(){
     return {
-      code1: code1,
-      code2: code2,
-      code3: code3,
+      code1: switch_md_1,
+      code2: switch_md_2,
+      code3: switch_md_3,
       value1: false,
       value2: false,
       value3: true,

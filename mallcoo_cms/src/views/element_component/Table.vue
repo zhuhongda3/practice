@@ -87,13 +87,13 @@
 
 <script>
 import CardBox from '@/components/share/CardBox';
-import {code1} from '@/code/table';
+import table_md_1 from '@/md/table_md_1.md';
 import {data} from '@/mock/tableData'
 
 export default {
   data(){
     return {
-      code1: code1,
+      code1: table_md_1,
       pagesizes: [10, 20, 30, 40],
       pagesize: 10,
       currentPage: 1,

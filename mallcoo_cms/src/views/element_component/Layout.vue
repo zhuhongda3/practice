@@ -135,17 +135,22 @@
 
 <script>
 import CardBox from '@/components/share/CardBox';
-import {code1,code2,code3,code4,code5,code6} from '@/code/layout';
+import layout_md_1 from '@/md/layout_md_1.md';
+import layout_md_2 from '@/md/layout_md_2.md';
+import layout_md_3 from '@/md/layout_md_3.md';
+import layout_md_4 from '@/md/layout_md_4.md';
+import layout_md_5 from '@/md/layout_md_5.md';
+import layout_md_6 from '@/md/layout_md_6.md';
 
 export default {
   data(){
     return {
-      code1: code1,
-      code2: code2,
-      code3: code3,
-      code4: code4,
-      code5: code5,
-      code6: code6
+      code1: layout_md_1,
+      code2: layout_md_2,
+      code3: layout_md_3,
+      code4: layout_md_4,
+      code5: layout_md_5,
+      code6: layout_md_6
     };
   },
   components:{
