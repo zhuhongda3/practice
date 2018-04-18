@@ -6,6 +6,7 @@ import router from "./router";
 import Highlight from "../path/to/highlight";
 import ElementUI from "element-ui";
 import 'element-ui/lib/theme-chalk/index.css';
+// import VueMarkDown from 'vue-markdown';
 
 Vue.config.productionTip = false;
 

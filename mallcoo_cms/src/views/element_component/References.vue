@@ -18,6 +18,11 @@
         </tr>
       </tbody>
     </table>
+     <card-box title="带有辅助性文字介绍">
+      <template slot="content">
+      </template>
+      <template slot="code">{{msg}}</template>
+    </card-box>
   </div>
 </template>
 

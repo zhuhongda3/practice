@@ -1,0 +1,9 @@
+```
+<template>
+  <el-alert
+    title="成功提示文案"
+    type="success"
+    description="这是一段辅助文字介绍，是一段辅助文字介绍">
+  </el-alert>
+</template>
+```

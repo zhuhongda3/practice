@@ -61,6 +61,7 @@ gulp.task("css-minify", function() {
     .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: "expanded" }).on("error", sass.logError))
     .pipe(postcss([require("precss"), require("autoprefixer")]))
+    // .pipe(concat("main.js"))
     .pipe(minifyCss())
     .pipe(
       rename({
@@ -76,6 +77,7 @@ gulp.task("css-minify", function() {
 gulp.task("js", ["js-minify"], function() {   
   gulp
     .src(config.js.url)
+    // .pipe(concat("main.js"))
     .pipe(babel())
     .pipe(sourcemaps.init())
     .pipe(sourcemaps.write("."))

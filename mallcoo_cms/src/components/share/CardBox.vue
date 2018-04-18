@@ -16,7 +16,8 @@
         <el-collapse-transition>
           <div v-show="isShow">
             <h3 class="title">代码</h3>
-            <div v-highlight><pre><code><slot name="code"></slot></code></pre></div>
+            <vue-markdown v-highlight><slot name="code"></slot></vue-markdown>
+            <!-- <div v-highlight><pre><code></code></pre></div> -->
           </div>
         </el-collapse-transition>
       </div>
@@ -27,6 +28,9 @@
 </template>
 
 <script>
+import VueMarkdown from 'vue-markdown';
+
+
 export default {
   props: ["title"],
   data() {
@@ -36,6 +40,9 @@ export default {
   },
   methods: {
     
+  },
+  components:{
+    VueMarkdown
   }
 };
 </script>

@@ -1,0 +1,10 @@
+```
+<template>
+  <el-alert
+    title="成功提示文案"
+    type="success"
+    show-icon
+    center>
+  </el-alert>
+</template>
+```

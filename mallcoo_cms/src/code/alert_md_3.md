@@ -1,0 +1,24 @@
+```
+<template>
+  <el-alert
+    title="成功提示文案"
+    type="success"
+    show-icon>
+  </el-alert>
+  <el-alert
+    title="消息提示文案"
+    type="info"
+    show-icon>
+  </el-alert>
+  <el-alert
+    title="警告提示文案"
+    type="warning"
+    show-icon>
+  </el-alert>
+  <el-alert
+    title="错误提示文案"
+    type="error"
+    show-icon>
+  </el-alert>
+</template>
+```
