@@ -34,7 +34,7 @@
         }).then(action => {
           this.$message({
             type: 'info',
-            message: 'action: ' + action
+            message: `action：${action}`
           });
         });
       }

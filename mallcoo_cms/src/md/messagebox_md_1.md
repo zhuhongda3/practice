@@ -12,7 +12,7 @@
           callback: action => {
             this.$message({
               type: 'info',
-              message: 'action: ' + action
+              message: `aciton：${action}`;
             });
           }
         });

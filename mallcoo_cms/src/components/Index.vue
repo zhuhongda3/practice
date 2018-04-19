@@ -75,6 +75,7 @@ export default {
   left: 0;
   height: calc(100% - 60px);
   background-color: #545c64;
+  z-index: 2;
 }
 
 .el-main{

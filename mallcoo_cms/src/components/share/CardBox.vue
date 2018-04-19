@@ -4,23 +4,16 @@
     <el-card>
       <div slot="header" class="clearfix">
         <div class="card-title" style="float: left;">{{title}}</div>
-        <el-button style="float: right;" @click="isShow = !isShow" size="small">{{isShow?'隐藏代码':'显示代码'}}<i v-if="isShow" class="el-icon-caret-top el-icon--right"></i><i v-else class="el-icon-caret-bottom el-icon--right"></i></el-button>
+        <el-button v-if="!toggle" style="float: right;" @click="isShow = !isShow" size="small">{{isShow?'隐藏代码':'显示代码'}}<i v-if="isShow" class="el-icon-caret-top el-icon--right"></i><i v-else class="el-icon-caret-bottom el-icon--right"></i></el-button>
       </div>
       <!-- 内容插槽 -->
-      <div>
-        <h3 class="title">内容</h3>
-        <slot name="content"></slot>
-      </div>
+      <slot name="content"></slot>
       <!-- 代码插槽 -->
-      <div>
-        <el-collapse-transition>
-          <div v-show="isShow">
-            <h3 class="title">代码</h3>
-            <vue-markdown v-highlight><slot name="code"></slot></vue-markdown>
-            <!-- <div v-highlight><pre><code></code></pre></div> -->
-          </div>
-        </el-collapse-transition>
-      </div>
+      <el-collapse-transition>
+        <div v-show="isShow">
+          <vue-markdown v-highlight><slot name="code"></slot></vue-markdown>
+        </div>
+      </el-collapse-transition>
     </el-card>
   </el-col>
 </el-row>
@@ -32,7 +25,7 @@ import VueMarkdown from 'vue-markdown';
 
 
 export default {
-  props: ["title"],
+  props: ["title","toggle"],
   data() {
     return {
       isShow: true,
@@ -52,11 +45,6 @@ pre,
 code {
   margin: 0;
   font-size: 14px;
-}
-.title{
-  font-weight: normal;
-  font-size: 16px;
-  color: #b4a078;
 }
 .card-title{
   padding-top: 6px;
