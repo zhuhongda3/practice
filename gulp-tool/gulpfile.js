@@ -1,5 +1,5 @@
 const gulp = require("gulp"),
-  // concat = require("gulp-concat"),
+  concat = require("gulp-concat"),
   uglify = require("gulp-uglify"),
   rename = require("gulp-rename"),
   clean = require("gulp-clean"),
@@ -15,23 +15,26 @@ const gulp = require("gulp"),
   config = require("./config");
 
 gulp.task("clean", function() {
-  return gulp.src(config.build, { read: false }).pipe(clean({ force: true }));
+  gulp.src(config.build, { read: false }).pipe(clean({ force: true }));
+  gulp.src(config.dest, { read: false }).pipe(clean({ force: true }));
 });
 
 gulp.task("copy", function() {
-  gulp.src(config.static.url).pipe(gulp.dest(config.static.url2));
+  gulp.src(config.static.srcPath).pipe(gulp.dest(config.static.devPath));
+  gulp.src(config.static.srcPath).pipe(gulp.dest(config.static.prdPath));
 });
 
 gulp.task("html", function() {
   gulp
-    .src(config.html.url) //['index.html']
+    .src(config.html.srcPath) //['index.html']
     .pipe(
       fileinclude({
         prefix: "@@",
         basepath: "@file"
       })
     )
-    .pipe(gulp.dest(config.html.url2))
+    .pipe(gulp.dest(config.html.devPath))
+    .pipe(gulp.dest(config.html.prdPath))
     .pipe(browserSync.reload({ stream: true }));
 });
 
@@ -46,22 +49,21 @@ gulp.task("html", function() {
 
 gulp.task("css", ["css-minify"], function() {
   return gulp
-    .src(config.css.url)
+    .src(config.css.srcPath)
     .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: "expanded" }).on("error", sass.logError))
     .pipe(postcss([require("precss"), require("autoprefixer")]))
     .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest(config.css.url2))
+    .pipe(gulp.dest(config.css.devPath))
     .pipe(browserSync.reload({ stream: true }));
 });
 
 gulp.task("css-minify", function() {
   return gulp
-    .src(config.css.url)
+    .src(config.css.srcPath)
     .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: "expanded" }).on("error", sass.logError))
     .pipe(postcss([require("precss"), require("autoprefixer")]))
-    // .pipe(concat("main.js"))
     .pipe(minifyCss())
     .pipe(
       rename({
@@ -69,27 +71,28 @@ gulp.task("css-minify", function() {
       })
     )
     .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest(config.css.url2))
+    .pipe(gulp.dest(config.css.prdPath))
     .pipe(browserSync.reload({ stream: true }));
 });
 
 // "lint", 
 gulp.task("js", ["js-minify"], function() {   
   gulp
-    .src(config.js.url)
-    // .pipe(concat("main.js"))
-    .pipe(babel())
+    .src(config.js.srcPath)
     .pipe(sourcemaps.init())
+    .pipe(babel())
+    .pipe(concat("main.js"))
     .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest(config.js.url2))
+    .pipe(gulp.dest(config.js.devPath))
     .pipe(browserSync.reload({ stream: true }));
 });
 
 gulp.task("js-minify", function() {
   gulp
-    .src(config.js.url)
-    .pipe(babel())
+    .src(config.js.srcPath)
     .pipe(sourcemaps.init())
+    .pipe(babel())
+    .pipe(concat("main.js"))
     .pipe(uglify())
     .pipe(
       rename({
@@ -97,20 +100,19 @@ gulp.task("js-minify", function() {
       })
     )
     .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest(config.js.url2))
+    .pipe(gulp.dest(config.js.prdPath))
     .pipe(browserSync.reload({ stream: true }));
 });
 
 gulp.task("watch", function() {
   // browserSync.init({
   //   server: {
-  //     baseDir: config.build
+  //     baseDir: config.devPath
   //   }
   // });
-  gulp.watch([config.html.url, config.html.url3], ["html"]);
-  gulp.watch(config.css.url3, ["css"]);
-  // "lint", 
-  gulp.watch(config.js.url, ["js"]);
+  gulp.watch([config.html.srcPath, config.html.project+'/layout/*.html'], ["html"]);
+  gulp.watch(config.src+'/sass/**/*.scss', ["css"]);
+  gulp.watch(config.js.srcPath, ["js"]);
 });
 
 gulp.task("default", ["clean"], function() {
