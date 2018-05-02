@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  body,html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .tab-list{
+    display: -webkit-flex;
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    background-color: #fff;
+    border-bottom: 1px solid #f4f4f4;
+  }
+  .tab-list .tab-list-item{
+    padding: 0 3px;
+    color: #808080;
+    font-size: 16px;
+    text-align: center;
+  }
+  .tab-list .tab-list-item.active{
+    color: #333;
+  }
+  .tab-line{
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    background-color: #3BC3E7;
+    transition: all .3s ease-in-out;
+  }
+  </style>
+</head>
+<body>
+  <div class="tab-list">
+    <div class="tab-list-item active">好友</div>
+    <div class="tab-list-item">群聊</div>
+    <div class="tab-list-item">设备</div>
+    <div class="tab-list-item">通讯录</div>
+    <div class="tab-list-item">公众号</div>
+    <div class="tab-line"></div>
+  </div>
+  <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  <script>
+    var $line = $('.tab-line');
+    var w = $('.tab-list .tab-list-item').eq(0).innerWidth();
+    var l = $('.tab-list .tab-list-item').eq(0).offset().left;
+    $line.css({
+      'left':l,
+      'width': w
+    });
+    $('.tab-list .tab-list-item').click(function () {
+      var idx = $(this).index();
+      $(this).addClass('active').siblings().removeClass('active');
+      var left = $(this).offset().left;
+      var width = $(this).innerWidth();
+      $line.css({
+        'left':left,
+        'width': width
+      });
+    });
+  </script>
+</body>
+</html>
