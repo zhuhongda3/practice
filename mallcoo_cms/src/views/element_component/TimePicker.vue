@@ -16,7 +16,7 @@
       <template slot="code">{{code1}}</template>
     </card-box>
 
-    <card-box title="固定时间点(设置了每次地增量)">
+    <card-box title="固定时间点(设置了每次的增量)">
       <template slot="content">
         <el-time-select
           v-model="value1"

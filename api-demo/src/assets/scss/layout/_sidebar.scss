@@ -1,0 +1,101 @@
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 0 24px;
+    width: 248px;
+    overflow-y: auto;
+    background: $sidebar-bg;
+    z-index: 3;
+    .title {
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+        font-size: 18px;
+        color: $theme-cor;
+        border-bottom: 2px solid hsla(0, 0%, 100%, .04);
+    }
+    .list-item {
+        position: relative;
+        padding: 5px 0;
+        overflow: hidden;
+        li {
+            height: 30px;
+            line-height: 30px;
+            padding-left: 20px;
+        }
+        a {
+            display: inline-block;
+            width: 100%;
+            font-size: 12px;
+            color: $sidebar-cor;
+            text-decoration: none;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+}
+
+
+
+// foundation sidebar
+.js-off-canvas-overlay {
+    background: rgba(0,0,0,.5);
+}
+
+.title-bar {
+    display: none;
+    height: 45px;
+    line-height: 25px;
+    background: #fff;
+}
+
+.menu-icon::after {
+    background: #0a0a0a;
+    -webkit-box-shadow: 0 7px 0 #0a0a0a, 0 14px 0 #0a0a0a;
+    box-shadow: 0 7px 0 #0a0a0a, 0 14px 0 #0a0a0a;
+}
+
+.off-canvas {
+    background: #121212;
+}
+
+.menu-con {
+    padding-top: 40px;
+}
+
+.accordion-menu >li a {
+    color: #666;
+}
+.accordion-menu .is-accordion-submenu a{
+    font-size: 14px;
+}
+
+.submenu-toggle::after {
+    border-color: #666 transparent transparent;
+}
+
+.close-button {
+    position: absolute;
+    z-index: 999;
+    color: #666;
+    font-size: 26px;
+}
+
+.close-button:focus,
+.close-button:hover {
+    color: #8a8a8a;
+}
+
+.accordion-menu li {
+    border-bottom: 1px solid #444;
+}
+
+.accordion-menu li:last-child {
+    border: 0;
+}
