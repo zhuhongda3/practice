@@ -1,23 +1,25 @@
 <template>
   <div>
     <el-row>
-      <el-col :span="12">
+      <el-col :span="24">
         <table>
           <thead>
             <tr>
-              <th>参考网站</th>
-              <th>链接</th>
+              <th>参考资源</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>element 中文文档</td><td><a href="//element.eleme.io/#/zh-CN" target="_black">element.eleme.io/#/zh-CN</a></td>
+              <td><a href="//element.eleme.io/#/zh-CN" target="_black">element 中文文档</a></td>
             </tr>
             <tr>
-              <td>vue 中文文档</td><td><a href="//cn.vuejs.org/" target="_black">cn.vuejs.org</a></td>
+              <td><a href="//cn.vuejs.org/" target="_black">vue 中文文档</a></td>
             </tr>
             <tr>
-              <td>lodash 英文文档</td><td><a href="//lodash.com" target="_black">lodash.com</a></td>
+              <td><a href="//lodash.com" target="_black">lodash 英文文档</a></td>
+            </tr>
+            <tr>
+              <td><a href="//zh.nuxtjs.org/guide" target="_black">nuxt.js 中文文档</a></td>
             </tr>
           </tbody>
         </table>
@@ -38,11 +40,10 @@ table{
   td{
     font-size: 14px;
     a{
-      text-decoration: none;
       color: #666;
       font-size: 13px;
-      &:hover{
-        text-decoration: underline;
+      &:not(:hover){
+        text-decoration: none;
       }
     }
   }
