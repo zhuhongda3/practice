@@ -173,6 +173,10 @@ const routerOptions = [
     path: '/component/pagination',
     component: 'Pagination'
   },
+  {
+    path: '/component/style1',
+    component: 'Style1'
+  },
 ];
 
 const children = routerOptions.map(route => {

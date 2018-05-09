@@ -10,7 +10,7 @@ $font18: 18px;
   &:before,
   &:after{
     content: '';
-    display: table;
+    display: block;
     clear: both;
   }
 }
@@ -79,3 +79,38 @@ body{
     vertical-align: middle;
   }
 }
+
+//input输入框宽度
+
+// .el-form-item__label{
+//   text-overflow: ellipsis;
+//   overflow: hidden;
+//   white-space: nowrap;
+// }
+
+.el-mc-input-xsmall{
+  width: 90px;
+}
+.el-mc-input-small{
+  width: 184px;
+}
+.el-mc-input-medium{
+  width: 310px;
+}
+.el-mc-input-large{
+  width: 560px;
+}
+
+// 图片上传控件
+.avatar-uploader{
+  display: inline-block;
+  vertical-align: top;
+  &.disabled{
+    .el-upload--picture-card{
+      display: none;
+    }
+  }
+}
+
+//提示框
+.el-mc-tip{color: #737373;font-size: 12px;}

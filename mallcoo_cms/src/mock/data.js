@@ -94,19 +94,19 @@ export const sideBarData = [
     submenu: '实例模板',
     menuItemGroup:[
       {
-        menuItemGroupTitle: '输入框',
+        menuItemGroupTitle: '实例分类',
         menuItemList:[
-          {menuItem:'风格一',url:''},
-          {menuItem:'风格一',url:''},
-          {menuItem:'风格一',url:''},
+          {menuItem:'提交模板',url:'/component/style1'},
+          {menuItem:'风格2',url:'/component/style2'},
+          {menuItem:'风格3',url:'/component/style3'},
         ]
       },
       {
-        menuItemGroupTitle: '表格',
+        menuItemGroupTitle: '实例分类',
         menuItemList:[
-          {menuItem:'风格一',url:''},
-          {menuItem:'风格一',url:''},
-          {menuItem:'风格一',url:''},
+          {menuItem:'风格4',url:'/component/style4'},
+          {menuItem:'风格5',url:'/component/style5'},
+          {menuItem:'风格6',url:'/component/style6'},
         ]
       }
     ]
