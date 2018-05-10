@@ -97,7 +97,7 @@ export const sideBarData = [
         menuItemGroupTitle: '实例分类',
         menuItemList:[
           {menuItem:'提交模板',url:'/component/style1'},
-          {menuItem:'风格2',url:'/component/style2'},
+          {menuItem:'购物车',url:'/component/car'},
           {menuItem:'风格3',url:'/component/style3'},
         ]
       },

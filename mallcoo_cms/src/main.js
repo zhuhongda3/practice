@@ -2,6 +2,8 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from "vue";
 
+import 'es6-promise/auto';
+
 import "normalize.css/normalize.css";
 
 import ElementUI from "element-ui";
@@ -18,10 +20,13 @@ Vue.config.productionTip = false;
 Vue.use(Highlight);  // 代码高亮
 Vue.use(ElementUI);  // 饿了么UI组件
 
+import {store} from './store/index.js';
+
 /* eslint-disable no-new */
 new Vue({
   el: "#app",
   router,
+  store,
   components: { App },
   template: "<App/>"
 });

@@ -106,12 +106,13 @@
 <script>
 import CardBox from '@/components/share/CardBox';
 import steps_md_1 from '@/md/style_md_1.md';
+import log from '@/assets/sample-logo.png';
 
 export default {
   data(){
     return {
       code1: steps_md_1,
-      placeholderFigure: '//mp-t.mallcoo.cn/assets/img/images-mp/sample-logo.png',
+      placeholderFigure: log,
       dialogVisible: false,
       dialogImageUrl: '',
       isDisabled: false,
@@ -123,7 +124,7 @@ export default {
       items2: ['代金券', '折扣券', '兑换券', '优惠券', '停车券'],
       fileList: [
         {
-          url: '//mp-t.mallcoo.cn/assets/img/images-mp/sample-logo.png'
+          url: log
         }
       ],
       ruleform: {

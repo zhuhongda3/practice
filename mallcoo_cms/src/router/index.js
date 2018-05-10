@@ -177,6 +177,10 @@ const routerOptions = [
     path: '/component/style1',
     component: 'Style1'
   },
+  {
+    path: '/component/car',
+    component: 'Car'
+  },
 ];
 
 const children = routerOptions.map(route => {
