@@ -1,0 +1,25 @@
+[{
+  "id": 1001,
+  "select": true,
+  "imgUrl": "//placeholder.qiniudn.com/80x80/ffc62d/000",
+  "name": "商品1",
+  "type": "",
+  "number": 1,
+  "price": 1
+},{
+  "id": 1002,
+  "select": true,
+  "imgUrl": "//placeholder.qiniudn.com/80x80/ffc62d/000",
+  "name": "商品2",
+  "type": "",
+  "number": 1,
+  "price": 2
+},{
+  "id": 1003,
+  "select": true,
+  "imgUrl": "//placeholder.qiniudn.com/80x80/ffc62d/000",
+  "name": "商品3",
+  "type": "",
+  "number": 1,
+  "price": 3
+}]

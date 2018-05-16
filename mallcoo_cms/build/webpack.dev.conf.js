@@ -10,6 +10,29 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 
+// ###start###
+const express = require('express')
+const app = express()
+var foodsdetail = require('../src/mock/cardData/foodsdetail.json')
+var foodslist = require('../src/mock/cardData/foodslist.json')
+var apiRoutes = express.Router()
+
+apiRoutes.get('/foodslist',(req,res)=> {
+  res.json({
+    errno: 0,
+    data: foodslist
+  });
+});
+apiRoutes.get('/foodsdetail',(req,res)=> {
+  res.json({
+    errno: 0,
+    data: foodsdetail
+  });
+});
+
+app.use('/api',apiRoutes)
+// ###end###
+
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
@@ -22,6 +45,22 @@ const devWebpackConfig = merge(baseWebpackConfig, {
 
   // these devServer options should be customized in /config/index.js
   devServer: {
+     // ###start###
+     before(app){
+      app.get('/api/foodslist',(req,res)=> {
+        res.json({
+          errno: 0,
+          data: foodslist
+        })
+      });
+      app.get('/api/foodsdetail',(req,res)=> {
+        res.json({
+          errno: 0,
+          data: foodsdetail
+        })
+      });
+    },
+    // ###end###
     clientLogLevel: 'warning',
     historyApiFallback: {
       rewrites: [
@@ -42,7 +81,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     quiet: true, // necessary for FriendlyErrorsPlugin
     watchOptions: {
       poll: config.dev.poll,
-    }
+    },
   },
   plugins: [
     new webpack.DefinePlugin({
