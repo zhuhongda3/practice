@@ -45,7 +45,17 @@ router.post('/api/login/updateAccount',(req,res)=>{
 })
 
 //删除单条数据
-router.delete('/api/login/deleteAccount',(req,res) => {
+// router.delete('/api/login/deleteAccount',(req,res) => {
+//     models.Login.remove({_id:req.body.id},(err,data) => {
+//         if (err) {
+//             res.send(err);
+//         } else {
+//             res.send('delete a account successed');
+//         }
+//     });
+// });
+
+router.post('/api/login/deleteAccount',(req,res) => {
     models.Login.remove({_id:req.body.id},(err,data) => {
         if (err) {
             res.send(err);

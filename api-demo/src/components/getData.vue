@@ -154,7 +154,11 @@ export default {
       this.deleteOneData(row._id);
     },
     deleteOneData(_id) {
-      this.$http.delete("/api/login/deleteAccount", { body: { id: _id } })
+      let params = {
+        id: _id
+      }
+      // this.$http.delete("/api/login/deleteAccount", { body: { id: _id } })
+      this.$http.post("/api/login/deleteAccount", params)
       .then(response => {
         this.searchData();
         this.$message({

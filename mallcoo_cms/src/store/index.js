@@ -7,7 +7,7 @@ export const store = new Vuex.Store({
     goodsList: localStorage["goodsList"]?JSON.parse(localStorage["goodsList"]): []
   },
   getters: {
-    sum: state => {
+    sum(state){
       var total = 0;
       state.goodsList.forEach(item => {
         if(item.select){
@@ -16,12 +16,12 @@ export const store = new Vuex.Store({
       });
       return total;
     },
-    goodsNumber: state => {
+    goodsNumber(state){
       return state.goodsList.length;
     }
   },
   mutations: {
-    addGoods: (state,data) => {
+    addGoods(state,data){
       state.goodsList.push(data);
       localStorage.setItem("goodsList",JSON.stringify(state.goodsList));
     },
@@ -39,3 +39,15 @@ export const store = new Vuex.Store({
 
   }
 });
+
+// 创建前
+// 创建
+// 安装前
+// 安装
+// 更新前
+// 更新
+// 激活
+// 释放前
+// 释放
+// 摧毁前
+// 摧毁

@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import { a } from "@/dataMock"; //引入模拟数据
+// import { a } from "@/dataMock"; //引入模拟数据
 
 export default {
   name: "Login", //备选
@@ -72,9 +72,9 @@ export default {
       var that = this;
       //遍历对象数组的两种常见形式
       // 1.
-      for (var i in a) {
-        that.arr.push(a[i]);
-      }
+      // for (var i in a) {
+      //   that.arr.push(a[i]);
+      // }
       // 2.
       // a.forEach(function(item) {
       //   that.arr.push(item);
