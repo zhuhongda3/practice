@@ -49,9 +49,9 @@ gulp.task('watch', function () {
             baseDir: "./"  
         }
     });
-    // gulp.watch('./*.html').on('change', reload);
-    // gulp.watch('./sass/**/*.scss', ['cssmin']);
-    // gulp.watch(['./js/*.js','!./js/*.min.js'], ['uglify']);
+    gulp.watch('./*.html').on('change', reload);
+    gulp.watch('./sass/**/*.scss', ['cssmin']);
+    gulp.watch(['./js/*.js','!./js/*.min.js'], ['uglify']);
 });
 
 gulp.task('default', ['watch']);        

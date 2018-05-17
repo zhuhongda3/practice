@@ -9,11 +9,9 @@ a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 article, aside, audio, b, canvas, caption, center,
 dd, details, dl, dt, embed, fieldset, figcaption,
-figure, footer, form, header, hgroup, i, label
-, legend, li, mark, menu, nav, ol, output, ruby,
+figure, footer, form, header, hgroup, i, label, legend, li, mark, menu, nav, ol, output, ruby,
 section, small, strike, strong, sub, summary, sup,
-table, tbody, td, tfoot, th, thead, time, tr, tt, u
-, ul, var, video {
+table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -160,9 +158,16 @@ a, img {
 
 /*禁用长按页面时的弹出菜单(iOS下有效) ,img和a标签都要加*/
 body {
-  font-size: 14px;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  background: #f4f4f4 url(./../img/background.png); }
+  background-image: url(./../../img/star.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat; }
+
+.link-nav .link-item .item a {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap; }
 
 .sidebar {
   position: fixed;
@@ -292,33 +297,51 @@ body {
   position: relative;
   margin-left: 270px; }
   .link-nav .link-item {
-    padding-top: 10px; }
+    padding-bottom: 20px;
+    overflow: hidden; }
     .link-nav .link-item .box-name {
-      margin-bottom: 20px;
-      color: #a0acb7; }
+      position: relative;
+      margin-bottom: 15px;
+      padding-left: 10px;
+      font-size: 13px;
+      color: #fff; }
+      .link-nav .link-item .box-name:before {
+        content: '';
+        display: block;
+        width: 2px;
+        height: 15px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #26cbff; }
     .link-nav .link-item .item {
-      display: inline-block;
-      border-radius: 5px;
-      padding: 5px;
+      float: left;
+      width: 200px;
+      margin-right: 10px;
+      vertical-align: top;
+      padding: 10px;
       margin-bottom: 10px;
-      overflow: hidden;
-      border: 1px solid #e4ecf3;
-      box-shadow: 3px 3px 3px #f2f6f8; }
+      background-color: #30333c;
+      border-radius: 6px;
+      overflow: hidden; }
       .link-nav .link-item .item span {
-        color: #b7c0c7;
-        margin-left: 10px; }
+        display: block;
+        color: #333;
+        font-size: 13px;
+        margin-bottom: 5px;
+        color: #808080; }
       .link-nav .link-item .item a {
-        display: inline-block;
-        margin-left: 5px;
-        padding: 5px;
-        color: #666; }
+        display: block;
+        padding: 5px 0;
+        color: #ddd;
+        font-size: 12px; }
         .link-nav .link-item .item a:hover {
-          text-decoration: none; }
+          color: #26cbff; }
 
 @media screen and (min-width: 481px) {
   .link-nav .link-list {
     max-width: 1200px;
-    margin: 0 35px; } }
+    padding: 30px 25px; } }
 
 @media screen and (max-width: 720px) {
   .sidebar {
