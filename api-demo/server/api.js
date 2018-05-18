@@ -10,11 +10,24 @@ router.post('/api/login/createAccount',(req,res) => {
         account : req.body.account,
         password : req.body.password
     });
-    newAccount.save((err,data) => {
-        if (err) {
-            res.send(err);
-        } else {
-            res.send('create a account successed');
+    models.Login.count({"account": newAccount.account},(err, docs) =>{
+        if(err){
+            console.log("Error：" + err)
+            res.send(err)
+        }else{
+            if(docs>=1){
+                console.log("注册失败")
+                res.send({code: 0,msg:'账号已经存在了，不能再次注册'})
+            }else{
+                newAccount.save((err,data) => {
+                    if (err) {
+                        res.send(err);
+                    } else {
+                        console.log("注册成功")
+                        res.send({code: 1,msg:'恭喜你,账号创建成功了'});
+                    }
+                });
+            }
         }
     });
 });
@@ -40,7 +53,9 @@ router.post('/api/login/updateAccount',(req,res)=>{
     },id = req.body.id;
     models.Login.findByIdAndUpdate(id, params, function (err, data) {
         if (err) return handleError(err);
-        res.send(data);
+        // res.send(data);
+        console.log("更新成功")
+        res.send({code:1,msg:'更新数据成功'})
     });
 })
 
@@ -56,11 +71,12 @@ router.post('/api/login/updateAccount',(req,res)=>{
 // });
 
 router.post('/api/login/deleteAccount',(req,res) => {
-    models.Login.remove({_id:req.body.id},(err,data) => {
+    models.Login.remove({account:req.body.account},(err,data) => {
         if (err) {
             res.send(err);
         } else {
-            res.send('delete a account successed');
+            console.log("删除数据成功");
+            res.send({code:1,msg:'删除数据成功'});
         }
     });
 });

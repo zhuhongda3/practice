@@ -1,7 +1,7 @@
 <template>
     <div class="wrap" style="width:100%;max-width:600px;margin:0 auto;">
 
-        <p style="text-align: center;margin:20px auto;">简单的增删改查操作</p>
+        <p style="text-align: center;margin:20px auto;">增删改查</p>
 
         <!-- 录入数据-输入框 -->
         <el-form ref="form" :model="form" label-width="80px">
@@ -12,7 +12,7 @@
                 <el-input v-model="form.password" placeholder="请输入密码"></el-input>
             </el-form-item>
             <el-form-item>
-                <el-button type="primary" @click="inputData">确定</el-button>
+                <el-button type="primary" @click="inputData">注册</el-button>
                 <el-button @click="resetInput">取消</el-button>
             </el-form-item>
         </el-form>
@@ -22,10 +22,6 @@
         :data="tableData.slice((currentPage-1)*pagesize,currentPage*pagesize)"
         border
         style="width: 100%">
-        <!-- <el-table-column
-          label="序号"
-          type="index">
-        </el-table-column> -->
         <el-table-column label="用户名">
           <template slot-scope="scope">
             <span>{{ scope.row.account }}</span>
@@ -33,7 +29,8 @@
         </el-table-column>
         <el-table-column label="密码">
           <template slot-scope="scope">
-            <el-tag size="medium">{{ scope.row.password }}</el-tag>
+            <span>{{ scope.row.password }}</span>
+            <!-- <el-tag size="medium"></el-tag> -->
           </template>
         </el-table-column>
         <el-table-column label="操作">
@@ -67,7 +64,7 @@
         <el-dialog title="更新数据" :visible.sync="dialogFormVisible">
           <el-form :model="form">
             <el-form-item label="用户名" :label-width="formLabelWidth">
-              <el-input v-model="form.account" auto-complete="off"></el-input>
+              <el-input v-model="form.account" auto-complete="off" disabled></el-input>
             </el-form-item>
             <el-form-item label="密码" :label-width="formLabelWidth">
               <el-input v-model="form.password" auto-complete="off"></el-input>
@@ -119,13 +116,13 @@ export default {
       this.dialogFormVisible = true;
     },
     //新增
-     inputData() {
+    inputData() {
       if (this.form.account != "" && this.form.password != "") {
         this.insertData();
       } else {
         this.$message({
           showClose: true,
-          message: "录入数据失败!",
+          message: "输入的账号或密码不能为空",
           type: "warning"
         });
       }
@@ -134,50 +131,52 @@ export default {
       let params = this.form;
       this.$http.post("/api/login/createAccount", params)
       .then(response => {
-        this.searchData();
-        this.$message({
-          showClose: true,
-          message: "录入数据成功!",
-          type: "success"
-        });
+        let res = response.data;
+        if(res.code == 1){
+          this.$message({
+            showClose: true,
+            message: res.msg,
+            type: "success"
+          });
+          this.searchData();
+        }else{
+          this.$message({
+            showClose: true,
+            message: res.msg,
+            type: "warning"
+          });
+        }
       }).catch(reject => {
         console.log(reject);
-         this.$message({
-          showClose: true,
-          message: "录入数据失败!",
-          type: "warning"
-        });
       });
     },
     //删除
     handleDelete(index, row) {
-      this.deleteOneData(row._id);
+      this.deleteOneData(row.account);
     },
-    deleteOneData(_id) {
+    deleteOneData(a) {
       let params = {
-        id: _id
+        account: a
       }
       // this.$http.delete("/api/login/deleteAccount", { body: { id: _id } })
       this.$http.post("/api/login/deleteAccount", params)
       .then(response => {
-        this.searchData();
-        this.$message({
-          showClose: true,
-          message: "删除数据成功!",
-          type: "success"
-        });
+        let res = response.data;
+        if(res.code == 1){
+          this.$message({
+            showClose: true,
+            message: res.msg,
+            type: "success"
+          });
+          this.searchData();
+        }
       }).catch(reject => {
         console.log(reject);
-         this.$message({
-          showClose: true,
-          message: "删除数据失败!",
-          type: "warning"
-        });
       });
     },
      //更改
     updateOneData(){
-      if(this.form.account!=""&&this.form.password!=""){
+      if(this.form.password != ""){
         let params ={
           id: this.id,
           account: this.form.account,
@@ -185,25 +184,23 @@ export default {
         }
         this.$http.post("/api/login/updateAccount",params)
         .then(response => {
-          this.searchData();
-          this.$message({
-            showClose: true,
-            message: "更新数据成功!",
-            type: "success"
-          });
-          this.dialogFormVisible = false;
+          let res = response.data;
+          if(res.code == 1){
+            this.$message({
+              showClose: true,
+              message: res.msg,
+              type: "success"
+            }); 
+            this.searchData();
+            this.dialogFormVisible = false;
+          }
         }).catch(reject => {
           console.log(reject);
-          this.$message({
-            showClose: true,
-            message: "更新数据失败!",
-            type: "warning"
-          });
         });
       }else{
         this.$message({
           showClose: true,
-          message: "更新数据失败!",
+          message: "密码不能为空",
           type: "warning"
         });
       }
