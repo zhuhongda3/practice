@@ -1,3 +1,6 @@
+// 引入Express
+const express = require('express');
+const app = express();
 // 引入编写好的api
 const api = require('./api'); 
 // 引入文件模块
@@ -6,10 +9,10 @@ const fs = require('fs');
 const path = require('path');
 // 引入处理post数据的模块
 const bodyParser = require('body-parser')
-// 引入Express
-const express = require('express');
-const app = express();
+//跨域
+const cors = require('cors')  
 
+app.use(cors({ origin: '*' }))  
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(api);
