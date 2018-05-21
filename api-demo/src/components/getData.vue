@@ -1,27 +1,25 @@
 <template>
-    <div class="wrap" style="width:100%;max-width:600px;margin:0 auto;">
-
-        <p style="text-align: center;margin:20px auto;">增删改查</p>
-
+    <div>
+    <el-row>
+        <el-col :span="24">
         <!-- 录入数据-输入框 -->
-        <el-form ref="form" :model="form" label-width="80px">
+        <el-form ref="form" :model="form" label-width="40px">
             <el-form-item label="账号">
-                <el-input v-model="form.account" placeholder="请输入账号"></el-input>
+                <el-input v-model="form.account" placeholder="请输入账号" clearable></el-input>
             </el-form-item>
             <el-form-item label="密码">
-                <el-input v-model="form.password" placeholder="请输入密码"></el-input>
+                <el-input v-model="form.password" placeholder="请输入密码" clearable></el-input>
             </el-form-item>
             <el-form-item>
-                <el-button type="primary" @click="inputData">注册</el-button>
-                <el-button @click="resetInput">取消</el-button>
+                <el-button type="primary" size="small" @click="inputData">注册</el-button>
+                <el-button size="small" @click="resetInput">取消</el-button>
             </el-form-item>
         </el-form>
 
         <!-- 显示数据-表格 -->
         <el-table
         :data="tableData.slice((currentPage-1)*pagesize,currentPage*pagesize)"
-        border
-        style="width: 100%">
+        border>
         <el-table-column label="用户名">
           <template slot-scope="scope">
             <span>{{ scope.row.account }}</span>
@@ -30,7 +28,6 @@
         <el-table-column label="密码">
           <template slot-scope="scope">
             <span>{{ scope.row.password }}</span>
-            <!-- <el-tag size="medium"></el-tag> -->
           </template>
         </el-table-column>
         <el-table-column label="操作">
@@ -63,11 +60,11 @@
         <!-- 编辑数据-弹出框 -->
         <el-dialog title="更新数据" :visible.sync="dialogFormVisible">
           <el-form :model="form">
-            <el-form-item label="用户名" :label-width="formLabelWidth">
+            <el-form-item label="账号" :label-width="formLabelWidth">
               <el-input v-model="form.account" auto-complete="off" disabled></el-input>
             </el-form-item>
             <el-form-item label="密码" :label-width="formLabelWidth">
-              <el-input v-model="form.password" auto-complete="off"></el-input>
+              <el-input v-model="form.password" auto-complete="off" clearable></el-input>
             </el-form-item>
           </el-form>
           <div slot="footer" class="dialog-footer">
@@ -76,6 +73,9 @@
           </div>
         </el-dialog>
 
+
+        </el-col>
+      </el-row>
     </div>
 </template>
 
@@ -121,9 +121,9 @@ export default {
         this.insertData();
       } else {
         this.$message({
-          showClose: true,
           message: "输入的账号或密码不能为空",
-          type: "warning"
+          type: "warning",
+          duration: '1000'
         });
       }
     },
@@ -134,16 +134,16 @@ export default {
         let res = response.data;
         if(res.code == 1){
           this.$message({
-            showClose: true,
             message: res.msg,
-            type: "success"
+            type: "success",
+            duration: '1000'
           });
           this.searchData();
         }else{
           this.$message({
-            showClose: true,
             message: res.msg,
-            type: "warning"
+            type: "warning",
+            duration: '1000'
           });
         }
       }).catch(reject => {
@@ -158,15 +158,14 @@ export default {
       let params = {
         account: a
       }
-      // this.$http.delete("/api/login/deleteAccount", { body: { id: _id } })
       this.$http.post("/api/login/deleteAccount", params)
       .then(response => {
         let res = response.data;
         if(res.code == 1){
           this.$message({
-            showClose: true,
             message: res.msg,
-            type: "success"
+            type: "success",
+            duration: '1000'
           });
           this.searchData();
         }
@@ -187,9 +186,9 @@ export default {
           let res = response.data;
           if(res.code == 1){
             this.$message({
-              showClose: true,
               message: res.msg,
-              type: "success"
+              type: "success",
+              duration: '1000'
             }); 
             this.searchData();
             this.dialogFormVisible = false;
@@ -199,9 +198,9 @@ export default {
         });
       }else{
         this.$message({
-          showClose: true,
           message: "密码不能为空",
-          type: "warning"
+          type: "warning",
+          duration: '1000'
         });
       }
     },
@@ -209,8 +208,11 @@ export default {
     searchData() {
       this.$http.get("/api/login/searchAccount")
       .then(response => {
-        this.tableData = response.data;
-        this.total = this.tableData.length;
+        let res = response.data;
+        if(res.code == 1){
+          this.tableData = res.data;
+          this.total = this.tableData.length;
+        }
       }).catch(reject => {
         console.log(reject);
       });

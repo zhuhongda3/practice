@@ -10,9 +10,9 @@ const path = require('path');
 // 引入处理post数据的模块
 const bodyParser = require('body-parser')
 //跨域
-const cors = require('cors')  
+// const cors = require('cors')  
 
-app.use(cors({ origin: '*' }))  
+// app.use(cors({ origin: '*' }))  
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(api);
