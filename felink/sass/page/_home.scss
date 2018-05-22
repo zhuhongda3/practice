@@ -6,12 +6,12 @@
   position: relative;
   margin-left: 270px;
   .link-item {
-    padding-bottom: 20px;
-    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+    padding-bottom: 15px;
     .box-name {
       position: relative;
-      margin-bottom: 15px;
-      padding-left: 10px;
+      padding: 20px 0 20px 10px;
       font-size: 13px;
       color: #fff;
       &:before{
@@ -20,14 +20,15 @@
         width: 2px;
         height: 15px;
         position: absolute;
-        top: 0;
+        top: 50%;
+        margin-top: -8px;
         left: 0;
         background-color: $theme-cor;
       }
     }
     .item {
-      float: left;
       width: 200px;
+      border: 1px solid #666;
       margin-right: 10px;
       vertical-align: top;
       padding: 10px;
@@ -39,17 +40,24 @@
         display: block;
         color: #333;
         font-size: 13px;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
+        padding: 0 5px;
         color: #808080;
       }
       a {
         display: block;
-        padding: 5px 0;
+        padding: 6px;
         color: #ddd;
         font-size: 12px;
+        border-radius: 5px;
+        &:not(:first-child){
+          margin-top: 2px;
+        }
+        transition: all .3s ease-in;
         @extend %ellipsis;
         &:hover{
           color: $theme-cor;
+          background-color: rgba(0,0,0,.2);
         }
       }
     }

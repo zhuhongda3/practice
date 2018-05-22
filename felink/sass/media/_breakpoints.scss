@@ -1,7 +1,7 @@
 @media screen and (min-width: 481px) {
     .link-nav .link-list {
-        max-width: 1200px;
-        padding: 30px 25px;
+        // max-width: 1200px;
+        padding: 0 25px;
     }
 }
 
@@ -12,6 +12,7 @@
     .link-nav{
         margin-left: 0;
         .link-item{
+            display: inherit;
             &:nth-child(1){
                 padding-top: 40px;
             }
