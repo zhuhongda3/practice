@@ -16,7 +16,7 @@ var gulp = require('gulp'),
 
 gulp.task('sass', () =>
     gulp.src('./sass/*.scss')
-    .pipe(sass().on("error", sass.logError))
+    .pipe(sass({ outputStyle: "expanded" }).on("error", sass.logError))
     .pipe(sourcemaps.init())
     .pipe(autoprefixer({
         browsers: ['last 2 versions'],   
