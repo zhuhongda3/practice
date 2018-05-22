@@ -9,9 +9,9 @@
           <el-menu
             :default-openeds="openedsArray"
             :default-active="$route.path"
-            background-color="#545c64"
-            text-color="#fff"
-            active-text-color="#ffd04b"
+            background-color="#ddd"
+            text-color="#333"
+            active-text-color="#3598dc"
             unique-opened
             router >
             <el-submenu v-for="(item,index) in itemList" :key="index" :index="String(index+1)">
@@ -60,8 +60,7 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  border-bottom: 1px solid #666;
-  background-color: #545c64;
+  background-color: #0085D7;
   span{
     color: #fff;
     line-height: 60px;
@@ -74,7 +73,7 @@ export default {
   top: 60px;
   left: 0;
   height: calc(100% - 60px);
-  background-color: #545c64;
+  background-color: #ddd;
   z-index: 2;
 }
 
@@ -85,6 +84,20 @@ export default {
 
 .el-menu{
   border-right: 0;
+  .el-submenu{
+    &:not(:first-child){
+      border-top: 1px solid #cbcbcb;
+    }
+    .el-submenu__title{
+      &:hover{
+        background-color: #fff;
+      }
+      i{
+        color: #555;
+      }
+    }
+  } 
 }
+
 </style>
 
