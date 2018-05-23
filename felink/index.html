@@ -531,7 +531,32 @@
     <script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="//cdn.bootcss.com/foundation/6.4.3/js/foundation.min.js"></script>
     <script src="//cdn.bootcss.com/modernizr/2010.07.06dev/modernizr.min.js"></script>
+    <script src="//unpkg.com/minigrid@3.1.1/dist/minigrid.min.js"></script>
     <script src="./js/global.min.js"></script>
+    <script>
+    (function(){
+    var grid;
+    function init() {
+        grid = new Minigrid({
+        container: '.link-list',
+        item: '.link-item',
+        gutter: 12
+        });
+        grid.mount();
+    }
+    
+    // mount
+    function update() {
+        grid.mount();
+    }
+    window.onload = function(){
+        init();
+    }
+    document.addEventListener('DOMContentLoaded', init);
+    window.addEventListener('resize', update);
+    })();
+
+    </script>
 </body>
 
 </html>

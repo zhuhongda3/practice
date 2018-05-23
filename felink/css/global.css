@@ -357,32 +357,35 @@ body {
   position: relative;
 }
 
+.link-list {
+  position: absolute;
+}
+
 .link-nav {
   position: relative;
   margin-left: 270px;
 }
 
 .link-nav .link-item {
-  display: inline-block;
-  vertical-align: top;
-  padding-bottom: 15px;
+  position: absolute;
+  transition: .3s ease-in-out;
 }
 
 .link-nav .link-item .box-name {
   position: relative;
-  padding: 20px 0 20px 10px;
+  padding: 15px 0 15px 10px;
   font-size: 14px;
-  color: #fff;
+  color: #666;
 }
 
 .link-nav .link-item .box-name:before {
   content: '';
   display: block;
   width: 2px;
-  height: 15px;
+  height: 14px;
   position: absolute;
   top: 50%;
-  margin-top: -8px;
+  margin-top: -7px;
   left: 0;
   background-color: #26cbff;
 }
@@ -390,7 +393,6 @@ body {
 .link-nav .link-item .item {
   width: 200px;
   border: 1px solid #4c4444;
-  margin-right: 10px;
   vertical-align: top;
   padding: 10px;
   margin-bottom: 10px;
@@ -409,73 +411,26 @@ body {
 }
 
 .link-nav .link-item .item a {
-  position: relative;
   display: block;
   padding: 6px;
   color: #ddd;
   font-size: 12px;
   border-radius: 5px;
-  transition: all .3s ease-in-out;
+  transition: all .3s ease-in;
 }
 
-.link-nav .link-item .item a:after {
-  content: "click";
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: none;
-  padding: 6px;
-  width: 100%;
-  height: 100%;
-  color: #26cbff;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.link-nav .link-item .item a:after:not(:last-child) {
+.link-nav .link-item .item a:not(:last-child) {
   margin-bottom: 2px;
 }
 
 .link-nav .link-item .item a:hover {
-  color: transparent;
-}
-
-.link-nav .link-item .item a:hover:after {
-  display: block;
+  color: #26cbff;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 @media screen and (min-width: 481px) {
   .link-nav .link-list {
     font-size: 0;
     padding: 0 25px;
-  }
-}
-
-@media screen and (max-width: 720px) {
-  .sidebar {
-    display: none;
-  }
-  .link-nav {
-    margin-left: 0;
-  }
-  .link-nav .link-item {
-    display: inherit;
-  }
-  .link-nav .link-item:nth-child(1) {
-    padding-top: 40px;
-  }
-  .link-nav .link-item .box-name {
-    margin-left: 3%;
-    margin-bottom: 0;
-  }
-  .link-nav .link-item .item {
-    margin: 3%;
-    width: 94%;
-  }
-  .title-bar {
-    display: block;
-  }
-  .footer {
-    padding-left: 0;
   }
 }
