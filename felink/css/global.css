@@ -393,20 +393,20 @@ body {
 .link-nav .link-item .item {
   width: 200px;
   border: 1px solid #4c4444;
-  vertical-align: top;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 10px 5px;
   background-color: #30333c;
   border-radius: 6px;
-  overflow: hidden;
+}
+
+.link-nav .link-item .item:not(:first-of-type) {
+  margin-top: 10px;
 }
 
 .link-nav .link-item .item span {
   display: block;
   color: #333;
   font-size: 13px;
-  margin-bottom: 10px;
-  padding: 0 5px;
+  padding: 5px;
   color: #808080;
 }
 
