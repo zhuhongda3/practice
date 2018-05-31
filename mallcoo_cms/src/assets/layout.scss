@@ -3,6 +3,8 @@ $font14: 14px;
 $font16: 16px;
 $font18: 18px;
 
+$theme-color: #409EFF;
+
 .el-mc-fr{float: right;}
 .el-mc-fl{float: left;}
 
@@ -40,7 +42,7 @@ body{
   //链接
   a{
     font-size: $font12;
-    color: #409EFF;
+    color: $theme-color;
     text-decoration: none;
   }
   //辅助文字
@@ -61,6 +63,7 @@ body{
     }
   }
 }
+
 //小标题
 .el-mc-subtitle{
   padding: 5px 0;
@@ -114,3 +117,62 @@ body{
 
 //提示框
 .el-mc-tip{color: #737373;font-size: 12px;}
+
+
+.el-menu-item, 
+.el-submenu__title,
+.el-submenu .el-menu-item{
+  height: 40px;
+  line-height: 40px;
+}
+
+.el-submenu__title:hover{
+  background-color: #eee!important;
+}
+
+.el-submenu .el-menu,
+.el-submenu .el-menu-item{
+  background-color: #fff!important;
+}
+
+.el-submenu .el-menu-item:hover{
+  color: rgb(53, 152, 220)!important;
+  background-color: #fff!important;
+}
+
+.el-submenu.is-active .el-submenu__title{
+  background-color: #fff!important;
+  border-bottom-color: transparent;
+}
+
+.el-submenu .el-menu{
+  border-top: 1px solid #ddd;
+}
+
+.el-header{
+  width: 100%;
+  padding: 0;
+  height: auto!important;
+}
+
+.el-aside{
+  background-color: #ddd;
+  border-right: 1px solid #ddd;
+}
+
+.el-menu{
+  border-right: 0;
+  .el-submenu{
+    &:not(:first-child){
+      border-top: 1px solid #cbcbcb;
+    }
+    .el-submenu__title{
+      i{
+        color: #555;
+      }
+      &:hover{
+        background-color: #fff;
+      }
+    }
+  } 
+}

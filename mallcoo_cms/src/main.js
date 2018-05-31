@@ -4,8 +4,6 @@ import Vue from "vue";
 
 import 'es6-promise/auto';
 
-import "normalize.css/normalize.css";
-
 import ElementUI from "element-ui";
 import 'element-ui/lib/theme-chalk/index.css';
 
@@ -25,7 +23,8 @@ Vue.use(ElementUI);  //
 
 import {store} from './store/index.js';
 
-
+import "normalize.css/normalize.css";
+import "./assets/layout.scss";
 
 /* eslint-disable no-new */
 new Vue({

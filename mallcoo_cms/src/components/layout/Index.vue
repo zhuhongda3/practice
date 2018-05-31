@@ -2,7 +2,10 @@
   <div>
     <el-container>
       <el-header>
-        <span>element-ui 2.3.3</span>
+        <div style="background-color: #0771b3;">
+          <div class="" style="line-height: 25px;min-height: 25px;font-size: 12px;"></div>
+          <div class="" style="background-color: #0085D7;padding: 25px 0;"></div>
+        </div>
       </el-header>
       <el-container>
         <el-aside>
@@ -54,50 +57,5 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.el-header{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #0085D7;
-  span{
-    color: #fff;
-    line-height: 60px;
-  }
-  z-index: 20;
-}
-
-.el-aside{
-  position: fixed;
-  top: 60px;
-  left: 0;
-  height: calc(100% - 60px);
-  background-color: #ddd;
-  z-index: 2;
-}
-
-.el-main{
-  margin-top: 60px;
-  margin-left: 300px;
-}
-
-.el-menu{
-  border-right: 0;
-  .el-submenu{
-    &:not(:first-child){
-      border-top: 1px solid #cbcbcb;
-    }
-    .el-submenu__title{
-      &:hover{
-        background-color: #fff;
-      }
-      i{
-        color: #555;
-      }
-    }
-  } 
-}
-
-</style>
+<style lang="scss" scoped></style>
 

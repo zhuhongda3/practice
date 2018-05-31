@@ -36,6 +36,8 @@ export default {
 <style lang="scss" scoped>
 table{
   width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
   td,th{
     border: 1px solid #999;
     padding: 10px;

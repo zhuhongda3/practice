@@ -31,6 +31,8 @@
 <style lang="scss" scoped>
 table{
   width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
   th,td{
     border: 1px solid #999;
     height: 30px;

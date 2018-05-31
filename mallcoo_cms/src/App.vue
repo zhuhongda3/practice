@@ -10,7 +10,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import './assets/normalize.scss';
-@import './assets/layout.scss';
-</style>
+<style lang="scss"></style>
