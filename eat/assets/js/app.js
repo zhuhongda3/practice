@@ -264,13 +264,14 @@ var plugins = {
         });
 
         $("#showModal").click(function(){
-            $('.js-table').toggleClass('hide');
-            if(!$('.js-table').hasClass('hide')){
-                $('.mask').show();
-                that.initScroll();
-            }else{
-                $('.mask').hide();
-            }
+            $('.js-table').removeClass('hide');
+            $('.mask').show();
+            that.initScroll();
+        });
+
+        $('.mask').click(function(){
+            $(this).hide();
+            $('.js-table').addClass('hide');
         });
 
         $('.js-table').on('click','.js-remove-item',function(){
