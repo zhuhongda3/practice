@@ -1,14 +1,14 @@
 {
-  "name": "felink",
+  "name": "fl",
   "version": "v1.0",
-  "description": "website link",
+  "description": "link",
   "homepage": "https://github.com/digfree",
   "repository": {
     "type": "git",
     "url": "https://github.com/digfree"
   },
   "author": {
-    "name": "loop",
+    "name": "zhd",
     "email": "prettywhoo@163.com"
   },
   "license": "ISC",
