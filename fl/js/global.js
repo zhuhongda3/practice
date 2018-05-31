@@ -22,18 +22,21 @@ $(document).ready(function () {
         var $this = $('.title-bar-right p');
         $this.hide();
         var scrollTop = $(this).scrollTop();
-        if(scrollTop>0){
+        if (scrollTop > 0) {
             $this.hide();
-        }else{
+        } else {
             $this.show();
         }
     });
 
-    function checkScroll(){
-        var m1 = 0,m2 = 0,timer = null,that = this;
+    function checkScroll() {
+        var m1 = 0,
+            m2 = 0,
+            timer = null,
+            that = this;
         document.onscroll = function () {
             clearTimeout(that.timer) // 每次滚动前 清除一次
-            that.timer = setTimeout(function(){
+            that.timer = setTimeout(function () {
                 that.m2 = $(window).scrollTop();
                 if (that.m2 == that.m1) {
                     $('.go-top').removeClass('off-inner');
@@ -51,10 +54,9 @@ $(document).ready(function () {
     });
     grid.mount();
     window.addEventListener('resize', grid.mount());
-    $(window).resize(function(){
+    $(window).resize(function () {
         grid.mount();
     });
-    
+
     $(document).foundation();
 });
-

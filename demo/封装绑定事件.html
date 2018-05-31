@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var bindEvent = {
+      'add': function (id, type, fn, isBubble) {
+        var dom = document.getElementById(id);
+        if (!isBubble) isBubble = false;
+        if (dom.addEventListenner) {
+          dom.addEventListenner(type, fn, isBubble);
+        } else if (dom.attachEvent) {
+          Transit = function () {
+            fn.call(dom);
+          }
+          dom.attachEvent('on' + type, Transit);
+        } else {
+          dom['on' + type] = fn;
+        }
+      },
+      'remove': function (id, type, fn, isBubble) {
+        var dom = document.getElementById(id);
+        if (!isBubble) isBubble = false;
+        if (dom.removeEventListenner) {
+          dom.removeEventListenner(type, fn, isBubble)
+        } else if (dom.detachEvent) {
+          dom.detachEvent('on' + type, Transit)
+        } else {
+          dom['on' + type] = null;
+        }
+      }
+    }
+    //定义事件处理程序
+    function msg() {
+      alert(this.tagName)
+    }
+
+    //为目标元素绑定事件
+    bindEvent.add('link', 'click', msg, false);
+
+    //解除目标元素绑定的事件
+    bindEvent.remove('link', 'click', msg, false);
+  </script>
+</body>
+
+</html>

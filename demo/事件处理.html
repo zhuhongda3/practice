@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button id="ele" type="button">clickMe</button>
+  <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  <script>
+    var elem = document.querySelector('#ele');
+    class Menu {
+      handleEvent(event) {
+        // switch(event.type) {
+        //   case 'mousedown':
+        //     elem.innerHTML = 'Mouse down!';
+        //     break
+        //   case 'mouseup':
+        //     elem.innerHTML = 'Mouse up!';
+        //   default:
+        //     return;
+        // }
+        let method = 'on' + event.type[0].toUpperCase() + event.type.slice(1);
+        this[method](event);
+      }
+      
+      onMousedown() {
+        elem.innerHTML = 'Mouse down!';
+      }
+
+      onMouseup() {
+        elem.innerHTML = 'Mouse up';
+      }
+    }
+    let menu = new Menu();
+    elem.addEventListener('mousedown',menu);
+    elem.addEventListener('mouseup',menu);
+  </script>
+</body>
+</html>
