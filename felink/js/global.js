@@ -43,6 +43,17 @@ $(document).ready(function () {
         }
     }
     checkScroll();
+
+    var grid = new Minigrid({
+        container: '.link-list',
+        item: '.link-item',
+        gutter: 12
+    });
+    grid.mount();
+    window.addEventListener('resize', grid.mount());
+    $(window).resize(function(){
+        grid.mount();
+    });
     
     $(document).foundation();
 });
