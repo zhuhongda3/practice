@@ -2,8 +2,7 @@
   <div>
     <card-box title="基础用法">
       <template slot="content">
-        
-       <el-form ref="ruleForm" :model="ruleform" :rules="rules" label-width="120px">
+        <el-form ref="ruleForm" :model="ruleform" :rules="rules" label-width="120px">
           <div class="el-mc-title">申请新建</div>
           <el-form-item label="商场名称：" prop="name">
             <el-input v-model="ruleform.name"  placeholder="商场名称" class="el-mc-input-medium"></el-input>
@@ -15,39 +14,39 @@
             <el-input v-model="ruleform.address" placeholder="商场地址" class="el-mc-input-medium"></el-input>
           </el-form-item>
           <el-form-item label="地图坐标：" prop="coordinate">
-            <el-col :span="2">
-              <el-form-item>
-                <el-input v-model="ruleform.coordinate[0]" placeholder="经度" class="el-mc-input-xsmall"></el-input>
-              </el-form-item>
-            </el-col>
-            <el-col :span="2">
-              <el-form-item>
-                <el-input v-model="ruleform.coordinate[1]" placeholder="纬度" class="el-mc-input-xsmall"></el-input>
-              </el-form-item>
-            </el-col>
+            <el-form-item class="el-form-item-ib">
+              <el-input v-model="ruleform.coordinate[0]" placeholder="经度" class="el-mc-input-xsmall"></el-input>
+            </el-form-item>
+            <el-form-item class="el-form-item-ib">
+              <el-input v-model="ruleform.coordinate[1]" placeholder="纬度" class="el-mc-input-xsmall"></el-input>
+            </el-form-item>
             <el-button type="primary" icon="el-icon-location-outline">设定地图坐标</el-button>
           </el-form-item>
+
           <el-form-item label="公司logo：" prop="imgUrl">
-            <el-upload
-              ref="elUpload"
-              action="https://jsonplaceholder.typicode.com/posts/"
-              list-type="picture-card"
-              class="avatar-uploader"
-              :class="{disabled: isDisabled}"
-              :on-success="handleUploadSuccess"
-              :on-preview="handlePicturePreview"
-              :before-upload="beforePictureUpload"
-              :on-remove="handleRemove"
-              :file-list="fileList">
-              <i class="el-icon-plus"></i>
-              <div slot="tip" class="el-upload__tip">只图片尺寸限制：500*500；图片格式支持：PNG、JPG、JPEG；最大支持4M</div>
-            </el-upload>
+            <div class="upload-area">
+              <el-upload
+                class="avatar-uploader"
+                action="https://jsonplaceholder.typicode.com/posts/"
+                :show-file-list="false"
+                :on-success="handleUploadSuccess"
+                :before-upload="beforePictureUpload">
+                <img v-if="ruleform.imgUrl" :src="ruleform.imgUrl" class="avatar">
+                <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+              </el-upload>
+              <div class="upload-icon-btn" v-if="ruleform.imgUrl">
+                <span>
+                  <i class="el-icon-rank"  @click="handlePicturePreview(ruleform.imgUrl)"></i>
+                  <i class="el-icon-delete" @click="handleRemove()"></i>
+                </span>
+              </div>
+            </div>
 
             <el-dialog :visible.sync="dialogVisible">
               <img width="100%" :src="dialogImageUrl" alt="">
             </el-dialog>
 
-            <div style="display: inline-block;">
+            <div style="display: inline-block;margin-left: 10px;">
               <span style="display:inline-block;vertical-align: top;">示例：</span>
               <img :src="placeholderFigure" alt="示例图片" width="150" height="150">
             </div>
@@ -64,31 +63,31 @@
           </el-form-item>
 
           <el-form-item label="口令核销：">
-             <el-switch  v-model="isSwitch"></el-switch>
-             <div class="el-mc-tip">开启口令验证，用户可以通过商场口令自助验证券。</div>
-             <div v-if="isSwitch">
-                <el-checkbox-group v-model="ruleform.checkedItems2">
-                  <el-checkbox v-for="item in items2" :label="item" :key="item">{{item}}</el-checkbox>
-                </el-checkbox-group>
-                <el-form-item prop="verify">
-                  <el-input v-model="ruleform.verify" placeholder="请输入验证口令" class="el-mc-input-medium"></el-input>
-                </el-form-item>
-                <div class="el-mc-tip">使用模板内容(需自行补充商场联系信息)</div>
-             </div>
+            <el-switch  v-model="isSwitch"></el-switch>
+            <div class="el-mc-tip">开启口令验证，用户可以通过商场口令自助验证券。</div>
+            <div v-if="isSwitch">
+              <el-checkbox-group v-model="ruleform.checkedItems2">
+                <el-checkbox v-for="item in items2" :label="item" :key="item">{{item}}</el-checkbox>
+              </el-checkbox-group>
+              <el-form-item prop="verify">
+                <el-input v-model="ruleform.verify" placeholder="请输入验证口令" class="el-mc-input-medium"></el-input>
+              </el-form-item>
+              <div class="el-mc-tip">使用模板内容(需自行补充商场联系信息)</div>
+            </div>
           </el-form-item>
 
           <div class="el-mc-title">商场运营平台配置项</div>
-           <el-form-item label="用户协议内容：">
-             <el-switch  v-model="isSwitch2"></el-switch>
-             <div class="el-mc-tip">开启口令验证，用户可以通过商场口令自助验证券。</div>
-             <div v-if="isSwitch2">
-               <el-input
+            <el-form-item label="用户协议内容：">
+              <el-switch  v-model="isSwitch2"></el-switch>
+              <div class="el-mc-tip">开启口令验证，用户可以通过商场口令自助验证券。</div>
+              <div v-if="isSwitch2">
+                <el-input
                 class="el-mc-input-large"
                 type="textarea"
                 :autosize="{ minRows: 10}"
                 v-model="ruleform.textareaData">
               </el-input>
-             </div>
+              </div>
           </el-form-item>
 
           <el-form-item>
@@ -96,7 +95,6 @@
             <el-button @click="resetForm('ruleForm')">重置</el-button>
           </el-form-item>
         </el-form>
-
       </template>
       <template slot="code">{{code1}}</template>
     </card-box>
@@ -106,33 +104,27 @@
 <script>
 import CardBox from '@/components/share/CardBox';
 import steps_md_1 from '@/md/style_md_1.md';
-import log from '@/assets/sample-logo.png';
+import default_img from '@/assets/sample-logo.png';
 
 export default {
   data(){
     return {
       code1: steps_md_1,
-      placeholderFigure: log,
+      placeholderFigure: default_img,
       dialogVisible: false,
       dialogImageUrl: '',
-      isDisabled: false,
       isIndeterminate: true,
       checkAll: false,
       isSwitch: false,
       isSwitch2: false,
       items: ['餐饮（基础版）', '餐饮（基础版2）'],
       items2: ['代金券', '折扣券', '兑换券', '优惠券', '停车券'],
-      fileList: [
-        {
-          url: log
-        }
-      ],
       ruleform: {
         name: '',
         englishName: '',
         address: '',
         coordinate: [],
-        imgUrl: '',
+        imgUrl: default_img,
         checkedItems: [],
         checkedItems2: [],
         verify: '',
@@ -176,15 +168,8 @@ export default {
     };
   },
   mounted(){
-    this.checkUploadIconShow();
   },
   methods: {
-    checkUploadIconShow(){
-      if(this.fileList.length>0){
-        this.isDisabled = true;
-        this.ruleform.imgUrl = this.fileList[0].url;
-      }
-    },
     submitForm(formName){
       this.$refs[formName].validate((valid)=>{
         if(valid){
@@ -197,12 +182,8 @@ export default {
     },
     resetForm(formName){
       this.$refs[formName].resetFields();
-
-      this.fileList = [];
-      this.isDisabled = false;
       this.isSwitch = false;
       this.isSwitch2 = false;
-      
       this.ruleform.englishName = '';
       this.ruleform.checkedItems = [];
       this.ruleform.checkedItems2 = [];
@@ -211,9 +192,7 @@ export default {
       this.ruleform.imgUrl = '';
     },
     handleRemove(file,fileList) {
-      this.isDisabled = false;
       this.ruleform.imgUrl = '';
-      this.fileList = [];
     },
     beforePictureUpload(file) {
       const isJPG = file.type === 'image/jpeg' || file.type === 'image/png' || file.type === 'image/jpg';
@@ -228,10 +207,9 @@ export default {
     },
     handlePicturePreview(file) {
       this.dialogVisible = true;
-      this.dialogImageUrl = file.url;
+      this.dialogImageUrl = file;
     },
     handleUploadSuccess(res, file){
-      this.isDisabled = true;
       this.ruleform.imgUrl = URL.createObjectURL(file.raw);
     },
     handleCheckAllChange(val) {
@@ -249,3 +227,70 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.upload-area{
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  .upload-icon-btn{
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-radius: 6px;
+    z-index: 2;
+    span{
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      i{
+        padding: 8px;
+        font-size: 18px;
+        color: #fff;
+        &:hover{
+          cursor: pointer;
+        }
+      }
+    }
+    &:hover{
+      background-color: rgba(0,0,0,.5);
+      span{
+        display: block;
+      }
+    }
+  }
+}
+
+.avatar-uploader{
+  line-height: 1;
+  .el-upload {
+    border: 1px dashed #d9d9d9;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+}
+.avatar-uploader .el-upload:hover {
+  border-color: #409EFF;
+}
+.avatar-uploader-icon {
+  font-size: 28px;
+  color: #8c939d;
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
+  text-align: center;
+}
+.avatar {
+  width: 150px;
+  height: 150px;
+  display: block;
+}
+</style>

@@ -90,7 +90,13 @@ body{
 //   overflow: hidden;
 //   white-space: nowrap;
 // }
-
+.el-form-item-ib{
+  display: inline-block;
+  margin-right: 10px;
+  @at-root .el-form-item__content{
+    font-size: 0;
+  }
+}
 .el-mc-input-xsmall{
   width: 90px;
 }

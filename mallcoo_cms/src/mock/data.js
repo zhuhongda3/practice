@@ -98,7 +98,7 @@ export const sideBarData = [
         menuItemList:[
           {menuItem:'提交模板',url:'/component/style1'},
           // {menuItem:'购物车',url:'/component/car'},
-          {menuItem:'风格3',url:'/component/style3'},
+          // {menuItem:'风格3',url:'/component/style3'},
         ]
       },
     ]
