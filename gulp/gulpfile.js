@@ -52,7 +52,7 @@ gulp.task("css", ["css-minify"], function() {
     .src(config.css.srcPath)
     .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: "expanded" }).on("error", sass.logError))
-    .pipe(postcss([require("precss"), require("autoprefixer")]))
+    .pipe(postcss([require("autoprefixer")]))
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest(config.css.devPath))
     .pipe(browserSync.reload({ stream: true }));
