@@ -10,13 +10,6 @@ var sass = require('gulp-sass');
  * 紧凑:compact
  * 压缩:compressed
  */
-
-/**
- * 模拟嵌套语法:precss
- * 下一代CSS:postcss-preset-env
- * 浏览器前缀:autoprefixer
- */
-
 gulp.task('scss', function () {
   return gulp.src('src/**/*.scss')
     .pipe(sourcemaps.init())
@@ -30,6 +23,11 @@ gulp.task('scss', function () {
     .pipe(gulp.dest('build/'));
 });
 
+/**
+ * 模拟嵌套语法:precss
+ * 下一代CSS:postcss-preset-env
+ * 浏览器前缀:autoprefixer
+ */
 // gulp.task('css', function () {
 //   return gulp.src('src/**/*.css')
 //     .pipe(sourcemaps.init())
