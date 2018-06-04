@@ -26,7 +26,7 @@
       </el-col>
       <el-col :span="8">
         <el-form-item label="会员等级">
-            <el-select v-model="form.grade" placeholder="请选择" style="width: 100%;">
+          <el-select v-model="form.grade" placeholder="请选择" style="width: 100%;">
             <el-option
               v-for="item in options"
               :key="item.value"
@@ -38,14 +38,24 @@
       </el-col>
       <el-col :span="8">
         <el-form-item label="当前积分">
-          <el-input v-model="form.integral" style="width:100%;"></el-input>
+          <el-col :span="11">
+            <el-form-item>
+              <el-input v-model="form.integral[0]" style="width:100%"></el-input>
+            </el-form-item>
+          </el-col>
+          <el-col :span="2" class="el-mc-text-center">至</el-col>
+          <el-col :span="11">
+            <el-form-item>
+              <el-input v-model="form.integral[1]" style="width:100%"></el-input>
+            </el-form-item>
+          </el-col>
         </el-form-item>
       </el-col>
     </el-row>
     <el-row>
       <el-col :span="8">
         <el-form-item label="是否绑定用户">
-            <el-select v-model="form.isBindingUsers" placeholder="请选择" style="width: 100%;">
+          <el-select v-model="form.isBindingUsers" placeholder="请选择" style="width: 100%;">
             <el-option
               v-for="item in options1"
               :key="item.value"
@@ -57,19 +67,19 @@
       </el-col>
       <el-col :span="8">
         <el-form-item label="状态">
-            <el-select v-model="form.status" placeholder="请选择" style="width: 100%;">
+          <el-select v-model="form.status" placeholder="请选择" style="width: 100%;">
             <el-option
-                v-for="item in options2"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value">
-              </el-option>
-            </el-select>
+              v-for="item in options2"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+            </el-option>
+          </el-select>
         </el-form-item>
       </el-col>
       <el-col :span="8">
         <el-form-item label="开卡来源">
-            <el-select v-model="form.source" placeholder="请选择" style="width: 100%;">
+          <el-select v-model="form.source" placeholder="请选择" style="width: 100%;">
             <el-option
               v-for="item in options3"
               :key="item.value"
@@ -83,7 +93,7 @@
     <el-row>
       <el-col :span="8">
         <el-form-item label="开卡时间" >
-            <el-date-picker
+          <el-date-picker
             v-model="form.cardOpenTime"
             type="daterange"
             range-separator="至"
@@ -108,7 +118,7 @@
     </el-row>
     <el-row>
       <el-col :span="8">
-          <el-form-item>
+        <el-form-item>
           <el-button @click="onSubmit" plain>搜索</el-button>
         </el-form-item>
       </el-col>
@@ -126,7 +136,7 @@ export default {
         externalNumber: '',
         tel: '',
         grade: '',
-        integral: '',
+        integral: [],
         isBindingUsers: '',
         status: '',
         source: '',

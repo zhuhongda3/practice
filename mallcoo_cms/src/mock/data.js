@@ -6,6 +6,7 @@ export const sideBarData = [
         menuItemGroupTitle: '说明列表',
         menuItemList:[
           {menuItem:'参考资料',url:'/component/references'},
+          {menuItem:'语法测试',url:'/component/test'},
         ]
       },
     ]
@@ -96,7 +97,7 @@ export const sideBarData = [
       {
         menuItemGroupTitle: '实例分类',
         menuItemList:[
-          {menuItem:'提交模板',url:'/component/style1'},
+          {menuItem:'提交模板',url:'/component/submit_demo'},
           // {menuItem:'购物车',url:'/component/car'},
           // {menuItem:'风格3',url:'/component/style3'},
         ]

@@ -20,6 +20,7 @@ export const store = new Vuex.Store({
       return state.goodsList.length;
     }
   },
+  //记录变更
   mutations: {
     addGoods(state,data){
       state.goodsList.push(data);
@@ -35,6 +36,7 @@ export const store = new Vuex.Store({
       localStorage.setItem("goodsList",JSON.stringify(state.goodsList));
     }
   },
+  //分发事件
   actions: {
 
   }

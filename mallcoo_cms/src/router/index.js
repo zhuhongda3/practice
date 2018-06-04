@@ -66,6 +66,10 @@ const routerOptions = [
     component: 'References'
   },
   {
+    path: '/component/test',
+    component: 'Test'
+  },
+  {
     path: '/component/layout',
     component: 'Layout'
   },
@@ -174,8 +178,8 @@ const routerOptions = [
     component: 'Pagination'
   },
   {
-    path: '/component/style1',
-    component: 'Style1'
+    path: '/component/submit_demo',
+    component: 'Submit-demo'
   },
   {
     path: '/component/car',

@@ -25,7 +25,7 @@
       <template slot="code">{{code3}}</template>
     </card-box>
 
-    <card-box title="尺寸">
+    <card-box title="按钮位置">
       <template slot="content">
         <el-input-number v-model="num8" controls-position="right" @change="handleChange" :min="1" :max="10" label="描述文字"></el-input-number>
       </template>

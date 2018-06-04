@@ -2,7 +2,7 @@
   <div>
     <card-box title="基础用法">
       <template slot="content">
-        <div class="box">
+        <div class="box" style="margin: 0 auto;">
           <div class="top">
             <el-tooltip class="item" content="Top Left 提示文字" placement="top-start">
               <el-button>上左</el-button>

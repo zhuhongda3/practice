@@ -23,10 +23,9 @@ $theme-color: #409EFF;
 
 body{
   min-width: 1280px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  // font-family: "Open Sans", sans-serif;
-  font-size: 14px;
+  // font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #f4f4f4;
+  font-size: 14px;
 }
 
 //标题
@@ -90,13 +89,23 @@ body{
 //   overflow: hidden;
 //   white-space: nowrap;
 // }
-.el-form-item-ib{
-  display: inline-block;
-  margin-right: 10px;
-  @at-root .el-form-item__content{
-    font-size: 0;
+.el-mc-text-center{
+  text-align: center;
+}
+.el-mc-text-left{
+  text-align: center;
+}
+.el-mc-text-right{
+  text-align: center;
+}
+
+.el-form-item__content{
+  .el-mc-fl+.el-mc-fl,
+  .el-mc-fl+.el-button{
+    margin-left: 10px;
   }
 }
+
 .el-mc-input-xsmall{
   width: 90px;
 }
