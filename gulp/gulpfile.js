@@ -1,4 +1,4 @@
-const gulp = require("gulp"),
+var gulp = require("gulp"),
   concat = require("gulp-concat"),
   uglify = require("gulp-uglify"),
   rename = require("gulp-rename"),
@@ -105,11 +105,11 @@ gulp.task("js-minify", function() {
 });
 
 gulp.task("watch", function() {
-  // browserSync.init({
-  //   server: {
-  //     baseDir: config.devPath
-  //   }
-  // });
+  browserSync.init({
+    server: {
+      baseDir: config.html.devPath
+    }
+  });
   gulp.watch([config.html.srcPath, config.html.project+'/layout/*.html'], ["html"]);
   gulp.watch(config.src+'/sass/**/*.scss', ["css"]);
   gulp.watch(config.js.srcPath, ["js"]);

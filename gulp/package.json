@@ -6,7 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "browserslist": ["Android 4.1", "iOS 7.1", "Chrome > 31", "ff > 31", "ie >= 10"],
+  "browserslist": [
+    "Android 4.1",
+    "iOS 7.1",
+    "Chrome > 31",
+    "ff > 31",
+    "ie >= 10"
+  ],
   "author": "zhd",
   "license": "ISC",
   "devDependencies": {

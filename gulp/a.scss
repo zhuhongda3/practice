@@ -1,0 +1,56 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+ul,li{
+  list-style: none;
+}
+$a: #f00;
+$b: #ff0;
+.word-test {
+  color: $a;
+  background: $b;
+}
+
+.nav {
+  background-color: steelblue;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__item {
+    color: white;
+    &--active {
+      @extend .nav__item;
+      border-bottom: 1px solid red;
+    }
+  }
+}
+//图片占位
+// http://placeholder.qiniudn.com/375x224/ffc62d/000
+
+// --------theme----------
+// .bg_box  //块颜色
+// .border-lighten-222 //块1px边框色
+
+// .fc_default //字体高亮颜色
+// .border-default //高亮边框
+// .bg-default   //高亮背景
+
+// .cor_f_1  //#fff  => #333
+// .cor_f_2  //#ddd  => #666
+// .cor_f_3  //#666  => #999
+
+// $.Zebra_Dialog('', {
+//   'source': {
+//       'inline': $('.customer_pop2').html()
+//   },
+//   'buttons': ['确定', '取消'],
+//   'custom_class': 'customer_pop',
+//   'show_close_button': false,
+//   'title': '登录',
+// });
+
+// flex
+// dis_flex
+// box_flex
