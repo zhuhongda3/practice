@@ -6,6 +6,7 @@
   padding: 0 24px;
   width: 270px;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   background: $sidebar-bg;
   z-index: 3;
   .title {

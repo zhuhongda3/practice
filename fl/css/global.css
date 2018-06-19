@@ -214,6 +214,7 @@ body {
   padding: 0 24px;
   width: 270px;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   background: #30333c;
   z-index: 3;
 }
