@@ -67,7 +67,7 @@
 
 .off-canvas {
   margin-top: 0!important;
-  background: #f4f4f4 url(./../img/background.png);
+  background-color: #171515;
 }
 
 .title-bar-right {
@@ -115,7 +115,7 @@
 }
 
 .accordion-menu li {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #3a3a3a;
 }
 
 .accordion-menu li:last-child {
@@ -125,16 +125,16 @@
 .go-top {
   position: fixed;
   bottom: 50px;
+  z-index: 5;
   right: 10px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #333;
   color: #fff;
   line-height: 40px;
   text-align: center;
   transition: .3s all;
-  z-index: 5;
+  box-shadow: 0 0 5px 1px #25cbfe;
   cursor: pointer;
 }
 

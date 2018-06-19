@@ -5,31 +5,39 @@
     }
 }
 
-// @media screen and (max-width:720px){
-//     .sidebar{
-//         display: none;
-//     }
-//     .link-nav{
-//         margin-left: 0;
-//         .link-item{
-//             display: inherit;
-//             &:nth-child(1){
-//                 padding-top: 40px;
-//             }
-//             .box-name{
-//                 margin-left: 3%;
-//                 margin-bottom: 0;
-//             }
-//             .item{
-//                 margin: 3%;
-//                 width: 94%;
-//             }
-//         } 
-//     }
-//     .title-bar{
-//         display: block;
-//     }
-//     .footer{
-//         padding-left: 0;
-//     }
-// }
+@media screen and (max-width:425px){
+    .sidebar{
+        display: none;
+    }
+    .link-nav{
+        margin-left: 0;
+    }
+    .link-nav{
+        .link-item{
+            width: calc(100% - 16px);
+            .item{
+                width: inherit;
+            }
+        }
+    } 
+    // .link-nav{
+    //     margin-left: 0;
+    //     .link-item{
+    //         display: inherit;
+    //         &:nth-child(1){
+    //             padding-top: 40px;
+    //         }
+    //         .box-name{
+    //             margin-left: 3%;
+    //             margin-bottom: 0;
+    //         }
+    //         .item{
+    //             margin: 3%;
+    //             width: 94%;
+    //         }
+    //     } 
+    // }
+    .title-bar{
+        display: block;
+    }
+}
