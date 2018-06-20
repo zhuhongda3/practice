@@ -16,6 +16,8 @@ var bob = {
   }
 }
 
+bob.printFriends();
+
 function square() {
   let example = () => {
     let numbers = [];
@@ -36,7 +38,8 @@ var b = 21;
 console.log(`${a} age is ${b}`);
 
 // 解构
-var [a, b, c] = [1, 2, 3];
+var [c,d,e] = [1, 2, 3];
+console.log(`${c} and ${d} and ${e}`);
 
 // 默认参数
 function f(x, y = 12) {

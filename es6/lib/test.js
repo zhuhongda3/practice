@@ -28,6 +28,8 @@ var bob = {
   }
 };
 
+bob.printFriends();
+
 function square() {
   var _arguments = arguments;
 
@@ -71,12 +73,13 @@ var b = 21;
 console.log(a + ' age is ' + b);
 
 // 解构
-var a = 1,
-    b = 2,
-    c = 3;
+var c = 1,
+    d = 2,
+    e = 3;
+
+console.log(c + ' and ' + d + ' and ' + e);
 
 // 默认参数
-
 function f(x) {
   var y = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 12;
 
@@ -94,7 +97,7 @@ function f2(x, y, z) {
   return x + y + z;
 }
 
-console.log(f2.apply(undefined, [1, 2, 3]) == 6); //true
+console.log(f2.apply(undefined, [1, 2, 3]) == 6); // true
 
 
 var Person = function () {
@@ -121,7 +124,7 @@ var Person = function () {
 var children1 = new Person('xixi');
 var children2 = new Person('xixi2');
 
-console.log(children1.getName()); //xixi
-console.log(children2.getName()); //xixi2
+console.log(children1.getName()); // xixi
+console.log(children2.getName()); // xixi2
 console.log(children1.__proto__ === children2.__proto__); // true
-console.log(children1.constructor === Person.prototype.constructor); //true
+console.log(children1.constructor === Person.prototype.constructor); // true
