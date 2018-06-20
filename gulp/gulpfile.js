@@ -26,7 +26,7 @@ gulp.task("copy", function() {
 
 gulp.task("html", function() {
   gulp
-    .src(config.html.srcPath) //['index.html']
+    .src(config.html.srcPath)
     .pipe(
       fileinclude({
         prefix: "@@",
@@ -115,6 +115,6 @@ gulp.task("watch", function() {
   gulp.watch(config.js.srcPath, ["js"]);
 });
 
-gulp.task("default", ["clean"], function() {
-  gulp.start('copy','html','css','js','watch');
+gulp.task("default", function() {
+  gulp.start('html','css','js','copy','watch');
 });
