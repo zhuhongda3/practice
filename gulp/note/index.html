@@ -3,19 +3,19 @@
 <main class="main">
   <nav class="nav">
     <ul class="data-list" id="dataEl">
-      <li>
+      <li v-for="(item1,index1) in dataList" :key="index1">
         <a href="#">
-          <p @click="show = !show" :class="{active: show}"><span>2018</span><i></i></p>
+          <p @click="show = !show" :class="{active: show}"><span>{{item1.year}}</span><i></i></p>
           <transition name="fade">
             <ul v-if="show">
-              <li>
+              <li v-for="(item2,index2) in item1.monthList" :key="index2">
                 <a href="#">
-                  <p @click.stop="show1 = !show1" :class="{active: show1}"><span>2018-01</span><i></i></p>
+                  <p @click.stop="show1 = !show1" :class="{active: show1}"><span>{{item2.month}}</span><i></i></p>
                   <transition name="fade">
                     <ul v-if="show1">
-                      <li>
-                        <a href="#">
-                          <p><span>文章1</span><i></i></p>
+                      <li v-for="(item3,index3) in item2.articleList" :key="index3">
+                        <a :href="item3.url">
+                          <p><span>{{item3.title}}</span><i></i></p>
                         </a>
                       </li>
                     </ul>
@@ -24,11 +24,6 @@
               </li>
             </ul>
           </transition>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <p><span>2017</span><i></i></p>
         </a>
       </li>
     </ul>

@@ -47,17 +47,15 @@ body{
     p{
       position: relative;
       padding: 15px 10px;
-      &:first-child{
-        border-top: 0; 
-      }
       &::after{
         content: '';
         position: absolute;
         left: 0;
-        top: 0;
+        bottom: -1px;
         display: block;
         width: 100%;
-        border-bottom: 1px solid #f4f4f4;
+        border: 1px solid #f4f4f4;
+        transform: scaleY(0.5);
       }
       i{
         position: absolute;
