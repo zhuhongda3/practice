@@ -1,0 +1,38 @@
+@@include('layout/res_header.html',{ "title":"首页" })
+<header class="header"></header>
+<main class="main">
+  <nav class="nav">
+    <ul class="data-list" id="dataEl">
+      <li>
+        <a href="#">
+          <p @click="show = !show" :class="{active: show}"><span>2018</span><i></i></p>
+          <transition name="fade">
+            <ul v-if="show">
+              <li>
+                <a href="#">
+                  <p @click.stop="show1 = !show1" :class="{active: show1}"><span>2018-01</span><i></i></p>
+                  <transition name="fade">
+                    <ul v-if="show1">
+                      <li>
+                        <a href="#">
+                          <p><span>文章1</span><i></i></p>
+                        </a>
+                      </li>
+                    </ul>
+                  </transition>
+                </a>
+              </li>
+            </ul>
+          </transition>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <p><span>2017</span><i></i></p>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</main>
+<footer class="footer"></footer>
+@@include('layout/res_footer.html')

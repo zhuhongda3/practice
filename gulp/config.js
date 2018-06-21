@@ -1,4 +1,4 @@
-const project = 'dzfp'; //项目主目录
+const project = 'note'; //项目主目录
 const src = project+'/src';  //源文件目录
 const build = project+'/build';  //开发环境目录
 const dest = project+'/dest';  //生产环境目录
