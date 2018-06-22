@@ -26,8 +26,6 @@ ul,li{
 article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}
 
 body{
-  margin: 0 auto;
-  max-width: 1200px;
   font: 12px/1.5 arial,'microsoft yahei',sans-serif;
   background-color: #f4f4f4;
   user-select: none;
@@ -43,10 +41,47 @@ body{
 
 .data-list{
   li{
-    font-size: 14px;
+    position: relative;
+    font-size: 16px;
+    .del-btn{
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: inline-block;
+      width: 70px;
+      height: 50px;
+      line-height: 50px;
+      font-size: 14px;
+      background-color: #F00;
+      color: #fff;
+      text-align: center;
+    }
+    >ul{
+      li{
+        p{
+          font-size: 15px;
+          color: #666;
+        }
+        >ul{
+          li{
+            p{
+              font-size: 13px;
+              color: #666;
+            }
+          }
+        }
+      }
+    }
     p{
       position: relative;
-      padding: 15px 10px;
+      padding: 0 10px;
+      height: 50px;
+      line-height: 50px;
+      background-color: #fff;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      transition: 0.3s;
       &::after{
         content: '';
         position: absolute;
@@ -72,6 +107,7 @@ body{
       &.active{
         i{
           transform: translateY(-50%) rotate(135deg);
+          margin-top: -3px;
         }
       }
     }

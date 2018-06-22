@@ -1,4 +1,14 @@
-@@include('layout/res_header.html',{ "title":"首页" })
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>首页</title>
+  <!-- <link rel="stylesheet" href="http://res.mallcoo.net/mobile/css/1.0.0/reset.css"> -->
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
 <header class="header"></header>
 <main class="main">
   <nav class="nav">
@@ -22,4 +32,10 @@
   </nav>
 </main>
 <footer class="footer"></footer>
-@@include('layout/res_footer.html')
+<!--[if IE]>
+<script src=”http://html5shiv.googlecode.com/svn/trunk/html5.js”></script>
+< ![endif]-->
+<script src="//cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
