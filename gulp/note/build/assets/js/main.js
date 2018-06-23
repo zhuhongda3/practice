@@ -2,7 +2,7 @@
 
 var DelItem = Vue.extend({
   props: ['item1', 'item2', 'index2'],
-  template: '<li ref="currentItem" :index="index2">' + '<a :href="item2.url">' + '<span class="del-btn" @click.prevent="deleteItem(item1.children,index2)" ref="remove">删除</span>' + '<p' + '@touchstart.prevent="_touchStart"' + '@touchmove.prevent="_touchMove"' + '@touchend="_touchEnd"' + ':style="txtStyle">' + '{{item2.name}}' + '</p>' + '</a>' + '</li>',
+  template: '<li ref="currentItem" :index="index2">' + '<a :href="item2.url">' + '<span class="del-btn" @click.prevent="deleteItem(item1.children,index2)" ref="remove">删除</span>' + '<p' + '@touchstart="_touchStart"' + '@touchmove.prevent="_touchMove"' + '@touchend="_touchEnd"' + ':style="txtStyle">' + '{{item2.name}}' + '</p>' + '</a>' + '</li>',
   data: function data() {
     return {
       startX: 0, //触摸位置
@@ -15,12 +15,23 @@ var DelItem = Vue.extend({
   methods: {
     _touchStart: function _touchStart(ev) {
       ev = ev || event;
+      var w = this.$refs.remove.offsetWidth;
       if (ev.touches.length == 1) {
-        var len = this.$refs.currentItem.parentNode.children.length;
         var idx = this.$refs.currentItem.getAttribute('index');
+        //当前元素的父元素ul的子元素li的个数
+        var len = this.$refs.currentItem.parentNode.children.length;
+        var current = this.$refs.currentItem.parentNode.children[idx].getElementsByTagName('p')[0].getAttribute('style');
+        if (typeof current != 'undefined' && current != null && current.match(/\d+/)[0] == String(w)) {
+          ev.preventDefault();
+        }
         for (var i = 0; i < len; i++) {
           if (i == idx) continue;
-          this.$refs.currentItem.parentNode.children[i].getElementsByTagName('p')[0].setAttribute('style', "transform: translateX(0px)");
+          var item = this.$refs.currentItem.parentNode.children[i];
+          var s = item.getElementsByTagName('p')[0].getAttribute('style');
+          if (typeof s != 'undefined' && s != null && s.match(/\d+/)[0] == String(w)) {
+            item.getElementsByTagName('p')[0].style.transform = 'translateX(0px)';
+            ev.preventDefault();
+          }
         }
         this.startX = ev.touches[0].clientX;
       }
@@ -55,8 +66,8 @@ var DelItem = Vue.extend({
       }
     },
     deleteItem: function deleteItem(item, index) {
-      item.splice(index, 1);
       this.txtStyle = "transform: translateX(0px)";
+      item.splice(index, 1);
     }
   }
 });
@@ -80,10 +91,7 @@ new Vue({
           url: "//baidu.com"
         }, {
           name: "文章2",
-          url: "#"
-        }, {
-          name: "文章3",
-          url: "#"
+          url: "//baidu.com"
         }]
       }, {
         show: false,
@@ -93,9 +101,6 @@ new Vue({
           url: "#"
         }, {
           name: "文章2",
-          url: "#"
-        }, {
-          name: "文章3",
           url: "#"
         }]
       }]
@@ -111,9 +116,6 @@ new Vue({
         }, {
           name: "文章2",
           url: "#"
-        }, {
-          name: "文章3",
-          url: "#"
         }]
       }, {
         show: false,
@@ -124,26 +126,58 @@ new Vue({
         }, {
           name: "文章2",
           url: "#"
-        }, {
-          name: "文章3",
-          url: "#"
         }]
       }]
     }];
   },
   methods: {
-    toggle: function toggle(item) {
+    toggleShare: function toggleShare(item) {
       var ev = ev || event;
-      item.show = !item.show;
-      if (item.show) {
-        var len = ev.target.parentNode.parentNode.children.length;
-        var idx = ev.target.getAttribute('index');
-        for (var i = 0; i < len; i++) {
-          if (i == idx) continue;
-          ev.target.parentNode.parentNode.children[i].getElementsByTagName('ul')[0].setAttribute('style', 'display: none');
-          ev.target.parentNode.parentNode.children[i].getElementsByTagName('p')[0].setAttribute('class', '');
+      var idx = ev.target.getAttribute('index');
+      var len = ev.target.parentNode.parentNode.children.length;
+      item.show = false;
+      for (var i = 0; i < len; i++) {
+        var child = ev.target.parentNode.parentNode.children[i];
+        var tagUl = child.getElementsByTagName('ul')[0];
+        var tagP = child.getElementsByTagName('p')[0];
+        if (i == idx) {
+          if (tagP.className == '') {
+            tagP.className = 'active';
+            tagUl.style.display = 'block';
+          } else {
+            item.show = true;
+          }
+        } else {
+          tagP.className = '';
+          tagUl.style.display = 'none';
         }
       }
+      //重置del
+      var tagPList = ev.target.parentNode.parentNode.getElementsByTagName('p');
+      for (var j = 0; j < tagPList.length; j++) {
+        var t = tagPList[j].style.transform;
+        if (typeof t != 'undefined' && Number(t.match(/\d+/)) > 0) {
+          tagPList[j].style.transform = 'translateX(0px)';
+        }
+      }
+
+      item.show = !item.show;
+    },
+    toggle: function toggle(item) {
+      this.toggleShare(item);
+
+      //重置2级ul
+      var ev = ev || event;
+      var tagP = ev.target.nextSibling.nextSibling.getElementsByTagName('p');
+      for (var i = 0; i < tagP.length; i++) {
+        if (tagP[i].className == 'active') {
+          tagP[i].className = '';
+          tagP[i].nextSibling.nextSibling.style.display = 'none';
+        }
+      }
+    },
+    toggle2: function toggle2(item) {
+      this.toggleShare(item);
     }
   }
 });
