@@ -28,7 +28,7 @@
       }
     }
     .item {
-      width: 200px;
+      width: 230px;
       border: 1px solid #4c4444;
       padding: 10px 5px;
       &:not(:first-of-type){
@@ -36,11 +36,11 @@
       }
       background-color: $sidebar-bg;
       border-radius: 6px;
-      span {
-        display: block;
-        font-size: 13px;
+      p {
         padding: 5px;
+        font-size: 13px;
         color: #808080;
+        word-break: break-all;
       }
       a {
         display: block;
@@ -55,7 +55,7 @@
         }
         &:hover{
           color: $theme-cor;
-          background-color: rgba(0,0,0,.4);
+          background-color: rgba(0,0,0,.6);
         }
       }
     }
