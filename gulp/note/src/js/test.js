@@ -1,6 +1,6 @@
 var DelItem = Vue.extend({
   props: ['item1', 'item2', 'index2'],
-  template: '<li ref="currentItem" :index="index2">'
+  template: '<li ref="currentItem">'
     + '<a :href="item2.url">'
     + '<span class="del-btn" @click.prevent="deleteItem(item1.children,index2)" ref="remove">删除</span>'
     + '<p'
@@ -69,7 +69,6 @@ var DelItem = Vue.extend({
       }
     },
     deleteItem: function (item, index) {
-      this.computeStyle('0');
       item.splice(index, 1);
     }
   }

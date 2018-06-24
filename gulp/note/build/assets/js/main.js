@@ -2,7 +2,7 @@
 
 var DelItem = Vue.extend({
   props: ['item1', 'item2', 'index2'],
-  template: '<li ref="currentItem" :index="index2">' + '<a :href="item2.url">' + '<span class="del-btn" @click.prevent="deleteItem(item1.children,index2)" ref="remove">删除</span>' + '<p' + '@touchstart="_touchStart(item2)"' + '@touchmove.prevent="_touchMove(item2)"' + '@touchend="_touchEnd(item2)"' + ':style="item2.style">' + '{{item2.name}}' + '</p>' + '</a>' + '</li>',
+  template: '<li ref="currentItem">' + '<a :href="item2.url">' + '<span class="del-btn" @click.prevent="deleteItem(item1.children,index2)" ref="remove">删除</span>' + '<p' + '@touchstart="_touchStart(item2)"' + '@touchmove.prevent="_touchMove(item2)"' + '@touchend="_touchEnd(item2)"' + ':style="item2.style">' + '{{item2.name}}' + '</p>' + '</a>' + '</li>',
   data: function data() {
     return {
       startX: 0, //触摸位置
@@ -60,7 +60,6 @@ var DelItem = Vue.extend({
       }
     },
     deleteItem: function deleteItem(item, index) {
-      this.computeStyle('0');
       item.splice(index, 1);
     }
   }
