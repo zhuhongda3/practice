@@ -1,3 +1,69 @@
+var dataMock = [
+  {
+    name: 2018,
+    children: [
+      {
+        name: "2018-01",
+        children: [
+          {
+            name: "文章1",
+            url: "//baidu.com"
+          },
+          {
+            name: "文章2",
+            url: "//baidu.com"
+          }
+        ]
+      },
+      {
+        name: "2018-02",
+        children: [
+          {
+            name: "文章1",
+            url: "//baidu.com"
+          },
+          {
+            name: "文章2",
+            url: "//baidu.com"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    name: 2017,
+    children: [
+      {
+        show: false,
+        name: "2017-01",
+        children: [
+          {
+            name: "文章1",
+            url: "#"
+          },
+          {
+            name: "文章2",
+            url: "#"
+          }
+        ]
+      },
+      {
+        name: "2017-02",
+        children: [
+          {
+            name: "文章1",
+            url: "#"
+          },
+          {
+            name: "文章2",
+            url: "#"
+          }
+        ]
+      }
+    ]
+  }
+];
+
 var DelItem = Vue.extend({
   props: ['item1', 'item2', 'index2'],
   template: '<li ref="currentItem">'
@@ -28,10 +94,10 @@ var DelItem = Vue.extend({
       var w = this.$refs.remove.offsetWidth;
       var _this = this;
       if (ev.touches.length == 1) {
-        if (typeof current.style != 'undefined' && current.style != null && current.style.match(/\d+/)[0] == String(w)) ev.preventDefault();
+        if (typeof current.style != 'undefined' && current.style != null && Number(current.style.match(/\d+/)[0]) == w) ev.preventDefault();
         this.item1.children.forEach(function (item) {
           if(item == current) return false;
-          if (typeof item.style != 'undefined' && item.style != null && item.style.match(/\d+/)[0] == String(w)) {
+          if (typeof item.style != 'undefined' && item.style != null && Number(item.style.match(/\d+/)[0]) == w) {
             _this.$set(item,'style',_this.computeStyle('0'));
             ev.preventDefault();
           }
@@ -81,79 +147,17 @@ new Vue({
   data: {
     dataList: [],
   },
+  
   mounted: function () {
-    this.dataList = [
-      {
-        name: 2018,
-        children: [
-          {
-            name: "2018-01",
-            children: [
-              {
-                name: "文章1",
-                url: "//baidu.com"
-              },
-              {
-                name: "文章2",
-                url: "//baidu.com"
-              }
-            ]
-          },
-          {
-            name: "2018-02",
-            children: [
-              {
-                name: "文章1",
-                url: "//baidu.com"
-              },
-              {
-                name: "文章2",
-                url: "//baidu.com"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        name: 2017,
-        children: [
-          {
-            show: false,
-            name: "2017-01",
-            children: [
-              {
-                name: "文章1",
-                url: "#"
-              },
-              {
-                name: "文章2",
-                url: "#"
-              }
-            ]
-          },
-          {
-            name: "2017-02",
-            children: [
-              {
-                name: "文章1",
-                url: "#"
-              },
-              {
-                name: "文章2",
-                url: "#"
-              }
-            ]
-          }
-        ]
-      }
-    ];
     var _this = this;
+    this.dataList = dataMock;
     this.dataList.forEach(function (item) {
       _this.$set(item, 'show', false);
       item.children.forEach(function (item2) {
         _this.$set(item2, 'show', false);
       });
     });
+    
   },
   methods: {
     resetDelStatus: function () {

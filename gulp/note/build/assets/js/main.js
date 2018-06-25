@@ -1,4 +1,49 @@
-'use strict';
+"use strict";
+
+var dataMock = [{
+  name: 2018,
+  children: [{
+    name: "2018-01",
+    children: [{
+      name: "文章1",
+      url: "//baidu.com"
+    }, {
+      name: "文章2",
+      url: "//baidu.com"
+    }]
+  }, {
+    name: "2018-02",
+    children: [{
+      name: "文章1",
+      url: "//baidu.com"
+    }, {
+      name: "文章2",
+      url: "//baidu.com"
+    }]
+  }]
+}, {
+  name: 2017,
+  children: [{
+    show: false,
+    name: "2017-01",
+    children: [{
+      name: "文章1",
+      url: "#"
+    }, {
+      name: "文章2",
+      url: "#"
+    }]
+  }, {
+    name: "2017-02",
+    children: [{
+      name: "文章1",
+      url: "#"
+    }, {
+      name: "文章2",
+      url: "#"
+    }]
+  }]
+}];
 
 var DelItem = Vue.extend({
   props: ['item1', 'item2', 'index2'],
@@ -72,52 +117,10 @@ new Vue({
   data: {
     dataList: []
   },
+
   mounted: function mounted() {
-    this.dataList = [{
-      name: 2018,
-      children: [{
-        name: "2018-01",
-        children: [{
-          name: "文章1",
-          url: "//baidu.com"
-        }, {
-          name: "文章2",
-          url: "//baidu.com"
-        }]
-      }, {
-        name: "2018-02",
-        children: [{
-          name: "文章1",
-          url: "//baidu.com"
-        }, {
-          name: "文章2",
-          url: "//baidu.com"
-        }]
-      }]
-    }, {
-      name: 2017,
-      children: [{
-        show: false,
-        name: "2017-01",
-        children: [{
-          name: "文章1",
-          url: "#"
-        }, {
-          name: "文章2",
-          url: "#"
-        }]
-      }, {
-        name: "2017-02",
-        children: [{
-          name: "文章1",
-          url: "#"
-        }, {
-          name: "文章2",
-          url: "#"
-        }]
-      }]
-    }];
     var _this = this;
+    this.dataList = dataMock;
     this.dataList.forEach(function (item) {
       _this.$set(item, 'show', false);
       item.children.forEach(function (item2) {
