@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .target {
+      background-color: #000;
+      color: #fff;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="parent">我是父节点的第一个节点<p class="child">我是父元素的第二个节点</p><span>我是父节点的最后一个节点</span></div>
+  <div class="target"></div>
+
+  <script>
+    var parent = document.getElementById('parent');
+    var target = document.querySelector('.target');
+    var child = document.querySelector('.child');
+
+    //节点的第一个元素和最后一个元素
+    console.log(parent.firstChild);
+    console.log(parent.lastChild);
+
+    var preSb = child.previousSibling;
+    console.log('我是前一个节点：')
+    console.log(preSb);
+    var nextSb = child.nextSibling;
+    console.log('我是后一个节点：')
+    console.log(nextSb);
+
+    var fsChild = parent.firstChild;
+    var lsChild = parent.lastChild;
+    target.appendChild(fsChild);
+    target.appendChild(lsChild);
+
+    //创建元素，文本节点
+    var newEleNode = document.createElement('span');
+    var newTextNode = document.createTextNode('我是新建的文本节点');
+    newEleNode.appendChild(newTextNode);
+    parent.appendChild(newEleNode);
+
+    //创建属性节点，和设置属性值
+    var newAttrNode = document.createAttribute('title');
+    newAttrNode.nodeValue = '我是属性节点的值';
+    parent.setAttributeNode(newAttrNode);
+
+    parent.setAttribute('title2','我是另一种方法创建的属性值');
+    console.log(parent.getAttribute('title2'));
+
+    // 删除属性节点
+    parent.removeAttribute('title2');
+    
+
+    //克隆节点
+    var cloneNode = newTextNode.cloneNode(true);
+    cloneNode.nodeValue = '我是修改后的克隆的值';
+    console.log('修改后的克隆节点值：')
+    console.log(cloneNode);
+    
+    //向某个节点之前插入节点
+    parent.insertBefore(cloneNode,newEleNode);
+    
+    // 遍历所有子节点
+    console.log('父节点的当前的子节点：')
+    var len = parent.childNodes.length;
+    for(var i = 0; i < len; i++){
+      console.log(parent.childNodes[i].nodeName);
+    }
+    
+    //替换newEleNode节点
+    var newNode = document.createElement('div');
+    newNode.innerHTML = '我是一个替换文本节点的元素节点';
+    parent.replaceChild(newNode,newEleNode);
+
+    //删除parent节点
+    parent.parentNode.removeChild(parent);
+  </script>
+</body>
+
+</html>
