@@ -16,7 +16,7 @@ export default new Router({
     },
     //demo
     {
-      path: '/count',
+      path: '/countitem',
       name: 'CountItem',
       component: CountItem
     }

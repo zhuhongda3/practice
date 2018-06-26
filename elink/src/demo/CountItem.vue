@@ -1,9 +1,9 @@
 <template>
   <div>
-    <span>doneTodosCount:{{doneTodosCount}}</span><br>
-    <span>{{count}}</span>
-    <button @click="incrementAsync">++</button>
-    <button @click="decrement">--</button><br>
+    <p>{{count}}</p>
+    <button @click="incrementAsync(5)">++</button>
+    <button @click="decrement">--</button>
+    <p>doneTodosCount:{{doneTodosCount}}</p>
   </div>
 </template>
 
@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     ...mapMutations([
-      'increment',
+      // 'increment',
       'decrement'
     ]),
     ...mapActions([
