@@ -1,0 +1,27 @@
+/*重置css*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, lengend, input, button, textarea, select, p, blockquote, th, td { margin:0; padding: 0;}
+html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 { -webkit-text-size-adjust: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+img { border: 0 none; vertical-align: top; }
+li { list-style-type: none; }
+caption, th { text-align: left; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%;font-weight:400;}
+body, input, button, textarea, select { font-size: 12px;font-family:"PingFangSC-Light","Microsoft Yahei",sans-serif;}
+button { cursor: pointer;border:0;}
+em, cite { font-style: normal; }
+body {line-height: 1.17; -webkit-text-size-adjust: none;-webkit-touch-callout: none;-webkit-user-select: none;background-color:#fff;}
+a { color: #2c2c2c; text-decoration: none!important; }
+a:link{text-decoration: none; }
+:focus { outline: none; }
+.clearfixed:after { content: "."; clear: both; display: block; height: 0; overflow: hidden; }
+.clearfixed { zoom: 1; display: block; }
+*{-webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -o-text-size-adjust: none; text-size-adjust: none;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;}
+::-webkit-scrollbar {width:0; height:0;}  /*滚动条样式*/
+::-ms-clear {display:none;}
+::-ms-reveal {display:none;}
+input::-webkit-input-placeholder{color:#ccc;}
+
+html{height:100%;-webkit-tap-highlight-color:transparent;}  /*去除点击页面中元素时出现的阴影*/
+input,textarea{-webkit-appearance:none;}/*去掉在ios中按钮用input的自带的圆角渐变*/
+input:-webkit-autofill {-webkit-box-shadow: 0 0 0px 1000px white inset;} /*去掉input自动填充内容的黄色背景*/
+.wrap{width:100%;margin:0 auto;color:#333;}

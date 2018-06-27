@@ -73,10 +73,10 @@ button,input,select,textarea{font-size:100%;}
 //移动端
 html{height:100%;-webkit-tap-highlight-color:transparent;}                 /*去除点击页面中元素时出现的阴影*/
 body{-webkit-user-select: none;}                                           /*禁止页面文字选择*/ 
-button,input{-webkit-appearance:none;}                                     /*去掉在ios中按钮用input的自带的圆角渐变*/
+button,input,textarea{-webkit-appearance:none;}                            /*去掉在ios中按钮用input的自带的圆角渐变*/
 input:-webkit-autofill {-webkit-box-shadow: 0 0 0px 1000px white inset;} /*去掉input自动填充内容的黄色背景*/
 html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 { -webkit-text-size-adjust: none; }  /*禁止文字自动调整大小*/
-a,img{-webkit-touch-callout:none;}                                         /*禁用长按页面时的弹出菜单(iOS下有效) ,img和a标签都要加*/ 
+a,img{-webkit-touch-callout:none;}                                     /*禁用长按页面时的弹出菜单(iOS下有效) ,img和a标签都要加*/ 
 
 body{
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;

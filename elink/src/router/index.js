@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 
 // demo
-import CountItem from '@/demo/CountItem'
+import VuexCount from '@/demo/VuexCount'  //计数器
+import DelItem from '@/demo/DelItem'      //树形结构，删除滑块
+import UseGloble from '@/demo/UseGloble'  //全局注册的一个组件
 
 Vue.use(Router)
 
@@ -11,14 +12,18 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'VuexCount',
+      component: VuexCount
     },
-    //demo
     {
-      path: '/countitem',
-      name: 'CountItem',
-      component: CountItem
+      path: '/delitem',
+      name: 'DelItem',
+      component: DelItem
+    },
+    {
+      path: '/usegloble',
+      name: 'UseGloble',
+      component: UseGloble
     }
   ]
 })

@@ -19,6 +19,9 @@ Vue.use(wx)
 //use store
 import {store} from './store/store'
 
+//全局注册组件
+import {testComponent} from './components/registergloble/globle'
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

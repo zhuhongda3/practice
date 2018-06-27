@@ -40,6 +40,8 @@ export default {
 span {
   color: #f00;
 }
+div{text-align: center;font-size: 20px;}
+button{padding: 10px;color: #fff;background-color: #000;}
 </style>
 
 
