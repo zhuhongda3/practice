@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="yo-scroll"
-    :class="{'down':(state===0),'up':(state==1),refresh:(state===2),touch:touching}"
+    :class="{'down':(state===0),'up':(state==1),'refresh':(state===2),'touch':touching}"
     @touchstart="touchStart($event)"
     @touchmove="touchMove($event)"
     @touchend="touchEnd($event)"
