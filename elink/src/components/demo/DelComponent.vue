@@ -6,8 +6,8 @@
       @touchstart="_touchStart(item2)"
       @touchmove.prevent="_touchMove(item2)"
       @touchend="_touchEnd(item2)"
-      :style="item2.style">
-      {{item2.name}}
+      :style="item2.style"
+      v-text="item2.name">
     </p>
     </a>
   </li>

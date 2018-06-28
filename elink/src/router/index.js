@@ -5,6 +5,7 @@ import Router from 'vue-router'
 import VuexCount from '@/demo/VuexCount'  //计数器
 import DelItem from '@/demo/DelItem'      //树形结构，删除滑块
 import UseGloble from '@/demo/UseGloble'  //全局注册的一个组件
+import UseUpLoad from '@/demo/UseUpLoad'  //全局注册的一个组件
 
 Vue.use(Router)
 
@@ -12,6 +13,11 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'UseUpLoad',
+      component: UseUpLoad
+    },
+    {
+      path: '/vuexcount',
       name: 'VuexCount',
       component: VuexCount
     },
@@ -24,6 +30,6 @@ export default new Router({
       path: '/usegloble',
       name: 'UseGloble',
       component: UseGloble
-    }
+    },
   ]
 })

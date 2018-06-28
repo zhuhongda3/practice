@@ -3,11 +3,11 @@
     <nav class="nav">
       <ul class="data-list" id="el">
         <li v-for="(item,index) in dataList" :key="index">
-          <p @click.prevent="toggle(item)" :class="{active: item.show}"><span>{{item.name}}</span><i></i></p>
+          <p @click.prevent="toggle(item)" :class="{active: item.show}"><span v-text="item.name"></span><i></i></p>
           <transition name="fade">
             <ul v-show="item.show">
               <li v-for="(item1,index1) in item.children" :key="index1">
-                <p @click.prevent="toggle2(item1)" :class="{active: item1.show}"><span>{{item1.name}}</span><i></i></p>
+                <p @click.prevent="toggle2(item1)" :class="{active: item1.show}"><span v-text="item1.name"></span><i></i></p>
                 <transition name="fade">
                   <ul v-show="item1.show">
                     <del-component v-for="(item2,index2) in item1.children" :key="index2" :item1="item1" :item2="item2" :index2="index2"></del-component>
