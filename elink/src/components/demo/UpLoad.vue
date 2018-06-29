@@ -5,21 +5,21 @@
     @touchmove="touchMove($event)"
     @touchend="touchEnd($event)"
     @scroll="(onInfinite || infiniteLoading) ? onScroll($event) : undefined">
-    <section class="inner" :style="{ transform: 'translate3d(0, ' + top + 'px, 0)' }">
-      <header class="pull-refresh">
+    <div class="inner" :style="{ transform: 'translate3d(0, ' + top + 'px, 0)' }">
+      <div class="pull-refresh">
         <slot name="pull-refresh">
-           <span class="down-tip">下拉更新</span>
-           <span class="up-tip">松开更新</span>
-           <span class="refresh-tip">更新中</span>
+            <span class="down-tip">下拉更新</span>
+            <span class="up-tip">松开更新</span>
+            <span class="refresh-tip">更新中</span>
         </slot>
-      </header>
+      </div>
       <slot></slot>
-      <footer class="load-more">
+      <div class="load-more">
         <slot name="load-more">
           <span v-text="loadingText"></span>
         </slot>
-      </footer>
-    </section>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -28,7 +28,7 @@ export default {
   props: {
     offset: {
       type: Number,
-      default: 40
+      default: 0
     },
     enableInfinite: {
       type: Boolean,
@@ -55,6 +55,7 @@ export default {
   },
   data() {
     return {
+      tips: '',
       top: 0,
       state: 0,
       startY: 0,
@@ -127,10 +128,10 @@ export default {
       if (!this.enableInfinite || this.infiniteLoading) {
         return;
       }
-      let outerHeight = this.$el.clientHeight;
-      let innerHeight = this.$el.querySelector(".inner").clientHeight;
-      let scrollTop = this.$el.scrollTop;
-      let ptrHeight = this.onRefresh? this.$el.querySelector(".pull-refresh").clientHeight : 0;
+      let innerHeight = this.$el.querySelector(".inner").clientHeight;  //内容的高度
+      let outerHeight = this.$el.clientHeight;  //窗口的高度
+      let scrollTop = this.$el.scrollTop;  //滚动条距离顶部的距离  
+      let ptrHeight = this.onRefresh? this.$el.querySelector(".pull-refresh").clientHeight : 0;  //顶部刷新元素的额高度
       let infiniteHeight = this.$el.querySelector(".load-more").clientHeight;
       let bottom = innerHeight - outerHeight - scrollTop - ptrHeight;
       if (bottom < infiniteHeight) this.infinite();
@@ -139,31 +140,37 @@ export default {
 };
 </script>
 <style lang="scss">
+body{
+  overflow: auto;
+}
 .yo-scroll {
   position: absolute;
-  top: 40px;   //用于顶部的tap
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   background-color: #ddd;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow: scroll;
 }
+
 .yo-scroll .inner {
   position: absolute;
-  top: -2rem;
+  top: -50px;
+  left: 0;
   width: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
   transition-duration: 300ms;
 }
+
 .yo-scroll .pull-refresh {
   position: relative;
   left: 0;
   top: 0;
   width: 100%;
-  height: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
 }
 .yo-scroll.touch .inner {
   transition-duration: 0ms;
@@ -183,9 +190,8 @@ export default {
   display: none;
 }
 .yo-scroll .load-more {
-  height: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
 }
 </style>

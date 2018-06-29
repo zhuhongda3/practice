@@ -65,10 +65,9 @@ ul{
   font-size: 0;
   li{ 
     display: inline-block;
-    padding: 20px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    width: 190px;
+    padding: 20px 10px;
+    margin: 0 5px 5px 0;
+    width: 25%;
     font-size: 16px;
     text-align: center;
     border: 1px solid #f4f4f4;

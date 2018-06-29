@@ -16,7 +16,7 @@ export default {
     return {
       loadingText: "加载中...",
       counter: 1, //默认已经显示出20条数据
-      num: 18, // 一次显示多少条
+      num: 20, // 一次显示多少条
       pageStart: 0, // 开始页数
       pageEnd: 0, // 结束页数
       listdata: [], // 下拉更新数据存放数组
@@ -40,7 +40,7 @@ export default {
     },
     onRefresh(done) {
       this.getList(); //获取初始化项
-      if (this.downdata != "") this.downdata = [];
+      // if (this.downdata != "") this.downdata = [];
       done(); // call done
     },
     onInfinite(done) {
@@ -49,6 +49,7 @@ export default {
         .get("https://api.github.com/repos/typecho-fans/plugins/contents/")
         .then(response => {
           vm.counter++;
+          console.log(vm.counter)
           vm.pageEnd = vm.num * vm.counter;
           vm.pageStart = vm.pageEnd - vm.num;
           let arr = response.data;
@@ -59,7 +60,8 @@ export default {
             obj["name"] = arr[i].name;
             vm.downdata.push(obj);
             if (i + 1 >= response.data.length) {
-              this.$el.querySelector(".load-more").style.display = "none";
+              // this.$el.querySelector(".load-more").style.display = "none";
+              this.$el.querySelector(".load-more").innerHTML = "以上为全部";
               return;
             }
           }
@@ -76,7 +78,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 ul {
   li {
     width: 100%;
