@@ -15,9 +15,27 @@ const loginSchema = mongoose.Schema({
     password : String
 },{collection:'logins'});
 
+const postSchema = mongoose.Schema({
+    posttitle: String,
+    content: String,
+    createTime: {
+        type: Date,
+        default: Date.now
+    },
+    updateTime: {
+        type: Date,
+        default: Date.now
+    }
+},{
+    collection:'posts',
+    versionKey: false,
+    timestamps: {createdAt: 'createTime',updatedAt: 'updateTime'}
+});
+
 /************** Model 模型 **************/
 const Models = {
-    Login : mongoose.model('Login',loginSchema,'logins')
+    Login : mongoose.model('Login',loginSchema,'logins'),
+    PostEdit : mongoose.model('PostEdit',postSchema,'posts')
 }
 
 module.exports = Models;

@@ -71,4 +71,84 @@ router.post('/api/login/deleteAccount',(req,res) => {
     });
 });
 
+
+
+router.post('/api/post/createPost',(req,res) => {
+    let newPost = new models.PostEdit({
+        posttitle : req.body.posttitle,
+        content : req.body.content
+    });
+    models.PostEdit.count({"posttitle": newPost.posttitle},(err, docs) =>{
+        if(err){
+            console.log("Error：" + err)
+            res.send(err)
+        }else{
+            if(docs>=1){
+                console.log("发布失败")
+                res.send({code: 0,msg:'帖子已存在'})
+            }else{
+                newPost.save((err,data) => {
+                    if (err) {
+                        res.send(err);
+                    } else {
+                        console.log("发布成功")
+                        res.send({code: 1,msg:'帖子创建成功'});
+                    }
+                });
+            }
+        }
+    });
+});
+
+router.post('/api/post/updatePost',(req,res)=>{
+    let params = {
+        $set:{
+            posttitle: req.body.posttitle,
+            content:req.body.content
+        }
+    },id = req.body.id;
+    models.PostEdit.findByIdAndUpdate(id, params, function (err, data) {
+        if (err) return handleError(err);
+        // res.send(data);
+        console.log("更新成功")
+        res.send({code:1,msg:'帖子更新成功'})
+    });
+});
+
+router.get('/api/post/searchPost',(req,res) => {
+    models.PostEdit.find((err,data) => {
+        if (err) {
+            res.send(err);
+        } else {
+            console.log("获取全部帖子数据成功");
+            res.send({code: 1,data: data,msg:'获取全部帖子数据成功'});
+        }
+    });
+});
+
+router.get('/api/post/searchOnePost',(req,res) => {
+    let id = req.body.id;
+    models.PostEdit.findById(id,(err,data) => {
+        if (err) {
+            res.send(err);
+        } else {
+            console.log("获取单条帖子数据成功");
+            res.send({code: 1,data: data,msg:'获取单条帖子数据成功'});
+        }
+    });
+});
+
+router.post('/api/login/deletePost',(req,res) => {
+    console.log(req.body.id);
+    models.PostEdit.findByIdAndRemove({_id:req.body.id},(err,data) => {
+        if (err) {
+            res.send(err);
+        } else {
+            console.log("删除帖子成功");
+            res.send({code:1,msg:'删除帖子成功'});
+        }
+    });
+});
+
+
 module.exports = router;
