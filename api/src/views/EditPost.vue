@@ -1,6 +1,6 @@
 <template>
   <!-- bidirectional data binding（双向数据绑定） -->
-  <div class="edit-wrap" style="max-width: 70%;margin: 0 auto;">
+  <div class="edit-wrap" style="max-width: 1150px;width: 100%;margin: 0 auto;padding: 0 10px;box-sizing: border-box;">
     <div>
       <h3 style="text-align: center;">文章发布系统</h3>
       <div style="text-align:right;">
@@ -25,14 +25,15 @@
       </div>
     </div>
     <label class="ps-label" for="">文章列表：</label>
+    <div style="padding: 10px 0;">
     <el-table
       :data="tableData"
       border
-      style="width: 100%;margin: 0 auto;text-align: left;"
+      style="width: 100%;text-align: left;"
     >
     <el-table-column
       prop="_id"
-      label="文章id"
+      label="文章ID"
       width="180"
     ></el-table-column>
     <el-table-column
@@ -72,15 +73,16 @@
         @click="handleEdit(scope.row)">编辑</el-button>
       <el-button
         size="mini"
-        type="danger"
-        @click="handleDelete(scope.$index, scope.row)">删除</el-button>
-      <el-button
-        size="mini"
         type="success"
         @click="handleLook(scope.row)">查看</el-button>
+      <el-button
+        size="mini"
+        type="danger"
+        @click="handleDelete(scope.$index, scope.row)">删除</el-button>
     </template>
     </el-table-column>
     </el-table>
+    </div>
   </div>
   <!-- Or manually control the data synchronization（或手动控制数据流） -->
 </template>
@@ -106,7 +108,7 @@ export default {
   methods: {
     handleLook(row){
       var id = row._id;
-      router.push({ name: 'PostDetail', params: { id: id }});
+      this.$router.push({ path: '/postdetail', query: { id: id }});
     },
     resetStatus(){
       this.id = '';
@@ -262,7 +264,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style>
 .ql-editor {
   min-height: 300px;
 }

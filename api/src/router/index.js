@@ -14,21 +14,22 @@ import PostDetail from '@/views/PostDetail'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
-      path: '/',
+      path: '/getdata',
       name: 'getData',
       component: getData
     },
     {
-      path: '/editpost',
+      path: '/',
       name: 'EditPost',
-      component: EditPost
+      component: EditPost,
+      props: (route) => ({ query: route.query.id })
     },
     {
-      path: '/postdetail/:id',
+      path: '/postdetail',
       name: 'PostDetail',
-      props: true,
       component: PostDetail
     },
     {

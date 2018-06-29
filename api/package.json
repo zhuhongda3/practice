@@ -13,6 +13,7 @@
     "test": "npm run unit && npm run e2e"
   },
   "dependencies": {
+    "normalize.css": "^8.0.0",
     "vue": "^2.5.2",
     "vue-moment": "^4.0.0",
     "vue-quill-editor": "^3.0.6",

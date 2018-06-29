@@ -109,7 +109,6 @@ router.post('/api/post/updatePost',(req,res)=>{
     },id = req.body.id;
     models.PostEdit.findByIdAndUpdate(id, params, function (err, data) {
         if (err) return handleError(err);
-        // res.send(data);
         console.log("更新成功")
         res.send({code:1,msg:'帖子更新成功'})
     });
@@ -127,8 +126,7 @@ router.get('/api/post/searchPost',(req,res) => {
 });
 
 router.get('/api/post/searchOnePost',(req,res) => {
-    let id = req.body.id;
-    models.PostEdit.findById(id,(err,data) => {
+    models.PostEdit.findById({_id: req.query.id},(err,data) => {
         if (err) {
             res.send(err);
         } else {
@@ -139,7 +137,6 @@ router.get('/api/post/searchOnePost',(req,res) => {
 });
 
 router.post('/api/login/deletePost',(req,res) => {
-    console.log(req.body.id);
     models.PostEdit.findByIdAndRemove({_id:req.body.id},(err,data) => {
         if (err) {
             res.send(err);
