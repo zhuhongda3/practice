@@ -1,7 +1,7 @@
 <template>
   <div class="article">
-    <div class="article-title">{{postList.posttitle}}</div>
-    <div class="article-time">{{postList.createTime | moment("YYYY-MM-DD HH:mm:ss")}}</div>
+    <div class="article-title">{{postList.title}}</div>
+    <div class="article-time">发布于：{{postList.createTime | moment("YYYY年MM月DD日 HH:mm:ss")}}</div>
     <div class="ql-container ql-snow">
       <div class="ql-editor">
         <div class="article-content" v-html="postList.content"></div>
@@ -26,15 +26,16 @@ export default {
   },
   methods: {
     getPostData(){
-      this.$http
-      .get('/api/post/searchOnePost', {
+      var data = {
         params: {
           id: this.$route.query.id
         }
-      })
+      }
+      this.$http
+      .get('/api/article/searchOnePost', data)
       .then(response=>{
         let res = response.data;
-        if(res.code == 1){
+        if(res.code === 0){
           this.postList = res.data;
         }
       }).catch(err => {
@@ -45,27 +46,33 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .article{
-  margin: 0 auto;
-  padding: 40px 10px;
-  max-width: 1150px;
   width: 100%;
-  background-color: #f4f4f4;
+  padding: 50px 0;
   word-break: break-all;
   box-sizing: border-box;
   white-space: pre-wrap;
+  background-color: #f7f9fd;
   pre{
     white-space: pre-wrap;
   }
 }
+
+.ql-container.ql-snow{
+  border: 0;
+}
+
 .article-title{
   margin-bottom: 20px;
   font-size: 24px;
   text-align: center;
 }
+
 .article-time{
+  margin-right: 30px;
   font-size: 14px;
+  text-align: right;
 }
 </style>
 

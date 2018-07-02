@@ -1,8 +1,8 @@
 <template>
   <!-- bidirectional data binding（双向数据绑定） -->
-  <div class="edit-wrap" style="max-width: 1150px;width: 100%;margin: 0 auto;padding: 0 10px;box-sizing: border-box;">
+  <div class="edit-wrap">
     <div>
-      <h3 style="text-align: center;">文章发布系统</h3>
+      <!-- <h3 style="text-align: center;">文章发布系统</h3> -->
       <div style="text-align:right;">
         <el-button size="small" @click="resetStatus" plain>新建文章<i class="el-icon-plus el-icon--right"></i></el-button>
       </div>
@@ -108,7 +108,7 @@ export default {
   methods: {
     handleLook(row){
       var id = row._id;
-      this.$router.push({ path: '/postdetail', query: { id: id }});
+      this.$router.push({ path: '/articleDetail', query: { id: id }});
     },
     resetStatus(){
       this.id = '';
@@ -265,6 +265,13 @@ export default {
 </script>
 
 <style>
+.edit-wrap{
+  max-width: 1150px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
 .ql-editor {
   min-height: 300px;
 }

@@ -10,7 +10,8 @@ import main from '@/felink/main'
 
 import getData from '@/views/getData'
 import EditPost from '@/views/EditPost'
-import PostDetail from '@/views/PostDetail'
+import ArticleDetail from '@/views/ArticleDetail'
+
 Vue.use(Router)
 
 export default new Router({
@@ -28,9 +29,9 @@ export default new Router({
       props: (route) => ({ query: route.query.id })
     },
     {
-      path: '/postdetail',
-      name: 'PostDetail',
-      component: PostDetail
+      path: '/articleDetail',
+      name: 'ArticleDetail',
+      component: ArticleDetail
     },
     {
       path: '/login',
