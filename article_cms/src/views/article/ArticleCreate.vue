@@ -3,7 +3,11 @@
   <div class="edit-wrap">
     <div>
       <label class="ps-label" for="">标题：</label>
-      <input type="text" v-model="title" style="margin-bottom: 30px;width: 100%;height:35px;padding: 0 10px;box-sizing: border-box;"/>
+      <el-input
+        placeholder="请输入标题"
+        v-model="title"
+        clearable
+      ></el-input>
       <label class="ps-label" for="">内容：</label>
       <quill-editor
         style="width:100%;" 
@@ -122,7 +126,7 @@ export default {
 }
 .ps-label {
   display: block;
-  margin-bottom: 10px;
+  padding: 10px 0;
   font-size: 14px;
   color: #999;
 }

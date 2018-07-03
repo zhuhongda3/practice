@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-container>
-      <el-header style="background-color:#545c64"></el-header>
+      <el-header style="background-color:#545c64;border-bottom: 1px solid #666;"></el-header>
       <el-container>
         <el-aside>
           <el-menu
@@ -14,17 +14,19 @@
             style="height: calc(100vh)"
             router >
             <template v-for="item in menuList">
-              <el-submenu v-if="!item.leaf" :key="item.path" :index="item.path">
-                <template slot="title">
-                  <i :class="item.icon"></i>
-                  <span slot="title">{{item.title}}</span>
-                </template>
-                <el-menu-item v-for="item2 in item.children" :key="item2.path" :index="item2.path" v-if="!item2.hidden">{{item2.title}}</el-menu-item>
-              </el-submenu>
-              <el-menu-item v-else-if="item.leaf" :key="item.path" :index="item.path">
-                <i :class="item.icon"></i>
-                <span slot="title">{{item.title}}</span>
-              </el-menu-item>
+              <template v-for="item2 in item.children">
+                <el-submenu v-if="!item2.leaf" :key="item2.path" :index="item2.path">
+                  <template slot="title">
+                    <i :class="item2.icon"></i>
+                    <span slot="title">{{item2.title}}</span>
+                  </template>
+                  <el-menu-item v-for="item3 in item2.children" :key="item3.path" :index="item3.path" v-if="!item3.hidden">{{item3.title}}</el-menu-item>
+                </el-submenu>
+                <el-menu-item v-else-if="item2.leaf" :key="item2.path" :index="item2.path">
+                  <i :class="item2.icon"></i>
+                  <span slot="title">{{item2.title}}</span>
+                </el-menu-item>
+              </template>
             </template>
           </el-menu>
         </el-aside>
@@ -50,8 +52,7 @@ export default {
   },
   methods:{
     getMenuList(){
-      this.menuList = this.$router.options.routes[0].children;
-      // console.log(this.$router.options.routes[])
+      this.menuList = this.$router.options.routes;
     }
   },
 }

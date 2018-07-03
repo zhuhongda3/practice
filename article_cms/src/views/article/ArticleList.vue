@@ -2,12 +2,16 @@
   <!-- bidirectional data binding（双向数据绑定） -->
   <div class="edit-wrap">
     <label class="ps-label" for="">文章列表：</label>
-    <div style="padding: 10px 0;">
+    <div>
     <el-table
-      :data="tableData"
+      :data="tableData.slice((currentPage-1)*pagesize,currentPage*pagesize)"
       border
       style="width: 100%;text-align: left;"
     >
+     <el-table-column
+      type="index"
+      width="50"
+    ></el-table-column>
     <el-table-column
       prop="_id"
       label="文章ID"
@@ -46,19 +50,35 @@
     >
      <template slot-scope="scope">
       <el-button
+        icon="el-icon-edit"
         size="mini"
+        type="primary"
         @click="handleEdit(scope.row)">编辑</el-button>
       <el-button
+        icon="el-icon-delete"
         size="mini"
         type="danger"
         @click="handleDelete(scope.$index, scope.row)">删除</el-button>
       <el-button
+        icon="el-icon-view"
         size="mini"
-        type="success"
         @click="handleLook(scope.row)">查看</el-button>
     </template>
     </el-table-column>
     </el-table>
+    </div>
+     <!-- 分页导航 -->
+    <div class="block" style="margin-top: 10px;">
+      <el-pagination
+        background
+        layout="total, sizes, prev, pager, next, jumper"
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+        :current-page="currentPage"
+        :page-sizes="pagesizes"
+        :page-size="pagesize"
+        :total="total">
+      </el-pagination>
     </div>
   </div>
   <!-- Or manually control the data synchronization（或手动控制数据流） -->
@@ -71,12 +91,23 @@ export default {
       id: "",
       title: "",
       content: "",
-      tableData: []
+      tableData: [],
+      pagesizes: [5, 10],
+      pagesize: 5,
+      currentPage: 1,
+      total: 0,
     };
   },
   // manually control the data synchronization
   // 如果需要手动控制数据同步，父组件需要显式地处理changed事件
   methods: {
+    //处理分页
+    handleSizeChange(val) {
+      this.pagesize = val;
+    },
+    handleCurrentChange(val) {
+      this.currentPage = val;
+    },
     handleLook(row) {
       var id = row._id;
       this.$router.push({ path: "/article/articleDetail", query: { id: id } });
@@ -101,6 +132,7 @@ export default {
           let res = response.data;
           if (res.code === 0) {
             this.tableData = res.data;
+            this.total = this.tableData.length;
           }
         })
         .catch(err => {
@@ -146,9 +178,5 @@ export default {
   margin: 0 auto;
   padding: 0 10px;
   box-sizing: border-box;
-}
-.ps-label {
-  display: block;
-  margin-bottom: 10px;
 }
 </style>

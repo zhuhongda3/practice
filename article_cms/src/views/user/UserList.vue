@@ -20,6 +20,11 @@
         <el-table
         :data="tableData.slice((currentPage-1)*pagesize,currentPage*pagesize)"
         border>
+        <el-table-column 
+         type="index"
+         width="50"
+        >
+        </el-table-column>
         <el-table-column label="用户名">
           <template slot-scope="scope">
             <span>{{ scope.row.account }}</span>
@@ -33,9 +38,12 @@
         <el-table-column label="操作">
           <template slot-scope="scope">
             <el-button
+              icon="el-icon-edit"
               size="mini"
+              type="primary"
               @click="handleEdit(scope.$index, scope.row);">编辑</el-button>
             <el-button
+              icon="el-icon-delete"
               size="mini"
               type="danger"
               @click="handleDelete(scope.$index, scope.row)">删除</el-button>
@@ -96,7 +104,6 @@ export default {
       dialogFormVisible: false,
       dialogTableVisible: false,
       formLabelWidth: '',
-      currentPage: 1
     };
   },
   mounted: function() {
