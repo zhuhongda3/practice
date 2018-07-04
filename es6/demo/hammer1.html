@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .wrap{
+      position: relative;
+      width: 300px;
+      height: 300px;
+      margin: 20px auto;
+    }
+
+    .bar{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      transform: translate(-50%,-50%);
+      background-color: #999;
+    }
+
+    .wrap:after{
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      transform: translate(-50%,-50%);
+      background-color: #000;
+    }
+
+    .arrow{
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin-left: -1px;
+      width: 2px;
+      height: 100%;
+    }
+    .arrow:after{
+      content: '';
+      display: block;
+      width: 100%;
+      height: 50%;
+      margin-top: 20px;
+      background: #000;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .pinch-ele {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+      background-color: #ddd;
+      text-align: center;
+      color: #f00;
+      font-size: 20px;
+      word-break: break-all;
+      word-wrap: break-word;
+    }
+
+    .btn{
+      width: 60%;
+      margin: 20px auto;
+      padding: 15px;
+      border-radius: 0;
+      border: 1px solid #ddd; 
+      text-align: center;     
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="pinch-ele" id="myElement"></div>
+    <div class="bar"></div>
+    <div class="arrow" id="myBar"></div>
+  </div>
+  <div class="btn" onclick="start(this);">开始</div>
+  <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+  <script>
+    var lastScale, scaleIndex;
+    var rotateIndex, lastRotate;
+    var myElement = document.getElementById('myElement');
+    var bar = document.getElementById('myBar');
+    var manager = new Hammer.Manager(myElement);
+    // 放大缩小
+    // manager.add(new Hammer.Pinch());
+    // manager.on('pinchmove pinchstart pinchin pinchout', function (e) {
+    //   var current;
+    //   if (e.type == 'pinchstart') {
+    //     scaleIndex = lastScale || 1;
+    //   }
+    //   lastScale = scaleIndex * e.scale;
+    //   current = scaleIndex * e.scale;
+    //   if (lastScale > 1) {
+    //     current = 1;
+    //   }
+    //   if (lastScale < 0.5) {
+    //     current = 0.5;
+    //   }
+    //   myElement.style.transform = "scale(" + current + ")";
+    //   myElement.textContent = current;
+    // });
+
+    //旋转
+    // manager.add(new Hammer.Rotate());
+    // manager.on('rotatestart rotatemove rotateend rotatecancel', function (e) {
+    //   var current;
+    //   if (e.type == 'rotatestart') {
+    //     rotateIndex = lastScale + e.angle;
+    //   }
+    //   if (e.type == 'rotatemove') {
+    //     current =  e.angle;
+    //   }
+    //   if (e.type == 'rotateend') {
+    //     rotateIndex = lastScale;
+    //   }
+    //   lastScale = e.angle;
+    //   myElement.style.transform = "rotate(" + current + "deg)";
+    // });
+
+
+    var r = Math.random()*(360 * 6.8 - 360 * 4.6) + 360 * 4.8,r2 = 0,tag = true;
+    function start() {
+      if(!tag) return false;
+      tag = false;
+      var t1 = new Date();
+      var t = Math.random()*(8 - 4) + 6;
+      console.log(r + '  ' + t+ '   '+ r2);
+      (function (){
+        r += r2;
+        myElement.style.transform = "rotate(" + r + "deg)";
+        bar.style.transform = "rotate(" + r + "deg)";
+        myElement.style.transition = "all " + t + "s";
+        bar.style.transition = "all " + t + "s";
+        r2 = Math.random()*(360 * 6 - 360 * 4.6) + 360 * 4.8;
+        setTimeout(function(){
+          tag = true;
+          // alert('finished')
+        },t * 1000);
+      })();
+    }
+
+    (function(){
+      var t = 1,t1;
+      function a(){
+        bar.style.transform = "rotate(" + 360 * t / 60 + "deg)";
+        t++;
+        t1 = setTimeout(function(){
+          a();
+        },1000);
+        if(t > 4){
+          clearTimeout(t1);
+        }
+      }
+      a(t);
+    })();
+  </script>
+
+</body>
+
+</html>

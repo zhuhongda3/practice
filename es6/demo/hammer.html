@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title></title>
+<meta name="viewport" content="user-scalable=no , width=device-width , initial-scale=1 , maximum-scale=1">
+<style>
+body{padding:0; overflow:hidden;}
+#pinchzoom{overflow:hidden; width:300px; height:300px; background-color:#eee;}
+</style>
+</head>
+<body>
+<div id="pinchzoom">
+    <img id="img" src="http://pr.bdimg.com/static/princess/img/misc/baidu_logo_c352a179.gif" ondragstart="return false" alt="" />
+</div>
+<script src="https://hammerjs.github.io/dist/hammer.js"></script>
+
+<script>
+var hammertime = Hammer(document.getElementById('pinchzoom'),{
+    transform_always_block:true,
+    transform_min_scale:0.5,
+    drag_block_horizontal:true,
+    drag_block_vertical:true,
+    drag_min_distance:0
+});
+
+var img = document.getElementById('img');
+//初始值
+var posX = 0,
+    posY = 0,
+    last_posX,
+    last_posY,
+    scale = 1,
+    last_scale,
+    rotation = 0,
+    last_rotation;
+
+hammertime.on('touch drag transform',function(e){
+    switch(e.type){
+        //当touch开始时，记录下当前的缩放量，旋转量和位移量
+        case 'touch':
+            last_scale = scale;
+            last_rotation = rotation;
+            last_posX = posX;
+            last_posY = posY;
+            break;
+        //拖拽时改变位移量
+        case 'drag':
+            posX = last_posX + e.deltaX;
+            posY = last_posY + e.deltaY;
+            break;
+        case 'transform':
+            rotation = last_rotation + e.rotation;
+            scale = Math.min(last_scale* e.scale,10);
+            break;
+    }
+    //使用CSS3 transform进行图片的变换
+    var transform = "translate3d("+posX+"px,"+posY+"px,0)"+"scale3d("+scale+","+scale+",1)"+"rotate("+rotation+"deg)";
+    img.style.webkitTransform = transform;
+})
+</script>
+</body>
+</html>
