@@ -14,6 +14,8 @@ import ArticleDetail from '@/views/article/ArticleDetail'
 
 import UserList from '@/views/user/UserList'
 
+import Login from '@/views/authority/Login'
+
 Vue.use(Router)
 
 const routes = [
@@ -60,7 +62,7 @@ const routes = [
     name: 'UserList',
     component: UserList,
     leaf: true,
-    title: '用户录入',
+    title: '用户管理',
     icon: 'el-icon-setting'
   }
 ];
@@ -69,11 +71,16 @@ const router = new Router({
   mode: 'history',
   routes: [
     {
-      path: '/',
+      path: '/article',
       name: 'Layout',
       component: Layout,
-      redirect: '/article',
+      // redirect: '/article',
       children: routes
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login,
     }
   ]
 });

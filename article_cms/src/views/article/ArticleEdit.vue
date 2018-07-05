@@ -7,6 +7,7 @@
         placeholder="请输入标题"
         v-model="title"
         clearable
+        style="width: 40%;"
       ></el-input>
       <label class="ps-label" for="">内容：</label>
       <quill-editor
@@ -37,7 +38,7 @@ export default {
       title: "",
       content: "",
       editorOption: {
-        // some quill options
+        placeholder: '请输入内容',
       }
     };
   },
@@ -136,15 +137,12 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 .edit-wrap {
   width: 100%;
   margin: 0 auto;
   padding: 0 10px;
   box-sizing: border-box;
-}
-.ql-editor {
-  min-height: 300px;
 }
 .ps-label {
   display: block;

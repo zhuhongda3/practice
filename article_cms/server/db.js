@@ -2,7 +2,7 @@
 //Model和Entity都可对数据库操作造成影响，但Model比Entity更具操作性。
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/cmsdb');
+mongoose.connect('mongodb://localhost:27017/local');
 mongoose.Promise = global.Promise;
 
 const db = mongoose.connection;

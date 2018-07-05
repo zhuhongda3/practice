@@ -1,7 +1,7 @@
 <template>
   <div class="article">
     <div class="article-title">{{postList.title}}</div>
-    <div class="article-time">发布于：{{postList.createTime | moment("YYYY年MM月DD日 HH:mm:ss")}}</div>
+    <div class="article-time">发布于：{{postList.createTime | moment("YYYY-MM-DD HH:mm:ss")}}</div>
     <div class="ql-container ql-snow">
       <div class="ql-editor">
         <div class="article-content" v-html="postList.content"></div>
@@ -49,11 +49,14 @@ export default {
 <style lang="scss" scoped>
 .article{
   width: 100%;
+  max-width: 1180px;
   padding: 50px 0;
+  margin: 0 auto;
   word-break: break-all;
   box-sizing: border-box;
   white-space: pre-wrap;
-  background-color: #f7f9fd;
+  word-wrap: break-word;
+  border: 1px solid #ddd;
   pre{
     white-space: pre-wrap;
   }
@@ -61,6 +64,10 @@ export default {
 
 .ql-container.ql-snow{
   border: 0;
+}
+
+.ql-editor {
+  min-height: 0;
 }
 
 .article-title{

@@ -1,7 +1,3 @@
-// const userModule = require("./api-modules/user-api");
-// const articleModule = require("./api-modules/article-api");
-// module.exports = {userModule,articleModule};
-
 const models = require('./db');
 const express = require('express');
 const router = express.Router();
@@ -217,5 +213,55 @@ router.get('/api/login/searchAccount', (req, res) => {
     }
   });
 });
+
+//登录验证
+router.post('/api/login/login', (req, res) => {
+  let account = req.body.account,password = req.body.password;
+  models.Login.count({
+    "account": account,
+    "password": password
+  }, (err, docs) => {
+    if (err) {
+      console.log("Error：" + err)
+      res.send(err)
+    } else {
+      if (docs >= 1) {
+        res.cookie('login',{account: account},{maxAge: 1000*60*60*24});
+        res.send({
+          code: 0,
+          msg: '登录成功'
+        })
+      } else {
+        res.send({
+          code: 1,
+          msg: '登录失败'
+        })
+      }
+    }
+  });
+});
+
+//是否是登录状态
+router.post('/api/login/checkLogin',(req,res) => {
+  var c = req.cookies['login'];
+  if(c){
+    res.send({
+      code: 0,
+      account: c.account
+    })
+  }else{
+    res.send({
+      code: 1,
+    })
+  }
+});
+
+//退出登录
+router.post('/api/login/loginOut',(req,res) => {
+  res.clearCookie("login");
+  res.send({
+    code: 0,
+  })
+})
 
 module.exports = router;

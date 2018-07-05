@@ -172,11 +172,17 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 .edit-wrap {
   width: 100%;
   margin: 0 auto;
   padding: 0 10px;
   box-sizing: border-box;
+}
+.ps-label {
+  display: block;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #999;
 }
 </style>

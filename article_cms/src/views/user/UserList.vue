@@ -2,28 +2,30 @@
     <div>
     <el-row>
         <el-col :span="24">
-        <!-- 录入数据-输入框 -->
-        <el-form ref="form" :model="form" label-width="40px">
-            <el-form-item label="账号">
-                <el-input v-model="form.account" placeholder="请输入账号" clearable></el-input>
-            </el-form-item>
-            <el-form-item label="密码">
-                <el-input v-model="form.password" placeholder="请输入密码" clearable></el-input>
-            </el-form-item>
-            <el-form-item>
-                <el-button type="primary" size="small" @click="inputData">注册</el-button>
-                <el-button size="small" @click="resetInput">取消</el-button>
-            </el-form-item>
-        </el-form>
-
-        <!-- 显示数据-表格 -->
+          <label class="ps-label">用户录入</label>
+          <el-col :span="10">
+            <el-form ref="form" :model="form" label-width="80px">
+                <el-form-item label="用户名">
+                    <el-input v-model="form.account" placeholder="用户名"></el-input>
+                </el-form-item>
+                <el-form-item label="密码">
+                    <el-input v-model="form.password" placeholder="密码"></el-input>
+                </el-form-item>
+                <el-form-item>
+                    <el-button type="primary" size="small" @click="inputData">确定</el-button>
+                    <el-button size="small" @click="resetInput">取消</el-button>
+                </el-form-item>
+            </el-form>
+          </el-col>
+        </el-col>
+        <el-col :span="24">
+        <label class="ps-label">用户列表</label>
         <el-table
         :data="tableData.slice((currentPage-1)*pagesize,currentPage*pagesize)"
         border>
         <el-table-column 
          type="index"
-         width="50"
-        >
+         width="50">
         </el-table-column>
         <el-table-column label="用户名">
           <template slot-scope="scope">
@@ -66,13 +68,14 @@
         </div>
 
         <!-- 编辑数据-弹出框 -->
+      
         <el-dialog title="更新数据" :visible.sync="dialogFormVisible">
           <el-form :model="form">
-            <el-form-item label="账号" :label-width="formLabelWidth">
+            <el-form-item label="用户名" :label-width="formLabelWidth">
               <el-input v-model="form.account" auto-complete="off" disabled></el-input>
             </el-form-item>
             <el-form-item label="密码" :label-width="formLabelWidth">
-              <el-input v-model="form.password" auto-complete="off" clearable></el-input>
+              <el-input v-model="form.password" auto-complete="off"></el-input>
             </el-form-item>
           </el-form>
           <div slot="footer" class="dialog-footer">
@@ -80,7 +83,6 @@
             <el-button type="primary" @click="updateOneData">确 定</el-button>
           </div>
         </el-dialog>
-
 
         </el-col>
       </el-row>
@@ -91,7 +93,7 @@
 export default {
   data() {
     return {
-      id:'',
+      id: "",
       form: {
         account: "",
         password: ""
@@ -103,7 +105,7 @@ export default {
       tableData: [],
       dialogFormVisible: false,
       dialogTableVisible: false,
-      formLabelWidth: '',
+      formLabelWidth: ""
     };
   },
   mounted: function() {
@@ -129,33 +131,35 @@ export default {
       } else {
         this.$message({
           message: "输入的账号或密码不能为空",
-          type: "warning",
-          duration: '1000'
+          type: "error",
+          duration: "1000"
         });
       }
     },
     insertData() {
       let params = this.form;
-      this.$http.post("/api/login/createAccount", params)
-      .then(response => {
-        let res = response.data;
-        if(res.code === 0){
-          this.$message({
-            message: res.msg,
-            type: "success",
-            duration: '1000'
-          });
-          this.searchData();
-        }else{
-          this.$message({
-            message: res.msg,
-            type: "warning",
-            duration: '1000'
-          });
-        }
-      }).catch(reject => {
-        console.log(reject);
-      });
+      this.$http
+        .post("/api/login/createAccount", params)
+        .then(response => {
+          let res = response.data;
+          if (res.code === 0) {
+            this.$message({
+              message: res.msg,
+              type: "success",
+              duration: "1000"
+            });
+            this.searchData();
+          } else {
+            this.$message({
+              message: res.msg,
+              type: "warning",
+              duration: "1000"
+            });
+          }
+        })
+        .catch(reject => {
+          console.log(reject);
+        });
     },
     //删除
     handleDelete(index, row) {
@@ -164,65 +168,71 @@ export default {
     deleteOneData(a) {
       let params = {
         account: a
-      }
-      this.$http.post("/api/login/deleteAccount", params)
-      .then(response => {
-        let res = response.data;
-        if(res.code === 0){
-          this.$message({
-            message: res.msg,
-            type: "success",
-            duration: '1000'
-          });
-          this.searchData();
-        }
-      }).catch(reject => {
-        console.log(reject);
-      });
-    },
-     //更改
-    updateOneData(){
-      if(this.form.password != ""){
-        let params ={
-          id: this.id,
-          account: this.form.account,
-          password: this.form.password
-        }
-        this.$http.post("/api/login/updateAccount",params)
+      };
+      this.$http
+        .post("/api/login/deleteAccount", params)
         .then(response => {
           let res = response.data;
-          if(res.code === 0){
+          if (res.code === 0) {
             this.$message({
               message: res.msg,
               type: "success",
-              duration: '1000'
-            }); 
+              duration: "1000"
+            });
             this.searchData();
-            this.dialogFormVisible = false;
           }
-        }).catch(reject => {
+        })
+        .catch(reject => {
           console.log(reject);
         });
-      }else{
+    },
+    //更改
+    updateOneData() {
+      if (this.form.password != "") {
+        let params = {
+          id: this.id,
+          account: this.form.account,
+          password: this.form.password
+        };
+        this.$http
+          .post("/api/login/updateAccount", params)
+          .then(response => {
+            let res = response.data;
+            if (res.code === 0) {
+              this.$message({
+                message: res.msg,
+                type: "success",
+                duration: "1000"
+              });
+              this.searchData();
+              this.dialogFormVisible = false;
+            }
+          })
+          .catch(reject => {
+            console.log(reject);
+          });
+      } else {
         this.$message({
           message: "密码不能为空",
           type: "warning",
-          duration: '1000'
+          duration: "1000"
         });
       }
     },
     //查询
     searchData() {
-      this.$http.get("/api/login/searchAccount")
-      .then(response => {
-        let res = response.data;
-        if(res.code === 0){
-          this.tableData = res.data;
-          this.total = this.tableData.length;
-        }
-      }).catch(reject => {
-        console.log(reject);
-      });
+      this.$http
+        .get("/api/login/searchAccount")
+        .then(response => {
+          let res = response.data;
+          if (res.code === 0) {
+            this.tableData = res.data;
+            this.total = this.tableData.length;
+          }
+        })
+        .catch(reject => {
+          console.log(reject);
+        });
     },
     //处理分页
     handleSizeChange(val) {
@@ -236,5 +246,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.ps-label {
+  display: block;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #999;
+}
 </style>
