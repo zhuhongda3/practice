@@ -5,12 +5,10 @@ var gulp = require('gulp'),
 gulp.task('watch', function () {
   browserSync.init({
       server: {
-          baseDir: "./"  
+          baseDir: "./",
       }
   });
-  gulp.watch('./*.html').on('change', reload);
-  gulp.watch('./sass/**/*.scss', ['cssmin']);
-  gulp.watch(['./js/*.js','!./js/*.min.js'], ['uglify']);
+  gulp.watch('./demo/*.html').on('change', reload);
 });
 
 gulp.task('default', ['watch']);
