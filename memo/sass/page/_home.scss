@@ -24,12 +24,11 @@
         top: 50%;
         margin-top: -7px;
         left: 0;
-        background-color: $theme-cor;
+        background-color: #666;
       }
     }
     .item {
       width: 230px;
-      border: 1px solid #4c4444;
       padding: 10px 5px;
       &:not(:first-of-type){
         margin-top: 10px;
@@ -39,23 +38,21 @@
       p {
         padding: 5px;
         font-size: 13px;
-        color: #808080;
+        color: #4c4444;
         word-break: break-all;
       }
       a {
         display: block;
         padding: 6px;
-        color: #ddd;
+        color: #999;
         font-size: 12px;
         border-radius: 5px;
-        transition: all .3s ease-in;
         @extend %ellipsis;
         &:not(:last-child){
           margin-bottom: 2px;
         }
         &:hover{
-          color: $theme-cor;
-          background-color: rgba(0,0,0,.6);
+          text-decoration: underline;
         }
       }
     }
