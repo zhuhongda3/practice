@@ -56,7 +56,7 @@ export default {
   box-sizing: border-box;
   white-space: pre-wrap;
   word-wrap: break-word;
-  border: 1px solid #ddd;
+  background-color: #fff;
   pre{
     white-space: pre-wrap;
   }
