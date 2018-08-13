@@ -1,0 +1,2 @@
+webpackJsonp([5],{dYaO:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r={render:function(){var e=this.$createElement;return(this._self._c||e)("p",[this._v("大学")])},staticRenderFns:[]};var s=n("VU/8")({},r,!1,function(e){n("sTSr")},null,null);t.default=s.exports},sTSr:function(e,t){}});
+//# sourceMappingURL=5.cd714799d58a3aeb0739.js.map
