@@ -10,6 +10,17 @@
   .link-item {
     position: absolute;
     transition: .3s ease-in-out;
+    &.active{
+      .item{
+        background-color: #666;
+        p{
+          color: #f3f3f3;
+        }
+        a{
+          color: #bbb;
+        }
+      }
+    }
     .box-name {
       position: relative;
       padding: 15px 0 15px 10px;
@@ -39,7 +50,7 @@
         padding: 5px;
         font-size: 13px;
         color: #4c4444;
-        word-break: break-all;
+        @extend %ellipsis;
       }
       a {
         display: block;

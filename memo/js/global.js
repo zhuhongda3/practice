@@ -8,6 +8,7 @@ $(document).ready(function () {
             duration: 500,
             easing: "swing"
         });
+        $(".link-item").eq(i).addClass('active').siblings().removeClass('active');
         return false;
     });
 

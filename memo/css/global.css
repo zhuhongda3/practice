@@ -200,7 +200,7 @@ body {
   background-attachment: fixed;
 }
 
-.link-nav .link-item .item a {
+.link-nav .link-item .item p, .link-nav .link-item .item a {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -341,7 +341,7 @@ body {
   width: 35px;
   height: 35px;
   font-size: 12px;
-  color: #ddd;
+  color: #928c8c;
   line-height: 35px;
   text-align: center;
   transition: .3s all;
@@ -370,6 +370,18 @@ body {
 .link-nav .link-item {
   position: absolute;
   transition: .3s ease-in-out;
+}
+
+.link-nav .link-item.active .item {
+  background-color: #666;
+}
+
+.link-nav .link-item.active .item p {
+  color: #f3f3f3;
+}
+
+.link-nav .link-item.active .item a {
+  color: #bbb;
 }
 
 .link-nav .link-item .box-name {
@@ -406,7 +418,6 @@ body {
   padding: 5px;
   font-size: 13px;
   color: #4c4444;
-  word-break: break-all;
 }
 
 .link-nav .link-item .item a {
