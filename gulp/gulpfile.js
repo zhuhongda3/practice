@@ -110,7 +110,7 @@ gulp.task("watch", function() {
       baseDir: config.html.devPath
     }
   });
-  gulp.watch([config.html.srcPath, config.html.project+'/layout/*.html'], ["html"]);
+  gulp.watch([config.html.srcPath, config.project+'/layout/*.html'], ["html"]);
   gulp.watch(config.src+'/sass/**/*.scss', ["css"]);
   gulp.watch(config.js.srcPath, ["js"]);
 });
