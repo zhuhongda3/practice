@@ -7,14 +7,14 @@
   width: 270px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  background: $sidebar-bg;
+  background: #666;
   z-index: 3;
   .title {
     text-align: center;
     height: 50px;
     line-height: 50px;
     font-size: 18px;
-    color: #000;
+    color: #fff;
     border-bottom: 2px solid hsla(0, 0%, 100%, .04);
   }
   .list-item {
@@ -30,7 +30,7 @@
       display: inline-block;
       width: 100%;
       font-size: 12px;
-      color: $sidebar-cor;
+      color: #fff;
       text-decoration: none;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -68,7 +68,7 @@
 
 .off-canvas {
   margin-top: 0!important;
-  background-color: #fff;
+  background-color: #666;
 }
 
 .title-bar-right {
@@ -91,12 +91,12 @@
 }
 
 .accordion-menu>li a {
-  font-size: 14px;
-  color: #666;
+  font-size: 13px;
+  color: #fff;
 }
 
 .accordion-menu .is-accordion-submenu a {
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .submenu-toggle::after {
@@ -113,10 +113,6 @@
 .close-button:focus,
 .close-button:hover {
   color: #ddd;
-}
-
-.accordion-menu li {
-  border-bottom: 1px solid #f4f4f4;
 }
 
 .accordion-menu li:last-child {

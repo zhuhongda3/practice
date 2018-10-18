@@ -215,7 +215,7 @@ body {
   width: 270px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  background: #fff;
+  background: #666;
   z-index: 3;
 }
 
@@ -224,7 +224,7 @@ body {
   height: 50px;
   line-height: 50px;
   font-size: 18px;
-  color: #000;
+  color: #fff;
   border-bottom: 2px solid rgba(255, 255, 255, 0.04);
 }
 
@@ -244,7 +244,7 @@ body {
   display: inline-block;
   width: 100%;
   font-size: 12px;
-  color: #6b7386;
+  color: #fff;
   text-decoration: none;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -279,7 +279,7 @@ body {
 
 .off-canvas {
   margin-top: 0 !important;
-  background-color: #fff;
+  background-color: #666;
 }
 
 .title-bar-right {
@@ -302,12 +302,12 @@ body {
 }
 
 .accordion-menu > li a {
-  font-size: 14px;
-  color: #666;
+  font-size: 13px;
+  color: #fff;
 }
 
 .accordion-menu .is-accordion-submenu a {
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .submenu-toggle::after {
@@ -324,10 +324,6 @@ body {
 .close-button:focus,
 .close-button:hover {
   color: #ddd;
-}
-
-.accordion-menu li {
-  border-bottom: 1px solid #f4f4f4;
 }
 
 .accordion-menu li:last-child {
@@ -372,18 +368,6 @@ body {
   transition: .3s ease-in-out;
 }
 
-.link-nav .link-item.active .item {
-  background-color: #666;
-}
-
-.link-nav .link-item.active .item p {
-  color: #f3f3f3;
-}
-
-.link-nav .link-item.active .item a {
-  color: #bbb;
-}
-
 .link-nav .link-item .box-name {
   position: relative;
   padding: 15px 0 15px 10px;
@@ -405,9 +389,10 @@ body {
 
 .link-nav .link-item .item {
   width: 230px;
-  padding: 10px 5px;
+  padding: 0;
   background-color: #fff;
-  border-radius: 6px;
+  border-radius: 5px;
+  border: 1px solid #eee;
 }
 
 .link-nav .link-item .item:not(:first-of-type) {
@@ -417,19 +402,16 @@ body {
 .link-nav .link-item .item p {
   padding: 5px;
   font-size: 13px;
-  color: #4c4444;
+  background: #666;
+  border-radius: 5px 5px 0 0;
+  color: #fff;
 }
 
 .link-nav .link-item .item a {
   display: block;
-  padding: 6px;
-  color: #999;
+  padding: 5px;
+  color: #4c4444;
   font-size: 12px;
-  border-radius: 5px;
-}
-
-.link-nav .link-item .item a:not(:last-child) {
-  margin-bottom: 2px;
 }
 
 .link-nav .link-item .item a:hover {

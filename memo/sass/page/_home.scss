@@ -10,17 +10,6 @@
   .link-item {
     position: absolute;
     transition: .3s ease-in-out;
-    &.active{
-      .item{
-        background-color: #666;
-        p{
-          color: #f3f3f3;
-        }
-        a{
-          color: #bbb;
-        }
-      }
-    }
     .box-name {
       position: relative;
       padding: 15px 0 15px 10px;
@@ -40,28 +29,27 @@
     }
     .item {
       width: 230px;
-      padding: 10px 5px;
+      padding: 0;
       &:not(:first-of-type){
         margin-top: 10px;
       }
       background-color: $sidebar-bg;
-      border-radius: 6px;
+      border-radius: 5px;
+      border: 1px solid #eee;
       p {
         padding: 5px;
         font-size: 13px;
-        color: #4c4444;
+        background: #666;
+        border-radius: 5px 5px 0 0;
+        color: #fff;
         @extend %ellipsis;
       }
       a {
         display: block;
-        padding: 6px;
-        color: #999;
+        padding: 5px;
+        color: #4c4444;
         font-size: 12px;
-        border-radius: 5px;
         @extend %ellipsis;
-        &:not(:last-child){
-          margin-bottom: 2px;
-        }
         &:hover{
           text-decoration: underline;
         }
