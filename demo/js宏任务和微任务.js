@@ -1,3 +1,6 @@
+// https://segmentfault.com/a/1190000014940904
+
+
 // call,apply 简单运用
 (function(){
   function add() {
@@ -24,7 +27,7 @@
   async function async2(){
     console.log('async2');
   }
-  console.log('script start');
+  console.log('script start'); 
   setTimeout(function(){
     console.log('setTimeout');
   },0);

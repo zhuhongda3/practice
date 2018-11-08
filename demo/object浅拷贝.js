@@ -13,6 +13,7 @@
 
 // 方案二
 (function(){
+
   // 单对象浅拷贝
   function extend(target, source){
     for(var obj in source){
@@ -20,6 +21,7 @@
     }
     return target;
   }
+  
   var o1 = extend({},{a: 1});
   console.log(o1);
 
@@ -34,6 +36,7 @@
     }
     return target;
   }
+
   var o2 = extendAll({a: 1},{b: 2},{c: 3});
   console.log(o2);
 })();
