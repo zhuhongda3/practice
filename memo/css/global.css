@@ -387,6 +387,10 @@ body {
   background-color: #666;
 }
 
+.link-nav .link-item.active {
+  box-shadow: 0 0 15px 2px #999;
+}
+
 .link-nav .link-item .item {
   width: 230px;
   padding: 0;

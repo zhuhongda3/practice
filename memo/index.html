@@ -2,658 +2,802 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="./img/icon.png">
-    <link href="./css/global.min.css?v=2.0" rel="stylesheet">
-    <title>memo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="./img/icon.png">
+  <link href="./css/global.min.css?v=2.0" rel="stylesheet">
+  <title>memo</title>
 </head>
 
 <body ontouchstart="">
-    <div class="wrapper">
-        <div class="sidebar">
-            <div class="title">
-                <p>memo</p>
-            </div>
-            <ul class="list-item">
-                <li class="link">
-                    <a href="javascript:void(0);">html</a>
-                </li>
-                <li class="link">
-                    <a href="javascript:void(0);">css</a>
-                </li>
-                <li class="link">
-                    <a href="javascript:void(0);">javascript</a>
-                </li>
-                <li class="link">
-                    <a href="javascript:void(0);">tools</a>
-                </li>
-                <li class="link">
-                    <a href="javascript:void(0);">nodeJs</a>
-                </li>
-                <li class="link">
-                    <a href="javascript:void(0);">community</a>
-                </li>
-                <li class="link">
-                    <a href="javascript:void(0);">database</a>
-                </li>
-                <li class="link">
-                    <a href="javascript:void(0);">ecological</a>
-                </li>
-                <li class="link">
-                    <a href="javascript:void(0);">algorithm</a>
-                </li>
-                <li class="link">
-                    <a href="javascript:void(0);">interview</a>
-                </li>
-            </ul>
+  <div class="wrapper">
+    <div class="sidebar">
+      <div class="title">
+        <p>memo</p>
+      </div>
+      <ul class="list-item">
+        <li class="link">
+          <a href="javascript:void(0);">html</a>
+        </li>
+        <li class="link">
+          <a href="javascript:void(0);">css</a>
+        </li>
+        <li class="link">
+          <a href="javascript:void(0);">javascript</a>
+        </li>
+        <li class="link">
+          <a href="javascript:void(0);">tools</a>
+        </li>
+        <li class="link">
+          <a href="javascript:void(0);">nodeJs</a>
+        </li>
+        <li class="link">
+          <a href="javascript:void(0);">community</a>
+        </li>
+        <li class="link">
+          <a href="javascript:void(0);">database</a>
+        </li>
+        <li class="link">
+          <a href="javascript:void(0);">ecological</a>
+        </li>
+        <li class="link">
+          <a href="javascript:void(0);">algorithm</a>
+        </li>
+        <li class="link">
+          <a href="javascript:void(0);">interview</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="off-canvas-wrapper">
+      <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+        <div class="title-bar">
+          <div class="title-bar-right">
+            <!-- <p>memo</p> -->
+            <button class="menu-icon" type="button" data-open="offCanvas"></button>
+          </div>
         </div>
+        <div class="off-canvas position-right" id="offCanvas" data-off-canvas data-transition="overlap">
 
-        <div class="off-canvas-wrapper">
-            <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
-                <div class="title-bar">
-                    <div class="title-bar-right">
-                        <!-- <p>memo</p> -->
-                        <button class="menu-icon" type="button" data-open="offCanvas"></button>
-                    </div>
+          <button class="close-button exit-off-canvas" aria-label="Close menu" type="button" data-close="offCanvas">
+            <span aria-hidden="true">&times;</span>
+          </button>
+
+          <ul class="menu-con vertical menu accordion-menu" data-accordion-menu data-submenu-toggle="true">
+            <li>
+              <a href="#modal-1" data-close="offCanvas">html</a>
+              <!-- <ul class="menu vertical nested"></ul> -->
+            </li>
+            <li>
+              <a href="#modal-2" data-close="offCanvas">css</a>
+              <!-- <ul class="menu vertical nested"></ul> -->
+            </li>
+            <li>
+              <a href="#modal-3" data-close="offCanvas">javascript</a>
+              <!-- <ul class="menu vertical nested"></ul> -->
+            </li>
+            <li>
+              <a href="#modal-4" data-close="offCanvas">tools</a>
+              <!-- <ul class="menu vertical nested"></ul> -->
+            </li>
+            <li>
+              <a href="#modal-5" data-close="offCanvas">nodeJs</a>
+              <!-- <ul class="menu vertical nested"></ul> -->
+            </li>
+            <li>
+              <a href="#modal-6" data-close="offCanvas">community</a>
+              <!-- <ul class="menu vertical nested"></ul> -->
+            </li>
+            <li>
+              <a href="#modal-7" data-close="offCanvas">database</a>
+              <!-- <ul class="menu vertical nested"></ul> -->
+            </li>
+            <li>
+              <a href="#modal-8" data-close="offCanvas">ecological</a>
+              <!-- <ul class="menu vertical nested"></ul> -->
+            </li>
+            <li>
+              <a href="#modal-9" data-close="offCanvas">algorithm</a>
+              <!-- <ul class="menu vertical nested"></ul> -->
+            </li>
+            <li>
+              <a href="#modal-10" data-close="offCanvas">interview</a>
+              <!-- <ul class="menu vertical nested"></ul> -->
+            </li>
+          </ul>
+
+        </div>
+        <div class="off-canvas-content" data-off-canvas-content>
+          <div class="link-nav">
+            <div class="link-list">
+              <!-- html -->
+              <div class="link-item" id="modal-1">
+                <div class="item">
+                  <p>W3C</p>
+                  <a href="//www.w3.org" target="_blank">英</a>
+                  <a href="http://www.chinaw3c.org/" target="_blank">中</a>
+                  <a href="//www.w3.org/html">html</a>
+                  <a href="//www.w3.org/TR/html5/">html5</a>
+                  <a href="//www.w3.org/TR">protocol</a>
+                  <a href="//www.w3.org/TR/CSS" target="_blank">CSS Snapshot</a>
+                  <a href="//www.w3.org/Style/CSS" target="_blank">CSS Home</a>
                 </div>
-                <div class="off-canvas position-right" id="offCanvas" data-off-canvas data-transition="overlap">
-
-                    <button class="close-button exit-off-canvas" aria-label="Close menu" type="button" data-close="offCanvas">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-
-                    <ul class="menu-con vertical menu accordion-menu" data-accordion-menu data-submenu-toggle="true">
-                        <li>
-                            <a href="#modal-1" data-close="offCanvas">html</a>
-                            <!-- <ul class="menu vertical nested"></ul> -->
-                        </li>
-                        <li>
-                            <a href="#modal-2" data-close="offCanvas">css</a>
-                            <!-- <ul class="menu vertical nested"></ul> -->
-                        </li>
-                        <li>
-                            <a href="#modal-3" data-close="offCanvas">javascript</a>
-                            <!-- <ul class="menu vertical nested"></ul> -->
-                        </li>
-                        <li>
-                            <a href="#modal-4" data-close="offCanvas">tools</a>
-                            <!-- <ul class="menu vertical nested"></ul> -->
-                        </li>
-                        <li>
-                            <a href="#modal-5" data-close="offCanvas">nodeJs</a>
-                            <!-- <ul class="menu vertical nested"></ul> -->
-                        </li>
-                        <li>
-                            <a href="#modal-6" data-close="offCanvas">community</a>
-                            <!-- <ul class="menu vertical nested"></ul> -->
-                        </li>
-                        <li>
-                            <a href="#modal-7" data-close="offCanvas">database</a>
-                            <!-- <ul class="menu vertical nested"></ul> -->
-                        </li>
-                        <li>
-                            <a href="#modal-8" data-close="offCanvas">ecological</a>
-                            <!-- <ul class="menu vertical nested"></ul> -->
-                        </li>
-                        <li>
-                            <a href="#modal-9" data-close="offCanvas">algorithm</a>
-                            <!-- <ul class="menu vertical nested"></ul> -->
-                        </li>
-                        <li>
-                            <a href="#modal-10" data-close="offCanvas">interview</a>
-                            <!-- <ul class="menu vertical nested"></ul> -->
-                        </li>
-                    </ul>
-
+                <div class="item">
+                  <p>MDN</p>
+                  <a href="//developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML5" target="_black">MDN</a>
                 </div>
-                <div class="off-canvas-content" data-off-canvas-content>
-                    <div class="link-nav">
-                        <div class="link-list">
-                            <!-- html -->
-                            <div class="link-item" id="modal-1">
-                                <div class="item">
-                                    <p>W3C</p>
-                                    <a href="//www.w3.org/html">html</a>
-                                    <a href="//www.w3.org/TR/html5/">html5</a>
-                                    <a href="//www.w3.org/TR">protocol</a>
-                                    <a href="//www.w3.org" target="_blank">英</a>
-                                    <a href="http://www.chinaw3c.org/" target="_blank">中</a>
-                                </div>
-                                <div class="item">
-                                    <a href="//developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML5" target="_black">MDN</a>
-                                    <a href="//www.w3cschool.cn/html5/" target="_black">w3cschool html5</a>
-                                    <a href="//www.w3cschool.cn/html5_reference.html" target="_black">w3cschool html5_reference</a>
-                                    <a href="//blog.csdn.net/shuidinaozhongyan/article/details/73159384">html5 API</a>
-                                </div>
-                                <div class="item">
-                                    <p>bootstrap</p>
-                                    <a href="http://www.bootcss.com/" target="_blank">中</a>
-                                    <a href="//getbootstrap.com/" target="_blank">英</a>
-                                    <p>foundation</p>
-                                    <a href="//foundation.zurb.com" target="_blank">英</a>
-                                    <p>metronic4.7.1</p>
-                                    <a href="http://i0.mallcoo.net/mc/metronic4.7.1/demo/admin_1/form_controls.html" target="_blank">英</a>
-                                </div>
-                            </div>
+                <div class="item">
+                  <p>Html5</p>
+                  <a href="//www.w3cschool.cn/html5/" target="_black">w3cschool html5</a>
+                  <a href="//www.w3cschool.cn/html5_reference.html" target="_black">w3cschool html5_reference</a>
+                  <a href="//blog.csdn.net/shuidinaozhongyan/article/details/73159384">html5 API</a>
+                </div>
+                <div class="item">
+                  <p>bootstrap</p>
+                  <a href="http://www.bootcss.com/" target="_blank">中</a>
+                  <a href="//getbootstrap.com/" target="_blank">英</a>
+                </div>
+                <div class="item">
+                  <p>foundation</p>
+                  <a href="//foundation.zurb.com" target="_blank">英</a>
+                </div>
+                <div class="item">
+                  <p>metronic4.7.1</p>
+                  <a href="http://i0.mallcoo.net/mc/metronic4.7.1/demo/admin_1/form_controls.html" target="_blank">英</a>
+                </div>
+              </div>
 
-                            <!-- css -->
-                            <div class="link-item" id="modal-2">
-                                <div class="item">
-                                    <p>W3C</p>
-                                    <a href="//www.w3.org/TR/CSS" target="_blank">CSS Snapshot</a>
-                                    <a href="//www.w3.org/Style/CSS" target="_blank">CSS Home</a>
-                                </div>
-                                <div class="item">
-                                    <p>postcss</p>
-                                    <a href="//www.postcss.com.cn/" target="_blank">中</a>
-                                    <a href="//postcss.org/" target="_blank">英</a>
-                                    <a href="http://cssnext.io/" target="_blank">cssnext</a>
-                                    <p>sass</p>
-                                    <a href="//www.sass.hk/" target="_blank">中</a>
-                                    <a href="//sass-lang.com/" target="_blank">英</a>
-                                    <p>less</p>
-                                    <a href="//less.bootcss.com/" target="_blank">中</a>
-                                    <a href="//lesscss.org/" target="_blank">英</a>
-                                    <p>stylus</p>
-                                    <a href="http://stylus-lang.com/" target="_blank">英</a>
-                                </div>
-                                <div class="item">
-                                    <p>hack</p>
-                                    <a href="//css-tricks.com" target="_blank">css-tricks</a>
-                                    <a href="//caniuse.com/" target="_blank">css i use</a>
-                                    <p>代码片段</p>
-                                    <a href="//atomiks.github.io/30-seconds-of-css/" target="_blank">30-seconds-of-css</a>
-                                    <a href="//segmentfault.com/a/1190000010780991?utm_medium=hao.caibaojian.com&utm_source=hao.caibaojian.com&share_user=1030000000178452" target="_blank">css3 summary</a>
-                                    <a href="//cssreference.io/" target="_blank">css reference</a>
-                                </div>
-                                <div class="item">
-                                    <p>命名规范</p>
-                                    <a href="http://getbem.com/" target="_blank">BEM</a>
-                                    <!-- <a href="//www.w3cplus.com/css/mindbemding-getting-your-head-round-bem-syntax.html" target="_blank">BEM</a> -->
-                                </div>
-                                <div class="item">
-                                    <p>UI</p>
-                                    <a href="http://www.shejidaren.com/">设计达人</a>
-                                    <a href="http://www.uisdc.com/frontend-quick-search-sheet" target="_blank">uisdc</a>
-                                    <p>book for designer</p>
-                                    <a href="//www.sketchingwithcss.com/" target="_blank">sketchingwithcss</a>
-                                    <p>切图</p>
-                                    <a href="//www.uisdc.com/tag/assistor-ps" target="_blank">assistor-ps</a>
-                                    <a href="http://www.cutterman.cn/zh" target="_blank">cutterman</a>
-                                    <a href="//www.imooc.com/learn/506" target="_blank">切图教程</a>
-                                </div>
-                                <div class="item">
-                                    <p>常用插件</p>
-                                    <a href="//www.swiper.com.cn/" target="_blank">swiper</a>
-                                    <a href="http://photoswipe.com/" target="_blank">photoswipe</a>
-                                    <p>常用工具</p>
-                                    <a href="//tinypng.com" target="_blank">压缩图片tinypng</a>
-                                    <a href="//www.toptal.com/developers/css/sprite-generator" target="_blank">合成雪碧图sprite-generator</a>
-                                    <a href="http://www.getmarkman.com/" target="_blank">设计稿标注</a>
-                                </div>
-                            </div>
+              <!-- css -->
+              <div class="link-item" id="modal-2">
+                <div class="item">
+                  <p>browsersList</p>
+                  <a href="//github.com/browserslist/browserslist#readme">browserslist</a>
+                  <a href="//browserl.ist/?q=%3E+1%25%2C+last+2+versions%2C+not+ie+%3C%3D+8">browserl</a>
+                  <a href="//blog.csdn.net/beyond__devil/article/details/82968266">资源链接</a>
+                </div>
+                <div class="item">
+                  <p>postcss</p>
+                  <a href="//www.postcss.com.cn/" target="_blank">中</a>
+                  <a href="//postcss.org/" target="_blank">英</a>
+                  <a href="http://cssnext.io/" target="_blank">cssnext</a>
+                  <a href="//segmentfault.com/a/1190000014782560" target="_blank">简介</a>
+                  <a href="//codepen.io/vank0/pen/kkGvAb" target="_blank">codepen demo</a>
+                </div>
+                <div class="item">
+                  <p>sass</p>
+                  <a href="//www.sass.hk/" target="_blank">中</a>
+                  <a href="//sass-lang.com/" target="_blank">英</a>
+                </div>
+                <div class="item">
+                  <p>less</p>
+                  <a href="//less.bootcss.com/" target="_blank">中</a>
+                  <a href="//lesscss.org/" target="_blank">英</a>
+                </div>
+                <div class="item">
+                  <p>stylus</p>
+                  <a href="http://stylus-lang.com/" target="_blank">英</a>
+                </div>
+                <div class="item">
+                  <p>hack</p>
+                  <a href="//css-tricks.com" target="_blank">css-tricks</a>
+                  <a href="//caniuse.com/" target="_blank">css i use</a>
+                </div>
+                <div class="item">
+                  <p>代码片段</p>
+                  <a href="//atomiks.github.io/30-seconds-of-css/" target="_blank">30-seconds-of-css</a>
+                  <a href="//segmentfault.com/a/1190000010780991?utm_medium=hao.caibaojian.com&utm_source=hao.caibaojian.com&share_user=1030000000178452"
+                    target="_blank">css3 summary</a>
+                  <a href="//cssreference.io/" target="_blank">css reference</a>
+                </div>
+                <div class="item">
+                  <p>命名规范</p>
+                  <a href="http://getbem.com/" target="_blank">BEM</a>
+                  <!-- <a href="//www.w3cplus.com/css/mindbemding-getting-your-head-round-bem-syntax.html" target="_blank">BEM</a> -->
+                </div>
+                <div class="item">
+                  <p>设计</p>
+                  <a href="http://www.shejidaren.com/">设计达人</a>
+                  <a href="http://www.uisdc.com/frontend-quick-search-sheet" target="_blank">uisdc</a>
+                  <a href="//www.sketchingwithcss.com/" target="_blank">sketchingwithcss</a>
+                </div>
+                <div class="item">
+                  <p>切图</p>
+                  <a href="//www.uisdc.com/tag/assistor-ps" target="_blank">assistor-ps</a>
+                  <a href="http://www.cutterman.cn/zh" target="_blank">cutterman</a>
+                  <a href="//www.imooc.com/learn/506" target="_blank">切图教程</a>
+                </div>
+                <div class="item">
+                  <p>常用插件</p>
+                  <a href="//www.swiper.com.cn/" target="_blank">swiper</a>
+                  <a href="http://photoswipe.com/" target="_blank">photoswipe</a>
+                </div>
+                <div class="item">
+                  <p>常用工具</p>
+                  <a href="//tinypng.com" target="_blank">压缩图片tinypng</a>
+                  <a href="//www.toptal.com/developers/css/sprite-generator" target="_blank">合成雪碧图sprite-generator</a>
+                  <a href="http://www.getmarkman.com/" target="_blank">设计稿标注</a>
+                </div>
+                <div class="item">
+                  <p>名称</p>
+                  <a href="//blog.csdn.net/u012182639/article/details/76063580" target="_blank">命名1</a>
+                  <a href="http://www.divcss5.com/jiqiao/j4.shtml" target="_blank">命名2</a>
+                </div>
+              </div>
 
-                            <!-- javascript -->
-                            <div class="link-item" id="modal-3">
-                                <div class="item">
-                                    <p>ECMAScript</p>
-                                    <a href="//github.com/tc39/ecma262" target="_black">tc39(new)</a>
-                                    <a href="//www.ecma-international.org/ecma-262/9.0/index.html" target="_black">es9-2018</a>
-                                    <a href="//www.ecma-international.org/ecma-262/8.0/index.html" target="_black">es8-2017</a>
-                                    <a href="//www.ecma-international.org/ecma-262/7.0/index.html" target="_black">es7-2016</a>
-                                    <a href="//www.ecma-international.org/ecma-262/6.0/index.html" target="_black">es6-2015</a>
-                                </div>
-                                <div class="item">
-                                    <p>es6+ article</p>
-                                    <a href="//juejin.im/entry/5b4d80ca518825195f498a22" target="_black">es7/es8/es9 2018-07</a>
-                                    <a href="//juejin.im/post/5b353534f265da595f0d3f7e" target="_black">es9 2018-06</a>
-                                    <a href="//www.imooc.com/article/37899" target="_black">es9 2018-05</a>
-                                    <a href="//www.jianshu.com/p/b54e5075b5e4" target="_black">es9 2018-02</a>
-                                    <a href="//www.cnblogs.com/zhuanzhuanfe/p/7493433.html" target="_black">es7/es8 2017-09</a>
-                                    <p>书籍、技巧</p>
-                                    <a href="//legacy.gitbook.com/book/sagittarius-rev/understanding-ecmascript-6-zh-ver/details" target="_black">Understanding ECMAScript 6</a>
-                                    <a href="//www.infoq.com/cn/es6-in-depth/" target="_blank">es6-in-depth</a>
-                                    <a href="//www.javascriptcn.com/" target="_black">javascriptcn</a>
-                                    <a href="http://www.jstips.co/zh_CN/" target="_black">jstips</a>
-                                    <a href="http://www.php.cn/js-tutorial.html" target="_black">js-tutorial</a>
-                                    <p>在线教程</p>
-                                    <a title="The Modern JavaScript Tutorial" href="//javascript.info/" target="_black">The Modern JavaScript Tutorial</a>
-                                    <a href="http://es6.ruanyifeng.com/" target="_blank">Introduction to the standard es6(ruanyifeng)</a>
-                                    <a href="http://javascript.ruanyifeng.com/" target="_black">JavaScript Standards Reference Guide(ruanyifeng)</a>
-                                    <a href="//developer.mozilla.org/zh-CN/docs/Web/JavaScript" target="_black">MDN JavaScript</a>
-                                    <a href="//w3cschool.cn/javascript/" target="_black">W3Cschool JavaScript</a>
-                                </div>
-                                <div class="item">
-                                    <p>原生代码风格</p>
-                                    <a href="//github.com/airbnb/javascript" target="_black">Airbnb JavaScript Style Guide</a>
-                                    <a href="//google.github.io/styleguide/jsguide.html" target="_black">Google JavaScript Style Guide</a>
-                                    <a href="//github.com/rwaldron/idiomatic.js" target="_black">Idiomatic JavaScript Style Guide</a>
-                                    <a href="//github.com/standard/standard" target="_black">JavaScript Standard Style Guide</a>
-                                    <a href="//github.com/ryanmcdermott/clean-code-javascript" target="_black">clean-code-javascript</a>
-                                    <p>jquery代码风格</p>
-                                    <a href="//contribute.jquery.org/style-guide/js/" target="_black">jQuery JavaScript Style Guide</a>
-                                    <p>editorconfig</p>
-                                    <a href="//editorconfig.org/" target="_black" title="在根目录新建.editorconfig文件,安装EditorConfig for VS Code插件">editorconfig</a>
-                                </div>
-                                <div class="item">
-                                    <p>浏览器兼容性表</p>
-                                    <a href="//kangax.github.io/compat-table/es5/" target="_black">compat-table</a>
-                                    <p>babel</p>
-                                    <a href="//babeljs.cn/" target="_blank">中</a>
-                                    <a href="//babeljs.io/" target="_blank">英</a>
-                                </div>
-                                <div class="item">
-                                    <p>Typescript</p>
-                                    <a href="//www.tslang.cn/" target="_blank">中</a>
-                                    <a href="//www.typescriptlang.org/" target="_blank">英</a>
-                                    <p>Flow</p>
-                                    <a href="//flow.org/" target="_blank">英</a>
-                                    <a href="//blog.csdn.net/tangxiujiang/article/details/80778627" target="_blank">资料</a>
-                                </div>
-                                <div class="item">
-                                    <p>React</p>
-                                    <a href="//doc.react-china.org/" target="_blank">中</a>
-                                    <a href="//facebook.github.io/react/" target="_blank">英</a>
-                                    <p>Vue</p>
-                                    <a href="//cn.vuejs.org/" target="_blank">中</a>
-                                    <p>Angular</p>
-                                    <a href="http://www.angularjs.net.cn/" target="_blank">中</a>
-                                    <a href="//angularjs.org/" target="_blank">英</a>
-                                    <p>Jquery</p>
-                                    <a href="//www.jquery123.com/" target="_blank">中</a>
-                                    <a href="//jquery.com/" target="_blank">英</a>
-                                    <p>backbonejs</p>
-                                    <a href="http://backbonejs.org/" target="_blank">英</a>
-                                    <p>plainjs</p>
-                                    <a href="//plainjs.com/javascript/" target="_blank">英</a>
-                                </div>
-                                <div class="item">
-                                    <p>lodash</p>
-                                    <a href="//lodashjs.com" target="_blank">中</a>
-                                    <a href="//lodash.com/" target="_blank">英</a>
-                                    <p>coffeescript</p>
-                                    <a href="http://coffee-script.org/" target="_blank">中</a>
-                                    <a href="//coffeescript.org/" target="_blank">英</a>
-                                </div>
-                                <div class="item">
-                                  <p>代码片段</p>
-                                  <a href="//github.com/Chalarangelo/30-seconds-of-code" target="_blank">30-seconds-of-code</a>
-                                  <a href="//github.com/you-dont-need" target="_blank">you-dont-need</a>
-                                </div>
-                                <div class="item">
-                                    <p>React Native</p>
-                                    <a href="//reactnative.cn/" target="_blank">中</a>
-                                    <a href="//facebook.github.io/react-native/" target="_blank">英</a>
-                                    <a href="http://weex.apache.org/cn/guide/" target="_blank">weex</a>
-                                    <p>NativeScript</p>
-                                    <a href="//www.nativescript.org" target="_black">英</a>
-                                    <a href="//github.com/nativescript-vue/nativescript-vue" target="_black">gitbub</a>
-                                    <p>flutter</p>
-                                    <a href="//flutter.io" target="_blank">英</a>
-                                    <a href="//flutterchina.club" target="_blank">中</a>
-                                    <a href="//taro.aotu.io/" target="_blank">Taro</a>
-                                    <p>wepy</p>
-                                    <a href="//tencent.github.io/wepy/">wepy</a>
-                                    <a href="//www.cnblogs.com/bugly/p/6133116.html">wepy(介绍)</a>
-                                    <a href="//blog.csdn.net/zhangdaiscott/article/details/80046764">wepy(介绍)</a>
-                                    <p>cordova</p>
-                                    <a href="http://cordova.axuer.com/" target="_blank">中</a>
-                                    <a href="//cordova.apache.org/" target="_blank">英</a>
-                                    <p>appcan</p>
-                                    <a href="http://www.appcan.cn/" target="_blank">中</a>
-                                    <p>html5plus</p>
-                                    <a href="http://www.html5plus.org/" target="_blank">中</a>
-                                    <a href="http://ask.dcloud.net.cn/article/88" target="_blank">Native.js</a>
-                                    <p>小程序</p>
-                                    <a href="//mp.weixin.qq.com/cgi-bin/wx" target="_blank">微信</a>
-                                    <a href="//docs.alipay.com/mini/api/ewdxl3" target="_blank">蚂蚁金服</a>
-                                </div>
-                                <div class="item">
-                                    <p>react</p>
-                                    <a href="//devarchy.com/react" target="_black">Awesome React Components</a>
-                                    <a href="//legacy.gitbook.com/book/chenyitian/react-docs/details" target="_blank">react-docs</a>
-                                    <a href="//github.com/carlleton/reactjs101/tree/zh-CN" target="_blank">Zero-based learning ReactJS</a>
-                                    <a href="//github.com/jondot/awesome-react-native" target="_black">awesome-react-native</a>
-                                    <p>vue</p>
-                                    <a href="http://hcysun.me/vue-design/art/" target="_black">vue-design</a>
-                                    <a href="//github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a>
-                                    <a href="//juejin.im/post/5bd83871f265da0afa3e3204" target="_blank">vue工程构建经验</a>
-                                    <p>jquery</p>
-                                    <a href="http://jquery.cuishifeng.cn" target="_blank">api</a>
-                                    <a href="http://lab.abhinayrathore.com/jquery-cheatsheet/" target="_blank">jquery-cheatsheet</a>
-                                    <a href="http://www.jq22.com/" target="_blank">插件</a>
-                                    <p>微信小程序</p>
-                                    <a href="//github.com/justjavac/awesome-wechat-weapp" target="_blank">awesome-wechat-weapp</a>
-                                    <a href="//www.zhihu.com/question/50907897" target="_blank">知乎</a>
-                                    <p>summarizing</p>
-                                    <a href="//github.com/devarchy/frontend-catalogs" target="_black">frontend-catalogs</a>
-                                    <a href="//www.sitepen.com/blog/2017/11/10/web-frameworks-conclusions/" target="_black">web-frameworks-conclusions</a>
-                                    <a href="//www.oschina.net/translate/web-frameworks-conclusions" target="_black">6 大主流 Web 框架优缺点对比（翻译）</a>
-                                </div>
-                            </div>
+              <!-- javascript -->
+              <div class="link-item" id="modal-3">
+                <div class="item">
+                  <p>ECMAScript</p>
+                  <a href="//github.com/tc39/ecma262" target="_black">tc39(new)</a>
+                  <a href="//www.ecma-international.org/ecma-262/9.0/index.html" target="_black">es9-2018</a>
+                  <a href="//www.ecma-international.org/ecma-262/8.0/index.html" target="_black">es8-2017</a>
+                  <a href="//www.ecma-international.org/ecma-262/7.0/index.html" target="_black">es7-2016</a>
+                  <a href="//www.ecma-international.org/ecma-262/6.0/index.html" target="_black">es6-2015</a>
+                </div>
+                <div class="item">
+                  <p>浏览器兼容性表</p>
+                  <a href="//kangax.github.io/compat-table/es5/" target="_black">compat-table</a>
+                </div>
+                <div class="item">
+                  <p>babel</p>
+                  <a href="//babeljs.cn/" target="_blank">中</a>
+                  <a href="//babeljs.io/" target="_blank">英</a>
+                </div>
+                <div class="item">
+                  <p>编辑器</p>
+                  <a href="//code.visualstudio.com/">visualstudio</a>
+                  <a href="https://www.cnblogs.com/vivaxiaonan/p/7380099.html">插件</a>
+                </div>
+                <div class="item">
+                  <p>article</p>
+                  <a href="//juejin.im/entry/5b4d80ca518825195f498a22" target="_black">es7/es8/es9 2018-07</a>
+                  <a href="//juejin.im/post/5b353534f265da595f0d3f7e" target="_black">es9 2018-06</a>
+                  <a href="//www.imooc.com/article/37899" target="_black">es9 2018-05</a>
+                  <a href="//www.jianshu.com/p/b54e5075b5e4" target="_black">es9 2018-02</a>
+                  <a href="//www.cnblogs.com/zhuanzhuanfe/p/7493433.html" target="_black">es7/es8 2017-09</a>
+                  <a href="//legacy.gitbook.com/book/sagittarius-rev/understanding-ecmascript-6-zh-ver/details" target="_black">Understanding
+                    ECMAScript 6</a>
+                  <a href="//www.infoq.com/cn/es6-in-depth/" target="_blank">es6-in-depth</a>
+                  <a href="//www.javascriptcn.com/" target="_black">javascriptcn</a>
+                  <a href="http://www.jstips.co/zh_CN/" target="_black">jstips</a>
+                  <a href="http://www.php.cn/js-tutorial.html" target="_black">js-tutorial</a>
+                  <a title="The Modern JavaScript Tutorial" href="//javascript.info/" target="_black">The Modern
+                    JavaScript Tutorial</a>
+                  <a href="http://es6.ruanyifeng.com/" target="_blank">Introduction to the standard es6(ruanyifeng)</a>
+                  <a href="http://javascript.ruanyifeng.com/" target="_black">JavaScript Standards Reference
+                    Guide(ruanyifeng)</a>
+                  <a href="//developer.mozilla.org/zh-CN/docs/Web/JavaScript" target="_black">MDN JavaScript</a>
+                  <a href="//w3cschool.cn/javascript/" target="_black">W3Cschool JavaScript</a>
+                </div>
+                <div class="item">
+                  <p>代码风格</p>
+                  <a href="//github.com/airbnb/javascript" target="_black">Airbnb JavaScript Style Guide</a>
+                  <a href="//google.github.io/styleguide/jsguide.html" target="_black">Google JavaScript Style Guide</a>
+                  <a href="//github.com/rwaldron/idiomatic.js" target="_black">Idiomatic JavaScript Style Guide</a>
+                  <a href="//github.com/standard/standard" target="_black">JavaScript Standard Style Guide</a>
+                  <a href="//github.com/ryanmcdermott/clean-code-javascript" target="_black">clean-code-javascript</a>
+                  <a href="//contribute.jquery.org/style-guide/js/" target="_black">jQuery JavaScript Style Guide</a>
+                  <a href="//editorconfig.org/" target="_black" title="在根目录新建.editorconfig文件,安装EditorConfig for VS Code插件">editorconfig</a>
+                  <a href="http://usejsdoc.org/" target="_black">usejsdoc</a>
+                </div>
+                <div class="item">
+                  <p>Typescript</p>
+                  <a href="//www.tslang.cn/" target="_blank">中</a>
+                  <a href="//www.typescriptlang.org/" target="_blank">英</a>
+                </div>
+                <div class="item">
+                  <p>Flow</p>
+                  <a href="//flow.org/" target="_blank">英</a>
+                  <a href="//blog.csdn.net/tangxiujiang/article/details/80778627" target="_blank">资料</a>
+                </div>
+                <div class="item">
+                  <p>Angular</p>
+                  <a href="//angularjs.org/" target="_blank">英</a>
+                  <a href="http://www.angularjs.net.cn/" target="_blank">中</a>
+                  <a href="//www.angular.cn/" target="_blank">中</a>
+                </div>
+                <div class="item">
+                  <p>React</p>
+                  <a href="//reactjs.org/" target="_blank">英</a>
+                  <a href="//doc.react-china.org/" target="_blank">中</a>
+                  <a href="//github.com/facebook/create-react-app/blob/master/README.md#getting-started" target="_blank">create-react-app</a>
+                  <a href="//devarchy.com/react" target="_black">Awesome React Components</a>
+                  <a href="//legacy.gitbook.com/book/chenyitian/react-docs/details" target="_blank">react-docs</a>
+                  <a href="//github.com/carlleton/reactjs101/tree/zh-CN" target="_blank">Zero-based learning ReactJS</a>
+                  <a href="//github.com/jondot/awesome-react-native" target="_black">awesome-react-native</a>
+                </div>
+                <div class="item">
+                  <p>Vue</p>
+                  <a href="//cn.vuejs.org/" target="_blank">中</a>
+                  <a href="http://hcysun.me/vue-design/art/" target="_black">vue-design</a>
+                  <a href="//github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a>
+                  <a href="//juejin.im/post/5bd83871f265da0afa3e3204" target="_blank">vue工程构建经验</a>
+                </div>
+                <div class="item">
+                  <p>Jquery</p>
+                  <a href="//www.jquery123.com/" target="_blank">中</a>
+                  <a href="//jquery.com/" target="_blank">英</a>
+                  <a href="http://jquery.cuishifeng.cn" target="_blank">api</a>
+                  <a href="http://lab.abhinayrathore.com/jquery-cheatsheet/" target="_blank">jquery-cheatsheet</a>
+                  <a href="http://www.jq22.com/" target="_blank">jq22插件</a>
+                  <a href="http://www.jqueryui.org.cn/" target="_blank">jqueryui</a>
+                  <a href="http://www.jquerycn.cn/jquery" target="_blank">jquery中文网</a>
+                </div>
+                <div class="item">
+                  <p>backbonejs</p>
+                  <a href="http://backbonejs.org/" target="_blank">英</a>
+                  <a href="//www.css88.com/doc/backbone/" target="_blank">中</a>
+                  <a href="//www.cnblogs.com/johnl/p/4236561.html" target="_blank">article</a>
+                </div>
+                <div class="item">
+                  <p>plainjs</p>
+                  <a href="//plainjs.com/javascript/" target="_blank">英</a>
+                </div>
+                <div class="item">
+                  <p>lodash</p>
+                  <a href="//lodashjs.com" target="_blank">中</a>
+                  <a href="//lodash.com/" target="_blank">英</a>
+                </div>
+                <div class="item">
+                  <p>underscorejs</p>
+                  <a href="//underscorejs.org/" target="_blank">英</a>
+                  <a href="//www.css88.com/doc/underscore/" target="_blank">中</a>
+                </div>
+                <div class="item">
+                  <p>coffeescript</p>
+                  <a href="http://coffee-script.org/" target="_blank">中</a>
+                  <a href="//coffeescript.org/" target="_blank">英</a>
+                </div>
+                <div class="item">
+                  <p>代码片段</p>
+                  <a href="//github.com/Chalarangelo/30-seconds-of-code" target="_blank">30-seconds-of-code</a>
+                  <a href="//github.com/you-dont-need" target="_blank">you-dont-need</a>
+                </div>
+                <div class="item">
+                  <p>React Native</p>
+                  <a href="//reactnative.cn/" target="_blank">中</a>
+                  <a href="//facebook.github.io/react-native/" target="_blank">英</a>
+                </div>
+                <div class="item">
+                  <p>NativeScript</p>
+                  <a href="//www.nativescript.org" target="_black">英</a>
+                  <a href="//github.com/nativescript-vue/nativescript-vue" target="_black">gitbub</a>
+                </div>
+                <div class="item">
+                  <p>flutter</p>
+                  <a href="//flutter.io" target="_blank">英</a>
+                  <a href="//flutterchina.club" target="_blank">中</a>
+                  <a href="//taro.aotu.io/" target="_blank">Taro</a>
+                </div>
+                <div class="item">
+                  <p>cordova</p>
+                  <a href="http://cordova.axuer.com/" target="_blank">中</a>
+                  <a href="//cordova.apache.org/" target="_blank">英</a>
+                </div>
+                <div class="item">
+                  <p>appcan</p>
+                  <a href="http://www.appcan.cn/" target="_blank">中</a>
+                </div>
+                <div class="item">
+                  <p>html5plus</p>
+                  <a href="http://www.html5plus.org/" target="_blank">中</a>
+                  <a href="http://ask.dcloud.net.cn/article/88" target="_blank">Native.js</a>
+                </div>
+                <div class="item">
+                  <p>蚂蚁金服小程序</p>
+                  <a href="//docs.alipay.com/mini/api/ewdxl3" target="_blank">中</a>
+                  <a href="http://weex.apache.org/cn/guide/" target="_blank">weex</a>
+                </div>
+                <div class="item">
+                  <p>微信小程序</p>
+                  <a href="//mp.weixin.qq.com/cgi-bin/wx" target="_blank">中</a>
+                  <a href="//github.com/justjavac/awesome-wechat-weapp" target="_blank">awesome-wechat-weapp</a>
+                  <a href="//www.zhihu.com/question/50907897" target="_blank">知乎</a>
+                  <a href="//tencent.github.io/wepy/">wepy</a>
+                  <a href="//www.cnblogs.com/bugly/p/6133116.html">wepy(介绍)</a>
+                  <a href="//blog.csdn.net/zhangdaiscott/article/details/80046764">wepy(介绍)</a>
+                </div>
+                <div class="item">
+                  <p>summarizing</p>
+                  <a href="//github.com/devarchy/frontend-catalogs" target="_black">frontend-catalogs</a>
+                  <a href="//www.sitepen.com/blog/2017/11/10/web-frameworks-conclusions/" target="_black">web-frameworks-conclusions</a>
+                  <a href="//www.oschina.net/translate/web-frameworks-conclusions" target="_black">6 大主流 Web
+                    框架优缺点对比（翻译）</a>
+                </div>
+                <div class="item">
+                  <p>http</p>
+                  <a href="//www.cnblogs.com/ranyonsue/p/5984001.html">http简介</a>
+                </div>
+                <div class="item">
+                  <p>axios</p>
+                  <a href="https://www.kancloud.cn/yunye/axios/234845">中</a>
+                </div>
+                <div class="item">
+                  <p>ajax</p>
+                  <a href="http://www.cnblogs.com/tylerdonet/p/3520862.html">article</a>
+                  <a href="//baijiahao.baidu.com/s?id=1588449672607885452&wfr=spider&for=pc">article</a>
+                </div>
+              </div>
 
-                            <!--tools -->
-                            <div class="link-item" id="modal-4">
-                                <div class="item">
-                                    <a href="//webpack.js.org/" target="_blank">webpack</a>
-                                    <a href="http://www.css88.com/doc/parcel/" target="_blank">parcel</a>
-                                    <p>rollup</p>
-                                    <a href="http://www.rollupjs.com" target="_black">中</a>
-                                    <a href="//rollupjs.org/guide/en" target="_black">英</a>
-                                    <a href="http://browserify.org/" target="_blank">browserify</a>
-                                    <p>gulp</p>
-                                    <a href="//www.gulpjs.com.cn/" target="_blank">中</a>
-                                    <a href="//gulpjs.com/" target="_blank">英</a>
-                                    <a href="http://www.browsersync.cn/docs/" target="_blank">browsersync</a>
-                                    <a href="//gruntjs.com/" target="_blank">grunt</a>
-                                </div>
-                                <div class="item">
-                                    <p>ES6 module/UMD/commonJs/AMD/CMD</p>
-                                    <a href="//www.tuicool.com/articles/nueqi27" target="_black">articles</a>
-                                    <a href="//segmentfault.com/a/1190000012419990" target="_black">articles</a>
-                                    <a href="http://www.cnblogs.com/imwtr/p/4666181.html" target="_black">articles</a>
-                                    <p>commonjs</p>
-                                    <a href="//commonjs.org/" target="_blank">英</a>
-                                    <p>requirejs</p>
-                                    <a href="http://www.requirejs.cn/docs/api.html" target="_blank">中</a>
-                                    <a href="//requirejs.org/" target="_blank">英</a>
-                                    <a href="//github.com/amdjs/amdjs-api/wiki/AMD" target="_blank">github</a>
-                                    <p>seajs</p>
-                                    <a href="//www.zhangxinxu.com/sp/seajs/" target="_blank">中</a>
-                                    <a href="//github.com/seajs/seajs" target="_blank">gitbub</a>
-                                    <a href="//www.zhihu.com/question/20351507" target="_blank">amd or cmd</a>
-                                </div>
-                                <div class="item">
-                                    <p>js模板</p>
-                                    <a href="http://www.ejs.co/" target="_blank">ejs</a>
-                                    <a href="//aui.github.io/art-template/" target="_blank">art-template</a>
-                                    <a href="//segmentfault.com/a/1190000000502743" target="_blank">more + </a>
-                                </div>
-                                <div class="item">
-                                    <p>node包管理工具</p>
-                                    <a href="//yarnpkg.com/en/" target="_blank">yarn</a>
-                                    <a href="//www.npmjs.com/" target="_blank">npm</a>
-                                    <a href="//bower.io/" target="_black">bower</a>
-                                </div>
-                                <div class="item">
-                                    <p>移动端调试工具</p>
-                                    <a href="//www.npmjs.com/package/eruda" target="_blank">eruda</a>
-                                    <a href="//juejin.im/post/5b72e1f66fb9a009d018fb94" target="_blank">more +</a>
-                                </div>
-                                <div class="item">
-                                    <p>数据展示</p>
-                                    <a href="http://echarts.baidu.com/" target="_blank">echarts</a>
-                                    <a href="//d3js.org/" target="_blank">d3js</a>
-                                    <a href="//threejs.org/" target="_blank">threejs</a>
-                                    <a href="//www.evget.com/article/2016/4/11/23883.html" target="_blank">more + </a>
-                                    <p>桌面应用开发</p>
-                                    <a href="//electronjs.org/" target="_blank">electronjs</a>
-                                    <p>游戏开发</p>
+              <!--tools -->
+              <div class="link-item" id="modal-4">
+                <div class="item">
+                  <p>webpack</p>
+                  <a href="//webpack.js.org/" target="_blank">英</a>
+                  <a href="//www.webpackjs.com/" target="_blank">中</a>
+                </div>
+                <div class="item">
+                  <p>parcel</p>
+                  <a href="http://www.css88.com/doc/parcel/" target="_blank">中</a>
+                </div>
+                <div class="item">
+                  <p>grunt</p>
+                  <a href="//gruntjs.com/" target="_blank">英</a>
+                </div>
+                <div class="item">
+                  <p>browsersync</p>
+                  <a href="http://www.browsersync.cn/docs/" target="_blank">browsersync</a>
+                </div>
+                <div class="item">
+                  <p>gulp</p>
+                  <a href="//gulpjs.com/" target="_blank">英</a>
+                  <a href="//www.gulpjs.com.cn/" target="_blank">中</a>
+                </div>
+                <div class="item">
+                  <p>rollup</p>
+                  <a href="//rollupjs.org/guide/en" target="_black">英</a>
+                  <a href="http://www.rollupjs.com" target="_black">中</a>
+                  <a href="http://browserify.org/" target="_blank">browserify</a>
+                </div>
+                <div class="item">
+                  <p>ES6 module/UMD/commonJs/AMD/CMD</p>
+                  <a href="//www.tuicool.com/articles/nueqi27" target="_black">articles</a>
+                  <a href="//segmentfault.com/a/1190000012419990" target="_black">articles</a>
+                  <a href="http://www.cnblogs.com/imwtr/p/4666181.html" target="_black">articles</a>
+                </div>
+                <div class="item">
+                  <p>commonjs</p>
+                  <a href="//commonjs.org/" target="_blank">英</a>
+                </div>
+                <div class="item">
+                  <p>requirejs</p>
+                  <a href="http://www.requirejs.cn/docs/api.html" target="_blank">中</a>
+                  <a href="//requirejs.org/" target="_blank">英</a>
+                  <a href="//github.com/amdjs/amdjs-api/wiki/AMD" target="_blank">github</a>
+                </div>
+                <div class="item">
+                  <p>seajs</p>
+                  <a href="//www.zhangxinxu.com/sp/seajs/" target="_blank">中</a>
+                  <a href="//github.com/seajs/seajs" target="_blank">gitbub</a>
+                  <a href="//www.zhihu.com/question/20351507" target="_blank">amd or cmd</a>
+                </div>
+                <div class="item">
+                  <p>js模板</p>
+                  <a href="http://www.ejs.co/" target="_blank">ejs</a>
+                  <a href="//aui.github.io/art-template/" target="_blank">art-template</a>
+                  <a href="//segmentfault.com/a/1190000000502743" target="_blank">more + </a>
+                </div>
+                <div class="item">
+                  <p>node包管理工具</p>
+                  <a href="//yarnpkg.com/en/" target="_blank">yarn</a>
+                  <a href="//www.npmjs.com/" target="_blank">npm</a>
+                  <a href="//bower.io/" target="_black">bower</a>
+                </div>
+                <div class="item">
+                  <p>移动端调试工具</p>
+                  <a href="//www.npmjs.com/package/eruda" target="_blank">eruda</a>
+                  <a href="//juejin.im/post/5b72e1f66fb9a009d018fb94" target="_blank">more +</a>
+                </div>
+                <div class="item">
+                  <p>数据展示/桌面应用开发</p>
+                  <a href="http://echarts.baidu.com/" target="_blank">echarts</a>
+                  <a href="//d3js.org/" target="_blank">d3js</a>
+                  <a href="//threejs.org/" target="_blank">threejs</a>
+                  <a href="//www.evget.com/article/2016/4/11/23883.html" target="_blank">more + </a>
+                  <a href="//electronjs.org/" target="_blank">electronjs</a>
+                  <!-- <p>游戏开发</p>
                                     <a href="http://www.scirra.com/construct2" target="_blank">construct2</a>
-                                    <a href="//www.yoyogames.com/gamemaker" target="_blank">GameMaker</a>
-                                </div>
-                                <div class="item">
-                                    <p>开发工具</p>
-                                    <a href="//tool.lu/">tool.lu</a>
-                                    <a href="http://tool.oschina.net/">tool.oschina</a>
-                                    <a href="//github.com/jaywcjlove/awesome-mac" target="_blank">awesome-mac</a>
-                                    <a href="http://msdn.itellyou.cn/" target="_blank">itellyou(software)</a>
-                                </div>
-                            </div>
-
-                            <!-- nodejs -->
-                            <div class="link-item" id="modal-5">
-                                <div class="item">
-                                    <p>nodejs</p>
-                                    <a href="http://nodejs.cn" target="_blank">中</a>
-                                    <a href="//nodejs.org/en/" target="_blank">英</a>
-                                    <a href="//github.com/nodejs/node" target="_blank">git</a>
-                                </div>
-                                <div class="item">
-                                    <a href="//cnodejs.org/" target="_blank">cnodejs</a>
-                                    <a href="//www.nodecloud.org/" target="_blank">nodecloud</a>
-                                </div>
-                                <div class="item">
-                                    <p>koa</p>
-                                    <a href="//koa.bootcss.com/" target="_blank">中</a>
-                                    <a href="//koajs.com/" target="_blank">英</a>
-                                    <p>express</p>
-                                    <a href="http://www.expressjs.com.cn/" target="_blank">中</a>
-                                    <a href="//expressjs.com/" target="_blank">英</a>
-                                    <a href="//eggjs.org/" target="_black">egg</a>
-                                    <a href="//thinkjs.org/" target="_black">thinkjs</a>
-                                </div>
-                                <div class="item">
-                                    <p>online book</p>
-                                    <a href="//github.com/azat-co/practicalnode" target="_black">Practical Node.js</a>
-                                </div>
-                            </div>
-
-                            <!-- community-->
-                            <div class="link-item" id="modal-6">
-                                <div class="item">
-                                    <p>导航类</p>
-                                    <a href="http://docschina.org/" target="_blank">docschina</a>
-                                    <a href="http://yunkus.com/front-end-web-develoment/" target="_blank">云酷网</a>
-                                    <a href="//alloyteam.com/nav/" target="_blank">腾讯alloyteam</a>
-                                    <a href="http://f2er.club/">醉牛前端</a>
-                                    <p>插件类</p>
-                                    <a href="//www.awesomes.cn/" target="_blank">awesomes</a>
-                                    <a href="//github.com/sindresorhus/awesome" target="_blank">awesomes（git）</a>
-                                    <p>视频类</p>
-                                    <a href="//www.imooc.com/" target="_blank">慕课网</a>
-                                    <a href="//study.163.com/" target="_blank">网易云课堂</a>
-                                    <a href="//ke.qq.com/" target="_blank">腾讯课堂</a>
-                                    <a href="http://www.xuetangx.com/" target="_blank">学堂在线</a>
-                                    <a href="//www.shiyanlou.com/" target="_blank">实验楼</a>
-                                    <a href="//www.jikexueyuan.com/" target="_blank">极客学院</a>
-                                    <a href="//www.itcast.cn/" target="_blank">传智播客</a>
-                                    <a href="//chuanke.baidu.com/" target="_blank">百度传课</a>
-                                    <a href="//miaov.com/" target="_blank">妙味课堂</a>
-                                    <a href="//edu.aliyun.com/developer" target="_blank">阿里云大学</a>
-                                    <a href="http://www.maiziedu.com/" target="_blank">麦子学院</a>
-                                    <a href="//cn.udacity.com" target="_blank">优达（英）</a>
-                                    <a href="//eu.udacity.com/courses/machine-learning" target="_blank">优达（中）</a>
-                                    <a href="//eu.udacity.com/courses/machine-learning" target="_blank">优达（中）</a>
-                                    <a href="//www.sitepoint.com/" target="_blank">sitepoint</a>
-                                    <a href="//code.tutsplus.com/" target="_blank">tutsplus（code）</a>
-                                    <a href="//www.icourse163.org" target="_blank">大学慕课</a>
-                                    <a href="//www.noroff.no/en/studies/vocational-school/front-end-development" target="_blank">noroff</a>
-                                    <p>技能类</p>
-                                    <a href="//tutsplus.com" target="_black">tutsplus</a>
-                                    <a href="//alistapart.com/" target="_black">alistapart</a>
-                                    <a href="//www.coursera.org" target="_black">coursera</a>
-                                    <a href="//news.ycombinator.com" target="_black">Hacker news</a>
-                                    <a href="//codeburst.io/udemys-black-friday-sale-starts-today-all-web-development-courses-just-10-44966e590bd4" target="_blank">codeburst</a>
-                                    <p>审美类</p>
-                                    <a href="//awwwards.com" target="_black">awwwards</a>
-                                    <a href="//Dribbble.com" target="_black">Dribbble</a>
-                                    <p>信息类</p>
-                                    <a href="//techcrunch.com" target="_black">TechCrunch</a>
-                                    <a href="//dzone.com" target="_black">dzone</a>
-                                    <a href="//thenextweb.com" target="_black">thenextweb</a>
-                                </div>
-                                <div class="item">
-                                    <p>国外IT社区、资讯网站</p>
-                                    <a href="//stackoverflow.com/" target="_blank">stackoverflow</a>
-                                    <a href="//github.com/" target="_blank">github</a>
-                                    <a href="//guides.github.com/introduction/flow/index.html">GitHub Guides</a>
-                                    <a href="//developer.mozilla.org/zh-CN/" target="_blank">Mozilla</a>
-                                    <a href="//www.ibm.com/developerworks/cn/topics/" target="_blank">IBM</a>
-                                    <a href="//www.sitepen.com/" target="_blank">sitepen</a>
-                                    <a href="//martinfowler.com/intro.html" target="_blank">martinfowler</a>
-                                    <p>国内个人IT博客</p>
-                                    <a href="//www.nczonline.net/" target="_blank">Nicholas C. Zakas</a>
-                                    <a href="//johnresig.com/blog/" target="_blank">johnresig</a>
-                                    <a href="//addyosmani.com/blog/" target="_blank">Addy Osmani</a>
-                                    <a href="http://nicolasgallagher.com/" target="_blank">nicolas gallagher</a>
-                                </div>
-                                <div class="item">
-                                    <p>国内IT社区</p>
-                                    <a href="//juejin.im/" target="_blank">掘金</a>
-                                    <a href="//www.csdn.net/" target="_blank">csdn</a>
-                                    <a href="//segmentfault.com/" target="_blank">segmentfault</a>
-                                    <a href="http://caibaojian.com/" target="_blank">前端开发博客</a>
-                                    <a href="http://www.open-open.com/lib/" target="_blank">深度开源</a>
-                                    <a href="//www.oschina.net/" target="_blank">开源中国</a>
-                                    <a href="//www.oschina.net/translate/list/1?tab=completed" target="_blank">开源中国（翻译区）</a>
-                                    <a href="//www.cnblogs.com/" target="_blank">博客园</a>
-                                    <a href="//www.yiibai.com" target="_blank">易百</a>
-                                    <a href="http://web.jobbole.com/category/basic-tech/" target="_blank">伯乐在线</a>
-                                    <a href="http://www.css88.com/" target="_blank">css88</a>
-                                    <a href="http://html5dw.com/" target="_blank">html5梦工厂</a>
-                                    <a href="http://www.51zxw.net/" target="_blank">51自学网</a>
-                                    <a href="//tuicool.com/" target="_blank">推酷网</a>
-                                    <a href="//get.ftqq.com/?c=default" target="_blank">Get社区</a>
-                                    <a href="//tgideas.qq.com/doc/" target="_blank">tgideas</a>
-                                    <a href="http://yunkus.com" target="_blank">云库网</a>
-                                    <a href="//www.daqianduan.com/" target="_blank">大前端</a>
-                                    <a href="//www.qdfuns.com/" target="_blank">qdfuns</a>
-                                    <a href="http://www.yyyweb.com/" target="_blank">前端里</a>
-                                    <a href="//www.w3cschool.cn/" target="_blank">w3cschool</a>
-                                    <a href="http://www.w3school.com.cn/" target="_blank">w3school</a>
-                                    <a href="//www.w3ctech.com/" target="_blank">w3ctech</a>
-                                    <a href="//w3cways.com/" target="_blank">w3cways</a>
-                                    <a href="//www.w3cplus.com/" target="_blank">w3cplus</a>
-                                    <a href="http://www.bslxx.com/" target="_blank">奔三路</a>
-                                    <p>互联网公司前端博客</p>
-                                    <a href="http://imweb.io/" target="_blank">腾讯</a>
-                                    <a href="//fex.baidu.com/" target="_blank">百度</a>
-                                    <a href="//75team.com/" target="_blank">奇舞团</a>
-                                    <a href="http://taobaofed.org/" target="_blank">淘宝</a>
-                                    <a href="//aotu.io" target="_blank">京东aotu</a>
-                                    <a href="//jdc.jd.com/" target="_blank">京东</a>
-                                    <a href="http://ued.sina.com.cn/" target="_blank">新浪</a>
-                                    <a href="//tech.youzan.com" target="_blank">有赞</a>
-                                    <a href="//blog.qiniu.com/archives/category/5" target="_blank">七牛</a>
-                                    <p>国内个人IT博客</p>
-                                    <a href="http://www.ruanyifeng.com/blog/archives.html" target="_blank">阮一峰</a>
-                                    <a href="//www.liaoxuefeng.com/" target="_blank">廖雪峰</a>
-                                    <a href="//www.cnblogs.com/TomXu/" target="_blank">TomXu</a>
-                                    <a href="//www.zhangxinxu.com/" target="_blank">张鑫旭</a>
-                                    <a href="//my.oschina.net/u/1859679" target="_blank">wier</a>
-                                    <a href="http://www.cnblogs.com/wangfupeng1988/" target="_blank">王福鹏</a>
-                                    <a href="//jikey.cnblogs.com/" target="_blank">jikey</a>
-                                    <a href="//segmentfault.com/blog/feweekly" target="_blank">前端周刊</a>
-                                    <a href="//segmentfault.com/u/wangshijun2010" target="_blank">王仕军</a>
-                                    <p>时间管理</p>
-                                    <a href="https://www.mifengtd.cn/" target="_blank">褪墨</a>
-                                </div>
-                            </div>
-
-                            <!-- database -->
-                            <div class="link-item" id="modal-7">
-                                <div class="item">
-                                    <p>mongodb</p>
-                                    <a href="//www.mongodb.com/" target="_blank">英</a>
-                                    <a href="http://www.mongoing.com/" target="_blank">中</a>
-                                    <p>reference</p>
-                                    <a href="http://mongoosejs.com/" target="_blank">mongoose</a>
-                                    <p>tutorial</p>
-                                    <a href="//www.yiibai.com/mongodb/" target="_blank">tutorial</a>
-                                </div>
-                                <div class="item">
-                                    <a href="//www.mysql.com/" target="_blank">mysql</a>
-                                    <a href="//www.yiibai.com/mysql/" target="_blank">tutorial</a>
-                                    <p>reference</p>
-                                    <a href="//www.cnblogs.com/programmer-tlh/p/5782418.html" target="_blank">基础入门1</a>
-                                    <a href="//www.linuxidc.com/Linux/2016-02/128127.htm" target="_blank">基础入门2</a>
-                                </div>
-                            </div>
-
-                            <!-- ecological -->
-                            <div class="link-item" id="modal-8">
-                                <div class="item">
-                                    <p>开发语言排名</p>
-                                    <a href="//www.tiobe.com/tiobe-index/" target="_blank">tiobe</a>
-                                    <a href="//pypl.github.io/PYPL.html" target="_blank">PYPL</a>
-                                    <a href="//stateofjs.com/" target="_blank">stateofjs</a>
-                                    <p>开发roadmap</p>
-                                    <a href="//github.com/kamranahmedse/developer-roadmap" target="_blank">developer-roadmap</a>
-                                    <a href="//github.com/TeamStuQ/skill-map" target="_blank">skill-map</a>
-                                    <a href="//github.com/JacksonTian/fks" target="_blank">Frontend Knowledge Structure</a>
-                                    <p>前端简史</p>
-                                    <a href="//github.com/ruanyf/jstraining/blob/master/docs/history.md" target="_blank">summarize</a>
-                                    <a href="//baijiahao.baidu.com/s?id=1590040230298660661&wfr=spider&for=pc" target="_blank">2018</a>
-                                    <a href="//www.uisdc.com/2017-6-frontend-trends" target="_blank">2017</a>
-                                    <a href="//www.barretlee.com/blog/2015/12/10/after-framework-we-gonna-to-hug-data/" target="_blank">2009-2016</a>
-                                </div>
-                            </div>
-
-                            <!-- algorithm -->
-                            <div class="link-item" id="modal-9">
-                                <div class="item">
-                                    <p>blog</p>
-                                    <a href="//leetcode.com/">leetcode</a>
-                                    <a href="//python.ctolib.com/">ctolib</a>
-                                    <a href="http://www.csie.ntnu.edu.tw/~u91029/DynamicProgramming.html">csie</a>
-                                    <a href="http://jeffe.cs.illinois.edu/">jeffe</a>
-                                    <a href="//acm.sjtu.edu.cn/OnlineJudge/problems?page=1">OnlineJudge</a>
-                                    <p>code with deep learning(ex)</p>
-                                    <a href="//github.com/tonybeltramelli/pix2code" target="_blank">pix2code</a>
-                                    <a href="//github.com/emilwallner/Screenshot-to-code-in-Keras" target="_blank">Screenshot-to-code-in-Keras</a>
-                                </div>
-                            </div>
-
-                            <!-- interview -->
-                            <div class="link-item" id="modal-10">
-                                <div class="item">
-                                    <p>knowledge</p>
-                                    <a href="//github.com/CyC2018/CS-Notes" target="_black">CS-Notes</a>
-                                    <a href="//github.com/grab/front-end-guide" target="_black">front-end-guide</a>
-                                    <a href="//github.com/InterviewMap/InterviewMap" target="_black">InterviewMap</a>
-                                    <a href="//github.com/paddingme/Front-end-Web-Development-Interview-Question" target="_black">Front-end-Web-Development-Interview-Question</a>
-                                    <a href="//github.com/h5bp/Front-end-Developer-Interview-Questions/tree/master/Translations/Chinese" target="_black">Front-end-Developer-Interview-Questions</a>
-                                    <a href="//github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions" target="_black">Front-end-Developer-Questions</a>
-                                    <a href="//github.com/helloqingfeng/Awsome-Front-End-learning-resource" target="_black">Awsome-Front-End-learning-resource</a>
-                                    <a href="//github.com/qiu-deqing/FE-interview" target="_black">FE-interview</a>
-                                    <a href="//juejin.im/post/5aae076d6fb9a028cc6100a9" target="_black">interview</a>
-                                    <a href="//github.com/MiYogurt/nodelover-maps" target="_black">nodelover-maps</a>
-                                    <a href="//github.com/guoxiaoxing/BeesFrontEnd" target="_black">BeesFrontEnd</a>
-                                    <a href="//github.com/webproblem/learning-article" target="_black">learning-article</a>
-                                    <p>碎片化</p>
-                                    <a href="//github.com/sindresorhus/awesome" target="_blank">资源教程1</a>
-                                    <a href="//github.com/dypsilon/frontend-dev-bookmarks" target="_black">资源教程2</a>
-                                    <a href="//github.com/Daiyichen/Front-end-tutorial" target="_black">资源教程3</a>
-                                    <a href="http://www.cnblogs.com/HanBlogs/p/5931814.html" target="_black">资源教程4</a>
-                                    <a href="//blog.csdn.net/bingqingsuimeng/article/details/17277123" target="_black">资源教程5</a>
-                                    <a href="//blog.csdn.net/qq_24122593/article/details/53131261" target="_black">资源教程6</a>
-                                    <a href="//blog.csdn.net/u013063153/article/details/52424176" target="_black">知识体系1</a>
-                                    <a href="//segmentfault.com/a/1190000004070468" target="_black">知识体系2</a>
-                                    <a href="http://www.open-open.com/lib/view/open1418465287652.html" target="_black">学习资料1</a>
-                                    <a href="//www.jianshu.com/p/2ad72acb67c8" target="_black">学习资料2</a>
-                                    <a href="//www.jianshu.com/p/966a4cc8f87a" target="_black">学习资料3</a>
-                                    <a href="//blog.csdn.net/liuwengai/article/details/52751565" target="_black">常见考题1</a>
-                                    <a href="//blog.csdn.net/sjpz0124/article/details/47023771" target="_black">常见考题2</a>
-                                    <a href="//www.imooc.com/article/11607" target="_black">常见考题3</a>
-                                    <a href="//www.cnblogs.com/bigboyLin/p/5272902.html" target="_black">常见考题4</a>
-                                    <p>skill</p>
-                                    <a href="//skillcrush.com/2016/02/11/skills-to-become-a-front-end-developer/">skills-to-become-a-front-end-developer</a>
-                                    <a href="//medium.com/@davesuperman/how-to-learn-front-end-web-development-for-free-in-5-days-25aa6021aa3b">how-to-learn-front-end-web</a>
-                                    <a href="//www.quora.com/How-should-I-plan-to-study-front-end-web-development">How-should-I-plan-to-study-front-end-web-development</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                    <a href="//www.yoyogames.com/gamemaker" target="_blank">GameMaker</a> -->
                 </div>
+                <div class="item">
+                  <p>开发工具</p>
+                  <a href="//tool.lu/">tool.lu</a>
+                  <a href="http://tool.oschina.net/">tool.oschina</a>
+                  <a href="//github.com/jaywcjlove/awesome-mac" target="_blank">awesome-mac</a>
+                  <a href="http://msdn.itellyou.cn/" target="_blank">itellyou(software)</a>
+                </div>
+              </div>
+
+              <!-- nodejs -->
+              <div class="link-item" id="modal-5">
+                <div class="item">
+                  <p>nodejs</p>
+                  <a href="http://nodejs.cn" target="_blank">中</a>
+                  <a href="//nodejs.org/en/" target="_blank">英</a>
+                  <a href="//github.com/nodejs/node" target="_blank">git</a>
+                </div>
+                <div class="item">
+                  <p>社区</p>
+                  <a href="//cnodejs.org/" target="_blank">cnodejs</a>
+                  <a href="//www.nodecloud.org/" target="_blank">nodecloud</a>
+                </div>
+                <div class="item">
+                  <p>koa</p>
+                  <a href="//koa.bootcss.com/" target="_blank">中</a>
+                  <a href="//koajs.com/" target="_blank">英</a>
+                </div>
+                <div class="item">
+                  <p>express</p>
+                  <a href="http://www.expressjs.com.cn/" target="_blank">中</a>
+                  <a href="//expressjs.com/" target="_blank">英</a>
+                </div>
+                <div class="item">
+                  <p>egg</p>
+                  <a href="//eggjs.org/" target="_black">egg</a>
+                </div>
+                <div class="item">
+                  <p>thinkjs</p>
+                  <a href="//thinkjs.org/" target="_black">thinkjs</a>
+                </div>
+                <div class="item">
+                  <p>online book</p>
+                  <a href="//github.com/azat-co/practicalnode" target="_black">Practical Node.js</a>
+                </div>
+                <div class="item">
+                  <p>nodejs框架对比</p>
+                  <a href="//www.jianshu.com/p/0e0cb495901f" target="_black">article</a>
+                </div>
+              </div>
+
+              <!-- community-->
+              <div class="link-item" id="modal-6">
+                <div class="item">
+                  <p>导航类</p>
+                  <a href="http://docschina.org/" target="_blank">docschina</a>
+                  <a href="http://yunkus.com/front-end-web-develoment/" target="_blank">云酷网</a>
+                  <a href="//alloyteam.com/nav/" target="_blank">腾讯alloyteam</a>
+                  <a href="http://f2er.club/">醉牛前端</a>
+                </div>
+                <div class="item">
+                  <p>信息类</p>
+                  <a href="//techcrunch.com" target="_black">TechCrunch</a>
+                  <a href="//dzone.com" target="_black">dzone</a>
+                  <a href="//thenextweb.com" target="_black">thenextweb</a>
+                </div>
+                <div class="item">
+                  <p>审美类</p>
+                  <a href="//awwwards.com" target="_black">awwwards</a>
+                  <a href="//Dribbble.com" target="_black">Dribbble</a>
+                </div>
+                <div class="item">
+                  <p>插件类</p>
+                  <a href="//www.awesomes.cn/" target="_blank">awesomes</a>
+                  <a href="//github.com/sindresorhus/awesome" target="_blank">awesomes（git）</a>
+                </div>
+                <div class="item">
+                  <p>技能类</p>
+                  <a href="//tutsplus.com" target="_black">tutsplus</a>
+                  <a href="//alistapart.com/" target="_black">alistapart</a>
+                  <a href="//www.coursera.org" target="_black">coursera</a>
+                  <a href="//news.ycombinator.com" target="_black">Hacker news</a>
+                  <a href="//codeburst.io/udemys-black-friday-sale-starts-today-all-web-development-courses-just-10-44966e590bd4"
+                    target="_blank">codeburst</a>
+                </div>
+                <div class="item">
+                  <p>视频类</p>
+                  <a href="//www.imooc.com/" target="_blank">慕课网</a>
+                  <a href="//study.163.com/" target="_blank">网易云课堂</a>
+                  <a href="//ke.qq.com/" target="_blank">腾讯课堂</a>
+                  <a href="http://www.xuetangx.com/" target="_blank">学堂在线</a>
+                  <a href="//www.shiyanlou.com/" target="_blank">实验楼</a>
+                  <a href="//www.jikexueyuan.com/" target="_blank">极客学院</a>
+                  <a href="//www.itcast.cn/" target="_blank">传智播客</a>
+                  <a href="//chuanke.baidu.com/" target="_blank">百度传课</a>
+                  <a href="//miaov.com/" target="_blank">妙味课堂</a>
+                  <a href="//edu.aliyun.com/developer" target="_blank">阿里云大学</a>
+                  <a href="http://www.maiziedu.com/" target="_blank">麦子学院</a>
+                  <a href="//cn.udacity.com" target="_blank">优达（英）</a>
+                  <a href="//eu.udacity.com/courses/machine-learning" target="_blank">优达（中）</a>
+                  <a href="//eu.udacity.com/courses/machine-learning" target="_blank">优达（中）</a>
+                  <a href="//www.sitepoint.com/" target="_blank">sitepoint</a>
+                  <a href="//code.tutsplus.com/" target="_blank">tutsplus（code）</a>
+                  <a href="//www.icourse163.org" target="_blank">大学慕课</a>
+                  <a href="//www.noroff.no/en/studies/vocational-school/front-end-development" target="_blank">noroff</a>
+                </div>
+                <div class="item">
+                  <p>国外IT社区、资讯网站</p>
+                  <a href="//stackoverflow.com/" target="_blank">stackoverflow</a>
+                  <a href="//github.com/" target="_blank">github</a>
+                  <a href="//guides.github.com/introduction/flow/index.html">GitHub Guides</a>
+                  <a href="//developer.mozilla.org/zh-CN/" target="_blank">Mozilla</a>
+                  <a href="//www.ibm.com/developerworks/cn/topics/" target="_blank">IBM</a>
+                  <a href="//www.sitepen.com/" target="_blank">sitepen</a>
+                  <a href="//martinfowler.com/intro.html" target="_blank">martinfowler</a>
+                </div>
+                <div class="item">
+                  <p>国外个人IT博客</p>
+                  <a href="//www.nczonline.net/" target="_blank">Nicholas C. Zakas</a>
+                  <a href="//johnresig.com/blog/" target="_blank">johnresig</a>
+                  <a href="//addyosmani.com/blog/" target="_blank">Addy Osmani</a>
+                  <a href="http://nicolasgallagher.com/" target="_blank">nicolas gallagher</a>
+                </div>
+                <div class="item">
+                  <p>国内IT社区</p>
+                  <a href="//juejin.im/" target="_blank">掘金</a>
+                  <a href="//www.csdn.net/" target="_blank">csdn</a>
+                  <a href="//segmentfault.com/" target="_blank">segmentfault</a>
+                  <a href="http://caibaojian.com/" target="_blank">前端开发博客</a>
+                  <a href="http://www.open-open.com/lib/" target="_blank">深度开源</a>
+                  <a href="//www.oschina.net/" target="_blank">开源中国</a>
+                  <a href="//www.oschina.net/translate/list/1?tab=completed" target="_blank">开源中国（翻译区）</a>
+                  <a href="//www.cnblogs.com/" target="_blank">博客园</a>
+                  <a href="//www.yiibai.com" target="_blank">易百</a>
+                  <a href="http://web.jobbole.com/category/basic-tech/" target="_blank">伯乐在线</a>
+                  <a href="http://www.css88.com/" target="_blank">css88</a>
+                  <a href="http://html5dw.com/" target="_blank">html5梦工厂</a>
+                  <a href="http://www.51zxw.net/" target="_blank">51自学网</a>
+                  <a href="//tuicool.com/" target="_blank">推酷网</a>
+                  <a href="//get.ftqq.com/?c=default" target="_blank">Get社区</a>
+                  <a href="//tgideas.qq.com/doc/" target="_blank">tgideas</a>
+                  <a href="http://yunkus.com" target="_blank">云库网</a>
+                  <a href="//www.daqianduan.com/" target="_blank">大前端</a>
+                  <a href="//www.qdfuns.com/" target="_blank">qdfuns</a>
+                  <a href="http://www.yyyweb.com/" target="_blank">前端里</a>
+                  <a href="//www.w3cschool.cn/" target="_blank">w3cschool</a>
+                  <a href="http://www.w3school.com.cn/" target="_blank">w3school</a>
+                  <a href="//www.w3ctech.com/" target="_blank">w3ctech</a>
+                  <a href="//w3cways.com/" target="_blank">w3cways</a>
+                  <a href="//www.w3cplus.com/" target="_blank">w3cplus</a>
+                  <a href="http://www.bslxx.com/" target="_blank">奔三路</a>
+                </div>
+                <div class="item">
+                  <p>国内个人IT博客</p>
+                  <a href="http://www.ruanyifeng.com/blog/archives.html" target="_blank">阮一峰</a>
+                  <a href="//www.liaoxuefeng.com/" target="_blank">廖雪峰</a>
+                  <a href="//www.cnblogs.com/TomXu/" target="_blank">TomXu</a>
+                  <a href="//www.zhangxinxu.com/" target="_blank">张鑫旭</a>
+                  <a href="//my.oschina.net/u/1859679" target="_blank">wier</a>
+                  <a href="http://www.cnblogs.com/wangfupeng1988/" target="_blank">王福鹏</a>
+                  <a href="//jikey.cnblogs.com/" target="_blank">jikey</a>
+                  <a href="//segmentfault.com/blog/feweekly" target="_blank">前端周刊</a>
+                  <a href="//segmentfault.com/u/wangshijun2010" target="_blank">王仕军</a>
+                  <a href="https://www.mifengtd.cn/" target="_blank">褪墨</a>
+                </div>
+                <div class="item">
+                  <p>国内互联网公司前端博客</p>
+                  <a href="http://imweb.io/" target="_blank">腾讯</a>
+                  <a href="//fex.baidu.com/" target="_blank">百度</a>
+                  <a href="//75team.com/" target="_blank">奇舞团</a>
+                  <a href="http://taobaofed.org/" target="_blank">淘宝</a>
+                  <a href="//aotu.io" target="_blank">京东aotu</a>
+                  <a href="//jdc.jd.com/" target="_blank">京东</a>
+                  <a href="http://ued.sina.com.cn/" target="_blank">新浪</a>
+                  <a href="//tech.youzan.com" target="_blank">有赞</a>
+                  <a href="//blog.qiniu.com/archives/category/5" target="_blank">七牛</a>
+                </div>
+              </div>
+
+              <!-- database -->
+              <div class="link-item" id="modal-7">
+                <div class="item">
+                  <p>mongodb</p>
+                  <a href="//www.mongodb.com/" target="_blank">英</a>
+                  <a href="http://www.mongoing.com/" target="_blank">中</a>
+                  <a href="http://mongoosejs.com/" target="_blank">mongoose</a>
+                  <a href="//www.yiibai.com/mongodb/" target="_blank">tutorial</a>
+                </div>
+                <div class="item">
+                  <p>mysql</p>
+                  <a href="//www.mysql.com/" target="_blank">mysql</a>
+                  <a href="//www.yiibai.com/mysql/" target="_blank">tutorial</a>
+                  <a href="//www.cnblogs.com/programmer-tlh/p/5782418.html" target="_blank">基础入门1</a>
+                  <a href="//www.linuxidc.com/Linux/2016-02/128127.htm" target="_blank">基础入门2</a>
+                </div>
+              </div>
+
+              <!-- ecological -->
+              <div class="link-item" id="modal-8">
+                <div class="item">
+                  <p>开发语言排名</p>
+                  <a href="//www.tiobe.com/tiobe-index/" target="_blank">tiobe</a>
+                  <a href="//pypl.github.io/PYPL.html" target="_blank">PYPL</a>
+                  <a href="//stateofjs.com/" target="_blank">stateofjs</a>
+                </div>
+                <div class="item">
+                  <p>学习路线图</p>
+                  <a href="//github.com/kamranahmedse/developer-roadmap" target="_blank">developer-roadmap</a>
+                  <a href="//github.com/TeamStuQ/skill-map" target="_blank">skill-map</a>
+                  <a href="//github.com/JacksonTian/fks" target="_blank">Frontend Knowledge Structure</a>
+                </div>
+                <div class="item">
+                  <p>前端发展历程</p>
+                  <a href="//github.com/ruanyf/jstraining/blob/master/docs/history.md" target="_blank">summarize</a>
+                  <a href="//baijiahao.baidu.com/s?id=1590040230298660661&wfr=spider&for=pc" target="_blank">2018</a>
+                  <a href="//www.uisdc.com/2017-6-frontend-trends" target="_blank">2017</a>
+                  <a href="//www.barretlee.com/blog/2015/12/10/after-framework-we-gonna-to-hug-data/" target="_blank">2009-2016</a>
+                </div>
+              </div>
+
+              <!-- algorithm -->
+              <div class="link-item" id="modal-9">
+                <div class="item">
+                  <p>blog</p>
+                  <a href="//leetcode.com/">leetcode</a>
+                  <a href="//python.ctolib.com/">ctolib</a>
+                  <a href="http://www.csie.ntnu.edu.tw/~u91029/DynamicProgramming.html">csie</a>
+                  <a href="http://jeffe.cs.illinois.edu/">jeffe</a>
+                  <a href="//acm.sjtu.edu.cn/OnlineJudge/problems?page=1">OnlineJudge</a>
+                </div>
+                <div class="item">
+                  <p>code with deep learning(ex)</p>
+                  <a href="//github.com/tonybeltramelli/pix2code" target="_blank">pix2code</a>
+                  <a href="//github.com/emilwallner/Screenshot-to-code-in-Keras" target="_blank">Screenshot-to-code-in-Keras</a>
+                </div>
+              </div>
+
+              <!-- interview -->
+              <div class="link-item" id="modal-10">
+                <div class="item">
+                  <p>前端资源</p>
+                  <a href="//github.com/CyC2018/CS-Notes" target="_black">CS-Notes</a>
+                  <a href="//github.com/grab/front-end-guide" target="_black">front-end-guide</a>
+                  <a href="//github.com/InterviewMap/InterviewMap" target="_black">InterviewMap</a>
+                  <a href="//github.com/paddingme/Front-end-Web-Development-Interview-Question" target="_black">Front-end-Web-Development-Interview-Question</a>
+                  <a href="//github.com/h5bp/Front-end-Developer-Interview-Questions/tree/master/Translations/Chinese"
+                    target="_black">Front-end-Developer-Interview-Questions</a>
+                  <a href="//github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions" target="_black">Front-end-Developer-Questions</a>
+                  <a href="//github.com/helloqingfeng/Awsome-Front-End-learning-resource" target="_black">Awsome-Front-End-learning-resource</a>
+                  <a href="//github.com/qiu-deqing/FE-interview" target="_black">FE-interview</a>
+                  <a href="//juejin.im/post/5aae076d6fb9a028cc6100a9" target="_black">interview</a>
+                  <a href="//github.com/MiYogurt/nodelover-maps" target="_black">nodelover-maps</a>
+                  <a href="//github.com/guoxiaoxing/BeesFrontEnd" target="_black">BeesFrontEnd</a>
+                  <a href="//github.com/webproblem/learning-article" target="_black">learning-article</a>
+                </div>
+                <div class="item">
+                  <p>碎片化资源</p>
+                  <a href="//github.com/sindresorhus/awesome" target="_blank">资源教程1</a>
+                  <a href="//github.com/dypsilon/frontend-dev-bookmarks" target="_black">资源教程2</a>
+                  <a href="//github.com/Daiyichen/Front-end-tutorial" target="_black">资源教程3</a>
+                  <a href="http://www.cnblogs.com/HanBlogs/p/5931814.html" target="_black">资源教程4</a>
+                  <a href="//blog.csdn.net/bingqingsuimeng/article/details/17277123" target="_black">资源教程5</a>
+                  <a href="//blog.csdn.net/qq_24122593/article/details/53131261" target="_black">资源教程6</a>
+                  <a href="//blog.csdn.net/u013063153/article/details/52424176" target="_black">知识体系1</a>
+                  <a href="//segmentfault.com/a/1190000004070468" target="_black">知识体系2</a>
+                  <a href="http://www.open-open.com/lib/view/open1418465287652.html" target="_black">学习资料1</a>
+                  <a href="//www.jianshu.com/p/2ad72acb67c8" target="_black">学习资料2</a>
+                  <a href="//www.jianshu.com/p/966a4cc8f87a" target="_black">学习资料3</a>
+                  <a href="//blog.csdn.net/liuwengai/article/details/52751565" target="_black">常见考题1</a>
+                  <a href="//blog.csdn.net/sjpz0124/article/details/47023771" target="_black">常见考题2</a>
+                  <a href="//www.imooc.com/article/11607" target="_black">常见考题3</a>
+                  <a href="//www.cnblogs.com/bigboyLin/p/5272902.html" target="_black">常见考题4</a>
+                </div>
+                <div class="item">
+                  <p>skill</p>
+                  <a href="//skillcrush.com/2016/02/11/skills-to-become-a-front-end-developer/">skills-to-become-a-front-end-developer</a>
+                  <a href="//medium.com/@davesuperman/how-to-learn-front-end-web-development-for-free-in-5-days-25aa6021aa3b">how-to-learn-front-end-web</a>
+                  <a href="//www.quora.com/How-should-I-plan-to-study-front-end-web-development">How-should-I-plan-to-study-front-end-web-development</a>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="go-top">
-        <i class="fa fa-arrow-up"></i>
-    </div>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2010.07.06dev/modernizr.min.js"></script>
-    <script src="//unpkg.com/minigrid@3.1.1/dist/minigrid.min.js"></script>
-    <script src="./js/global.min.js?v=2.0"></script>
+  </div>
+  <div class="go-top">
+    <i class="fa fa-arrow-up"></i>
+  </div>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2010.07.06dev/modernizr.min.js"></script>
+  <script src="//unpkg.com/minigrid@3.1.1/dist/minigrid.min.js"></script>
+  <script src="./js/global.min.js?v=2.0"></script>
 </body>
 
 </html>
