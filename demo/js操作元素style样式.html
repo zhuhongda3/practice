@@ -20,7 +20,7 @@
   <script>
   var test = document.getElementById('test');
   test.style.cssText = 'color: #f00;font-size: 30px';
-  test.style['cssFloat' in test.style?'cssFloat':'styleFloat'] = "right";
+  test.style['cssFloat' in test.style?'cssFloat':'styleFloat'] = "right";  //兼容ie
   </script>
 </body>
 </html>

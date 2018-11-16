@@ -14,10 +14,15 @@
   // console.log(o1); 
   console.log(typeof obj);
   eval('var o2 =' + obj);
-  var o3 = eval('('+obj+')');
+  var o3 = eval('('+obj+')'); 
   console.log(o2);
   console.log(o3);
   console.log(typeof o2,typeof o3);
+
+
+  var obj = '{"a": 1}';
+  var o4 = eval('('+obj+')'); //推荐
+  console.log(o4); // {a: 1}
   </script>
 </body>
 </html>

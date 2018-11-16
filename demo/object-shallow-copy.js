@@ -1,4 +1,4 @@
-//浅拷贝-对象(简单的拷贝)  Shallow copy of object
+//对象浅拷贝
 
 // 方案一
 (function(){
@@ -6,9 +6,7 @@
   var obj2 = {b: 2};
   
   var obj = Object.assign({},obj1,obj2);
-  console.log(obj1);
-  console.log(obj2);
-  console.log(obj);
+  console.log(obj); //{ a: 1, b: 2 }
 })();
 
 // 方案二
@@ -23,7 +21,7 @@
   }
   
   var o1 = extend({},{a: 1});
-  console.log(o1);
+  console.log(o1);    //{a: 1}
 
   // 多对象浅拷贝
   function extendAll(){
@@ -38,6 +36,5 @@
   }
 
   var o2 = extendAll({a: 1},{b: 2},{c: 3});
-  console.log(o2);
+  console.log(o2); //{a: 1,b: 2,c: 3}
 })();
-
