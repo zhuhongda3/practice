@@ -10,6 +10,7 @@
   .link-item {
     position: absolute;
     transition: .3s ease-in-out;
+    border-radius: 5px;
     .box-name {
       position: relative;
       padding: 15px 0 15px 10px;
@@ -28,11 +29,11 @@
       }
     }
     &.active{
-      box-shadow: 0 0 15px 2px #999;
+      box-shadow: 0 0 15px 2px #7ccfff;
     }
     .item {
-      width: 230px;
       padding: 0;
+      width: 230px;
       &:not(:first-of-type){
         margin-top: 10px;
       }

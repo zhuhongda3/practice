@@ -366,6 +366,7 @@ body {
 .link-nav .link-item {
   position: absolute;
   transition: .3s ease-in-out;
+  border-radius: 5px;
 }
 
 .link-nav .link-item .box-name {
@@ -388,12 +389,12 @@ body {
 }
 
 .link-nav .link-item.active {
-  box-shadow: 0 0 15px 2px #999;
+  box-shadow: 0 0 15px 2px #7ccfff;
 }
 
 .link-nav .link-item .item {
-  width: 230px;
   padding: 0;
+  width: 230px;
   background-color: #fff;
   border-radius: 5px;
   border: 1px solid #eee;
