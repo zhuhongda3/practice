@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>table-cell实践</title>
+  <style>
+    *{
+    margin: 0;
+    padding: 0;
+  }
+  *,*:before,*:after{
+    box-sizing: border-box;
+  }
+  .list_row1{
+    display: table-row;
+  }
+  .list_cell1{
+    display: table-cell;
+    width: 30%;
+    background-color: #ddd;
+    text-align: center;
+  }
+
+  .list_row2{
+    display: table;
+  }
+
+  .fl{
+    float: left;
+    /* display: table-cell;  
+    vertical-align: middle; */
+  }
+
+  .list_cell2{
+    display: table-cell;   
+    vertical-align: top;
+    width: 1000px;
+    padding-left: 20px;
+  }
+
+  .list_cell3{
+    display: table-cell;
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    background: #ddd;
+    vertical-align: middle;
+  }
+
+  .list_cell3 img{
+    vertical-align: middle;
+  }
+
+  .content{
+    width: 100%;
+  }
+
+  .list_row4{
+    display: table;
+    width: 100%;
+    border-right: 1px solid #ddd;
+  }
+
+  .list_cell4{
+    display: table-cell;
+    width: 20%;
+    border: 1px solid #ddd;
+    border-right: 0;
+    height: 100px;
+  }
+
+  .search-box{
+    display: table;
+    width: 100%;
+  }
+  .search-cont{
+    display: table-cell;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 8px 0px;
+  }
+  .search-btn{
+    display: table-cell;
+    white-space: nowrap;
+    text-align: center;
+    padding: 6px 12px;
+    background-color: #ccc;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    font-size: 14px;
+    line-height: 1;
+    color: #555;
+    border-right: 0;
+  }
+  </style>
+</head>
+
+<body>
+  <p>1.等高应用</p>
+  <div class="list_row1">
+    <div class="list_cell1">四大行刚看电视浪死啦施蒂利克高房价是看到过手动利克高房价是看到过手动利克高房价是看到过手动利克高房价是看到过手动利克高房价是看到过手动就嘎都流口水感觉大送过来看的收购价阿萨德国际打算来开个价单个撒狗粮快速搭建</div>
+    <div class="list_cell1">四大行刚看电视浪死啦施蒂利克高房价是看到过手动就嘎</div>
+    <div class="list_cell1">四大行刚看电视浪死啦施蒂利克高房价是看到过手动就嘎四大行刚看电视浪死啦施蒂利克高房价是看到过手动就嘎</div>
+  </div>
+  <br>
+  <p>2.宽度自适应</p>
+  <div class="list_row2">
+    <div class="fl">
+      <img src="test.jpg" alt="" width="30">
+    </div>
+    <div class="list_cell2">
+      四大行刚看电视浪死啦施蒂利克高房价是看到过手动利克四大行刚看电视浪死啦施蒂利克高房价是看到过手动利克四大行刚看电视浪死啦施蒂利克高房价是看到过手动利克四大行刚看电视浪死啦施蒂利克高房价是看到过手动利克四大行刚看电视浪死啦施蒂利克高房价是看到过手动利克四大行刚看电视浪死啦施蒂利克高房价是看到过手动利克
+    </div>
+  </div>
+  <br>
+  <p>3.图片居中</p>
+  <div class="list_row3">
+    <div class="list_cell3">
+      <img src="test.jpg" alt="" width="20px;">
+    </div>
+  </div>
+  <br>
+  <p>4.一列等分</p>
+  <div class="content">
+    <div class="list_row4">
+      <div class="list_cell4"></div>
+      <div class="list_cell4"></div>
+      <div class="list_cell4"></div>
+      <div class="list_cell4"></div>
+      <div class="list_cell4"></div>
+    </div>
+  </div>
+  <br>
+  <p>5.输入框应用</p>
+  <div class="search-box">
+    <span class="search-btn">搜索</span>
+    <input type="text" class="search-cont" />
+  </div>
+</body>
+
+</html>
