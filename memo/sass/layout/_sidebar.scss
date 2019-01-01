@@ -7,14 +7,14 @@
   width: 270px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  background: #666;
+  background: #222;
   z-index: 3;
   .title {
     text-align: center;
     height: 50px;
     line-height: 50px;
     font-size: 18px;
-    color: #fff;
+    color: $blue;
     border-bottom: 2px solid hsla(0, 0%, 100%, .04);
   }
   .list-item {
@@ -29,14 +29,14 @@
     a {
       display: inline-block;
       width: 100%;
-      font-size: 12px;
-      color: #fff;
+      font-size: 14px;
+      color: $gray;
       text-decoration: none;
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
       &:hover {
-        text-decoration: underline;
+        color: $white;
       }
     }
   }
@@ -68,7 +68,7 @@
 
 .off-canvas {
   margin-top: 0!important;
-  background-color: #666;
+  background-color: #222;
 }
 
 .title-bar-right {
@@ -91,12 +91,12 @@
 }
 
 .accordion-menu>li a {
-  font-size: 13px;
-  color: #fff;
+  font-size: 14px;
+  color: $gray;
 }
 
 .accordion-menu .is-accordion-submenu a {
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .submenu-toggle::after {
@@ -123,16 +123,20 @@
   position: fixed;
   bottom: 60px;
   right: 10px;
-  width: 35px;
-  height: 35px;
-  font-size: 12px;
-  color: #928c8c;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 14px;
+  color: #ccc;
   line-height: 35px;
   text-align: center;
   transition: .3s all;
-  border: 1px solid #ddd;
+  background: #666;
   cursor: pointer;
   z-index: 5;
+  i{
+    line-height: 50px;
+  }
 }
 
 .go-top.off-inner {

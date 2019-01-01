@@ -8,7 +8,7 @@ $(document).ready(function () {
             duration: 500,
             easing: "swing"
         });
-        $(".link-item").eq(i).addClass('active').siblings().removeClass('active');
+        // $(".link-item").eq(i).addClass('active').siblings().removeClass('active');
         return false;
     });
 
@@ -48,16 +48,16 @@ $(document).ready(function () {
     }
     checkScroll();
 
-    var grid = new Minigrid({
-        container: '.link-list',
-        item: '.link-item',
-        gutter: 12
-    });
-    grid.mount();
-    window.addEventListener('resize', grid.mount());
-    $(window).resize(function () {
-        grid.mount();
-    });
+    // var grid = new Minigrid({
+    //     container: '.link-list',
+    //     item: '.link-item',
+    //     gutter: 12
+    // });
+    // grid.mount();
+    // window.addEventListener('resize', grid.mount());
+    // $(window).resize(function () {
+    //     grid.mount();
+    // });
 
     $(document).foundation();
 });
