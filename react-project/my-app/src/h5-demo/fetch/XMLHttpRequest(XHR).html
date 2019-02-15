@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <p>XMLHttpRequest可以用于获取任何类型的数据，而不仅仅是XML，它还支持HTTP以外的协议(包括文件和ftp)。</p>
+
+  <script>
+    var xhr = new XMLHttpRequest();
+    var url = 'https://www.tianqiapi.com/api/?version=v1&city=青岛';
+
+    xhr.open('GET',url,true);
+    xhr.onreadystatechange = function(e){
+      if(this.readyState == 4 && this.status == 200){
+        var data = JSON.parse(this.response);
+        console.log(data);
+      }
+    }
+    xhr.send();
+  </script>
+</body>
+</html>
