@@ -4,6 +4,7 @@ import './TodoStyle.css';
 
 // 简单介绍了父子组件如何通信
 // 关于props 和 state的介绍可参考：https://segmentfault.com/a/1190000011184076
+// props 解构用法介绍： https://www.cnblogs.com/cqsjs/p/5879644.html <Component {...props} />
 
 class TodoList extends Component {
   constructor(props){
