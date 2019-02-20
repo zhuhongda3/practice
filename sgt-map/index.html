@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .map {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+      }
+
+      body {
+        position: relative;
+        background: url(./images/rowbg.png) no-repeat #31323f;
+        background-size: 100% auto;
+      }
+
+      @media screen and (max-width: 1120px) {
+        body {
+          background-image: url(./images/colbg.png);
+        }
+      }
+
+      .select-list{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 10000;
+      }
+
+      .select-list li{
+        list-style: none;
+        display: inline-bock;
+        padding: 25px;
+        background: #0ff;
+        font-size: 30px;
+        color: #fff;
+        margin-bottom: 20px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ul class="select-list" id="selectList">
+      <li>-2L</li>
+      <li>-1L</li>
+      <li>1L</li>
+      <li>2L</li>
+      <li>3L</li>
+    </ul>
+    <div class="map" id="screenFengMap"></div>
+    <script src="https://res.mallcoo.net/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://m.mallcoo.cn/a/map/Areas/FM/assets/js/fengmap.min-v2.1.24-nologo.js"></script>
+    
+    <script>
+      var map_config = {
+        fmapID: "sz-sgt",
+        key: "00b5e43e6b9b41d460dc7c3278e82822",
+        theme: "sz-sgt",
+        appName: "深国投广场"
+      };
+
+      var map = new fengmap.FMMap({
+        container: document.getElementById("screenFengMap"),
+        mapThemeURL: "http://i0.mallcoo.net/public/map/fmap/theme/10919",
+        defaultThemeName: map_config.theme,
+        defaultMapScaleLevel: 19,
+        mapScaleLevelRange: [16, 23],
+        viewModeAnimateMode: true,
+        focusAlphaMode: false,
+        key: map_config.key,
+        appName: map_config.appName,
+        defaultVisibleGroups: [2] // [1,2,3,4,5] => (-2L,-1L,1L,2L,3L)
+      });
+
+      map.openMapById(map_config.fmapID, function(error) {
+        console.log(error);
+      });
+
+      map.on("loadComplete", function() {
+        // map.viewMode = fengmap.FMViewMode.MODE_2D  //开启2D
+      });
+
+      $('.select-list li').click(function(){
+        var arr = [];
+        var i = $(this).index() + 1;
+        map.visibleGroupIDs = [i];
+        map.focusGroupID = i;
+        $('.select-list').hide();
+      })
+
+
+    </script>
+  </body>
+</html>

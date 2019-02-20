@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
+// antd
+import { Button } from 'antd';
+import 'antd/dist/antd.css';
+
 import {
   BrowserRouter as Router,
   Route,
   Link
 } from 'react-router-dom';
 
+
 // 学习地址： https://www.jianshu.com/p/e06736dbac65
+// https://www.jianshu.com/p/7ae9b7e74023
 
 // HashRouter
 // ReactDOM.render(
@@ -43,6 +51,7 @@ const RouterExample = () => (
 const Home = () => (
   <div>
     <h2>Home</h2>
+    <Button type="primary">Button</Button>
   </div>
 )
 

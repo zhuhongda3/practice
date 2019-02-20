@@ -5,7 +5,7 @@ import RouterExample from './components/RouterExample';
 
 
 // TodoList
-// React.render(<TodoList />, document.getElementById('root'));
+// ReactDOM.render(<TodoList />, document.getElementById('root'));
 
 // RouterExample
 ReactDOM.render(<RouterExample />, document.getElementById('root'));
