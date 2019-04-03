@@ -1,5 +1,0 @@
-/* pages/test/test.wxss */
-.map{
-  width: 100%;
-  height: 500px;
-}
