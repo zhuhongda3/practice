@@ -1,7 +1,6 @@
 /* 消除输入框和按钮的原生外观 */
 /* input{-webkit-appearance: none;} */
-input[type="button"],input[type="submit"],input[type="reset"]{-webkit-appearance: none;}
-textarea{-webkit-appearance: none;}
+input[type="button"],input[type="submit"],input[type="reset"],input[type="radio"],textarea{-webkit-appearance: none;}
 
 /* 去除ios按钮圆角和默认样式 */
 button{border-radius: 0;cursor: pointer;border: 0;}
@@ -27,8 +26,7 @@ div{resize: both;overflow: auto;}
 
 /* 移除ios移动端元素点击时的高亮背景(阴影) */
 html{
-  -webkit-tap-highlight-color:transparent;
-  /* -webkit-tap-highlight-color:rgba(0,0,0,0); */
+  -webkit-tap-highlight-color:transparent; /*rgba(0,0,0,0)*/
 }
 
 /* 禁止用户选中页面文字 */

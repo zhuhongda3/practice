@@ -1,0 +1,17 @@
+page{
+  min-height: 100%;
+  font-size: 24rpx;
+  font-family: "Microsoft Yahei",微软雅黑,Arial,Helvetica;
+  color:#444;
+  line-height: 1.17;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+image{border: 0 none;vertical-align: top;}
+image,text,view,scroll-view,swiper,rich-text,button,form,input,label,textarea,navigator,icon,picker{-webkit-box-sizing: border-box; box-sizing: border-box;}
+button::after{ border: none; }
+button{background:transparent;line-height:inherit;border-radius:0;}
+.clearfix{zoom: 1; display: block;}     
+.clearfix:after{content: "."; clear: both; display: block; height: 0; overflow: hidden;}
+/* ::-webkit-input-placeholder{color:#999;}
+::-webkit-scrollbar{width: 0;height: 0;color: transparent;} */
