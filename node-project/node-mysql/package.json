@@ -1,0 +1,14 @@
+{
+  "name": "mysql",
+  "version": "1.0.0",
+  "description": "[navicat-for-mysql 下载](https://navicatformysql.en.softonic.com/)\r [navicat-for-mysql 使用](https://jingyan.baidu.com/article/d7130635cd6b7913fcf47573.html)",
+  "main": "app-pooling.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mysql": "^2.16.0"
+  }
+}
