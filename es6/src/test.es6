@@ -81,7 +81,7 @@ console.log(children1.__proto__ === children2.__proto__); // true
 console.log(children1.constructor === Person.prototype.constructor); // true
 
 
-// 数组深拷贝
+// 数组浅拷贝
 var arr1 = [1,3,2];
 var arr2 = [...arr1];
 
@@ -103,7 +103,7 @@ while(!$result.done){
 /**
  * 数组去重
  * 1.使用new Set 将数组转化为 对象，并去除重复项
- * 2. 使用Array.from()将类数组转化成数组,类似于es5的[].slice.call(obj) 或者 Array、prototype.call(obj)
+ * 2. 使用Array.from()将类数组转化成数组,类似于es5的[].slice.call(obj) 或者 Array.prototype.slice.call(obj)
  */ 
 
  var arr3 = Array.from(new Set(arr1));
@@ -135,7 +135,7 @@ while(!$result.done){
 var a = [1,5,2,2,4,6];
 for(var i = 0; i < a.length - 1;i++){ //外层循环控制排序趟数
   for(var j = 0; j < a.length - 1 - i;j++){ //内层循环控制每一趟排序多少次
-    if(a[j] > a[j+1]){ //升序
+    if(a[j] > a[j+1]){ //升序  降序 '<'
       var temp = a[j+1];
       a[j+1] = a[j];
       a[j] = temp;
