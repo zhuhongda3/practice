@@ -1,0 +1,66 @@
+{
+  "pages": [
+    {
+      "path": "pages/product",
+      "config": {
+        "navigationBarTitleText": "商品",
+        "usingComponents": {
+          "van-button": "vant-weapp/button"
+        }
+      }
+    },
+    {
+      "path": "pages/cart",
+      "config": {
+        "navigationBarTitleText": "购物车"
+      }
+    },
+    {
+      "path": "pages/my",
+      "config": {
+        "navigationBarTitleText": "我的"
+      }
+    },
+    {
+      "path": "pages/index",
+      "config": {
+        "navigationBarTitleText": "dz-yan"
+      }
+    },
+    "pages/counter",
+    {
+      "path": "packageA/logs",
+      "subPackage": true
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#cccccc",
+    "selectedColor": "#ff0000",
+    "list": [
+      {
+        "pagePath": "pages/product",
+        "text": "商品",
+        "iconPath": "/static/images/icon-o.png",
+        "selectedIconPath": "/static/images/icon.png"
+      },
+      {
+        "pagePath": "pages/cart",
+        "text": "购物车",
+        "iconPath": "/static/images/icon-o.png",
+        "selectedIconPath": "/static/images/icon.png"
+      },
+      {
+        "pagePath": "pages/my",
+        "text": "我的",
+        "iconPath": "/static/images/icon-o.png",
+        "selectedIconPath": "/static/images/icon.png"
+      }
+    ]
+  }
+}
