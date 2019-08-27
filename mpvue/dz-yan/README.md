@@ -27,3 +27,4 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 # https://www.youzan.com/intro/wsc/case
 # http://momentjs.cn/
 # https://github.com/youzan/vant-weapp
+# https://segmentfault.com/a/1190000019844657?utm_source=tag-newest
