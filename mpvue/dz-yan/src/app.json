@@ -5,14 +5,28 @@
       "config": {
         "navigationBarTitleText": "商品",
         "usingComponents": {
-          "van-button": "vant-weapp/button"
+          "van-button": "../static/ui/vant-weapp/button/index",
+          "van-card": "../static/ui/vant-weapp/card/index",
+          "van-loading": "../static/ui/vant-weapp/loading/index",
+          "van-popup": "../static/ui/vant-weapp/popup/index",
+          "van-stepper": "../static/ui/vant-weapp/stepper/index",
+          "van-goods-action": "../static/ui/vant-weapp/goods-action/index",
+          "van-goods-action-button": "../static/ui/vant-weapp/goods-action-button/index"
         }
       }
     },
     {
       "path": "pages/cart",
       "config": {
-        "navigationBarTitleText": "购物车"
+        "navigationBarTitleText": "购物车",
+        "usingComponents":{
+          "van-card": "../static/ui/vant-weapp/card/index",
+          "van-loading": "../static/ui/vant-weapp/loading/index",
+          "van-checkbox": "../static/ui/vant-weapp/checkbox/index",
+          "van-swipe-cell": "../static/ui/vant-weapp/swipe-cell/index",
+          "van-submit-bar": "../static/ui/vant-weapp/submit-bar/index",
+          "van-stepper": "../static/ui/vant-weapp/stepper/index"
+        }
       }
     },
     {

@@ -25,3 +25,5 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 # https://www.youzan.com/intro/wsc/case
 # https://github.com/F-loat/mpvue-quickstart
 # https://www.youzan.com/intro/wsc/case
+# http://momentjs.cn/
+# https://github.com/youzan/vant-weapp

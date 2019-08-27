@@ -1,0 +1,87 @@
+@import "./mixin";
+
+//主题色
+$theme-color: #e02a18 !default; //app主题色， 菜单栏icon，重要的文字和按钮， 少面积使用
+$gradient-color1: #e53a29 !default;
+$gradient-color2: #e02a18 !default;
+$theme-bg: linear-gradient(125deg, $gradient-color1 60%, $gradient-color2 100%);
+$btn-bg: $theme-bg;
+
+//按钮圆角
+// $btn-radius-lg: 48rpx; //大按钮圆角
+// $btn-radius-sm: 28rpx; //小按钮圆角
+
+// 字体，边框，分割线
+$base-color: #21283f !default;
+$base-font-color: $base-color; //标题
+$base-font-color2: rgba($base-color, .5) !default; // 次要字颜色
+$base-font-color3: rgba($base-color, .4) !default; // 副标题,边框
+$border-color: rgba($base-color, .08) !default; //分割线线颜色
+$label-color: rgba($base-color, .9) !default; //input的label颜色 ，详情lable
+$detail-color: rgba($base-color, .8) !default; //详情
+$placeholder-color: rgba($base-color, .3) !default; //input placeholder
+$cancel-color: rgba($base-color, .5) !default; //弹框取消
+$confirm-color: #027bff !default; //弹框确定颜色
+$white-color: #fff !default; //白色
+
+//块级
+$block-bg-white: #fff !default; // 块级背景白色
+$block-bg-gray: #f7f7f9 !default; // 块级背景灰色
+$block-shadow: 0 1px 8px 0 rgba($base-color, .08); // 块级 阴影
+$block-radius: 4px !default; //块级圆角
+
+// 字号
+$font-size-base: 10px !default;
+$h5-font-size: $font-size-base * 1.2 !default; //font-size:24rpx
+$h4-font-size: $font-size-base * 1.4 !default; //font-size:28rpx
+$h3-font-size: $font-size-base * 1.6 !default; //font-size:32rpx
+$h2-font-size: $font-size-base * 1.8 !default; //font-size:36rpx
+$h1-font-size: $font-size-base * 2 !default; //font-size:40rpx
+
+//活动-进度条
+// $bar-bg-o: rgba($base-color, 0.16) !default;
+// $bar-bg: #767a8a !default;
+// $bar-radius: 11rpx !default;
+
+//用户标签
+// $tag-color: #b67721 !default;
+// $tag-bg: rgba(#ead6bb, 0.6) !default;
+// $tag-bg-1: rgba(#fa8c16, 0.1) !default;
+// $tag-color-1: rgba(#fa8c16, 0.1) !default;
+
+//遮罩层颜色
+$mask-bg: rgba(#090b12, .7) !default;
+
+//状态
+$suc_color: #469e00 !default;
+$fail_color: #f53c23 !default;
+$wait_color: #2b6dde !default;
+
+//左右边距
+$padlr_normal: 12px !default;
+
+//clear float
+%clearfix {
+  display: block;
+  zoom: 1;
+  &::after {
+    content: " ";
+    clear: both;
+    display: block;
+    overflow: hidden;
+    height: 0;
+  }
+}
+
+//flex center
+%center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%btn-theme {
+  @extend %center;
+  color: $white-color;
+  background: $theme-bg;
+}

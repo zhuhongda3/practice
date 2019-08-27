@@ -98,12 +98,12 @@ module.exports = {
         ignore: ['.*']
       }
     ]),
-    new CopyWebpackPlugin([
-      {
-        from: resolve('node_modules/vant-weapp/dist'),
-        to: resolve('dist/vant-weapp/dist'),
-        ignore: ['.*']
-      }
-    ])
+    // new CopyWebpackPlugin([
+    //   {
+    //     from: resolve('node_modules/vant-weapp/dist'),
+    //     to: resolve('dist/vant-weapp/dist'),
+    //     ignore: ['.*']
+    //   }
+    // ])
   ]
 }
