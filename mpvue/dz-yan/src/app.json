@@ -18,12 +18,43 @@
       }
     },
     {
+      "path": "pages/login",
+      "config": {
+        "navigationBarTitleText": "登录",
+        "usingComponents": {}
+      }
+    },
+    {
+      "path": "pages/auth",
+      "config": {
+        "navigationBarTitleText": "授权",
+        "usingComponents": {}
+      }
+    },
+    {
+      "path": "pages/hdproduct",
+      "config": {
+        "navigationBarTitleText": "活动商品",
+        "enablePullDownRefresh": true,
+        "backgroundTextStyle": "dark",
+        "usingComponents": {
+          "van-button": "../static/ui/vant-weapp/button/index",
+          "van-card": "../static/ui/vant-weapp/card/index",
+          "van-loading": "../static/ui/vant-weapp/loading/index",
+          "van-popup": "../static/ui/vant-weapp/popup/index",
+          "van-stepper": "../static/ui/vant-weapp/stepper/index",
+          "van-goods-action": "../static/ui/vant-weapp/goods-action/index",
+          "van-goods-action-button": "../static/ui/vant-weapp/goods-action-button/index"
+        }
+      }
+    },
+    {
       "path": "pages/cart",
       "config": {
         "navigationBarTitleText": "购物车",
         "enablePullDownRefresh": true,
         "backgroundTextStyle": "dark",
-        "usingComponents":{
+        "usingComponents": {
           "van-card": "../static/ui/vant-weapp/card/index",
           "van-loading": "../static/ui/vant-weapp/loading/index",
           "van-checkbox": "../static/ui/vant-weapp/checkbox/index",
@@ -37,7 +68,7 @@
       "path": "pages/my",
       "config": {
         "navigationBarTitleText": "我的",
-        "usingComponents":{
+        "usingComponents": {
           "van-panel": "../static/ui/vant-weapp/panel/index",
           "van-cell": "../static/ui/vant-weapp/cell/index"
         }
@@ -49,7 +80,8 @@
         "navigationBarTitleText": "",
         "enablePullDownRefresh": true,
         "backgroundTextStyle": "dark",
-        "usingComponents":{
+        "usingComponents": {
+          "van-button": "../static/ui/vant-weapp/button/index",
           "van-card": "../static/ui/vant-weapp/card/index",
           "van-loading": "../static/ui/vant-weapp/loading/index"
         }
@@ -59,23 +91,14 @@
       "path": "pages/stores",
       "config": {
         "navigationBarTitleText": "门店信息",
-        "usingComponents":{
+        "usingComponents": {
           "van-cell-group": "../static/ui/vant-weapp/cell-group/index",
           "van-button": "../static/ui/vant-weapp/button/index",
+          "van-popup": "../static/ui/vant-weapp/popup/index",
+          "van-area": "../static/ui/vant-weapp/area/index",
           "van-field": "../static/ui/vant-weapp/field/index"
         }
       }
-    },
-    {
-      "path": "pages/index",
-      "config": {
-        "navigationBarTitleText": "dz-yan"
-      }
-    },
-    "pages/counter",
-    {
-      "path": "packageA/logs",
-      "subPackage": true
     }
   ],
   "window": {
@@ -85,27 +108,36 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "#cccccc",
-    "selectedColor": "#ff0000",
+    "color": "#bfbfbf",
+    "selectedColor": "#2c2c2c",
     "list": [
       {
         "pagePath": "pages/product",
         "text": "商品",
-        "iconPath": "/static/images/icon-o.png",
-        "selectedIconPath": "/static/images/icon.png"
+        "iconPath": "/static/images/product-o.png",
+        "selectedIconPath": "/static/images/product.png"
       },
       {
         "pagePath": "pages/cart",
         "text": "购物车",
-        "iconPath": "/static/images/icon-o.png",
-        "selectedIconPath": "/static/images/icon.png"
+        "iconPath": "/static/images/cart-o.png",
+        "selectedIconPath": "/static/images/cart.png"
       },
       {
         "pagePath": "pages/my",
         "text": "我的",
-        "iconPath": "/static/images/icon-o.png",
-        "selectedIconPath": "/static/images/icon.png"
+        "iconPath": "/static/images/my-o.png",
+        "selectedIconPath": "/static/images/my.png"
       }
     ]
+  },
+  "networkTimeout": {
+    "request": 5000,
+    "downloadFile": 5000
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
   }
 }

@@ -14,14 +14,16 @@
           <img
             :src="item"
             mode="widthFix"
-            @click="gotoPage"
-            :data-url="'/pages/hdproduct'"
             class="ad-img"
           >
         </swiper-item>
       </swiper>
     </div>
 
+    <div
+      class="ac-title"
+      v-if="list.length>0"
+    >活动商品,火热抢购中！</div>
     <div class="product-list">
       <div
         class="product-item"
@@ -29,6 +31,7 @@
         :key="index"
       >
         <van-card
+          :num="item.Num"
           :price="item.goods_price"
           :origin-price="item.goods_pro_price"
           :desc="item.goods_info"
@@ -116,7 +119,6 @@ export default {
       bannerData: {
         api_name: 'get_seting',
         login_key: '',
-        sign: '',
         reqtime: '',
       },
       searchData: {
@@ -128,13 +130,6 @@ export default {
         sign: '',
         isOVer: false,
       },
-    }
-  },
-  onShow(){
-    if(this.$store.getters.isShow == 0){
-      this.$common.showModal('', '您好，请先完善门店信息！', false, '', '立即完善', () => {
-        this.$common.gotoPage('/pages/stores')
-      })
     }
   },
   onLoad() {
@@ -180,21 +175,6 @@ export default {
     },
     confirmPay() {
       console.log('confirmPay')
-      this.$common.showLoading('正在下单中')
-      setTimeout(() => {
-        this.$common.showModal(
-          '',
-          '下单成功',
-          false,
-          '',
-          '知道了',
-          () => {
-            this.$common.gotoPage('/pages/order?status=1')
-          },
-          () => {}
-        )
-        this.$common.hideLoading()
-      }, 1500)
     },
     onChange(e) {
       this.selectProduct.addNum = e.mp.detail
@@ -246,7 +226,7 @@ export default {
       let res = await get_goods_list_api(param)
 
       if (res.return_code == 200) {
-        res.data.forEach(item => {
+         res.data.forEach(item => {
           item.goods_pic = 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4123588406,1666799354&fm=26&gp=0.jpg'
           item.Num =  100
         })

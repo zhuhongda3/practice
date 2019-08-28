@@ -15,6 +15,7 @@ import {
   makePhoneCall,
   getWxAuth,
   wxPayment,
+  signCreate,
 } from "@/utils/submodule/wx.js";
 import {
   isMobile,
@@ -53,6 +54,7 @@ export default {
   makePhoneCall,
   getWxAuth,
   wxPayment,
+  signCreate,
   //校验
   isMobile,
   isEmail,

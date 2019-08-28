@@ -178,5 +178,13 @@ function wxPayment(options) {
     }
   })
 }
+function signCreate(keys,opts){
+  let md5 = require('md5')
+  let s = []
+  for (let item of keys){
+    s.push(`${item}=${opts[item]}`)
+  }
+  return md5(s.join("&") +'wuyeuqiwe8927391289123')
+}
 
-export { rpx2px, imgPreview, scanQRCode, showToast, showLoading, hideLoading, showModal, openLocation, makePhoneCall, getWxAuth, wxPayment }
+export { rpx2px, imgPreview, scanQRCode, showToast, showLoading, hideLoading, showModal, openLocation, makePhoneCall, getWxAuth, wxPayment, signCreate }

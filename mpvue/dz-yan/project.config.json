@@ -9,7 +9,7 @@
 	},
 	"miniprogramRoot": "./dist/",
 	"compileType": "miniprogram",
-	"appid": "touristappid",
+	"appid": "wx105bdafff12e1886",
 	"projectname": "dz-yan",
 	"condition": {
 		"search": {

@@ -1,15 +1,27 @@
 <template>
   <div class="center-body">
-    <div class="cus-center-infor" :style="'background-image:url('+bgImgUrl+')'">
+    <div
+      class="cus-center-infor"
+      :style="'background-image:url('+bgImgUrl+')'"
+    >
       <div class="user-avatar">
-        <img class="img" :src="avatar" />
+        <img
+          class="img"
+          :src="avatarUrl"
+        />
       </div>
-      <p class="nick-name">{{UserName}}</p>
+      <p class="nick-name">{{nickName}}</p>
     </div>
 
     <div class="cus-center-content">
       <div class="cus-center-cell">
-        <van-cell title="订单信息" value="查看全部订单" is-link link-type="navigateTo" url="/pages/order?status=0"></van-cell>
+        <van-cell
+          title="订单信息"
+          value="查看全部订单"
+          is-link
+          link-type="navigateTo"
+          url="/pages/order?status=0"
+        ></van-cell>
         <div class="goods-state-list">
           <div
             class="goods-state-item"
@@ -24,7 +36,13 @@
         </div>
       </div>
       <div class="cus-center-cell">
-        <van-cell title="门店信息" icon="shop-o" is-link link-type="navigateTo" url="/pages/stores"></van-cell>
+        <van-cell
+          title="门店信息"
+          icon="shop-o"
+          is-link
+          link-type="navigateTo"
+          url="/pages/stores"
+        ></van-cell>
       </div>
     </div>
   </div>
@@ -34,29 +52,43 @@
 export default {
   data() {
     return {
-      avatar: "http://iph.href.lu/100x100?bg=f44",
-      UserName: "哈哈哈哈哈",
-      bgImgUrl: "", //http://iph.href.lu/750x300?bg=000
+      avatarUrl: require('../../static/images/avatar.jpg'),
+      nickName: '',
+      bgImgUrl: '',
       goodsStateList: [
         {
-          name: "待发货",
-          url: "/pages/order?status=1",
-          iconName: "iconfont icon-shopping"
+          name: '待发货',
+          url: '/pages/order?status=1',
+          iconName: 'iconfont icon-shopping',
         },
         {
-          name: "待收货",
-          url: "/pages/order?status=2",
-          iconName: "iconfont icon-shopping"
+          name: '待收货',
+          url: '/pages/order?status=2',
+          iconName: 'iconfont icon-shopping',
         },
         {
-          name: "已完成",
-          url: "/pages/order?status=3",
-          iconName: "iconfont icon-shopping"
-        }
-      ]
-    };
+          name: '已完成',
+          url: '/pages/order?status=3',
+          iconName: 'iconfont icon-shopping',
+        },
+      ],
+    }
+  },
+  onLoad(){
+    this.getUserData()
+  },
+  methods: {
+    getUserData(){
+      let userinfo = this.$store.getters.userInfo
+      if(userinfo.avatarUrl && userinfo.nickName){
+        console.log(userinfo)
+        console.log(1111111111)
+        this.avatarUrl = userinfo.avatarUrl
+        this.nickName = userinfo.nickName
+      }
+    }
   }
-};
+}
 </script>
 <style lang="scss">
 page{
@@ -68,14 +100,14 @@ page{
     display: flex;
     align-items: center;
     height: 150px;
-    padding: 0 10px;
+    padding: 0 20px;
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: #ddd;
+    background-color: #ff9977;
     .user-avatar{
       position: relative;
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border-radius: 100%;
       overflow: hidden;
       .img{
@@ -109,7 +141,7 @@ page{
     text-align: center;
     .iconfont{
       font-size: 20px;
-      color: #ddd;
+      color: #2c2c2c;
     }
     .state-name{
       margin-top: 5px;

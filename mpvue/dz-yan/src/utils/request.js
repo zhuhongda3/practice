@@ -11,21 +11,22 @@ var fly = new Fly()
 
 //request拦截器
 fly.interceptors.request.use(request => {
-  if (store.getters.token) {
-    request.headers['Authorization'] = store.getters.token
+  if (!store.getters.token) {
+    // request.headers['login_key'] = store.getters.token
+    common.gotoPage('/pages/login', 'redirect')
   }
   // loading --start
-  startLoading();
+  startLoading()
   return request
 })
 
 //response拦截器
 fly.interceptors.response.use(
   response => {
-    // loading --end
+    // loading --end'
     endLoading()
-    if (response && response.data && response.data.Code != 1 && response.data.Code<10000) {
-      if(response.data.Message){
+    if (response && response.data && response.data.Code != 1 && response.data.Code < 10000) {
+      if (response.data.Message) {
         common.showToast(response.data.Message)
       }
     }
@@ -36,7 +37,7 @@ fly.interceptors.response.use(
     if (err.response) {
       switch (err.response.status) {
         case 401:
-          common.gotoPage('/pages/identity/login/index', 'redirect')
+          common.gotoPage('/pages/login', 'redirect')
           break
         case 403:
           common.showToast('没有权限！')
@@ -49,51 +50,53 @@ fly.interceptors.response.use(
   }
 )
 
-const startLoading = function(){
-  store.commit('user/loadingAddCount',1);
-  var lcount = store.getters.loading;
-  if(lcount<=1)
-  {
+const startLoading = function() {
+  store.commit('user/loadingAddCount', 1)
+  var lcount = store.getters.loading
+  if (lcount <= 1) {
     wx.showLoading({
       title: '加载中',
-      mask : true
+      mask: true,
     })
   }
 }
 
-const endLoading = function(){
-    store.commit('user/loadingReduceCount',1);
-    var lcount = store.getters.loading;
-    if(lcount<=0)
+const endLoading = function() {
+  store.commit('user/loadingReduceCount', 1)
+  var lcount = store.getters.loading
+  if (lcount <= 0) wx.hideLoading()
+  else {
+    setTimeout(() => {
+      store.commit('user/loadingReduceCount', -1)
       wx.hideLoading()
-    else{
-      setTimeout(() => {
-        store.commit('user/loadingReduceCount',-1);
-        wx.hideLoading()
-      }, 5000);
-    }
+    }, 5000)
+  }
 }
 
 // 请求基地址
-
-// fly.config.baseURL = 'https://aivillapi.mp-t.mallcoo.cn/api/'
-fly.config.baseURL = ''
+fly.config.baseURL = process.env.API_ROOT
+console.log(fly.config.baseURL)
 
 // 请求超时
-fly.config.timeout = 10000
+fly.config.timeout = 5000
 //设置公共的Get参数
-// fly.config.params={"token":"testtoken"};
-const request = function (opts) {
+let qs = require('qs')
+const request = function(opts) {
+  // console.log(qs.stringify({data: opts.data}))
   return new Promise((resolve, reject) => {
-    return fly
-      .request(opts.url, opts.data, { method: 'post', ...opts.options })
-      .then(res => {
-        resolve(res.data)
-      })
-      .catch(e => {
-        reject(e)
-      })
+    return (
+      fly
+        //.request(opts.url, { data: opts.data }, { method: 'get', ...opts.options })
+        // .get(opts.url + '?data=' + encodeURIComponent(JSON.stringify(opts.data)))
+        .request(opts.url, 'data=' + encodeURIComponent(JSON.stringify(opts.data)), { method: 'get', ...opts.options })
+        .then(res => {
+          resolve(res.data)
+        })
+        .catch(e => {
+          reject(e)
+        })
+    )
   })
 }
 
-export default request; 
+export default request
