@@ -7,7 +7,6 @@
         :key="index"
       >
         <van-swipe-cell
-          id="swipe-cell"
           :data-index="index"
           right-width="65"
           left-width="65"
@@ -99,6 +98,11 @@ export default {
   onLoad() {
     this.getDataMock(true);
     // this.getData(true);
+  },
+  async onPullDownRefresh(){
+    this.list = []
+    this.getDataMock(true);
+    wx.stopPullDownRefresh();
   },
   onReachBottom() {
     this.getDataMock(false);
@@ -247,7 +251,7 @@ export default {
   padding: 5px;
 }
 .cus-submit-left{
-  padding: 0 10px;
+  padding-left: 14px;
   display: flex;
   align-items: center;
 }

@@ -145,7 +145,10 @@ import { test } from "@/api/api";
 export default {
   data() {
     return {
-      swiperData: [],
+      swiperData: [
+        "http://iph.href.lu/750x300?bg=000",
+        "http://iph.href.lu/750x300"
+      ],
       list1: [],
       list2: [],
       loadtip: "",
@@ -159,26 +162,14 @@ export default {
     };
   },
   onLoad() {
-    this.getSwiperData();
     this.getDataMock(true);
     // this.getData(true);
-  },
-  async onPullDownRefresh(){
-    this.list1 = []
-    this.list2 = []
-    this.getSwiperData();
-    this.getDataMock(true);
-    wx.stopPullDownRefresh();
   },
   onReachBottom() {
     this.getDataMock(false);
     // this.getData(false);
   },
   methods: {
-    getSwiperData(){
-      this.swiperData = [ "http://iph.href.lu/750x300?bg=000",
-        "http://iph.href.lu/750x300"]
-    },
     addToCart(e) {
       let dataset = e.currentTarget.dataset,
         item = dataset.item;
@@ -233,7 +224,6 @@ export default {
       if (first) {
         this.searchData.PageIndex = 1;
         this.searchData.isOVer = false;
-        this.list1 = [];
         this.list2 = [];
       }
       if (this.searchData.isOVer) return;

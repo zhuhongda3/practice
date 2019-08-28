@@ -17,6 +17,12 @@ Vue.mixin({
   // }
   onUnload() {
     Object.assign(this, this.$options.data())
+  },
+  methods: {
+    gotoPage(e){
+      let url = e.mp.currentTarget.dataset.url
+      this.$common.gotoPage(url)
+    }
   }
 })
 

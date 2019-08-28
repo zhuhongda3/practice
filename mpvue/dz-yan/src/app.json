@@ -4,6 +4,8 @@
       "path": "pages/product",
       "config": {
         "navigationBarTitleText": "商品",
+        "enablePullDownRefresh": true,
+        "backgroundTextStyle": "dark",
         "usingComponents": {
           "van-button": "../static/ui/vant-weapp/button/index",
           "van-card": "../static/ui/vant-weapp/card/index",
@@ -19,6 +21,8 @@
       "path": "pages/cart",
       "config": {
         "navigationBarTitleText": "购物车",
+        "enablePullDownRefresh": true,
+        "backgroundTextStyle": "dark",
         "usingComponents":{
           "van-card": "../static/ui/vant-weapp/card/index",
           "van-loading": "../static/ui/vant-weapp/loading/index",
@@ -32,7 +36,34 @@
     {
       "path": "pages/my",
       "config": {
-        "navigationBarTitleText": "我的"
+        "navigationBarTitleText": "我的",
+        "usingComponents":{
+          "van-panel": "../static/ui/vant-weapp/panel/index",
+          "van-cell": "../static/ui/vant-weapp/cell/index"
+        }
+      }
+    },
+    {
+      "path": "pages/order",
+      "config": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": true,
+        "backgroundTextStyle": "dark",
+        "usingComponents":{
+          "van-card": "../static/ui/vant-weapp/card/index",
+          "van-loading": "../static/ui/vant-weapp/loading/index"
+        }
+      }
+    },
+    {
+      "path": "pages/stores",
+      "config": {
+        "navigationBarTitleText": "门店信息",
+        "usingComponents":{
+          "van-cell-group": "../static/ui/vant-weapp/cell-group/index",
+          "van-button": "../static/ui/vant-weapp/button/index",
+          "van-field": "../static/ui/vant-weapp/field/index"
+        }
       }
     },
     {
