@@ -9,15 +9,16 @@ class Clock extends Component {
 
   //事件声明
   handleClick1 = function(id) {
-    alert(id)
+    console.log(id)
   }
 
   handleClick2 = id => {
-    alert(id)
+    console.log(id)
   }
 
-  handleClick3 = e => {
-    e.preventDefault()  //阻止事件冒泡必须显示声明，不能使用return false代替
+  handleClick3 = event => {
+    console.log(event)
+    event.preventDefault() //阻止事件冒泡必须显示声明，不能使用return false代替
   }
 
   componentDidMount() {
@@ -41,8 +42,9 @@ class Clock extends Component {
         <button onClick={this.handleClick1.bind(this, 1)}>
           点击事件1（推荐方式）
         </button>
-        <button onClick={e => this.handleClick2(2, e)}>点击事件2</button>
-        <button onClick={e => this.handleClick3}>阻止事件冒泡</button>
+        {/* <button onClick={e => this.handleClick2(2, e)}>点击事件2</button> */}
+        <button onClick={() => this.handleClick2(2)}>点击事件2</button>
+        <button onClick={this.handleClick3}>阻止事件冒泡</button>
       </Fragment>
     )
   }
