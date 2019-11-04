@@ -1,16 +1,11 @@
-import React from 'react';
+import React from 'react'
 // import ReactDOM from 'react-dom';
 
 // antd
-import { Button } from 'antd';
-import 'antd/dist/antd.css';
+import { Button } from 'antd'
+import 'antd/dist/antd.css'
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom';
-
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 // 学习地址： https://www.jianshu.com/p/e06736dbac65
 // https://www.jianshu.com/p/7ae9b7e74023
@@ -21,8 +16,7 @@ import {
 //   <Route path="/" component={home}></Route>
 // </HashRouter>, document.getElementById('root'));
 
-
-// BrowerRouter : 
+// BrowerRouter :
 //原理是使用HTML5 history API (pushState, replaceState, popState)来使你的内容随着url动态改变的
 /**
  * exact控制匹配到/路径时不会再继续向下匹配
@@ -34,16 +28,22 @@ const RouterExample = () => (
   <Router>
     <div>
       <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/topics">Topics</Link></li>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/topics">Topics</Link>
+        </li>
       </ul>
 
-      <hr/>
+      <hr />
 
-      <Route exact path="/" component={Home}/>
-      <Route path="/about" component={About}/>
-      <Route path="/topics" component={Topics}/>
+      <Route exact path="/" component={Home} />
+      <Route path="/about" component={About} />
+      <Route path="/topics" component={Topics} />
     </div>
   </Router>
 )
@@ -66,26 +66,22 @@ const Topics = ({ match }) => (
     <h2>Topics</h2>
     <ul>
       <li>
-        <Link to={`${match.url}/rendering`}>
-          Rendering with React
-        </Link>
+        <Link to={`${match.url}/rendering`}>Rendering with React</Link>
       </li>
       <li>
-        <Link to={`${match.url}/components`}>
-          Components
-        </Link>
+        <Link to={`${match.url}/components`}>Components</Link>
       </li>
       <li>
-        <Link to={`${match.url}/props-v-state`}>
-          Props v. State
-        </Link>
+        <Link to={`${match.url}/props-v-state`}>Props v. State</Link>
       </li>
     </ul>
 
-    <Route path={`${match.url}/:topicId`} component={Topic}/>
-    <Route exact path={match.url} render={() => (
-      <h3>Please select a topic.</h3>
-    )}/>
+    <Route path={`${match.url}/:topicId`} component={Topic} />
+    <Route
+      exact
+      path={match.url}
+      render={() => <h3>Please select a topic.</h3>}
+    />
   </div>
 )
 
@@ -95,5 +91,4 @@ const Topic = ({ match }) => (
   </div>
 )
 
-
-export default RouterExample;
+export default RouterExample

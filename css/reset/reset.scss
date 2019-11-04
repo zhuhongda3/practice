@@ -28,7 +28,7 @@ textarea{vertical-align:top}
 button,input{line-height:normal}
 select{margin:0;outline:0}
 input.fixAKeyboard:focus,textarea.fixAndroidKeyboard:focus{-webkit-tap-highlight-color:rgba(255,255,255,0);-webkit-user-modify:read-write-plaintext-only}
-input:-webkit-autofill{-webkit-box-shadow:0 0 0 1000px #fff inset!important}
+input:-webkit-autofill{box-shadow:0 0 0 1000px #fff inset!important}
 button,input[type=button],input[type=checkbox],input[type=reset],input[type=submit],label{cursor:pointer;user-select:none;-ms-user-select:none;-moz-user-select:none;-webkit-user-select:none}
 input[type=submit]{-webkit-user-modify:read-plaintext-only;-moz-user-modify:read-plaintext-only;-ms-user-modify:read-plaintext-only;-o-user-modify:read-plaintext-only;user-modify:read-plaintext-only}
 input[type=search]::-webkit-search-cancel-button,

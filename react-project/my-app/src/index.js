@@ -1,11 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
+
 // import TodoList from './components/TodoList/TodoList';
-import RouterExample from './components/RouterExample';
+// import RouterExample from './components/RouterDemo/RouterExample'
+// import ClockDemo from './components/ClockDemo/ClockDemo'
+// import LoginControl from './components/LoginControl/LoginControl'
+import NameForm from './components/NameForm/NameForm'
 
-
-// TodoList
-// ReactDOM.render(<TodoList />, document.getElementById('root'));
-
-// RouterExample
-ReactDOM.render(<RouterExample />, document.getElementById('root'));
+ReactDOM.render(<NameForm />, document.getElementById('root'))
