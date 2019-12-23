@@ -196,7 +196,7 @@ a, img {
 /*禁用长按页面时的弹出菜单(iOS下有效) ,img和a标签都要加*/
 body {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-color: #000;
   background-attachment: fixed;
 }
 
