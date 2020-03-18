@@ -8,6 +8,7 @@
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   background: #222;
+  border-right: 1px solid #333;
   z-index: 3;
   .title {
     text-align: center;
@@ -25,6 +26,11 @@
       height: 30px;
       line-height: 30px;
       padding-left: 20px;
+      &.active{
+        a{
+          color: $theme-cor;
+        }
+      }
     }
     a {
       display: inline-block;
@@ -88,11 +94,20 @@
 
 .menu-con {
   padding-top: 40px;
+  li{
+    &.active{
+      a{
+        color: $theme-cor;
+        background: none;
+      }
+    }
+  }
 }
 
 .accordion-menu>li a {
   font-size: 14px;
   color: $gray;
+  text-decoration: none;
 }
 
 .accordion-menu .is-accordion-submenu a {

@@ -196,7 +196,7 @@ a, img {
 /*禁用长按页面时的弹出菜单(iOS下有效) ,img和a标签都要加*/
 body {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  background-color: #000;
+  background-color: #222;
   background-attachment: fixed;
 }
 
@@ -216,6 +216,7 @@ body {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   background: #222;
+  border-right: 1px solid #333;
   z-index: 3;
 }
 
@@ -238,6 +239,10 @@ body {
   height: 30px;
   line-height: 30px;
   padding-left: 20px;
+}
+
+.sidebar .list-item li.active a {
+  color: #50a4d6;
 }
 
 .sidebar .list-item a {
@@ -301,9 +306,15 @@ body {
   padding-top: 40px;
 }
 
+.menu-con li.active a {
+  color: #50a4d6;
+  background: none;
+}
+
 .accordion-menu > li a {
   font-size: 14px;
   color: #888;
+  text-decoration: none;
 }
 
 .accordion-menu .is-accordion-submenu a {
@@ -371,11 +382,6 @@ body {
 .link-nav .link-item {
   border-radius: 5px;
   padding: 15px 0;
-  background-color: #222;
-}
-
-.link-nav .link-item:not(:last-child) {
-  margin-bottom: 20px;
 }
 
 .link-nav .link-item:after {

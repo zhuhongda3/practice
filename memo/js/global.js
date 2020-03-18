@@ -1,14 +1,15 @@
 $(document).ready(function () {
-
-    $(".link").click(function () {
+    $(".link-item").eq(0).show().siblings().hide();
+    $(".link,.menu-con li").click(function () {
         var i = $(this).index();
-        $("html, body").animate({
-            scrollTop: $(".link-item").eq(i).offset().top
-        }, {
-            duration: 500,
-            easing: "swing"
-        });
-        // $(".link-item").eq(i).addClass('active').siblings().removeClass('active');
+        // $("html, body").animate({
+        //     scrollTop: $(".link-item").eq(i).offset().top
+        // }, {
+        //     duration: 500,
+        //     easing: "swing"
+        // });
+        $(this).addClass('active').siblings().removeClass('active')
+        $(".link-item").eq(i).show().siblings().hide();
         return false;
     });
 
