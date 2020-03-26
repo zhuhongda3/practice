@@ -221,11 +221,12 @@ body {
 }
 
 .sidebar .title {
+  font-family: cursive;
   text-align: center;
   height: 50px;
   line-height: 50px;
-  font-size: 18px;
-  color: #50a4d6;
+  font-size: 24px;
+  color: #827e7e;
   border-bottom: 2px solid rgba(255, 255, 255, 0.04);
 }
 
@@ -242,13 +243,13 @@ body {
 }
 
 .sidebar .list-item li.active a {
-  color: #50a4d6;
+  text-decoration: underline;
 }
 
 .sidebar .list-item a {
   display: inline-block;
   width: 100%;
-  font-size: 14px;
+  font-size: 16px;
   color: #888;
   text-decoration: none;
   text-overflow: ellipsis;
@@ -257,7 +258,7 @@ body {
 }
 
 .sidebar .list-item a:hover {
-  color: #fff;
+  text-decoration: underline;
 }
 
 .js-off-canvas-overlay {
@@ -307,7 +308,7 @@ body {
 }
 
 .menu-con li.active a {
-  color: #50a4d6;
+  color: #827e7e;
   background: none;
 }
 
@@ -352,7 +353,7 @@ body {
   color: #ccc;
   line-height: 35px;
   text-align: center;
-  transition: .3s all;
+  transition: 0.3s all;
   background: #666;
   cursor: pointer;
   z-index: 5;
@@ -372,6 +373,8 @@ body {
 
 .link-list {
   padding: 20px 0;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 .link-nav {
@@ -385,7 +388,7 @@ body {
 }
 
 .link-nav .link-item:after {
-  content: '';
+  content: "";
   display: block;
   clear: both;
 }
@@ -398,7 +401,7 @@ body {
 }
 
 .link-nav .link-item .box-name:before {
-  content: '';
+  content: "";
   display: block;
   width: 2px;
   height: 14px;
@@ -410,27 +413,57 @@ body {
 }
 
 .link-nav .link-item .item {
-  float: left;
-  padding: 0 10px;
+  padding: 0 20px;
   border-radius: 5px;
   margin-right: 10px;
 }
 
 .link-nav .link-item .item p {
-  padding: 15px;
+  padding: 15px 0;
   font-size: 16px;
-  color: #50a4d6;
+  color: #827e7e;
 }
 
 .link-nav .link-item .item a {
-  display: block;
-  padding: 10px 15px;
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
   color: #888;
-  font-size: 14px;
+  font-size: 16px;
+  border: 1px solid #333;
+  border-radius: 20px 0 20px 0;
+  margin-bottom: 10px;
+  margin-right: 10px;
 }
 
 .link-nav .link-item .item a:hover {
-  color: #fff;
+  color: #ddd;
+  border-color: transparent;
+}
+
+.link-nav .link-item .item a::before, .link-nav .link-item .item a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  background: #333;
+  z-index: -1;
+  transition: width 0.5s, height 0.5s;
+}
+
+.link-nav .link-item .item a::before {
+  top: -1px;
+  right: -1px;
+}
+
+.link-nav .link-item .item a::after {
+  bottom: -1px;
+  left: -1px;
+}
+
+.link-nav .link-item .item a:hover::before, .link-nav .link-item .item a:hover::after {
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
 }
 
 @media screen and (min-width: 481px) {

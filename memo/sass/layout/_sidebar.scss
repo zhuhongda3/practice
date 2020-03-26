@@ -11,12 +11,13 @@
   border-right: 1px solid #333;
   z-index: 3;
   .title {
+    font-family: cursive;
     text-align: center;
     height: 50px;
     line-height: 50px;
-    font-size: 18px;
+    font-size: 24px;
     color: $blue;
-    border-bottom: 2px solid hsla(0, 0%, 100%, .04);
+    border-bottom: 2px solid hsla(0, 0%, 100%, 0.04);
   }
   .list-item {
     position: relative;
@@ -26,23 +27,23 @@
       height: 30px;
       line-height: 30px;
       padding-left: 20px;
-      &.active{
-        a{
-          color: $theme-cor;
+      &.active {
+        a {
+          text-decoration: underline;
         }
       }
     }
     a {
       display: inline-block;
       width: 100%;
-      font-size: 14px;
+      font-size: 16px;
       color: $gray;
       text-decoration: none;
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
       &:hover {
-        color: $white;
+        text-decoration: underline;
       }
     }
   }
@@ -50,7 +51,7 @@
 
 // foundation sidebar
 .js-off-canvas-overlay {
-  background: rgba(0, 0, 0, .5);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .title-bar {
@@ -73,7 +74,7 @@
 }
 
 .off-canvas {
-  margin-top: 0!important;
+  margin-top: 0 !important;
   background-color: #222;
 }
 
@@ -94,9 +95,9 @@
 
 .menu-con {
   padding-top: 40px;
-  li{
-    &.active{
-      a{
+  li {
+    &.active {
+      a {
         color: $theme-cor;
         background: none;
       }
@@ -104,7 +105,7 @@
   }
 }
 
-.accordion-menu>li a {
+.accordion-menu > li a {
   font-size: 14px;
   color: $gray;
   text-decoration: none;
@@ -145,11 +146,11 @@
   color: #ccc;
   line-height: 35px;
   text-align: center;
-  transition: .3s all;
+  transition: 0.3s all;
   background: #666;
   cursor: pointer;
   z-index: 5;
-  i{
+  i {
     line-height: 50px;
   }
 }
