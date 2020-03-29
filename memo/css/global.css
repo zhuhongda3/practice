@@ -195,9 +195,11 @@ a, img {
 
 /*禁用长按页面时的弹出菜单(iOS下有效) ,img和a标签都要加*/
 body {
+  height: 100%;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   background-color: #222;
   background-attachment: fixed;
+  overflow: hidden;
 }
 
 .link-nav .link-item .item p, .link-nav .link-item .item a {
@@ -371,10 +373,14 @@ body {
   position: relative;
 }
 
+.off-canvas-content {
+  height: calc(100vh - 70px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 .link-list {
   padding: 20px 0;
-  height: 100vh;
-  overflow-y: auto;
 }
 
 .link-nav {
@@ -384,7 +390,6 @@ body {
 
 .link-nav .link-item {
   border-radius: 5px;
-  padding: 15px 0;
 }
 
 .link-nav .link-item:after {
@@ -436,11 +441,6 @@ body {
   margin-right: 10px;
 }
 
-.link-nav .link-item .item a:hover {
-  color: #ddd;
-  border-color: transparent;
-}
-
 .link-nav .link-item .item a::before, .link-nav .link-item .item a::after {
   content: "";
   position: absolute;
@@ -449,6 +449,7 @@ body {
   background: #333;
   z-index: -1;
   transition: width 0.5s, height 0.5s;
+  border-radius: 20px 0 20px 0;
 }
 
 .link-nav .link-item .item a::before {
@@ -461,7 +462,12 @@ body {
   left: -1px;
 }
 
-.link-nav .link-item .item a:hover::before, .link-nav .link-item .item a:hover::after {
+.link-nav .link-item .item a:hover, .link-nav .link-item .item a:active {
+  color: #ddd;
+  border-color: transparent;
+}
+
+.link-nav .link-item .item a:hover::before, .link-nav .link-item .item a:hover::after, .link-nav .link-item .item a:active::before, .link-nav .link-item .item a:active::after {
   width: calc(100% + 2px);
   height: calc(100% + 2px);
 }

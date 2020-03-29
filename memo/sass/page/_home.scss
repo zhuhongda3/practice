@@ -1,10 +1,13 @@
 .wrapper {
   position: relative;
 }
+.off-canvas-content{
+  height: calc(100vh - 70px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
 .link-list {
   padding: 20px 0;
-  height: 100vh;
-  overflow-y: auto;
 }
 // @keyframes wordsLoop {
 //   0% {
@@ -32,7 +35,6 @@
   margin-left: 270px;
   .link-item {
     border-radius: 5px;
-    padding: 15px 0;
     &:after {
       content: "";
       display: block;
@@ -77,10 +79,6 @@
         margin-bottom: 10px;
         margin-right: 10px;
         @extend %ellipsis;
-        &:hover {
-          color: #ddd;
-          border-color: transparent;
-        }
         &::before,
         &::after {
           content: "";
@@ -90,6 +88,7 @@
           background: #333;
           z-index: -1;
           transition: width 0.5s, height 0.5s;
+          border-radius: 20px 0 20px 0;
         }
         &::before {
           top: -1px;
@@ -99,7 +98,9 @@
           bottom: -1px;
           left: -1px;
         }
-        &:hover {
+        &:hover,&:active {
+          color: #ddd;
+          border-color: transparent;
           &::before,
           &::after {
             width: calc(100% + 2px);
