@@ -2,7 +2,7 @@
   position: relative;
 }
 .off-canvas-content{
-  height: calc(100vh - 70px);
+  height: 100vh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -74,38 +74,36 @@
         padding: 10px 20px;
         color: $gray;
         font-size: 16px;
-        border: 1px solid #333;
-        border-radius: 20px 0 20px 0;
         margin-bottom: 10px;
         margin-right: 10px;
         @extend %ellipsis;
-        &::before,
-        &::after {
-          content: "";
-          position: absolute;
-          width: 0;
-          height: 0;
-          background: #333;
-          z-index: -1;
-          transition: width 0.5s, height 0.5s;
-          border-radius: 20px 0 20px 0;
-        }
-        &::before {
-          top: -1px;
-          right: -1px;
-        }
-        &::after {
-          bottom: -1px;
-          left: -1px;
-        }
+        max-width: 100%;
+        // &::before,
+        // &::after {
+        //   content: "";
+        //   position: absolute;
+        //   width: 0;
+        //   height: 0;
+        //   background: #333;
+        //   z-index: -1;
+        //   transition: width 0.5s, height 0.5s;
+        // }
+        // &::before {
+        //   top: -1px;
+        //   right: -1px;
+        // }
+        // &::after {
+        //   bottom: -1px;
+        //   left: -1px;
+        // }
         &:hover,&:active {
           color: #ddd;
-          border-color: transparent;
-          &::before,
-          &::after {
-            width: calc(100% + 2px);
-            height: calc(100% + 2px);
-          }
+          // border-color: transparent;
+          // &::before,
+          // &::after {
+          //   width: calc(100% + 2px);
+          //   height: calc(100% + 2px);
+          // }
         }
       }
     }

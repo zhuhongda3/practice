@@ -50,7 +50,7 @@ gulp.task('watch', function () {
         }
     });
     gulp.watch('./*.html').on('change', reload);
-    gulp.watch('./sass/**/*.scss', ['cssmin']);
+    gulp.watch('./sass/*.scss', ['cssmin']);
     gulp.watch(['./js/*.js','!./js/*.min.js'], ['uglify']);
 });
 
