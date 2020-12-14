@@ -7,17 +7,13 @@
   width: 270px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  // background: #222;
-  // border-right: 1px solid #333;
   z-index: 3;
   .title {
-    font-family: cursive;
     text-align: center;
     height: 50px;
     line-height: 50px;
     font-size: 24px;
-    color: $blue;
-    // border-bottom: 2px solid hsla(0, 0%, 100%, 0.04);
+    color: $black;
   }
   .list-item {
     position: relative;
@@ -27,27 +23,17 @@
       height: 30px;
       line-height: 30px;
       padding-left: 20px;
-      &.active {
-        a {
-          text-decoration: none;
-          color: #fff;
-        }
-      }
     }
     a {
-      display: inline-block;
+      position: relative;
+      display: block;
       width: 100%;
-      font-size: 16px;
-      color: $gray;
+      font-size: 15px;
+      color: #000;
       text-decoration: none;
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
-      &:hover {
-        // text-decoration: underline;
-        color: #fff;
-        text-decoration: none;
-      }
     }
   }
 }
@@ -78,7 +64,6 @@
 
 .off-canvas {
   margin-top: 0 !important;
-  // background-color: #222;
   background: rgba(#000,.8);
 }
 
@@ -102,7 +87,7 @@
   li {
     &.active {
       a {
-        color: $theme-cor;
+        font-weight: bold;
         background: none;
       }
     }

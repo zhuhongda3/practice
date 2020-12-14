@@ -196,10 +196,10 @@ a, img {
 /*禁用长按页面时的弹出菜单(iOS下有效) ,img和a标签都要加*/
 body {
   height: 100%;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: sans-serif;
+  background-color: #C7EDCC;
   background-attachment: fixed;
   overflow: hidden;
-  background: url("../img/bg.gif") repeat;
 }
 
 .link-nav .link-item .item p, .link-nav .link-item .item a {
@@ -221,12 +221,11 @@ body {
 }
 
 .sidebar .title {
-  font-family: cursive;
   text-align: center;
   height: 50px;
   line-height: 50px;
   font-size: 24px;
-  color: #fff;
+  color: #000;
 }
 
 .sidebar .list-item {
@@ -241,25 +240,16 @@ body {
   padding-left: 20px;
 }
 
-.sidebar .list-item li.active a {
-  text-decoration: none;
-  color: #fff;
-}
-
 .sidebar .list-item a {
-  display: inline-block;
+  position: relative;
+  display: block;
   width: 100%;
-  font-size: 16px;
-  color: #888;
+  font-size: 15px;
+  color: #000;
   text-decoration: none;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-}
-
-.sidebar .list-item a:hover {
-  color: #fff;
-  text-decoration: none;
 }
 
 .js-off-canvas-overlay {
@@ -309,7 +299,7 @@ body {
 }
 
 .menu-con li.active a {
-  color: #fff;
+  font-weight: bold;
   background: none;
 }
 
@@ -424,23 +414,34 @@ body {
 
 .link-nav .link-item .item p {
   padding: 15px 0;
-  font-size: 16px;
-  color: #fff;
+  font-size: 15px;
+  color: #000;
 }
 
 .link-nav .link-item .item a {
   position: relative;
   display: inline-block;
-  padding: 10px 20px;
+  padding: 14px 0;
   color: #888;
-  font-size: 16px;
+  font-size: 14px;
   margin-bottom: 10px;
-  margin-right: 10px;
+  margin-right: 24px;
   max-width: 100%;
 }
 
-.link-nav .link-item .item a:hover, .link-nav .link-item .item a:active {
-  color: #ddd;
+.link-nav .link-item .item a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #333;
+  transition: width 0.3s;
+}
+
+.link-nav .link-item .item a:hover::after {
+  width: 100%;
 }
 
 @media screen and (min-width: 481px) {
