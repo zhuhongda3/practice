@@ -57,7 +57,7 @@
     "karma-spec-reporter": "0.0.31",
     "karma-webpack": "^2.0.2",
     "mocha": "^3.2.0",
-    "mongoose": "^4.13.1",
+    "mongoose": "^5.7.7",
     "nightwatch": "^0.9.12",
     "node-sass": "^4.7.2",
     "opn": "^5.1.0",
