@@ -196,7 +196,7 @@ a, img {
 /*禁用长按页面时的弹出菜单(iOS下有效) ,img和a标签都要加*/
 body {
   height: 100%;
-  font-family: sans-serif;
+  font-family: '微软雅黑',sans-serif;
   background-color: #C7EDCC;
   background-attachment: fixed;
   overflow: hidden;
@@ -363,6 +363,7 @@ body {
 }
 
 .off-canvas-content {
+  padding: 20px 0 50px;
   height: 100vh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
